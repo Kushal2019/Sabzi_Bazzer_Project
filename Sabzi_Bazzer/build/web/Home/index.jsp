@@ -16,11 +16,6 @@
 
     <%@include file="../PageFiles/navMain.jsp" %>
     <!-- Navbar end -->
-
-
-
-
-
   <!-- Start image slider -->
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
