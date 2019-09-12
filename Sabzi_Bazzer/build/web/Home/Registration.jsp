@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../Css/Mainlogin.css">
          <link  rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
          
-         <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
+         <!--<script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>-->
 </head>
 <!--Coded with love by Mutiullah Samim-->
 <body>
@@ -31,7 +31,7 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                               <form> 
+                                <form name="Reg" method="POST" action="../Registration_User"> 
                                 <h3 class="register-heading">Apply as a User</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
@@ -111,6 +111,9 @@
                                             <input type="password" class="form-control" placeholder="Confirm Password *" value="" name="s_c_password" id="s_c_password"/>
                                         </div>
                                         <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Company name *" value="" name="s_Company" id="s_Company"/>
+                                        </div>
+                                        <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Licence Number *" value="" name="s_licence" id="s_licence"/>
                                         </div>
                                         <div class="form-group">
@@ -133,6 +136,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
+                                         
                                        <div class="form-group">
                                            <select class="form-control" name="s_state" id="s_state" onchange="state()">
                                                 <option class="hidden"  selected disabled>Select your State *</option>
@@ -164,6 +168,12 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Landmark *" value="" name="s_landmark" id="s_landmark" />
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Enter the capctha *" value="" name="s_landmark" id="s_landmark" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" class="form-control" value="hi" name="captext" id="captext" />
                                         </div>
                                         <input type="submit" class="btnRegister"  value="Register" onclick="Seller_validation()"/>
                                         
