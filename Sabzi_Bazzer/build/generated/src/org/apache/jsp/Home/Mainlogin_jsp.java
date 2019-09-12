@@ -58,8 +58,8 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>\r\n");
       out.write("\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
       out.write("\t<link rel=\"stylesheet\" href=\"../Css/Mainlogin.css\">\r\n");
+      out.write("        <script src=\"../Javascript/Login_Validation.js\"></script>\r\n");
       out.write("</head>\r\n");
-      out.write("<!--Coded with love by Mutiullah Samim-->\r\n");
       out.write("\r\n");
       out.write("<body>\r\n");
       out.write("\t");

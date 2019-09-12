@@ -9,6 +9,7 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="../Css/Mainlogin.css">
+        <script src="../Javascript/Login_Validation.js"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-                                    <form method="POST" action="../User/index.jsp">
+                                    <form method="POST" action="#">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -44,7 +45,7 @@
 							</div>
 						</div>
 				<div class="d-flex justify-content-center mt-8 login_container">
-                                    <button type="submit" name="log_sub" class="btn login_btn" onclick="function Login_Validation()">Login</button>
+                                    <input type="submit" name="log_sub" class="btn login_btn" onclick="Login_Validation()" value="Login">
 				</div>
                                     </form>
                                 </div>
