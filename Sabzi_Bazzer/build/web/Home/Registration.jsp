@@ -114,33 +114,41 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="First Name *" value=""
                                                 name="s_f_name" id="s_f_name" />
+                                            <span style="color:red;" id="s1"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Last Name *" value=""
                                                 name="s_last_name" id="s_last_name" />
+                                            <span style="color:red;" id="s2"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="Password *"
                                                 value="" name="s_password" id="s_password" />
+                                            <span style="color:red;" id="s3"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="Confirm Password *"
                                                 value="" name="s_c_password" id="s_c_password" />
+                                            <span style="color:red;" id="s4"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Company name *" value="" name="s_Company" id="s_Company"/>
+                                            <span style="color:red;" id="s5"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Licence Number *" value="" name="s_licence" id="s_licence"/>
+                                            <span style="color:red;" id="s6"></span>
          
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Email *" value=""
                                                 name="s_email" id="s_email" />
+                                            <span style="color:red;" id="s7"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" maxlength="10" minlength="10" class="form-control"
                                                 placeholder="Phone *" value="" name="s_phone" id="s_phone" />
+                                            <span style="color:red;" id="s8"></span>
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">
@@ -169,30 +177,38 @@
                                             <option value="Uttarakhand">Uttarakhand</option>
                                             <option value="Delhi">Delhi</option>
                                         </select>
+                                        <span style="color:red;" id="s9"></span>
                                     </div>
                                         <div class="form-group">
                                             <select class="form-control" name="s_city" id="s_town">
                                                 <option class="hidden"  selected disabled>Select your Town *</option>
                                                 <option>Unknown Town</option>
                                             </select>
+                                            <span style="color:red;" id="s10"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Zip Code *" value="" name="s_zip" id="s_zip" />
+                                            <span style="color:red;" id="s11"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Street *" value="" name="s_street" id="s_street" />
+                                            <span style="color:red;" id="s12"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="House Number *" value="" name="s_house" id="s_house" />
+                                            <span style="color:red;" id="s13"></span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Landmark *" value="" name="s_landmark" id="s_landmark" />
+                                            <span style="color:red;" id="s14"></span>
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Enter the capctha *" value="" name="s_landmark" id="s_landmark" />
+                                            <span style="color:red;" id="s15"></span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="hidden" class="form-control" value="hi" name="captext" id="captext" />
+                                            <input type="text" disabled class="form-control" value="hi" name="captext" id="captext" />
+                                            <span style="color:red;" id="s16"></span>
                                         </div>
                                         <input type="submit" class="btnRegister"  value="Register" onclick="Seller_validation()"/>
                                        

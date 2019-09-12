@@ -220,7 +220,21 @@ function SQ() {
 function Seller_validation()
 {
     let s_f_name,s_last_name,s_password,s_c_password,s_licence,s_email,s_phone,s_Company,s_state,s_town,s_zip,s_street,s_house,s_landmark;
-    
+    s_f_name=document.getElementById('s_f_name');
+    s_last_name=document.getElementById('s_last_name');
+    s_password=document.getElementById('s_password');
+    s_c_password=document.getElementById('s_c_password');
+    s_licence=document.getElementById('s_licence');
+    s_email=document.getElementById('s_email');
+    s_phone=document.getElementById('s_phone');
+    s_Company=document.getElementById('s_Company');
+    s_state=document.getElementById('s_state');
+    s_town=document.getElementById('s_town');
+    s_zip=document.getElementById('s_zip');
+    s_street=document.getElementById('s_street');
+    s_house=document.getElementById('s_house');
+    s_landmark=document.getElementById('s_landmark');
+    alert("ji");
 }
 
 
