@@ -134,17 +134,17 @@
                                     </div>
                                     <div class="col-md-6">
                                        <div class="form-group">
-                                            <select class="form-control" name="s_state" id="s_state">
+                                           <select class="form-control" name="s_state" id="s_state" onchange="state()">
                                                 <option class="hidden"  selected disabled>Select your State *</option>
-                                                <option>West Bengal</option>
-                                                <option>Bihar</option>
-                                                <option>Gujarat</option>
-                                                <option>Himachal Pradesh</option>
-                                                <option>Maharashtra</option>
-                                                <option>Odisha</option>
-                                                <option>Tamil Nadu</option>
-                                                <option>Uttarakhand</option>
-                                                <option>Delhi</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                                <option value="Bihar">Bihar</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="Delhi">Delhi</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -154,9 +154,9 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-control" name="s_district" id="s_question">
+                                            <select class="form-control" name="s_district" id="s_district">
                                                 <option class="hidden"  selected disabled>Select your District *</option>
-                                                <option>Unknown District</option>>
+                                                <option>Unknown District</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

@@ -206,3 +206,17 @@ function User_validation() {
 
 
 //************************************ User Validation Function End ***********************************
+//
+//************************* Dropdown menu Vallidation start*************************************************
+function state()
+{
+    let s_state,s_city,s_district;
+     s_state=document.getElementById('s_state');
+     s_city=document.getElementById('s_city');
+     if(s_state.value=="West Bengal")
+     {
+         s_city.innerHTML="<option value='kolkata'>Kolkata</option>\n\
+                            <option value='kolkata'>Kolkata</option>\n\
+                            <option value='kolkata'>Kolkata</option>";
+     }
+}

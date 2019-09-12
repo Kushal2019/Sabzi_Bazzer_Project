@@ -93,11 +93,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </nav>");
       out.write("\r\n");
       out.write("    <!-- Navbar end -->\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("  <!-- Start image slider -->\r\n");
       out.write("  <div id=\"carouselExampleFade\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">\r\n");
       out.write("  <div class=\"carousel-inner\">\r\n");
