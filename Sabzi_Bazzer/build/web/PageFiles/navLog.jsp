@@ -17,9 +17,6 @@
         <a class="nav-link" href="#">Cart</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Mainlogin.jsp">Login</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="../Home/Registration.jsp">Sign Up</a>
       </li>
     </ul>
