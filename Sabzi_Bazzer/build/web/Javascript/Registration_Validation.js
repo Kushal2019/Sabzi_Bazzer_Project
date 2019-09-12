@@ -206,11 +206,19 @@ function SQ() {
 
 
 //************************************ User Validation Function End ***********************************
+//
+//************************* Seller  Vallidation start*************************************************
+function Seller_validation()
+{
+    let s_f_name,s_last_name,s_password,s_c_password,s_licence,s_email,s_phone,s_Company,s_state,s_town,s_zip,s_street,s_house,s_landmark;
+    
+}
 
 
-//************************* Seller Vallidation Start********************************************
 
-//dropdown menu validation start
+
+
+//Dropdown menu Vallidation start
 function state() {
     let s_state, s_town;
     s_state = document.getElementById('s_state');
@@ -291,5 +299,19 @@ function state() {
                             <option value='Erode'>Erode</option>\n\
                             <option value='Vellore'>Vellore</option>\n\
                             <option value='Dindigul'>Dindigul</option>";
-    }
+
+     }
+     if(s_state.value=="Uttarakhand")
+     {
+         s_town.innerHTML="<option value='Dehradun'>Dehradun</option>\n\
+                            <option value='Haridwar'>Haridwar</option>\n\
+                            <option value='Rudrapur'>Rudrapur</option>\n\
+                            <option value='Roorkee'>Roorkee</option>\n\
+                            <option value='Kashipur'>Kashipur</option>\n\
+                            <option value='Rishikesh'>Rishikesh</option>\n\
+                            <option value='Haldwani'>Haldwani</option>";
+     }
+    
+    
 }
+///Dropdown menu Vallidation start end

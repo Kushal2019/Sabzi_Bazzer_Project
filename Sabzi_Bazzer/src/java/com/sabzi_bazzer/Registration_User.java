@@ -7,6 +7,8 @@ package com.sabzi_bazzer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -70,7 +72,7 @@ public class Registration_User extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        processRequest_post(request, response);
     }
 
     /**
@@ -82,5 +84,47 @@ public class Registration_User extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void processRequest_post(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            PrintWriter out= response.getWriter();
+            String fname,lname,pass,email,phone,ques,ans,gender;
+            fname=request.getParameter("u_f_name");
+            lname=request.getParameter("u_last_name");
+            pass=request.getParameter("u_password");
+            email=request.getParameter("u_email");
+            phone=request.getParameter("txtEmpPhone");
+            ques=request.getParameter("u_s_question");
+            ans=request.getParameter("u_s_answer");
+            gender=request.getParameter("u_gender");
+            User user= new User();
+            user.setFname(fname);
+            user.setLname(lname);
+            user.setEmail(email);
+            user.setPass(pass);
+            user.setPhone(phone);
+            user.setGender(gender);
+            user.setQues(ques);
+            user.setAns(ans);
+            user.setType("USER");
+            Database db = new Database();
+            int x=db.insertUser(user);
+            if(x==1)
+            {
+//              db.insertLogindetails(user);
+                response.sendRedirect("Home/Mainlogin.jsp");
+            }
+            else
+            {
+                response.sendRedirect("Home/Registration.jsp?Err=1");
+            }
+                    
+//            out.println(db.isConnected());
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Registration_User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }

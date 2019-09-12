@@ -1,11 +1,11 @@
 <html>
 
 <head>
-    <title>Registation Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Css/Mainlogin.css">
-    <link rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
-    <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
+	<title>Registation Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../Css/Mainlogin.css">
+         <link  rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
+         <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
 </head>
 <!--Coded with love by Mutiullah Samim-->
 
@@ -128,8 +128,11 @@
                                                 value="" name="s_c_password" id="s_c_password" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Licence Number *"
-                                                value="" name="s_licence" id="s_licence" />
+                                            <input type="text" class="form-control" placeholder="Company name *" value="" name="s_Company" id="s_Company"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Licence Number *" value="" name="s_licence" id="s_licence"/>
+         
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Email *" value=""
@@ -167,31 +170,32 @@
                                             <option value="Delhi">Delhi</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <select class="form-control" name="s_city" id="s_town">
-                                            <option class="hidden" selected disabled>Select your Town *</option>
-                                            <option>Unknown Town</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Zip Code *" value=""
-                                            name="s_zip" id="s_zip" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Street *" value=""
-                                            name="s_street" id="s_street" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="House Number *" value=""
-                                            name="s_house" id="s_house" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Landmark *" value=""
-                                            name="s_landmark" id="s_landmark" />
-                                    </div>
-                                    <input type="submit" class="btnRegister" value="Register"
-                                        onclick="Seller_validation()" />
-
+                                        <div class="form-group">
+                                            <select class="form-control" name="s_city" id="s_town">
+                                                <option class="hidden"  selected disabled>Select your Town *</option>
+                                                <option>Unknown Town</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Zip Code *" value="" name="s_zip" id="s_zip" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Street *" value="" name="s_street" id="s_street" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="House Number *" value="" name="s_house" id="s_house" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Landmark *" value="" name="s_landmark" id="s_landmark" />
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Enter the capctha *" value="" name="s_landmark" id="s_landmark" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" class="form-control" value="hi" name="captext" id="captext" />
+                                        </div>
+                                        <input type="submit" class="btnRegister"  value="Register" onclick="Seller_validation()"/>
+                                       
                                 </div>
                             </div>
 
