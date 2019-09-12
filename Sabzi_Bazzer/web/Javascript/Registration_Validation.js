@@ -70,7 +70,7 @@ function User_validation() {
     }
 
     // Last_Name Validation
-    
+
     // Password Validation Start
     if (u_password.value == "") {
         u_password.style.borderColor = "red";
@@ -186,26 +186,27 @@ function User_validation() {
         return false;
     }
 }
-    // Password Validation End
-    
-    //Question_Answer Validation Start
-    
-        function SQ() {
-            let u_s_question = document.getElementById('u_s_question');
-            let u_s_answer = document.getElementById('u_s_answer');
-            if (!u_s_question.value == "") {
-                u_s_answer.disabled = false;
-                if (u_s_answer.value == "") {
-                    return 1;
-                }
-            }
+// Password Validation End
+
+//Question_Answer Validation Start
+
+function SQ() {
+    let u_s_question = document.getElementById('u_s_question');
+    let u_s_answer = document.getElementById('u_s_answer');
+    if (!u_s_question.value == "") {
+        u_s_answer.disabled = false;
+        if (u_s_answer.value == "") {
+            return 1;
+        }
+    }
 }
-    //Question_Answer Validation Start
+//Question_Answer Validation Start
 
 
 
 
 //************************************ User Validation Function End ***********************************
+<<<<<<< HEAD
 //
 //************************* Seller  Vallidation start*************************************************
 function Seller_validation()
@@ -228,6 +229,19 @@ function state()
      {
          s_town.innerHTML="<option value='kolkata'>Kolkata</option>\n\
                             <option value='Bankura'>Bankura</option>\n\
+=======
+
+
+//************************* Seller Vallidation Start********************************************
+
+//dropdown menu validation start
+function state() {
+    let s_state, s_town;
+    s_state = document.getElementById('s_state');
+    s_town = document.getElementById('s_town');
+    if (s_state.value == "West Bengal") {
+        s_town.innerHTML = "<option value='kolkata'>Kolkata</option>\n\
+>>>>>>> 6575a72e3523ea808fd050157c9918d436a42795
                             <option value='Asansol'>Asansol</option>\n\
                             <option value='North 24 Parganas'>North 24 Parganas</option>\n\
                             <option value='South 24 Parganas'>South 24 Parganas</option>\n\
@@ -236,10 +250,9 @@ function state()
                             <option value='Malda'>Malda</option>\n\
                             <option value='Paschim Medinipur'>Paschim Medinipur</option>\n\
                             <option value='Purba Medinipur'>Purba Medinipur</option>";
-     }
-     if(s_state.value=="Bihar")
-     {
-         s_town.innerHTML="<option value='Patna'>Patna</option>\n\
+    }
+    if (s_state.value == "Bihar") {
+        s_town.innerHTML = "<option value='Patna'>Patna</option>\n\
                             <option value='Gaya'>Gaya</option>\n\
                             <option value='Bhagalpur'>Bhagalpur</option>\n\
                             <option value='Muzaffarpur'>Muzaffarpur</option>\n\
@@ -248,10 +261,9 @@ function state()
                             <option value='Jamalpur'>Jamalpur</option>\n\
                             <option value='Bagaha'>Bagaha</option>\n\
                             <option value='Siwan'>Siwan</option>";
-     }
-     if(s_state.value=="Gujarat")
-     {
-         s_town.innerHTML="<option value='Ahmedabad'>Ahmedabad</option>\n\
+    }
+    if (s_state.value == "Gujarat") {
+        s_town.innerHTML = "<option value='Ahmedabad'>Ahmedabad</option>\n\
                             <option value='Surat'>Surat</option>\n\
                             <option value='Rajkot'>Rajkot</option>\n\
                             <option value='Bhavnagar'>Bhavnagar</option>\n\
@@ -260,10 +272,9 @@ function state()
                             <option value='Nadiad'>Nadiad</option>\n\
                             <option value='Gandhidham'>Gandhidham</option>\n\
                             <option value='Porbandar'>Porbandar</option>";
-     }
-     if(s_state.value=="Himachal Pradesh")
-     {
-         s_town.innerHTML="<option value='Shimla'>Shimla</option>\n\
+    }
+    if (s_state.value == "Himachal Pradesh") {
+        s_town.innerHTML = "<option value='Shimla'>Shimla</option>\n\
                             <option value='Solan'>Solan</option>\n\
                             <option value='Dharamsala'>Dharamsala</option>\n\
                             <option value='Baddi'>Baddi</option>\n\
@@ -272,10 +283,9 @@ function state()
                             <option value='Paonta Sahib'>Paonta Sahib</option>\n\
                             <option value='Sundarnagar'>Sundarnagar</option>\n\
                             <option value='Chamba'>Chamba</option>";
-     }
-     if(s_state.value=="Maharashtra")
-     {
-         s_town.innerHTML="<option value='Mumbai'>Mumbai</option>\n\
+    }
+    if (s_state.value == "Maharashtra") {
+        s_town.innerHTML = "<option value='Mumbai'>Mumbai</option>\n\
                             <option value='Pune'>Pune</option>\n\
                             <option value='Nagpur'>Nagpur</option>\n\
                             <option value='Nashik'>Nashik</option>\n\
@@ -284,10 +294,9 @@ function state()
                             <option value='Gondia'>Gondia</option>\n\
                             <option value='Sangli'>Sangli</option>\n\
                             <option value='Jalna'>Jalna</option>";
-     }
-     if(s_state.value=="Odisha")
-     {
-         s_town.innerHTML="<option value='Bhubaneswar'>Bhubaneswar</option>\n\
+    }
+    if (s_state.value == "Odisha") {
+        s_town.innerHTML = "<option value='Bhubaneswar'>Bhubaneswar</option>\n\
                             <option value='Cuttack'>Cuttack</option>\n\
                             <option value='Rourkela'>Rourkela</option>\n\
                             <option value='Brahmapur'>Brahmapur</option>\n\
@@ -296,10 +305,9 @@ function state()
                             <option value='Jeypore'>Jeypore</option>\n\
                             <option value='Bargarh'>Bargarh</option>\n\
                             <option value='Rayagada'>Rayagada</option>";
-     }
-     if(s_state.value=="Tamil Nadu")
-     {
-         s_town.innerHTML="<option value='Chennai'>Chennai</option>\n\
+    }
+    if (s_state.value == "Tamil Nadu") {
+        s_town.innerHTML = "<option value='Chennai'>Chennai</option>\n\
                             <option value='Coimbatore'>Coimbatore</option>\n\
                             <option value='Madurai'>Madurai</option>\n\
                             <option value='Tiruchirappalli'>Tiruchirappalli</option>\n\
@@ -308,6 +316,7 @@ function state()
                             <option value='Erode'>Erode</option>\n\
                             <option value='Vellore'>Vellore</option>\n\
                             <option value='Dindigul'>Dindigul</option>";
+<<<<<<< HEAD
      }
      if(s_state.value=="Uttarakhand")
      {
@@ -323,3 +332,7 @@ function state()
     
 }
 ///Dropdown menu Vallidation start end
+=======
+    }
+}
+>>>>>>> 6575a72e3523ea808fd050157c9918d436a42795
