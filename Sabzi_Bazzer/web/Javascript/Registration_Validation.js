@@ -206,7 +206,6 @@ function SQ() {
 
 
 //************************************ User Validation Function End ***********************************
-<<<<<<< HEAD
 //
 //************************* Seller  Vallidation start*************************************************
 function Seller_validation()
@@ -220,28 +219,12 @@ function Seller_validation()
 
 
 //Dropdown menu Vallidation start
-function state()
-{
-    let s_state,s_town;
-     s_state=document.getElementById('s_state');
-     s_town=document.getElementById('s_town');
-     if(s_state.value=="West Bengal")
-     {
-         s_town.innerHTML="<option value='kolkata'>Kolkata</option>\n\
-                            <option value='Bankura'>Bankura</option>\n\
-=======
-
-
-//************************* Seller Vallidation Start********************************************
-
-//dropdown menu validation start
 function state() {
     let s_state, s_town;
     s_state = document.getElementById('s_state');
     s_town = document.getElementById('s_town');
     if (s_state.value == "West Bengal") {
         s_town.innerHTML = "<option value='kolkata'>Kolkata</option>\n\
->>>>>>> 6575a72e3523ea808fd050157c9918d436a42795
                             <option value='Asansol'>Asansol</option>\n\
                             <option value='North 24 Parganas'>North 24 Parganas</option>\n\
                             <option value='South 24 Parganas'>South 24 Parganas</option>\n\
@@ -316,7 +299,7 @@ function state() {
                             <option value='Erode'>Erode</option>\n\
                             <option value='Vellore'>Vellore</option>\n\
                             <option value='Dindigul'>Dindigul</option>";
-<<<<<<< HEAD
+
      }
      if(s_state.value=="Uttarakhand")
      {
@@ -332,7 +315,3 @@ function state() {
     
 }
 ///Dropdown menu Vallidation start end
-=======
-    }
-}
->>>>>>> 6575a72e3523ea808fd050157c9918d436a42795

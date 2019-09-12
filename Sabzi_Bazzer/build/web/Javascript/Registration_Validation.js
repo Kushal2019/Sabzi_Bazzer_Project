@@ -219,15 +219,12 @@ function Seller_validation()
 
 
 //Dropdown menu Vallidation start
-function state()
-{
-    let s_state,s_town;
-     s_state=document.getElementById('s_state');
-     s_town=document.getElementById('s_town');
-     if(s_state.value=="West Bengal")
-     {
-         s_town.innerHTML="<option value='kolkata'>Kolkata</option>\n\
-                            <option value='Bankura'>Bankura</option>\n\
+function state() {
+    let s_state, s_town;
+    s_state = document.getElementById('s_state');
+    s_town = document.getElementById('s_town');
+    if (s_state.value == "West Bengal") {
+        s_town.innerHTML = "<option value='kolkata'>Kolkata</option>\n\
                             <option value='Asansol'>Asansol</option>\n\
                             <option value='North 24 Parganas'>North 24 Parganas</option>\n\
                             <option value='South 24 Parganas'>South 24 Parganas</option>\n\
@@ -302,6 +299,7 @@ function state()
                             <option value='Erode'>Erode</option>\n\
                             <option value='Vellore'>Vellore</option>\n\
                             <option value='Dindigul'>Dindigul</option>";
+
      }
      if(s_state.value=="Uttarakhand")
      {

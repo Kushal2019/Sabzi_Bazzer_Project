@@ -1,20 +1,11 @@
 <html>
 
 <head>
-<<<<<<< HEAD
 	<title>Registation Page</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="../Css/Mainlogin.css">
          <link  rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
-         
-         <!--<script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>-->
-=======
-    <title>Registation Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Css/Mainlogin.css">
-    <link rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
-    <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
->>>>>>> 6575a72e3523ea808fd050157c9918d436a42795
+         <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
 </head>
 <!--Coded with love by Mutiullah Samim-->
 
@@ -22,59 +13,6 @@
     <%@include file="../PageFiles/navReg.jsp" %>
     <br>
     <div class="container register">
-<<<<<<< HEAD
-                <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src="../image/Sabzi_Logo.png" alt="" />
-                        <h3>Welcome</h3>
-                        <p>You are 30 seconds away from earning your own money!</p>
-                        <input type="submit" name="" value="Login"/><br/>
-                    </div>
-                    <div class="col-md-9 register-right">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">User</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Seller</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <form name="Reg" method="POST" action="../Registration_User"> 
-                                <h3 class="register-heading">Apply as a User</h3>
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" name="u_f_name" id="u_f_name"  />
-                                            <span style="color:red;" id="e1"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" name="u_last_name" id="u_last_name"/>
-                                            <span style="color:red;" id="e2"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" name="u_password" id="u_password"/>
-                                            <span style="color:red;" id="e3"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Confirm Password *" value="" name="u_c_password" id="u_c_password"/>
-                                            <span style="color:red;" id="e4"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="maxl">
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="u_gender" value="male" checked  id="male">
-                                                    <span> Male </span> 
-                                                </label>
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="u_gender" value="female" id="female">
-                                                    <span>Female </span> 
-                                                </label>
-                                            </div>
-                                        </div>
-=======
         <div class="row">
             <div class="col-md-3 register-left">
                 <img src="../image/Sabzi_Logo.png" alt="" />
@@ -104,7 +42,6 @@
                                         <input type="text" class="form-control" placeholder="First Name *"
                                             name="u_f_name" id="u_f_name" />
                                         <span style="color:red;" id="e1"></span>
->>>>>>> 6575a72e3523ea808fd050157c9918d436a42795
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Last Name *" value=""
@@ -191,15 +128,11 @@
                                                 value="" name="s_c_password" id="s_c_password" />
                                         </div>
                                         <div class="form-group">
-<<<<<<< HEAD
                                             <input type="text" class="form-control" placeholder="Company name *" value="" name="s_Company" id="s_Company"/>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Licence Number *" value="" name="s_licence" id="s_licence"/>
-=======
-                                            <input type="text" class="form-control" placeholder="Licence Number *"
-                                                value="" name="s_licence" id="s_licence" />
->>>>>>> 6575a72e3523ea808fd050157c9918d436a42795
+         
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Email *" value=""
@@ -237,23 +170,6 @@
                                             <option value="Delhi">Delhi</option>
                                         </select>
                                     </div>
-<<<<<<< HEAD
-                                    <div class="col-md-6">
-                                         
-                                       <div class="form-group">
-                                           <select class="form-control" name="s_state" id="s_state" onchange="state()">
-                                                <option class="hidden"  selected disabled>Select your State *</option>
-                                                <option value="West Bengal">West Bengal</option>
-                                                <option value="Bihar">Bihar</option>
-                                                <option value="Gujarat">Gujarat</option>
-                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                                <option value="Maharashtra">Maharashtra</option>
-                                                <option value="Odisha">Odisha</option>
-                                                <option value="Tamil Nadu">Tamil Nadu</option>
-                                                <option value="Uttarakhand">Uttarakhand</option>
-                                                <option value="Delhi">Delhi</option>
-                                            </select>
-                                        </div>
                                         <div class="form-group">
                                             <select class="form-control" name="s_city" id="s_town">
                                                 <option class="hidden"  selected disabled>Select your Town *</option>
@@ -279,34 +195,7 @@
                                             <input type="hidden" class="form-control" value="hi" name="captext" id="captext" />
                                         </div>
                                         <input type="submit" class="btnRegister"  value="Register" onclick="Seller_validation()"/>
-                                        
-=======
-                                    <div class="form-group">
-                                        <select class="form-control" name="s_city" id="s_town">
-                                            <option class="hidden" selected disabled>Select your Town *</option>
-                                            <option>Unknown Town</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Zip Code *" value=""
-                                            name="s_zip" id="s_zip" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Street *" value=""
-                                            name="s_street" id="s_street" />
->>>>>>> 6575a72e3523ea808fd050157c9918d436a42795
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="House Number *" value=""
-                                            name="s_house" id="s_house" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Landmark *" value=""
-                                            name="s_landmark" id="s_landmark" />
-                                    </div>
-                                    <input type="submit" class="btnRegister" value="Register"
-                                        onclick="Seller_validation()" />
-
+                                       
                                 </div>
                             </div>
 
