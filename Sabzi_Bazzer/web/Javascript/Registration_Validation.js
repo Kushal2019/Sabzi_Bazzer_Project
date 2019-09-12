@@ -164,6 +164,15 @@ function User_validation() {
             }
         }
     }
+     if (u_s_question.value == "") {
+        u_s_question.style.borderColor = "red";
+        document.getElementById('e7').innerHTML = "Enter the sequrity Question";
+        f = 1;
+    }
+    else {
+        u_s_question.style.borderColor = "green";
+        document.getElementById('e7').innerHTML = "";
+    }
     let x = SQ();
     if (x == 1) {
         u_s_answer.style.borderColor = "red";

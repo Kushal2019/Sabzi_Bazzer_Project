@@ -33,7 +33,7 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <form>
+                        <form method="POST" action="../Registration_User">
                             <h3 class="register-heading">Apply as a User</h3>
                             <div class="row register-form">
                                 <div class="col-md-6">
@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Enter Your Answer *"
-                                            disabled value="" name="u_s_answer" id="u_s_answer" />
+                                               disabled value="" name="u_s_answer" id="u_s_answer" />
                                         <span style="color:red;" id="e8"></span>
                                     </div>
                                     <input type="submit" class="btnRegister" value="Register"
