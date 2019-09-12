@@ -210,13 +210,91 @@ function User_validation() {
 //************************* Dropdown menu Vallidation start*************************************************
 function state()
 {
-    let s_state,s_city,s_district;
+    let s_state,s_town;
      s_state=document.getElementById('s_state');
-     s_city=document.getElementById('s_city');
+     s_town=document.getElementById('s_town');
      if(s_state.value=="West Bengal")
      {
-         s_city.innerHTML="<option value='kolkata'>Kolkata</option>\n\
-                            <option value='kolkata'>Kolkata</option>\n\
-                            <option value='kolkata'>Kolkata</option>";
+         s_town.innerHTML="<option value='kolkata'>Kolkata</option>\n\
+                            <option value='Asansol'>Asansol</option>\n\
+                            <option value='North 24 Parganas'>North 24 Parganas</option>\n\
+                            <option value='South 24 Parganas'>South 24 Parganas</option>\n\
+                            <option value='Howrah'>Howrah</option>\n\
+                            <option value='Hooghly'>Hooghly</option>\n\
+                            <option value='Malda'>Malda</option>\n\
+                            <option value='Paschim Medinipur'>Paschim Medinipur</option>\n\
+                            <option value='Purba Medinipur'>Purba Medinipur</option>";
+     }
+     if(s_state.value=="Bihar")
+     {
+         s_town.innerHTML="<option value='Patna'>Patna</option>\n\
+                            <option value='Gaya'>Gaya</option>\n\
+                            <option value='Bhagalpur'>Bhagalpur</option>\n\
+                            <option value='Muzaffarpur'>Muzaffarpur</option>\n\
+                            <option value='Purnia'>Purnia</option>\n\
+                            <option value='Bhojpur'>Bhojpur</option>\n\
+                            <option value='Jamalpur'>Jamalpur</option>\n\
+                            <option value='Bagaha'>Bagaha</option>\n\
+                            <option value='Siwan'>Siwan</option>";
+     }
+     if(s_state.value=="Gujarat")
+     {
+         s_town.innerHTML="<option value='Ahmedabad'>Ahmedabad</option>\n\
+                            <option value='Surat'>Surat</option>\n\
+                            <option value='Rajkot'>Rajkot</option>\n\
+                            <option value='Bhavnagar'>Bhavnagar</option>\n\
+                            <option value='Jamnagar'>Jamnagar</option>\n\
+                            <option value='Vadodara'>Vadodara</option>\n\
+                            <option value='Nadiad'>Nadiad</option>\n\
+                            <option value='Gandhidham'>Gandhidham</option>\n\
+                            <option value='Porbandar'>Porbandar</option>";
+     }
+     if(s_state.value=="Himachal Pradesh")
+     {
+         s_town.innerHTML="<option value='Shimla'>Shimla</option>\n\
+                            <option value='Solan'>Solan</option>\n\
+                            <option value='Dharamsala'>Dharamsala</option>\n\
+                            <option value='Baddi'>Baddi</option>\n\
+                            <option value='Nahan'>Nahan</option>\n\
+                            <option value='Mandi'>Mandi</option>\n\
+                            <option value='Paonta Sahib'>Paonta Sahib</option>\n\
+                            <option value='Sundarnagar'>Sundarnagar</option>\n\
+                            <option value='Chamba'>Chamba</option>";
+     }
+     if(s_state.value=="Maharashtra")
+     {
+         s_town.innerHTML="<option value='Mumbai'>Mumbai</option>\n\
+                            <option value='Pune'>Pune</option>\n\
+                            <option value='Nagpur'>Nagpur</option>\n\
+                            <option value='Nashik'>Nashik</option>\n\
+                            <option value='Aurangabad'>Aurangabad</option>\n\
+                            <option value='Jalgaon'>Jalgaon</option>\n\
+                            <option value='Gondia'>Gondia</option>\n\
+                            <option value='Sangli'>Sangli</option>\n\
+                            <option value='Jalna'>Jalna</option>";
+     }
+     if(s_state.value=="Odisha")
+     {
+         s_town.innerHTML="<option value='Bhubaneswar'>Bhubaneswar</option>\n\
+                            <option value='Cuttack'>Cuttack</option>\n\
+                            <option value='Rourkela'>Rourkela</option>\n\
+                            <option value='Brahmapur'>Brahmapur</option>\n\
+                            <option value='Puri'>Puri</option>\n\
+                            <option value='Baripada'>Baripada</option>\n\
+                            <option value='Jeypore'>Jeypore</option>\n\
+                            <option value='Bargarh'>Bargarh</option>\n\
+                            <option value='Rayagada'>Rayagada</option>";
+     }
+     if(s_state.value=="Tamil Nadu")
+     {
+         s_town.innerHTML="<option value='Chennai'>Chennai</option>\n\
+                            <option value='Coimbatore'>Coimbatore</option>\n\
+                            <option value='Madurai'>Madurai</option>\n\
+                            <option value='Tiruchirappalli'>Tiruchirappalli</option>\n\
+                            <option value='Tiruppur'>Tiruppur</option>\n\
+                            <option value='Salem'>Salem</option>\n\
+                            <option value='Erode'>Erode</option>\n\
+                            <option value='Vellore'>Vellore</option>\n\
+                            <option value='Dindigul'>Dindigul</option>";
      }
 }

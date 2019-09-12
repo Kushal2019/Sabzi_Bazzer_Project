@@ -148,15 +148,9 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <select class="form-control" name="s_city" id="s_city">
-                                                <option class="hidden"  selected disabled>Select your City *</option>
-                                                <option>Unknown City</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-control" name="s_district" id="s_district">
-                                                <option class="hidden"  selected disabled>Select your District *</option>
-                                                <option>Unknown District</option>
+                                            <select class="form-control" name="s_city" id="s_town">
+                                                <option class="hidden"  selected disabled>Select your Town *</option>
+                                                <option>Unknown Town</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
