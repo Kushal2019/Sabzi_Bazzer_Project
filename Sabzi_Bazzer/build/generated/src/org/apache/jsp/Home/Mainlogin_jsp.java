@@ -58,7 +58,7 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>\r\n");
       out.write("\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
       out.write("\t<link rel=\"stylesheet\" href=\"../Css/Mainlogin.css\">\r\n");
-      out.write("        <script src=\"../Javascript/Login_Validation.js\"></script>\r\n");
+      out.write("        <script src=\"../Javascript/Mainlogin_Validation.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
       out.write("<body>\r\n");
@@ -98,7 +98,7 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t<div class=\"d-flex justify-content-center form_container\">\r\n");
-      out.write("                                    <form method=\"POST\" action=\"../User/index.jsp\">\r\n");
+      out.write("                                    <form method=\"POST\" action=\"#\">\r\n");
       out.write("\t\t\t\t\t\t<div class=\"input-group mb-3\">\r\n");
       out.write("\t\t\t\t\t\t\t<div class=\"input-group-append\">\r\n");
       out.write("\t\t\t\t\t\t\t\t<span class=\"input-group-text\"><i class=\"fas fa-user\"></i></span>\r\n");
@@ -119,7 +119,7 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t<div class=\"d-flex justify-content-center mt-8 login_container\">\r\n");
-      out.write("                                    <button type=\"submit\" name=\"log_sub\" class=\"btn login_btn\" onclick=\"function Login_Validation()\">Login</button>\r\n");
+      out.write("                                    <input type=\"submit\" name=\"log_sub\" class=\"btn login_btn\" onclick=\"Login_Validation()\" value=\"Login\">\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("                                    </form>\r\n");
       out.write("                                </div>\r\n");
