@@ -18,7 +18,7 @@
                 <img src="../image/Sabzi_Logo.png" alt="" />
                 <h3>Welcome</h3>
                 <p>You are 30 seconds away from earning your own money!</p>
-                <input type="submit" name="" value="Login" /><br />
+                <a href="Mainlogin.jsp"><input type="button" value="Login"/></a>
             </div>
             <div class="col-md-9 register-right">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
