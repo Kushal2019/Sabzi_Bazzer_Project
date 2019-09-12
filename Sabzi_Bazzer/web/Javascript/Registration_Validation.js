@@ -206,8 +206,11 @@ function User_validation() {
 
 
 //************************************ User Validation Function End ***********************************
-//
-//************************* Dropdown menu Vallidation start*************************************************
+
+
+//************************* Seller Vallidation Start********************************************
+
+    //dropdown menu validation start
 function state()
 {
     let s_state,s_town;
