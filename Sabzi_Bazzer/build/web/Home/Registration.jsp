@@ -7,9 +7,7 @@
          <link  rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
          <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
 </head>
-<!--Coded with love by Mutiullah Samim-->
-
-<body>
+<body onload="ran(1)">
     <%@include file="../PageFiles/navReg.jsp" %>
     <br>
     <div class="container register">
@@ -203,25 +201,25 @@
                                             <span style="color:red;" id="s14"></span>
                                         </div>
                                          <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Enter the capctha *" value="" name="s_landmark" id="s_landmark" />
+                                            <input type="text" class="form-control" placeholder="Enter the capctha *" value="" name="s_capctha" id="s_capctha" />
                                             <span style="color:red;" id="s15"></span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" disabled class="form-control" value="hi" name="captext" id="captext" />
+                                            <input type="text" style="text-align: center;" disabled class="form-control" value="hi" name="captext" id="captext" />
                                             <span style="color:red;" id="s16"></span>
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register" onclick="Seller_validation()"/>
+                                        <input type="submit" class="btnRegister"  value="Register" onclick="return Seller_validation()"/>
                                        
                                 </div>
                             </div>
-
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-    </form>
+    
     <%@include file="../PageFiles/footerMain.jsp" %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
