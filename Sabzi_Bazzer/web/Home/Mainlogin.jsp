@@ -24,19 +24,22 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form method="POST" action="#">
+					<form>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+							<input type="text" name="Login_username" id="Login_username" class="form-control input_user"
+								value="" placeholder="username">
+							<span id="Login_username_Error"></span>
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value=""
-								placeholder="password">
+							<input type="password" name="Login_password" id="Login_password"
+								class="form-control input_pass" value="" placeholder="password">
+							<span id="Login_password_Error"></span>
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -45,8 +48,8 @@
 							</div>
 						</div>
 						<div class="d-flex justify-content-center mt-8 login_container">
-							<input type="submit" name="log_sub" class="btn login_btn" onclick="Login_Validation()"
-								value="Login">
+							<input type="submit" name="log_sub" class="btn login_btn"
+								onclick="return Login_Validation()" value="Login">
 						</div>
 					</form>
 				</div>
