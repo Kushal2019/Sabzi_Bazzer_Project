@@ -67,3 +67,7 @@
 		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
 			background-color: #c0392b !important;
 		}
+                .error_msz_box{
+                    position: relative;
+                    margin: 20px;
+                }

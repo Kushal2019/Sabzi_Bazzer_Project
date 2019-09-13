@@ -2,22 +2,26 @@
 
 function Login_Validation() {
 
-    var Login_username, Login_password;
+    let Login_username, Login_password, f = 0;
     Login_username = document.getElementById('Login_username');
     Login_password = document.getElementById('Login_password');
 
     if (Login_username.value == "") {
-        Login_username.style.borderColor = "blue";
-        document.getElementById('Login_password_Error').innerHTML = "Please fill the fild";
+        Login_username.style.borderColor = "red";
+        document.getElementById('Login_password_Error').innerHTML = "Please fill the fild-1";
         Login_username.focus();
-        return false;
+        f = 1;
     }
-
-    else if (Login_password.value == "") {
-        Login_password.style.borderColor = "blue";
-        document.getElementById('Login_password').innerHTML = "Please fill the fild";
+    else (Login_password.value == "") {
+        Login_password.style.borderColor = "red";
+        document.getElementById('Login_password').innerHTML = "Please fill the fild-2";
         Login_password.focus();
+        f = 1;
+    }
+    if(f=0){
+        return true;
+    }
+    else{
         return false;
     }
-    return true;
 }
