@@ -2,7 +2,7 @@
 
 function Login_Validation() {
 
-    var Login_username, Login_password, ;
+    var Login_username, Login_password;
     Login_username = document.getElementById('Login_username');
     Login_password = document.getElementById('Login_password');
 
