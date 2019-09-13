@@ -9,7 +9,7 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="../Css/Mainlogin.css">
-        <script src="../Javascript/Login_Validation.js"></script>
+	<script src="../Javascript/Mainlogin_Validation.js"></script>
 </head>
 
 <body>
@@ -24,19 +24,20 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-                                    <form method="POST" action="#">
+					<form>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+							<input type="text" name="Login_username" id="Login_username" class="form-control input_user" value="" placeholder="username">
+                                                        <span id="Login_username_Error" style="color:red;"></span>
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+                                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value=""
-								placeholder="password">
+							<input type="password" name="Login_password" id="Login_password" class="form-control input_pass" value="" placeholder="password">
+                                                        <span id="Login_password_Error" style="color:red;"></span> 
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -44,11 +45,12 @@
 								<label class="custom-control-label" for="customControlInline">Remember me</label>
 							</div>
 						</div>
-				<div class="d-flex justify-content-center mt-8 login_container">
-                                    <input type="submit" name="log_sub" class="btn login_btn" onclick="Login_Validation()" value="Login">
+						<div class="d-flex justify-content-center mt-8 login_container">
+							<input type="submit" name="log_sub" class="btn login_btn"
+								onclick="return Login_Validation()" value="Login">
+						</div>
+					</form>
 				</div>
-                                    </form>
-                                </div>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Don't have an account? <a href="Registration.jsp" class="ml-2">Sign Up</a>
