@@ -12,13 +12,13 @@ function Login_Validation() {
         Login_username.focus();
         f = 1;
     }
-    else (Login_password.value == "") {
+    else if(Login_password.value == "") {
         Login_password.style.borderColor = "red";
         document.getElementById('Login_password').innerHTML = "Please fill the fild-2";
         Login_password.focus();
         f = 1;
     }
-    if(f=0){
+    if(f==0){
         return true;
     }
     else{
