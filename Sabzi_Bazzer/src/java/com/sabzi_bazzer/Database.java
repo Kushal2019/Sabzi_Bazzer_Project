@@ -86,5 +86,31 @@ public class Database {
             close();
         }
     }
+
+    int insertLogindetails(User user) {
+        try {
+            if(isConnected())
+            {
+                String qre="INSERT INTO `login_details`(`login_id`, `email`, `password`, `user_type`, `isactive`) VALUES (null,?,?,?,?)";
+                smt=conn.prepareStatement(qre);
+                smt.setString(1,user.getEmail());
+                smt.setString(2,user.getPass());
+                smt.setString(3,user.getType());
+                smt.setString(4,"1");
+                smt.execute();
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        } catch (Exception e) {
+            return 0;
+        }  
+        finally
+        {
+            close();
+        }
+    }
     
 }

@@ -112,7 +112,14 @@ public class Registration_User extends HttpServlet {
             if(x==1)
             {
 //              db.insertLogindetails(user);
-                response.sendRedirect("Home/Mainlogin.jsp");
+              int y=db.insertLogindetails(user);
+                if(y==1)
+                {
+                    response.sendRedirect("Home/Mainlogin.jsp");
+                }else
+                {
+                    response.sendRedirect("Home/Registration.jsp?Err=2");
+                }
             }
             else
             {

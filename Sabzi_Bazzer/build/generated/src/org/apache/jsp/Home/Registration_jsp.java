@@ -54,7 +54,7 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"../Css/Mainlogin.css\">\r\n");
       out.write("         <link  rel=\"stylesheet\" type=\"text/css\" href=\"../Css/Registration_Style.css\">\r\n");
-      out.write("         <script type=\"text/javascript\" src=\"../Javascript/Registration_Validation.js\"></script>\r\n");
+      out.write("         <!--<script type=\"text/javascript\" src=\"../Javascript/Registration_Validation.js\"></script>-->\r\n");
       out.write("</head>\r\n");
       out.write("<body onload=\"ran(1)\">\r\n");
       out.write("    ");
@@ -238,7 +238,7 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                <div class=\"col-md-6\">\r\n");
       out.write("                                    <div class=\"form-group\">\r\n");
       out.write("                                        <select class=\"form-control\" name=\"s_state\" id=\"s_state\" onchange=\"state()\">\r\n");
-      out.write("                                            <option class=\"hidden\" selected disabled>Select your State *</option>\r\n");
+      out.write("                                            <option class=\"hidden\" selected disabled value=\"\">Select your State *</option>\r\n");
       out.write("                                            <option value=\"West Bengal\">West Bengal</option>\r\n");
       out.write("                                            <option value=\"Bihar\">Bihar</option>\r\n");
       out.write("                                            <option value=\"Gujarat\">Gujarat</option>\r\n");
@@ -252,14 +252,14 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                        <span style=\"color:red;\" id=\"s9\"></span>\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <select class=\"form-control\" name=\"s_city\" id=\"s_town\">\r\n");
+      out.write("                                            <select class=\"form-control\" name=\"s_city\" id=\"s_town\" >\r\n");
       out.write("                                                <option class=\"hidden\"  selected disabled>Select your Town *</option>\r\n");
-      out.write("                                                <option>Unknown Town</option>\r\n");
+      out.write("                                                <option value=\"\">Unknown Town</option>\r\n");
       out.write("                                            </select>\r\n");
       out.write("                                            <span style=\"color:red;\" id=\"s10\"></span>\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Zip Code *\" value=\"\" name=\"s_zip\" id=\"s_zip\" />\r\n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Zip Code *\" minlength=\"6\" maxlength=\"6\" value=\"\" name=\"s_zip\" id=\"s_zip\" />\r\n");
       out.write("                                            <span style=\"color:red;\" id=\"s11\"></span>\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");

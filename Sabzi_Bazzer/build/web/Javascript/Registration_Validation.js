@@ -137,18 +137,19 @@ function User_validation() {
         f = 1;
     }
     else {
-        let atposition = u_email.value.indexOf("@");
-        let dotposition = u_email.value.lastIndexOf(".");
-        if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= u_email.length) {
-            u_email.style.borderColor = "red";
-            document.getElementById('e5').innerHTML = "Please enter a valid e-mail address";
-            u_email.focus();
-            f = 1;
-        }
-        else {
-            s_email.style.borderColor = "green";
-            document.getElementById('e5').innerHTML = "";
-        }
+            let atposition=u_email.value.indexOf("@");  
+            let  dotposition=u_email.value.lastIndexOf(".");  
+            if (atposition<1 || dotposition<atposition+2 || dotposition+2>=u_email.length){  
+                u_email.style.borderColor = "red";
+                document.getElementById('e5').innerHTML = "Please enter a valid e-mail address";
+                u_email.focus();
+                f=1;
+            }  
+            else
+            {
+                s_email.style.borderColor = "green";
+                document.getElementById('e5').innerHTML = "";
+            }
     }
 
     if (txtEmpPhone.value == "") {
@@ -175,7 +176,7 @@ function User_validation() {
             }
         }
     }
-    if (u_s_question.value == "") {
+     if (u_s_question.value == "") {
         u_s_question.style.borderColor = "red";
         document.getElementById('e7').innerHTML = "Enter the sequrity Question";
         f = 1;
@@ -228,24 +229,25 @@ function SQ() {
 //************************************ User Validation Function End ***********************************
 //
 //************************* Seller  Vallidation start*************************************************
-function Seller_validation() {
-    let s_f_name, s_last_name, s_password, s_c_password, s_licence, s_email, s_phone, s_Company, s_state, s_town, s_zip, s_street, s_house, s_landmark, s_capctha, f = 0;
-    s_f_name = document.getElementById('s_f_name');
-    s_last_name = document.getElementById('s_last_name');
-    s_password = document.getElementById('s_password');
-    s_c_password = document.getElementById('s_c_password');
-    s_licence = document.getElementById('s_licence');
-    s_email = document.getElementById('s_email');
-    s_phone = document.getElementById('s_phone');
-    s_Company = document.getElementById('s_Company');
-    s_state = document.getElementById('s_state');
-    s_town = document.getElementById('s_town');
-    s_zip = document.getElementById('s_zip');
-    s_street = document.getElementById('s_street');
-    s_house = document.getElementById('s_house');
-    s_landmark = document.getElementById('s_landmark');
-    s_capctha = document.getElementById('s_capctha');
-
+function Seller_validation()
+{
+    let s_f_name,s_last_name,s_password,s_c_password,s_licence,s_email,s_phone,s_Company,s_state,s_town,s_zip,s_street,s_house,s_landmark,s_capctha,f=0;
+    s_f_name=document.getElementById('s_f_name');
+    s_last_name=document.getElementById('s_last_name');
+    s_password=document.getElementById('s_password');
+    s_c_password=document.getElementById('s_c_password');
+    s_licence=document.getElementById('s_licence');
+    s_email=document.getElementById('s_email');
+    s_phone=document.getElementById('s_phone');
+    s_Company=document.getElementById('s_Company');
+    s_state=document.getElementById('s_state');
+    s_town=document.getElementById('s_town');
+    s_zip=document.getElementById('s_zip');
+    s_street=document.getElementById('s_street');
+    s_house=document.getElementById('s_house');
+    s_landmark=document.getElementById('s_landmark');
+    s_capctha=document.getElementById('s_capctha');
+    
     if (s_f_name.value == "") {
         s_f_name.style.borderColor = "red";
         document.getElementById('s1').innerHTML = "Enter the first name";
@@ -274,8 +276,8 @@ function Seller_validation() {
         }
     }
     // First_Name Validation End
-
-    // Last_Name Validation Start
+    
+     // Last_Name Validation Start
     if (s_last_name.value == "") {
         s_last_name.style.borderColor = "red";
         document.getElementById('s2').innerHTML = "Enter the last name";
@@ -304,8 +306,8 @@ function Seller_validation() {
     }
 
     // Last_Name Validation
-
-    // Password Validation Start
+    
+     // Password Validation Start
     if (s_password.value == "") {
         s_password.style.borderColor = "red";
         document.getElementById('s3').innerHTML = "Enter the password";
@@ -367,57 +369,60 @@ function Seller_validation() {
     // 
     // 
     //Email validation start
-    if (s_email.value == "") {
+     if (s_email.value == "") {
         s_email.style.borderColor = "red";
         document.getElementById('s7').innerHTML = "Enter the Email";
         f = 1;
     }
-    else {
-        let atposition = s_email.value.indexOf("@");
-        let dotposition = s_email.value.lastIndexOf(".");
-        if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= s_email.length) {
-            s_email.style.borderColor = "red";
-            document.getElementById('s7').innerHTML = "Please enter a valid e-mail address";
+     else {
+            let atposition=s_email.value.indexOf("@");  
+            let  dotposition=s_email.value.lastIndexOf(".");  
+            if (atposition<1 || dotposition<atposition+2 || dotposition+2>=s_email.length){  
+                s_email.style.borderColor = "red";
+                document.getElementById('s7').innerHTML = "Please enter a valid e-mail address";
+                f=1;
+            }  
+            else
+            {
+                s_email.style.borderColor = "green";
+                document.getElementById('s7').innerHTML = "";
+            }
+    }
+    
+      //Email validation end
+      //
+      //licence number validation start
+      if(s_licence.value=="")
+      {
+            s_licence.style.borderColor = "red";
+            document.getElementById('s6').innerHTML = "Enter the Licence number";
+           
             f = 1;
+      }
+       else {
+            s_licence.style.borderColor = "green";
+            document.getElementById('s6').innerHTML = "";
         }
-        else {
-            s_email.style.borderColor = "green";
-            document.getElementById('s7').innerHTML = "";
+      //licence number validation end
+      
+      //company name validation start
+      if(s_Company.value=="")
+      {
+            s_Company.style.borderColor = "red";
+            document.getElementById('s5').innerHTML = "Enter the Company name";
+            f = 1;
+      }
+       else {
+            s_licence.style.borderColor = "green";
+            document.getElementById('s5').innerHTML = "";
         }
-    }
-
-    //Email validation end
-    //
-    //licence number validation start
-    if (s_licence.value == "") {
-        s_licence.style.borderColor = "red";
-        document.getElementById('s6').innerHTML = "Enter the Licence number";
-
-        f = 1;
-    }
-    else {
-        s_licence.style.borderColor = "green";
-        document.getElementById('s6').innerHTML = "";
-    }
-    //licence number validation end
-
-    //company name validation start
-    if (s_Company.value == "") {
-        s_Company.style.borderColor = "red";
-        document.getElementById('s5').innerHTML = "Enter the Company name";
-        f = 1;
-    }
-    else {
-        s_licence.style.borderColor = "green";
-        document.getElementById('s5').innerHTML = "";
-    }
-    //company name validation end
-    //ph number validtion start
-
-    if (s_phone.value == "") {
+      //company name validation end
+      //ph number validtion start
+      
+      if (s_phone.value == "") {
         s_phone.style.borderColor = "red";
         document.getElementById('s8').innerHTML = "Enter the phone number";
-
+        
         f = 1;
     }
     else {
@@ -441,93 +446,105 @@ function Seller_validation() {
     }
     //ph valid end 
     //captch code vlidation
-
-    if (s_capctha.value == "") {
-
-        s_capctha.style.borderColor = "red";
-        document.getElementById('s15').innerHTML = "Enter the Captcha ";
-        f = 1;
+   
+    if(s_capctha.value=="")
+    {               
+                 
+                s_capctha.style.borderColor = "red";
+                document.getElementById('s15').innerHTML = "Enter the Captcha ";
+                f = 1;
     }
-    else {
-        if (s_capctha.value == code) {
+    else
+    {
+        if(s_capctha.value==code)
+        {
             s_capctha.style.borderColor = "green";
-            document.getElementById('s15').innerHTML = "";
+            document.getElementById('s15').innerHTML ="";
         }
-        else {
+        else
+        {
             s_capctha.style.borderColor = "red";
             document.getElementById('s15').innerHTML = "Wrong Captcha ";
+            f=1;
+        }
+    }
+     //captch code vlidation end
+     //select state and town validation start
+     if(s_state.value=="")
+      {
+            s_state.style.borderColor = "red";
+            document.getElementById('s9').innerHTML = "Select the state";
             f = 1;
-        }
-    }
-    //captch code vlidation end
-    //select state and town validation start
-    if (s_state.value == "") {
-        s_state.style.borderColor = "red";
-        document.getElementById('s9').innerHTML = "Select the state";
-        f = 1;
-    }
-    else {
-        s_state.style.borderColor = "green";
-        document.getElementById('s9').innerHTML = "";
-        if (s_town.value == "") {
-            s_town.style.borderColor = "red";
-            document.getElementById('s10').innerHTML = "Select the Town";
+      }
+       else {
+            s_state.style.borderColor = "green";
+            document.getElementById('s9').innerHTML = "";  
+            if(s_town.value=="")
+            {
+                s_town.style.borderColor = "red";
+                document.getElementById('s10').innerHTML = "Select the Town";
+                f = 1;
+            }
+             else {
+                s_town.style.borderColor = "green";
+                document.getElementById('s10').innerHTML = "";  
+            
+             }
+      }
+         //select state and town validation end
+         //s_zip validation 
+      if(s_zip.value=="")
+      {
+            s_zip.style.borderColor = "red";
+            document.getElementById('s11').innerHTML = "Enter the Zip code";
             f = 1;
+      }
+       else {
+            s_zip.style.borderColor = "green";
+            document.getElementById('s11').innerHTML = "";
         }
-        else {
-            s_town.style.borderColor = "green";
-            document.getElementById('s10').innerHTML = "";
-
+        //s_zip validation end
+        //street validation start
+         if(s_street.value=="")
+      {
+            s_street.style.borderColor = "red";
+            document.getElementById('s12').innerHTML = "Enter the Street";
+            f = 1;
+      }
+       else {
+            s_street.style.borderColor = "green";
+            document.getElementById('s12').innerHTML = "";
         }
-    }
-    //select state and town validation end
-    //s_zip validation 
-    if (s_zip.value == "") {
-        s_zip.style.borderColor = "red";
-        document.getElementById('s11').innerHTML = "Enter the Zip code";
-        f = 1;
-    }
-    else {
-        s_zip.style.borderColor = "green";
-        document.getElementById('s11').innerHTML = "";
-    }
-    //s_zip validation end
-    //street validation start
-    if (s_street.value == "") {
-        s_street.style.borderColor = "red";
-        document.getElementById('s12').innerHTML = "Enter the Street";
-        f = 1;
-    }
-    else {
-        s_street.style.borderColor = "green";
-        document.getElementById('s12').innerHTML = "";
-    }
-    //street validation end
-
-    if (s_house.value == "") {
-        s_house.style.borderColor = "red";
-        document.getElementById('s13').innerHTML = "Enter the House number";
-        f = 1;
-    }
-    else {
-        s_house.style.borderColor = "green";
-        document.getElementById('s13').innerHTML = "";
-    }
-
-
-    if (s_landmark.value == "") {
-        s_landmark.style.borderColor = "red";
-        document.getElementById('s14').innerHTML = "Enter the Landmark";
-        f = 1;
-    }
-    else {
-        s_landmark.style.borderColor = "green";
-        document.getElementById('s14').innerHTML = "";
-    }
-    if (f == 0) {
+        //street validation end
+        
+         if(s_house.value=="")
+      {
+            s_house.style.borderColor = "red";
+            document.getElementById('s13').innerHTML = "Enter the House number";
+            f = 1;
+      }
+       else {
+            s_house.style.borderColor = "green";
+            document.getElementById('s13').innerHTML = "";
+        }
+        
+        
+         if(s_landmark.value=="")
+      {
+            s_landmark.style.borderColor = "red";
+            document.getElementById('s14').innerHTML = "Enter the Landmark";
+            f = 1;
+      }
+       else {
+            s_landmark.style.borderColor = "green";
+            document.getElementById('s14').innerHTML = "";
+        }
+    if(f==0)
+    {
         return true;
     }
-    else {
+    else
+    {
         return false;
     }
 }
@@ -625,9 +642,10 @@ function state() {
                             <option value='Vellore'>Vellore</option>\n\
                             <option value='Dindigul'>Dindigul</option>";
 
-    }
-    if (s_state.value == "Uttarakhand") {
-        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+     }
+     if(s_state.value=="Uttarakhand")
+     {
+         s_town.innerHTML="<option value=''>Select your Town *</option>\n\
                            <option value='Dehradun'>Dehradun</option>\n\
                             <option value='Haridwar'>Haridwar</option>\n\
                             <option value='Rudrapur'>Rudrapur</option>\n\
@@ -635,32 +653,35 @@ function state() {
                             <option value='Kashipur'>Kashipur</option>\n\
                             <option value='Rishikesh'>Rishikesh</option>\n\
                             <option value='Haldwani'>Haldwani</option>";
-    }
-
-
+     }
+    
+    
 }
 ///Dropdown menu Vallidation start end
-function ran(st_l) {
-    var a1, a2, a3;
-    a1 = Math.floor(Math.random() * 10);
-    a2 = Math.floor(Math.random() * 10);
-    a3 = Math.floor(Math.random() * 10);
-    let r_s = '';
-    let r_a;
-    let rs = '';
-    let ra;
-    for (let i = 0; i < st_l; i++) {
-        r_a = Math.floor((Math.random() * (122 - 97)) + 97);
-        r_s += String.fromCharCode(r_a)
+function ran(st_l)
+	{
+	var a1,a2,a3;
+		a1=Math.floor(Math.random() * 10); 
+		a2=Math.floor(Math.random() * 10); 
+		a3=Math.floor(Math.random() * 10); 
+		let r_s='';
+		let r_a;
+		let rs='';
+		let ra;
+		for(let i=0;i<st_l;i++)
+		{
+			r_a=Math.floor((Math.random()*(122-97))+97);
+			r_s+=String.fromCharCode(r_a)
 
-    }
-    for (let i = 0; i < st_l; i++) {
-        ra = Math.floor((Math.random() * (90 - 65)) + 65);
-        rs += String.fromCharCode(ra)
+		}
+		for(let i=0;i<st_l;i++)
+		{
+			ra=Math.floor((Math.random()*(90-65))+65);
+			rs+=String.fromCharCode(ra)
 
-    }
-    code = a1 + "" + r_s + "" + a2 + "" + rs + "" + a3;
-    document.getElementById("captext").value = code;
-    //document.write(f);
-    //return f;
-}
+		}
+		code=a1+""+r_s+""+a2+""+rs+""+a3;
+		document.getElementById("captext").value=code;
+                //document.write(f);
+                //return f;
+ }
