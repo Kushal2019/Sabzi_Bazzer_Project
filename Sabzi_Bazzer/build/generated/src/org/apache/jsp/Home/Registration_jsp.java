@@ -178,7 +178,7 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                        </form>\r\n");
       out.write("                    </div>\r\n");
       out.write("                    <div class=\"tab-pane fade show\" id=\"profile\" role=\"tabpanel\" aria-labelledby=\"profile-tab\">\r\n");
-      out.write("                        <form>\r\n");
+      out.write("                        <form name=\"Seller\" method=\"POST\" action=\"../Registration_Seller1\">\r\n");
       out.write("                            <h3 class=\"register-heading\">Apply as a Seller</h3>\r\n");
       out.write("                            <div class=\"row register-form\">\r\n");
       out.write("                                <div class=\"col-md-6\">\r\n");

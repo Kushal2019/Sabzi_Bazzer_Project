@@ -51,7 +51,7 @@ public class Database {
             return false;
         }
     }
-    int insertUser(User user) {
+    int insertUser(User_value user) {
         try
         {
             if(isConnected())
@@ -87,7 +87,7 @@ public class Database {
         }
     }
 
-    int insertLogindetails(User user) {
+    int insertLogindetails(User_value user) {
         try {
             if(isConnected())
             {

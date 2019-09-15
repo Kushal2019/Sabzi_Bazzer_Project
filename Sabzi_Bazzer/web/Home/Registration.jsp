@@ -104,7 +104,7 @@
                         </form>
                     </div>
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form>
+                        <form name="Seller" method="POST" action="../Registration_Seller1">
                             <h3 class="register-heading">Apply as a Seller</h3>
                             <div class="row register-form">
                                 <div class="col-md-6">
