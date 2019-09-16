@@ -65,7 +65,7 @@ public class Database {
                 smt.setString(4, user.getEmail());
                 smt.setString(5, user.getPhone());
                 smt.setString(6, user.getQues());
-                smt.setString(7,"sdfghjk" );   //user.getAns()
+                smt.setString(7,"This is answare" );   //user.getAns()
                 smt.setString(8, user.getGender());
                 smt.execute();
                 return 1;                
