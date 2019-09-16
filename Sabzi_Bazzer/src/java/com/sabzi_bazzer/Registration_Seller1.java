@@ -7,8 +7,6 @@ package com.sabzi_bazzer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Kushal
+ * @author Soumen-Pc
  */
-public class Registration_User extends HttpServlet {
+public class Registration_Seller1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +35,10 @@ public class Registration_User extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Registration_User</title>");            
+            out.println("<title>Servlet Registration_Seller1</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Registration_User at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Registration_Seller1 at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -72,7 +70,7 @@ public class Registration_User extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest_post(request, response);
+        processRequest1(request, response);
     }
 
     /**
@@ -85,52 +83,41 @@ public class Registration_User extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void processRequest_post(HttpServletRequest request, HttpServletResponse response) {
+    private void processRequest1(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
-            PrintWriter out= response.getWriter();
-            String fname,lname,pass,email,phone,ques,ans,gender;
-            fname=request.getParameter("u_f_name");
-            lname=request.getParameter("u_last_name");
-            pass=request.getParameter("u_password");
-            email=request.getParameter("u_email");
-            phone=request.getParameter("txtEmpPhone");
-            ques=request.getParameter("u_s_question");
-            ans=request.getParameter("u_s_answer");
-            gender=request.getParameter("u_gender");
-            User_value user= new User_value();
-            user.setFname(fname);
-            user.setLname(lname);
-            user.setEmail(email);
-            user.setPass(pass);
-            user.setPhone(phone);
-            user.setGender(gender);
-            user.setQues(ques);
-            user.setAns(ans);
-            user.setType("USER");
-            Database db = new Database();
-            int x=db.insertUser(user);
-            if(x==1)
-            {
-//              db.insertLogindetails(user);
-              int y=db.insertLogindetails(user);
-                if(y==1)
-                {
-                    response.sendRedirect("Home/Mainlogin.jsp");
-                }else
-                {
-                    response.sendRedirect("Home/Registration.jsp?Err=2");
-                }
-            }
-            else
-            {
-                response.sendRedirect("Home/Registration.jsp?Err=1");
-            }
-                    
-//            out.println(db.isConnected());
-            
-            
-        } catch (IOException ex) {
-            Logger.getLogger(Registration_User.class.getName()).log(Level.SEVERE, null, ex);
+          PrintWriter out=  response.getWriter();
+          String s_f_name,s_last_name,s_password,s_licence,s_email,s_phone,s_Company,s_state,s_town,s_zip,s_street,s_house,s_landmark,gender;
+          s_f_name=request.getParameter("s_f_name");
+          s_last_name=request.getParameter("s_f_name");
+          s_password=request.getParameter("s_password");
+          s_licence=request.getParameter("s_licence");
+          s_email=request.getParameter("s_email");
+          s_phone=request.getParameter("s_phone");
+          s_Company=request.getParameter("s_Company");
+          s_state=request.getParameter("s_state");
+          s_town=request.getParameter("s_town");
+          s_zip=request.getParameter("s_zip");
+          s_street=request.getParameter("s_street");
+          s_house=request.getParameter("s_house");
+          s_landmark=request.getParameter("s_landmark");
+          gender=request.getParameter("s_gender");
+          Seller_value seller=new Seller_value();
+          seller.setS_f_name(s_f_name);
+          seller.setS_last_name(s_last_name);
+          seller.setS_password(s_password);
+          seller.setS_phone(s_phone);
+          seller.setS_licence(s_licence);
+          seller.setS_Company(s_Company);
+          seller.setGender(gender);
+          seller.setS_email(s_email);
+          seller.setS_house(s_house);
+          seller.setS_landmark(s_landmark);
+          seller.setS_state(s_state);
+          seller.setS_street(s_street);
+          seller.setS_zip(s_zip);
+          seller.setS_town(s_town);
+          seller.setType("SELLER");
+        } catch (Exception e) {
         }
     }
 

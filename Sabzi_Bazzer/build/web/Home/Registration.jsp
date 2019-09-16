@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="../Css/Mainlogin.css">
          <link  rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
-         <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
+         <!--<script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>-->
 </head>
 <body onload="ran(1)">
     <%@include file="../PageFiles/navReg.jsp" %>
@@ -104,7 +104,7 @@
                         </form>
                     </div>
                     <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form>
+                        <form name="Seller" method="POST" action="../Registration_Seller1">
                             <h3 class="register-heading">Apply as a Seller</h3>
                             <div class="row register-form">
                                 <div class="col-md-6">
@@ -164,7 +164,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <select class="form-control" name="s_state" id="s_state" onchange="state()">
-                                            <option class="hidden" selected disabled>Select your State *</option>
+                                            <option class="hidden" selected disabled value="">Select your State *</option>
                                             <option value="West Bengal">West Bengal</option>
                                             <option value="Bihar">Bihar</option>
                                             <option value="Gujarat">Gujarat</option>
@@ -178,14 +178,14 @@
                                         <span style="color:red;" id="s9"></span>
                                     </div>
                                         <div class="form-group">
-                                            <select class="form-control" name="s_city" id="s_town">
+                                            <select class="form-control" name="s_city" id="s_town" >
                                                 <option class="hidden"  selected disabled>Select your Town *</option>
-                                                <option>Unknown Town</option>
+                                                <option value="">Unknown Town</option>
                                             </select>
                                             <span style="color:red;" id="s10"></span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Zip Code *" value="" name="s_zip" id="s_zip" />
+                                            <input type="text" class="form-control" placeholder="Zip Code *" minlength="6" maxlength="6" value="" name="s_zip" id="s_zip" />
                                             <span style="color:red;" id="s11"></span>
                                         </div>
                                         <div class="form-group">

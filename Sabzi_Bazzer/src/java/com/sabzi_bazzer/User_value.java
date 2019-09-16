@@ -9,13 +9,13 @@ package com.sabzi_bazzer;
  *
  * @author Soumen-Pc
  */
-public class User {
+public class User_value {
     String fname,lname,pass,email,phone,ques,ans,gender,type;
 
-    public User() {
+    public User_value() {
     }
 
-    public User(String fname, String lname, String pass, String email, String phone, String ques, String ans, String gender, String type) {
+    public User_value(String fname, String lname, String pass, String email, String phone, String ques, String ans, String gender, String type) {
         this.fname = fname;
         this.lname = lname;
         this.pass = pass;

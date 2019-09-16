@@ -4,9 +4,25 @@
         <servlet-name>Registration_User</servlet-name>
         <servlet-class>com.sabzi_bazzer.Registration_User</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Registration_Seller</servlet-name>
+        <servlet-class>Registration_Seller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Registration_Seller1</servlet-name>
+        <servlet-class>com.sabzi_bazzer.Registration_Seller1</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registration_Seller</servlet-name>
+        <url-pattern>/Registration_Seller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registration_Seller1</servlet-name>
+        <url-pattern>/Registration_Seller1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
