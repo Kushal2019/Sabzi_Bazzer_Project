@@ -307,7 +307,7 @@ function Seller_validation()
 
     // Last_Name Validation
     
-     // Password Validation Start
+    // Password Validation Start
     if (s_password.value == "") {
         s_password.style.borderColor = "red";
         document.getElementById('s3').innerHTML = "Enter the password";
@@ -366,8 +366,7 @@ function Seller_validation()
 
     }
     // Confirm Password Validation End
-    // 
-    // 
+    
     //Email validation start
      if (s_email.value == "") {
         s_email.style.borderColor = "red";
@@ -389,9 +388,9 @@ function Seller_validation()
             }
     }
     
-      //Email validation end
-      //
-      //licence number validation start
+      //Email Validation End
+    
+      //Licence Number Validation Start
       if(s_licence.value=="")
       {
             s_licence.style.borderColor = "red";
@@ -405,7 +404,7 @@ function Seller_validation()
         }
       //licence number validation end
       
-      //company name validation start
+      //Company name validation start
       if(s_Company.value=="")
       {
             s_Company.style.borderColor = "red";
@@ -416,13 +415,13 @@ function Seller_validation()
             s_licence.style.borderColor = "green";
             document.getElementById('s5').innerHTML = "";
         }
-      //company name validation end
-      //ph number validtion start
+      //Company Name Validation End
+      
+      //Phone Number Validtion Start
       
       if (s_phone.value == "") {
         s_phone.style.borderColor = "red";
         document.getElementById('s8').innerHTML = "Enter the phone number";
-        
         f = 1;
     }
     else {
@@ -444,8 +443,10 @@ function Seller_validation()
             }
         }
     }
-    //ph valid end 
-    //captch code vlidation
+    
+    //Phone Number Validation End 
+    
+    //Captch-Code Validation
    
     if(s_capctha.value=="")
     {               
@@ -468,8 +469,10 @@ function Seller_validation()
             f=1;
         }
     }
-     //captch code vlidation end
-     //select state and town validation start
+     //Captch-Code Validation End
+     
+     //State and Town Validation Start
+     
      if(s_state.value=="")
       {
             s_state.style.borderColor = "red";
@@ -491,8 +494,10 @@ function Seller_validation()
             
              }
       }
-         //select state and town validation end
-         //s_zip validation 
+      
+      //State and Town Validation End
+      
+      //Zip-Code Validation Start
       if(s_zip.value=="")
       {
             s_zip.style.borderColor = "red";
@@ -503,8 +508,9 @@ function Seller_validation()
             s_zip.style.borderColor = "green";
             document.getElementById('s11').innerHTML = "";
         }
-        //s_zip validation end
-        //street validation start
+        //Zip-Code Validation End
+        
+        //Street Validation Start
          if(s_street.value=="")
       {
             s_street.style.borderColor = "red";
@@ -515,7 +521,7 @@ function Seller_validation()
             s_street.style.borderColor = "green";
             document.getElementById('s12').innerHTML = "";
         }
-        //street validation end
+        //Street Validation End
         
          if(s_house.value=="")
       {
@@ -549,11 +555,7 @@ function Seller_validation()
     }
 }
 
-
-
-
-
-//Dropdown menu Vallidation start
+//Dropdown Menu Vallidation Start
 function state() {
     let s_state, s_town;
     s_state = document.getElementById('s_state');
@@ -657,7 +659,9 @@ function state() {
     
     
 }
-///Dropdown menu Vallidation start end
+//Dropdown menu Vallidation End
+
+//Capture Validation Start
 function ran(st_l)
 	{
 	var a1,a2,a3;
@@ -685,3 +689,4 @@ function ran(st_l)
                 //document.write(f);
                 //return f;
  }
+ //Capture Validation End

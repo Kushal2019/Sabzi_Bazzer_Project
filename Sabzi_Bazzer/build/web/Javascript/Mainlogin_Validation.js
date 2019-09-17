@@ -8,13 +8,13 @@ function Login_Validation() {
 
     if (Login_username.value == "") {
         Login_username.style.borderColor = "red";
-        document.getElementById('Login_password_Error').innerHTML = "Please fill the fild-1";
+        document.getElementById('Login_username_Error').innerHTML = "Please fill the fild-1";
         Login_username.focus();
         f = 1;
     }
     else if(Login_password.value == "") {
         Login_password.style.borderColor = "red";
-        document.getElementById('Login_password').innerHTML = "Please fill the fild-2";
+        document.getElementById('Login_password_Error').innerHTML = "Please fill the fild-2";
         Login_password.focus();
         f = 1;
     }
