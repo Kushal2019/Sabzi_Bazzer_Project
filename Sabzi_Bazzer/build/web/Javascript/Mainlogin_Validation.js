@@ -8,15 +8,23 @@ function Login_Validation() {
 
     if (Login_username.value == "") {
         Login_username.style.borderColor = "red";
-        document.getElementById('Login_username_Error').innerHTML = "Please fill the fild-1";
+        document.getElementById('v1').innerHTML = "Please fill username";
         Login_username.focus();
         f = 1;
     }
-    else if(Login_password.value == "") {
+    else {
+        Login_username.style.borderColor = "green";
+        document.getElementById('v1').innerHTML = "";
+    }
+    if (Login_password.value == "") {
         Login_password.style.borderColor = "red";
-        document.getElementById('Login_password_Error').innerHTML = "Please fill the fild-2";
+        document.getElementById('v2').innerHTML = "Please fill password";
         Login_password.focus();
         f = 1;
+    }
+    else{
+        Login_password.style.borderColor = "green";
+        document.getElementById('v2').innerHTML = "";
     }
     if(f==0){
         return true;

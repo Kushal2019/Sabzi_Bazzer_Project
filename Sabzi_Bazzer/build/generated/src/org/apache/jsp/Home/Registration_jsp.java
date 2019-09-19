@@ -53,8 +53,8 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t<title>Registation Page</title>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"../Css/Mainlogin.css\">\r\n");
-      out.write("         <link  rel=\"stylesheet\" type=\"text/css\" href=\"../Css/Registration_Style.css\">\r\n");
-      out.write("         <!--<script type=\"text/javascript\" src=\"../Javascript/Registration_Validation.js\"></script>-->\r\n");
+      out.write("        <link  rel=\"stylesheet\" type=\"text/css\" href=\"../Css/Registration_Style.css\">\r\n");
+      out.write("        <script type=\"text/javascript\" src=\"../Javascript/Registration_Validation.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("<body onload=\"ran(1)\">\r\n");
       out.write("    ");
