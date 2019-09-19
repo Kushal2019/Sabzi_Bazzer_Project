@@ -41,12 +41,6 @@
 								class="form-control input_pass" value="" placeholder="password" />
 							<div id="v2" style="color: #bf0404; position: relative; left: 5px; top: 4px;"></div>
 						</div>&nbsp;
-						<div class="form-group">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline" required>
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
-							</div>
-						</div>
 						<div class="d-flex justify-content-center mt-8 login_container">
 							<input type="submit" name="log_sub" class="btn login_btn" onclick="return Login_Validation()" value="Login">
 						</div>

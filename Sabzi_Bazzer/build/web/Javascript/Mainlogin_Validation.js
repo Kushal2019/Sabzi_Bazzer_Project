@@ -2,7 +2,7 @@
 
 function Login_Validation() {
 
-    let Login_username, Login_password, f = 0;
+    let Login_username, Login_password;
     Login_username = document.getElementById('Login_username');
     Login_password = document.getElementById('Login_password');
 
@@ -10,26 +10,20 @@ function Login_Validation() {
         Login_username.style.borderColor = "red";
         document.getElementById('v1').innerHTML = "Enter username";
         Login_username.focus();
-        f = 1;
+        return false;
     }
     else {
-        Login_password.style.borderColor = "green";
-        document.getElementById('v2').innerHTML = "";
+        Login_username.style.borderColor = "green";
+        document.getElementById('v1').innerHTML = "";
     }
     if (Login_password.value === "") {
         Login_password.style.borderColor = "red";
         document.getElementById('v2').innerHTML = "Enter password";
         Login_password.focus();
-        f = 1;
+        return false;
     }
     else{
-        Login_username.style.borderColor = "green";
-        document.getElementById('v1').innerHTML = "";
-    }
-    if (f === 0) {
-        return true;
-    }
-    else {
-        return false;
+        Login_password.style.borderColor = "green";
+        document.getElementById('v2').innerHTML = "";
     }
 }
