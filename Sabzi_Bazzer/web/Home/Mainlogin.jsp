@@ -24,26 +24,24 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <form>
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
                                                     <input type="text" name="Login_username" id="Login_username" class="form-control input_user" value="" placeholder="username"/>
-<!--                                                        <span id="v1" style="color:red;"></span>-->
-                                                        <div id="v1" style="color: red; position: relative; top: 30px; right: 40px;"></div>
-						</div>
-						<div class="input-group mb-2">
+                                                        <div id="v1" style="color: #bf0404; position: relative; left: 5px; top: 4px;"></div>
+                                                </div>&nbsp;
+						<div class="input-group">
 							<div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<input type="password" name="Login_password" id="Login_password" class="form-control input_pass" value="" placeholder="password"/>
-<!--                                                        <span id="v2" style="color:red;"></span> -->
-                                                        <div id="v2" style="color: red; position: relative; top: 30px; right: 40px;"></div>
-						</div>
+                                                        <div id="v2" style="color: #bf0404; position: relative; left: 5px; top: 4px;"></div>
+                                                </div>&nbsp;
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
+                                                            <input type="checkbox" class="custom-control-input" id="customControlInline" required>
 								<label class="custom-control-label" for="customControlInline">Remember me</label>
 							</div>
 						</div>
