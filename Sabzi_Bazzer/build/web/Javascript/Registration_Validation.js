@@ -20,7 +20,6 @@ function User_validation() {
     }
     else {
         if (u_f_name.value.match(/^[A-Za-z]+$/)) {
-
             if (u_f_name.value.length < 3 || u_f_name.value.length > 10) {
                 u_f_name.style.borderColor = "red";
                 document.getElementById('e1').innerHTML = "First name must be 3-10 characters";

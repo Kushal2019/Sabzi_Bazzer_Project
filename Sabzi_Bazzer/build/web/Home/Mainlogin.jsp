@@ -48,8 +48,7 @@
 							</div>
 						</div>
 						<div class="d-flex justify-content-center mt-8 login_container">
-							<input type="submit" name="log_sub" class="btn login_btn"
-								onclick="return Login_Validation()" value="Login">
+							<input type="submit" name="log_sub" class="btn login_btn" onclick="return Login_Validation()" value="Login">
 						</div>
 					</form>
 				</div>
