@@ -22,14 +22,14 @@ function Login_Validation() {
         Login_password.focus();
         f = 1;
     }
-    else{
+    else {
         Login_password.style.borderColor = "green";
         document.getElementById('v2').innerHTML = "";
     }
-    if(f==0){
+    if (f == 0) {
         return true;
     }
-    else{
+    else {
         return false;
     }
 }
