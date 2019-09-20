@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="../Css/Mainlogin.css">
          <link  rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
-         <!--<script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>-->
+         <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
 </head>
 <body onload="ran(1)">
     <%@include file="../PageFiles/navReg.jsp" %>

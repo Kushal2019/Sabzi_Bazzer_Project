@@ -112,5 +112,37 @@ public class Database {
             close();
         }
     }
-    
+
+    int insertseller(Seller_value seller) {
+       
+        try {
+            if(isConnected())
+            {
+              String que="INSERT INTO `seller_details`(`seller_id`, `first_name`, `last_name`, `password`, `company_name`, `licence_number`, `email`, `ph_number`, `gender`, `state`, `town`, `zip_code`, `street`, `house_number`, `landmark`) VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";  
+              smt=conn.prepareStatement(que);
+              smt.setString(1,seller.getS_f_name());
+              smt.setString(2,seller.getS_last_name());
+              smt.setString(3,seller.getS_password());
+              smt.setString(4,seller.getS_Company());
+              smt.setString(5,seller.getS_licence());
+              smt.setString(6,seller.getS_email());
+              smt.setString(7,seller.getS_phone());
+              smt.setString(8,seller.getGender());
+              smt.setString(9,seller.getS_state());
+              smt.setString(10,seller.getS_town());
+              smt.setString(11,seller.getS_zip());
+              smt.setString(12,seller.getS_street());
+              smt.setString(13,seller.getS_house());
+              smt.setString(14,seller.getS_landmark());
+              smt.execute();
+              return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        } catch (Exception e) {
+            return 0;
+        }
+        }
 }

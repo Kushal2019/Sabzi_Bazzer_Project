@@ -86,16 +86,16 @@ public class Registration_Seller1 extends HttpServlet {
     private void processRequest1(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
           PrintWriter out=  response.getWriter();
-          String s_f_name,s_last_name,s_password,s_licence,s_email,s_phone,s_Company,s_state,s_town,s_zip,s_street,s_house,s_landmark,gender;
+          String s_f_name,s_last_name,s_password,s_licence,s_email,s_phone,s_Company,s_state,s_city,s_zip,s_street,s_house,s_landmark,gender;
           s_f_name=request.getParameter("s_f_name");
-          s_last_name=request.getParameter("s_f_name");
+          s_last_name=request.getParameter("s_last_name");
           s_password=request.getParameter("s_password");
           s_licence=request.getParameter("s_licence");
           s_email=request.getParameter("s_email");
           s_phone=request.getParameter("s_phone");
           s_Company=request.getParameter("s_Company");
           s_state=request.getParameter("s_state");
-          s_town=request.getParameter("s_town");
+          s_city=request.getParameter("s_city");
           s_zip=request.getParameter("s_zip");
           s_street=request.getParameter("s_street");
           s_house=request.getParameter("s_house");
@@ -110,14 +110,26 @@ public class Registration_Seller1 extends HttpServlet {
           seller.setS_Company(s_Company);
           seller.setGender(gender);
           seller.setS_email(s_email);
-          seller.setS_house(s_house);
+          seller.setS_house(s_email);
           seller.setS_landmark(s_landmark);
           seller.setS_state(s_state);
           seller.setS_street(s_street);
           seller.setS_zip(s_zip);
-          seller.setS_town(s_town);
+          seller.setS_town(s_city);
           seller.setType("SELLER");
+          out.println(s_f_name+" "+s_last_name+" "+s_password+" "+s_phone+" "+s_licence+" "+s_Company+" "+gender+" "+s_email+" "+s_landmark+" "+s_state+" "+s_street+" "+s_zip+" "+s_city);
+          Database db= new Database();
+          int x=db.insertseller(seller);
+          if(x==1)
+          {
+              response.sendRedirect("Home/Registration.jsp?Err=Done");
+          }
+          else
+          {
+               response.sendRedirect("Home/Registration.jsp?Err=not");
+          }
         } catch (Exception e) {
+            
         }
     }
 
