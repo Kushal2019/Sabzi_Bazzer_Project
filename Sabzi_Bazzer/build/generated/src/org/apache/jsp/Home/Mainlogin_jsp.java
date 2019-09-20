@@ -99,29 +99,43 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t<div class=\"d-flex justify-content-center form_container\">\r\n");
       out.write("\t\t\t\t\t<form>\r\n");
-      out.write("\t\t\t\t\t\t<div class=\"input-group mb-3\">\r\n");
+      out.write("\t\t\t\t\t\t<div class=\"input-group\">\r\n");
       out.write("\t\t\t\t\t\t\t<div class=\"input-group-append\">\r\n");
       out.write("\t\t\t\t\t\t\t\t<span class=\"input-group-text\"><i class=\"fas fa-user\"></i></span>\r\n");
       out.write("\t\t\t\t\t\t\t</div>\r\n");
+<<<<<<< HEAD
       out.write("\t\t\t\t\t\t\t<input type=\"text\" name=\"Login_username\" id=\"Login_username\" class=\"form-control input_user\" value=\"\" placeholder=\"username\">\r\n");
       out.write("                                                       \r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t<div class=\"input-group mb-2\">\r\n");
+=======
+      out.write("\t\t\t\t\t\t\t<input type=\"text\" name=\"Login_username\" id=\"Login_username\" class=\"form-control input_user\"\r\n");
+      out.write("\t\t\t\t\t\t\t\tvalue=\"\" placeholder=\"username\" />\r\n");
+      out.write("\t\t\t\t\t\t\t<div id=\"v1\" style=\"color: #bf0404; position: relative; left: 5px; top: 4px;\"></div>\r\n");
+      out.write("\t\t\t\t\t\t</div>&nbsp;\r\n");
+      out.write("\t\t\t\t\t\t<div class=\"input-group\">\r\n");
+>>>>>>> cd4a57be0d882a44039703dedd756b6b2a64b0c3
       out.write("\t\t\t\t\t\t\t<div class=\"input-group-append\">\r\n");
-      out.write("                                                            <span class=\"input-group-text\"><i class=\"fas fa-key\"></i></span>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<span class=\"input-group-text\"><i class=\"fas fa-key\"></i></span>\r\n");
       out.write("\t\t\t\t\t\t\t</div>\r\n");
+<<<<<<< HEAD
       out.write("\t\t\t\t\t\t\t<input type=\"password\" name=\"Login_password\" id=\"Login_password\" class=\"form-control input_pass\" value=\"\" placeholder=\"password\">\r\n");
       out.write("                                                        \r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
+=======
+      out.write("\t\t\t\t\t\t\t<input type=\"password\" name=\"Login_password\" id=\"Login_password\"\r\n");
+      out.write("\t\t\t\t\t\t\t\tclass=\"form-control input_pass\" value=\"\" placeholder=\"password\" />\r\n");
+      out.write("\t\t\t\t\t\t\t<div id=\"v2\" style=\"color: #bf0404; position: relative; left: 5px; top: 4px;\"></div>\r\n");
+      out.write("\t\t\t\t\t\t</div>&nbsp;\r\n");
+>>>>>>> cd4a57be0d882a44039703dedd756b6b2a64b0c3
       out.write("\t\t\t\t\t\t<div class=\"form-group\">\r\n");
       out.write("\t\t\t\t\t\t\t<div class=\"custom-control custom-checkbox\">\r\n");
-      out.write("\t\t\t\t\t\t\t\t<input type=\"checkbox\" class=\"custom-control-input\" id=\"customControlInline\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t<input type=\"checkbox\" class=\"custom-control-input\" id=\"customControlInline\" required>\r\n");
       out.write("\t\t\t\t\t\t\t\t<label class=\"custom-control-label\" for=\"customControlInline\">Remember me</label>\r\n");
       out.write("\t\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t<div class=\"d-flex justify-content-center mt-8 login_container\">\r\n");
-      out.write("\t\t\t\t\t\t\t<input type=\"submit\" name=\"log_sub\" class=\"btn login_btn\"\r\n");
-      out.write("\t\t\t\t\t\t\t\tonclick=\"return Login_Validation()\" value=\"Login\">\r\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"submit\" name=\"log_sub\" class=\"btn login_btn\" onclick=\"return Login_Validation()\" value=\"Login\">\r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t</form>\r\n");
       out.write("\t\t\t\t</div>\r\n");
@@ -139,8 +153,8 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t");
       out.write("<footer class=\"py-3 bg-dark\">\r\n");
       out.write("  <div class=\"container\">\r\n");
-      out.write("    <p class=\"m-0 text-center text-white\"> This site is made by Kushal & Soumen </p>\r\n");
-      out.write("    <p class=\"m-0 text-center text-danger\"> Special thanks to respected Debashis sir... </p>\r\n");
+      out.write("    <p class=\"m-0 text-center text-white\"> This site is made by Kushal & Soumen... </p>\r\n");
+      out.write("    <p class=\"m-0 text-center text-danger\"> Special thanks to respected Debashis Sir... </p>\r\n");
       out.write("  </div>\r\n");
       out.write("</footer>");
       out.write("\r\n");

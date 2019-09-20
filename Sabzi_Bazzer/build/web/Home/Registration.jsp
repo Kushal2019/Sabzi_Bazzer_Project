@@ -7,6 +7,7 @@
          <link  rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
          <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
 </head>
+
 <body onload="ran(1)">
     <%@include file="../PageFiles/navReg.jsp" %>
     <br>
@@ -16,7 +17,7 @@
                 <img src="../image/Sabzi_Logo.png" alt="" />
                 <h3>Welcome</h3>
                 <p>You are 30 seconds away from earning your own money!</p>
-                <a href="Mainlogin.jsp"><input type="button" value="Login"/></a>
+                <a href="Mainlogin.jsp"><input type="button" value="Login" /></a>
             </div>
             <div class="col-md-9 register-right">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -94,7 +95,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Enter Your Answer *"
-                                               disabled value="" name="u_s_answer" id="u_s_answer" />
+                                            disabled value="" name="u_s_answer" id="u_s_answer" />
                                         <span style="color:red;" id="e8"></span>
                                     </div>
                                     <input type="submit" class="btnRegister" value="Register"
@@ -130,13 +131,15 @@
                                             <span style="color:red;" id="s4"></span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Company name *" value="" name="s_Company" id="s_Company"/>
+                                            <input type="text" class="form-control" placeholder="Company name *"
+                                                value="" name="s_Company" id="s_Company" />
                                             <span style="color:red;" id="s5"></span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Licence Number *" value="" name="s_licence" id="s_licence"/>
+                                            <input type="text" class="form-control" placeholder="Licence Number *"
+                                                value="" name="s_licence" id="s_licence" />
                                             <span style="color:red;" id="s6"></span>
-         
+
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Email *" value=""
@@ -164,7 +167,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <select class="form-control" name="s_state" id="s_state" onchange="state()">
-                                            <option class="hidden" selected disabled value="">Select your State *</option>
+                                            <option class="hidden" selected disabled value="">Select your State *
+                                            </option>
                                             <option value="West Bengal">West Bengal</option>
                                             <option value="Bihar">Bihar</option>
                                             <option value="Gujarat">Gujarat</option>
@@ -177,39 +181,46 @@
                                         </select>
                                         <span style="color:red;" id="s9"></span>
                                     </div>
-                                        <div class="form-group">
-                                            <select class="form-control" name="s_city" id="s_town" >
-                                                <option class="hidden"  selected disabled>Select your Town *</option>
-                                                <option value="">Unknown Town</option>
-                                            </select>
-                                            <span style="color:red;" id="s10"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Zip Code *" minlength="6" maxlength="6" value="" name="s_zip" id="s_zip" />
-                                            <span style="color:red;" id="s11"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Street *" value="" name="s_street" id="s_street" />
-                                            <span style="color:red;" id="s12"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="House Number *" value="" name="s_house" id="s_house" />
-                                            <span style="color:red;" id="s13"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Landmark *" value="" name="s_landmark" id="s_landmark" />
-                                            <span style="color:red;" id="s14"></span>
-                                        </div>
-                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Enter the capctha *" value="" name="s_capctha" id="s_capctha" />
-                                            <span style="color:red;" id="s15"></span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" style="text-align: center;" disabled class="form-control" value="hi" name="captext" id="captext" />
-                                            <span style="color:red;" id="s16"></span>
-                                        </div>
-                                        <input type="submit" class="btnRegister"  value="Register" onclick="return Seller_validation()"/>
-                                       
+                                    <div class="form-group">
+                                        <select class="form-control" name="s_city" id="s_town">
+                                            <option class="hidden" selected disabled>Select your Town *</option>
+                                            <option value="">Unknown Town</option>
+                                        </select>
+                                        <span style="color:red;" id="s10"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Zip Code *" minlength="6"
+                                            maxlength="6" value="" name="s_zip" id="s_zip" />
+                                        <span style="color:red;" id="s11"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Street *" value=""
+                                            name="s_street" id="s_street" />
+                                        <span style="color:red;" id="s12"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="House Number *" value=""
+                                            name="s_house" id="s_house" />
+                                        <span style="color:red;" id="s13"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Landmark *" value=""
+                                            name="s_landmark" id="s_landmark" />
+                                        <span style="color:red;" id="s14"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Enter the capctha *"
+                                            value="" name="s_capctha" id="s_capctha" />
+                                        <span style="color:red;" id="s15"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" style="text-align: center;" disabled class="form-control"
+                                            value="hi" name="captext" id="captext" />
+                                        <span style="color:red;" id="s16"></span>
+                                    </div>
+                                    <input type="submit" class="btnRegister" value="Register"
+                                        onclick="return Seller_validation()" />
+
                                 </div>
                             </div>
                         </form>
@@ -219,7 +230,7 @@
         </div>
 
     </div>
-    
+
     <%@include file="../PageFiles/footerMain.jsp" %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

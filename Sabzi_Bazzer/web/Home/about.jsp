@@ -104,7 +104,7 @@
         <!-- Team item-->
         <div class="col-xl-3 col-sm-6 mb-5">
           <div class="bg-white rounded shadow-sm py-5 px-4"><img
-              src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png" alt="" width="100"
+                  src="../image/Team_Member_Pic/Sankho.jpeg" alt="" width="100"
               class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Sankho Subro Dorie </h5><span class="small text-uppercase text-muted">CEO - Founder</span>
             <ul class="social mb-0 list-inline mt-3">
