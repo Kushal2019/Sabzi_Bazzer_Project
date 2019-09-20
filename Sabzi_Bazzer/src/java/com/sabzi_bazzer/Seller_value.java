@@ -32,6 +32,8 @@ public class Seller_value {
         this.type = type;
     }
 
+   
+
     public String getS_f_name() {
         return s_f_name;
     }

@@ -2,25 +2,37 @@
 
 function Login_Validation() {
 
-    let Login_username, Login_password;
+    let Login_username, Login_password,customControlInline, f = 0;
     Login_username = document.getElementById('Login_username');
     Login_password = document.getElementById('Login_password');
-
-    if (Login_username.value === "") {
+    customControlInline= document.getElementById('customControlInline');
+    if (Login_username.value == "") {
+        alert("Enter the Username");
         Login_username.style.borderColor = "red";
-        document.getElementById('v1').innerHTML = "Enter username";
         Login_username.focus();
-        return false;
-    }
-    else {
-        Login_username.style.borderColor = "green";
-        document.getElementById('v1').innerHTML = "";
-    }
-    if (Login_password.value === "") {
+        f = 1;
+    }else
+    {
+         Login_username.style.borderColor = "green";
+        if(Login_password.value == "") {
+        alert("Enter the Password");
         Login_password.style.borderColor = "red";
-        document.getElementById('v2').innerHTML = "Enter password";
         Login_password.focus();
-        return false;
+        f = 1;
+        }
+        else
+        {
+             Login_password.style.borderColor = "green";
+             if(customControlInline.checked == false)
+             {
+                 alert('You must agree to the terms first.'); 
+                 customControlInline.focus();
+                 f=1;
+             }
+        }
+    }
+    if(f==0){
+        return true;
     }
     else{
         Login_password.style.borderColor = "green";
