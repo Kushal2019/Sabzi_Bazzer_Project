@@ -3,11 +3,11 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #60a3bc !important;
+			background: #60a3bc;
 		}
 		.user_card {
-			height: 400px;
-			width: 350px;
+			height: 428px;
+			width: 355px;
 			margin-top: auto;
 			margin-bottom: auto;
 			background: #f39c12;
@@ -24,7 +24,7 @@
 		}
 		.brand_logo_container {
 			position: absolute;
-			height: 170px;
+			height: 168px;
 			width: 170px;
 			top: -75px;
 			border-radius: 50%;
