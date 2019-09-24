@@ -145,4 +145,26 @@ public class Database {
             return 0;
         }
         }
+
+    int insertLogindetails1(Seller_value seller) {
+        try {
+            if(isConnected())
+            {
+                String qre="INSERT INTO `login_details`(`login_id`, `email`, `password`, `user_type`, `isactive`) VALUES (null,?,?,?,?)";
+                smt=conn.prepareStatement(qre); 
+                smt.setString(1, seller.getS_email());
+                smt.setString(2,seller.getS_password());
+                smt.setString(3,seller.getType());
+                smt.setString(4,"0");
+                smt.execute();
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        } catch (Exception e) {
+            return 0;
+        }
+    }
 }

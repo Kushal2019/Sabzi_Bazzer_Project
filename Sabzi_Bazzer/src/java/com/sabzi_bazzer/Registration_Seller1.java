@@ -122,11 +122,19 @@ public class Registration_Seller1 extends HttpServlet {
           int x=db.insertseller(seller);
           if(x==1)
           {
-              response.sendRedirect("Home/Registration.jsp?Err=Done");
+             int y=db.insertLogindetails1(seller);
+             if(y==1)
+             {
+                response.sendRedirect("Home/Mainlogin.jsp");
+             }
+             else
+             {
+                 response.sendRedirect("Home/Registration.jsp?Err=3"); 
+             }
           }
           else
           {
-               response.sendRedirect("Home/Registration.jsp?Err=not");
+               response.sendRedirect("Home/Registration.jsp?Err=4");
           }
         } catch (Exception e) {
             

@@ -53,14 +53,10 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t<title>Registation Page</title>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"../Css/Mainlogin.css\">\r\n");
-<<<<<<< HEAD
       out.write("         <link  rel=\"stylesheet\" type=\"text/css\" href=\"../Css/Registration_Style.css\">\r\n");
       out.write("         <script type=\"text/javascript\" src=\"../Javascript/Registration_Validation.js\"></script>\r\n");
-=======
-      out.write("        <link  rel=\"stylesheet\" type=\"text/css\" href=\"../Css/Registration_Style.css\">\r\n");
-      out.write("        <script type=\"text/javascript\" src=\"../Javascript/Registration_Validation.js\"></script>\r\n");
->>>>>>> cd4a57be0d882a44039703dedd756b6b2a64b0c3
       out.write("</head>\r\n");
+      out.write("\r\n");
       out.write("<body onload=\"ran(1)\">\r\n");
       out.write("    ");
       out.write("<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-Secondary\">\r\n");
@@ -95,7 +91,7 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                <img src=\"../image/Sabzi_Logo.png\" alt=\"\" />\r\n");
       out.write("                <h3>Welcome</h3>\r\n");
       out.write("                <p>You are 30 seconds away from earning your own money!</p>\r\n");
-      out.write("                <a href=\"Mainlogin.jsp\"><input type=\"button\" value=\"Login\"/></a>\r\n");
+      out.write("                <a href=\"Mainlogin.jsp\"><input type=\"button\" value=\"Login\" /></a>\r\n");
       out.write("            </div>\r\n");
       out.write("            <div class=\"col-md-9 register-right\">\r\n");
       out.write("                <ul class=\"nav nav-tabs nav-justified\" id=\"myTab\" role=\"tablist\">\r\n");
@@ -147,6 +143,25 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                            </label>\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        ");
+ 
+                                            try {
+                                                String err=request.getParameter("Err");
+                                                if(err.contains("1"))
+                                                {
+                                        
+      out.write("\r\n");
+      out.write("                                                <span style=\"color:red;\" id=\"error\">account already exists</span>\r\n");
+      out.write("                                        ");
+   
+                                                }
+                                            } catch (Exception e) {}
+                                        
+      out.write("\r\n");
+      out.write("                                        \r\n");
+      out.write("                                      \r\n");
+      out.write("                                    </div>\r\n");
       out.write("                                </div>\r\n");
       out.write("                                <div class=\"col-md-6\">\r\n");
       out.write("                                    <div class=\"form-group\">\r\n");
@@ -173,7 +188,7 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                    </div>\r\n");
       out.write("                                    <div class=\"form-group\">\r\n");
       out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"Enter Your Answer *\"\r\n");
-      out.write("                                               disabled value=\"\" name=\"u_s_answer\" id=\"u_s_answer\" />\r\n");
+      out.write("                                            disabled value=\"\" name=\"u_s_answer\" id=\"u_s_answer\" />\r\n");
       out.write("                                        <span style=\"color:red;\" id=\"e8\"></span>\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <input type=\"submit\" class=\"btnRegister\" value=\"Register\"\r\n");
@@ -209,13 +224,15 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                            <span style=\"color:red;\" id=\"s4\"></span>\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Company name *\" value=\"\" name=\"s_Company\" id=\"s_Company\"/>\r\n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Company name *\"\r\n");
+      out.write("                                                value=\"\" name=\"s_Company\" id=\"s_Company\" />\r\n");
       out.write("                                            <span style=\"color:red;\" id=\"s5\"></span>\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Licence Number *\" value=\"\" name=\"s_licence\" id=\"s_licence\"/>\r\n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Licence Number *\"\r\n");
+      out.write("                                                value=\"\" name=\"s_licence\" id=\"s_licence\" />\r\n");
       out.write("                                            <span style=\"color:red;\" id=\"s6\"></span>\r\n");
-      out.write("         \r\n");
+      out.write("\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
       out.write("                                            <input type=\"email\" class=\"form-control\" placeholder=\"Email *\" value=\"\"\r\n");
@@ -243,7 +260,8 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                <div class=\"col-md-6\">\r\n");
       out.write("                                    <div class=\"form-group\">\r\n");
       out.write("                                        <select class=\"form-control\" name=\"s_state\" id=\"s_state\" onchange=\"state()\">\r\n");
-      out.write("                                            <option class=\"hidden\" selected disabled value=\"\">Select your State *</option>\r\n");
+      out.write("                                            <option class=\"hidden\" selected disabled value=\"\">Select your State *\r\n");
+      out.write("                                            </option>\r\n");
       out.write("                                            <option value=\"West Bengal\">West Bengal</option>\r\n");
       out.write("                                            <option value=\"Bihar\">Bihar</option>\r\n");
       out.write("                                            <option value=\"Gujarat\">Gujarat</option>\r\n");
@@ -256,39 +274,46 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                        </select>\r\n");
       out.write("                                        <span style=\"color:red;\" id=\"s9\"></span>\r\n");
       out.write("                                    </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <select class=\"form-control\" name=\"s_city\" id=\"s_town\" >\r\n");
-      out.write("                                                <option class=\"hidden\"  selected disabled>Select your Town *</option>\r\n");
-      out.write("                                                <option value=\"\">Unknown Town</option>\r\n");
-      out.write("                                            </select>\r\n");
-      out.write("                                            <span style=\"color:red;\" id=\"s10\"></span>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Zip Code *\" minlength=\"6\" maxlength=\"6\" value=\"\" name=\"s_zip\" id=\"s_zip\" />\r\n");
-      out.write("                                            <span style=\"color:red;\" id=\"s11\"></span>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Street *\" value=\"\" name=\"s_street\" id=\"s_street\" />\r\n");
-      out.write("                                            <span style=\"color:red;\" id=\"s12\"></span>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"House Number *\" value=\"\" name=\"s_house\" id=\"s_house\" />\r\n");
-      out.write("                                            <span style=\"color:red;\" id=\"s13\"></span>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Landmark *\" value=\"\" name=\"s_landmark\" id=\"s_landmark\" />\r\n");
-      out.write("                                            <span style=\"color:red;\" id=\"s14\"></span>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                         <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Enter the capctha *\" value=\"\" name=\"s_capctha\" id=\"s_capctha\" />\r\n");
-      out.write("                                            <span style=\"color:red;\" id=\"s15\"></span>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" style=\"text-align: center;\" disabled class=\"form-control\" value=\"hi\" name=\"captext\" id=\"captext\" />\r\n");
-      out.write("                                            <span style=\"color:red;\" id=\"s16\"></span>\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <input type=\"submit\" class=\"btnRegister\"  value=\"Register\" onclick=\"return Seller_validation()\"/>\r\n");
-      out.write("                                       \r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        <select class=\"form-control\" name=\"s_city\" id=\"s_town\">\r\n");
+      out.write("                                            <option class=\"hidden\" selected disabled>Select your Town *</option>\r\n");
+      out.write("                                            <option value=\"\">Unknown Town</option>\r\n");
+      out.write("                                        </select>\r\n");
+      out.write("                                        <span style=\"color:red;\" id=\"s10\"></span>\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"Zip Code *\" minlength=\"6\"\r\n");
+      out.write("                                            maxlength=\"6\" value=\"\" name=\"s_zip\" id=\"s_zip\" />\r\n");
+      out.write("                                        <span style=\"color:red;\" id=\"s11\"></span>\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"Street *\" value=\"\"\r\n");
+      out.write("                                            name=\"s_street\" id=\"s_street\" />\r\n");
+      out.write("                                        <span style=\"color:red;\" id=\"s12\"></span>\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"House Number *\" value=\"\"\r\n");
+      out.write("                                            name=\"s_house\" id=\"s_house\" />\r\n");
+      out.write("                                        <span style=\"color:red;\" id=\"s13\"></span>\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"Landmark *\" value=\"\"\r\n");
+      out.write("                                            name=\"s_landmark\" id=\"s_landmark\" />\r\n");
+      out.write("                                        <span style=\"color:red;\" id=\"s14\"></span>\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"Enter the capctha *\"\r\n");
+      out.write("                                            value=\"\" name=\"s_capctha\" id=\"s_capctha\" />\r\n");
+      out.write("                                        <span style=\"color:red;\" id=\"s15\"></span>\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        <input type=\"text\" style=\"text-align: center;\" disabled class=\"form-control\"\r\n");
+      out.write("                                            value=\"hi\" name=\"captext\" id=\"captext\" />\r\n");
+      out.write("                                        <span style=\"color:red;\" id=\"s16\"></span>\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <input type=\"submit\" class=\"btnRegister\" value=\"Register\"\r\n");
+      out.write("                                        onclick=\"return Seller_validation()\" />\r\n");
+      out.write("\r\n");
       out.write("                                </div>\r\n");
       out.write("                            </div>\r\n");
       out.write("                        </form>\r\n");
@@ -298,12 +323,12 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("    </div>\r\n");
-      out.write("    \r\n");
+      out.write("\r\n");
       out.write("    ");
       out.write("<footer class=\"py-3 bg-dark\">\r\n");
       out.write("  <div class=\"container\">\r\n");
-      out.write("    <p class=\"m-0 text-center text-white\"> This site is made by Kushal & Soumen </p>\r\n");
-      out.write("    <p class=\"m-0 text-center text-danger\"> Special thanks to respected Debashis sir... </p>\r\n");
+      out.write("    <p class=\"m-0 text-center text-white\"> This site is made by Kushal & Soumen... </p>\r\n");
+      out.write("    <p class=\"m-0 text-center text-danger\"> Special thanks to respected Debashis Sir... </p>\r\n");
       out.write("  </div>\r\n");
       out.write("</footer>");
       out.write("\r\n");
