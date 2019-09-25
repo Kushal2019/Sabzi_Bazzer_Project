@@ -427,7 +427,7 @@ function Seller_validation()
 
         if (isNaN(s_phone.value)) {
             s_phone.style.borderColor = "red";
-            document.getElementById('s8').innerHTML = "character not allowed ";
+            document.getElementById('s8').innerHTML = "Character not allowed ";
             f = 1;
         }
         else {

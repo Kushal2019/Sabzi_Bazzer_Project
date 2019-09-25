@@ -13,7 +13,7 @@ function Login_Validation() {
         f = 1;
     }else
     {
-         Login_username.style.borderColor = "green";
+        Login_username.style.borderColor = "green";
         if(Login_password.value == "") {
         alert("Enter the Password");
         Login_password.style.borderColor = "red";
