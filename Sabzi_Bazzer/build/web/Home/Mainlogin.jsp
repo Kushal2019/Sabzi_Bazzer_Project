@@ -12,7 +12,7 @@
 	<script src="../Javascript/Mainlogin_Validation.js"></script>
 </head>
 
-<body>
+<body onload="err()">
 	<%@include file="../PageFiles/navLog.jsp" %>
 	<br><br>
 	<div class="container h-100">

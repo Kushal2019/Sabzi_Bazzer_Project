@@ -68,6 +68,29 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <% 
+                                            try {
+                                                String err=request.getParameter("Err");
+                                                if(err.contains("1")||err.contains("2"))
+                                                {
+                                        %>
+                                                <span style="color:red;" id="error">account already exists</span>
+                                        <%   
+                                                }
+                                          
+                                        %>
+                                         <% 
+                                            
+                                                if(err.contains("3")||err.contains("4"))
+                                                {
+                                        %>
+                                                <span style="color:red;" id="error">account already exists</span>
+                                        <%   
+                                                }
+                                             } catch (Exception e) {}
+                                        %> 
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">

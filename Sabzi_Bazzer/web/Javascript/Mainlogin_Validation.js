@@ -35,7 +35,6 @@ function Login_Validation() {
         return true;
     }
     else{
-        Login_password.style.borderColor = "green";
-        document.getElementById('v2').innerHTML = "";
+        return false;
     }
 }
