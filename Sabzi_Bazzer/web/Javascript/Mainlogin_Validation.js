@@ -25,7 +25,7 @@ function Login_Validation() {
              Login_password.style.borderColor = "green";
              if(customControlInline.checked == false)
              {
-                 alert('You must agree to the terms first.'); 
+                 alert('You must agree Terms & Conditions'); 
                  customControlInline.focus();
                  f=1;
              }

@@ -4,7 +4,35 @@
     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
+<%
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        String uname=session.getAttribute("UserID").toString();
+        if(utype.equals("USER") && !uname.equals(""))
+        {
+            
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+                response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+            {
+                response.sendRedirect("../Seller/index.jsp");
+            } 
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+%>
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
@@ -17,7 +45,7 @@
         <a class="nav-link" href="">Cart</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="../Home/Logout.jsp">Logout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

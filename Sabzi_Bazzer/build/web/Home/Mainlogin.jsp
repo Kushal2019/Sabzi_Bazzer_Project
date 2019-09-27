@@ -10,10 +10,60 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="../Css/Mainlogin.css">
 	<script src="../Javascript/Mainlogin_Validation.js"></script>
+        <script>
+            function errorMag()
+            {
+                alert("Invalid Userid or Password");
+            }
+        </script>
 </head>
+<%
+    int err=0;
+    try
+    {
+        String error=request.getParameter("error");
+        if(error.equals("1"))
+        {
+            err=1;
+        }
+    }
+    catch(Exception e){}
+%>
 
-<body onload="err()">
+<body onload="<%=(err==1)?"errorMag()":""%>">
 	<%@include file="../PageFiles/navLog.jsp" %>
+           <%
+        try
+        {
+            String userType=session.getAttribute("UserType").toString();
+            if(userType.equals("USER"))
+            {
+                //user
+                response.sendRedirect("../User/index.jsp");
+            }
+            else
+            {
+                if(userType.equals("SELLER"))
+                {
+                    //Seller
+                    response.sendRedirect("../Seller/index.jsp");
+                }  
+                else
+                {
+                    if(userType.equals("ADMIN"))
+                    {
+                        //Admin
+                        response.sendRedirect("../Admin/index.jsp");
+                    }
+                    else
+                    {
+                        //none of the above
+                    }
+                }
+            }
+        }
+        catch(Exception ex){}
+    %>
 	<br><br>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
@@ -24,7 +74,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
+                                    <form name="login" action="../MainLogin" method="POST">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -42,13 +92,14 @@
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
+								<label class="custom-control-label" for="customControlInline">Accept Terms & Condition</label>
 							</div>
 						</div>
 						<div class="d-flex justify-content-center mt-8 login_container">
 							<input type="submit" name="log_sub" class="btn login_btn"
 								onclick="return Login_Validation()" value="Login">
 						</div>
+                                        
 					</form>
 				</div>
 				<div class="mt-4">
