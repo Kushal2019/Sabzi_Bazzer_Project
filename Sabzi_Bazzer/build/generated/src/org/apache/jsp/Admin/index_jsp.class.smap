@@ -5,6 +5,22 @@ JSP
 *F
 + 0 index.jsp
 Admin/index.jsp
++ 1 admin_sidePaneel.jsp
+Admin/pageFiles/admin_sidePaneel.jsp
++ 2 admin_topToolbar.jsp
+Admin/pageFiles/admin_topToolbar.jsp
 *L
-1,124:44
+1,16:51
+5#1,35:67
+16#0,5:101
+5#2,33:106
+20#0,15:139
+35,8:155
+42:163
+43:164,3
+44,16:167
+60,8:184
+67:192
+68:193,3
+69,33:196
 *E

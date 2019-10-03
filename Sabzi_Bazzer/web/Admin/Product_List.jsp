@@ -15,24 +15,35 @@
         <div class="dash-app">
             <%@include file="pageFiles/admin_topToolbar.jsp" %>
             <main class="dash-content">
-                <div class="container-fluid">
-                    <div class="row dash-row">
-                        <div class="col-xl-4">
-                            <div class="stats stats-danger">
-                                <h3 class="stats-title"> Products </h3>
-                                <div class="stats-content">
-                                    <div class="stats-icon">
-                                        <i class="fas fa-phone"></i>
-                                    </div>
-                                    <div class="stats-data">
-                                        <div class="stats-number">5</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="container">        
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th width="50px">Firstname</th>
+                <th width="50px">Lastname</th>
+                <th width="50px">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
             </main>
         </div>
     </div>
