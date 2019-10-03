@@ -244,5 +244,26 @@ public class Database {
             return "0";
         }
     }
+    public ResultSet Buyerdetails()
+    {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="SELECT * FROM user_details ORDER BY user_id ASC";
+                    smt=conn.prepareStatement(sql);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
 }
 

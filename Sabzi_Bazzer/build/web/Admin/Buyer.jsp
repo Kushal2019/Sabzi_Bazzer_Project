@@ -1,11 +1,19 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="../Css/Admin_Style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script src="../Javascript/Admin_Charts.js"></script>
+   
+  
   <title>Admin Panel</title>
 </head>
 
@@ -21,42 +29,48 @@
           <table class="table table-dark table-striped">
             <thead>
               <tr>
-                <th width="50px">Firstname</th>
-                <th width="50px">Lastname</th>
-                <th width="50px">Email</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Gender</th>
+                <th>Permission</th>
               </tr>
             </thead>
             <tbody>
+                <%
+                   try {
+                         ResultSet rs = new Database().Buyerdetails();  
+                         while(rs.next())
+                         {
+                %>
               <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
+                  <td><%=rs.getString("first_name")%></td>
+                <td><%=rs.getString("last_name")%></td>
+                <td><%=rs.getString("email")%></td>
+                <td><%=rs.getString("ph_number")%></td>
+                <td><%=rs.getString("gender")%></td>
+                <td>
+                    <button type="button" class="btn btn-labeled btn-success">
+                    Success <span class="btn-label"><i class="fa fa-check"></i></span></button>
+                    <button type="button" class="btn btn-labeled btn-danger">
+                    Cancel <span class="btn-label"><i class="fa fa-close"></i></span></button>
+                </td>
               </tr>
-              <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-              </tr>
+              <%            
+                  }
+                }
+                catch(Exception e){}
+               %>
             </tbody>
           </table>
         </div>
       </main>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="../Javascript/Admin_Style.js"></script>
 </body>
 

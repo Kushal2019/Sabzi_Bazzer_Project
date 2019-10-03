@@ -52,13 +52,7 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<head>\r\n");
       out.write("\t<title>Registation Page</title>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n");
-<<<<<<< HEAD
-      out.write("<!--        <link rel=\"stylesheet\" href=\"../Css/Mainlogin.css\">-->\r\n");
       out.write("        <link  rel=\"stylesheet\" type=\"text/css\" href=\"../Css/Registration_Style.css\">\r\n");
-=======
-      out.write("        <link rel=\"stylesheet\" href=\"../Css/Mainlogin.css\">\r\n");
-      out.write("         <link  rel=\"stylesheet\" type=\"text/css\" href=\"../Css/Registration_Style.css\">\r\n");
->>>>>>> 2c69b9352cd89da49be6626c03cf498eaf535af5
       out.write("         <script type=\"text/javascript\" src=\"../Javascript/Registration_Validation.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
@@ -90,6 +84,40 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("</nav>");
       out.write("\r\n");
       out.write("    <br>\r\n");
+      out.write("    ");
+
+        try
+        {
+            String userType=session.getAttribute("UserType").toString();
+            if(userType.equals("USER"))
+            {
+                //user
+                response.sendRedirect("../User/index.jsp");
+            }
+            else
+            {
+                if(userType.equals("SELLER"))
+                {
+                    //Seller
+                    response.sendRedirect("../Seller/index.jsp");
+                }  
+                else
+                {
+                    if(userType.equals("ADMIN"))
+                    {
+                        //Admin
+                        response.sendRedirect("../Admin/index.jsp");
+                    }
+                    else
+                    {
+                        //none of the above
+                    }
+                }
+            }
+        }
+        catch(Exception ex){}
+    
+      out.write("\r\n");
       out.write("    <div class=\"container register\">\r\n");
       out.write("        <div class=\"row\">\r\n");
       out.write("            <div class=\"col-md-3 register-left\">\r\n");
@@ -153,7 +181,7 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
  
                                             try {
                                                 String err=request.getParameter("Err");
-                                                if(err.contains("1"))
+                                                if(err.contains("1")||err.contains("2"))
                                                 {
                                         
       out.write("\r\n");
@@ -161,11 +189,23 @@ public final class Registration_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                        ");
    
                                                 }
-                                            } catch (Exception e) {}
+                                          
                                         
       out.write("\r\n");
-      out.write("                                        \r\n");
-      out.write("                                      \r\n");
+      out.write("                                         ");
+ 
+                                            
+                                                if(err.contains("3")||err.contains("4"))
+                                                {
+                                        
+      out.write("\r\n");
+      out.write("                                                <span style=\"color:red;\" id=\"error\">account already exists</span>\r\n");
+      out.write("                                        ");
+   
+                                                }
+                                             } catch (Exception e) {}
+                                        
+      out.write(" \r\n");
       out.write("                                    </div>\r\n");
       out.write("                                </div>\r\n");
       out.write("                                <div class=\"col-md-6\">\r\n");
