@@ -190,4 +190,59 @@ public class Database {
             return null;
         }
     }
+    public String getSellerCount()
+    {
+        try{
+            if(isConnected())
+            {
+                String sql="SELECT count(*) as total FROM seller_details";
+                smt=conn.prepareStatement(sql);
+                rs=smt.executeQuery();
+                if(rs.next())
+                {
+                    return rs.getString("total");
+                }
+                else 
+                {
+                    return "0";
+                }
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        catch(Exception ex )
+        {
+            return "0";
+        }
+    }
+    public String getBuyerCount()
+    {
+        try{
+            if(isConnected())
+            {
+                String sql="SELECT count(*) as total FROM user_details";
+                smt=conn.prepareStatement(sql);
+                rs=smt.executeQuery();
+                if(rs.next())
+                {
+                    return rs.getString("total");
+                }
+                else 
+                {
+                    return "0";
+                }
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        catch(Exception ex )
+        {
+            return "0";
+        }
+    }
 }
+

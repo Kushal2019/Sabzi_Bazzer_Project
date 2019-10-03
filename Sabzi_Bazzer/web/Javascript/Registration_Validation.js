@@ -569,6 +569,7 @@ function state() {
                             <option value='Hooghly'>Hooghly</option>\n\
                             <option value='Malda'>Malda</option>\n\
                             <option value='Paschim Medinipur'>Paschim Medinipur</option>\n\
+                            <option value='Bankura'>Bankura</option>\n\
                             <option value='Purba Medinipur'>Purba Medinipur</option>";
     }
     if (s_state.value == "Bihar") {
