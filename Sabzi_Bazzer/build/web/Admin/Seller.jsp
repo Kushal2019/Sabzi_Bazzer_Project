@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <html>
 
 <head>
@@ -7,6 +9,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script src="../Javascript/Admin_Charts.js"></script>
   <title>Admin Panel</title>
+  <script>
+      function activate(id)
+      {
+          let loc="SellerAction.jsp?Activeid="+id;
+          window.location=loc;
+      }
+      function Deactivate(id)
+      {
+          let loc="SellerAction.jsp?Deactiveid="+id;
+          window.location=loc;
+      }
+  </script>
 </head>
 
 <body>
@@ -20,28 +34,42 @@
         <div class="container">
           <table class="table table-dark table-striped">
             <thead>
-              <tr>
-                <th width="50px">Firstname</th>
-                <th width="50px">Lastname</th>
-                <th width="50px">Email</th>
+             <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Gender</th>
+                <th>Status</th>
+                <th>Permission</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
+                <%
+                   try {
+                         ResultSet rs = new Database().Sellerdetails();  
+                         while(rs.next())
+                         {
+                %>
+                <tr>
+                 <td><%=rs.getString("first_name")%></td>
+                <td><%=rs.getString("last_name")%></td>
+                <td><%=rs.getString("email")%></td>       
+                <td><%=rs.getString("ph_number")%></td>
+                <td><%=rs.getString("gender")%></td>
+                <td><%=(rs.getString("isactive").toString().equals("1"))?"Activated":"Disabled"%></td>
+                <td>
+                    <button type="button"  onclick="activate('<%=rs.getString("email")%>')" class="btn btn-labeled btn-success">
+                    Enable <span class="btn-label"><i class="fa fa-check"></i></span></button>
+                    <button type="button" onclick="Deactivate('<%=rs.getString("email")%>')" class="btn btn-labeled btn-danger">
+                    Disable <span class="btn-label"><i class="fa fa-close"></i></span></button>
+                </td>
               </tr>
-              <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-              </tr>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-              </tr>
+              <%            
+                  }
+                }
+                catch(Exception e){}
+               %>
             </tbody>
           </table>
         </div>

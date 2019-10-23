@@ -250,7 +250,104 @@ public class Database {
         {
             if(isConnected())
             {
-                    String sql="SELECT * FROM user_details ORDER BY user_id ASC";
+                    String sql="SELECT `first_name`,`last_name`,user_details.email,`ph_number`,`gender`,login_details.isactive FROM `user_details`,login_details WHERE user_details.email=login_details.email and login_details.user_type='USER' ORDER BY user_id ASC";
+                    smt=conn.prepareStatement(sql);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+    public void activateBuyerByEmail(String Email)
+    {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="UPDATE `login_details` SET `isactive`='1' WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, Email);
+                    smt.execute();
+            }
+            else
+            {
+            }
+        }
+        catch(Exception e)
+        {
+        }
+    }
+    public void DeActivateBuyerByEmail(String Email)
+    {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="UPDATE `login_details` SET `isactive`='0' WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, Email);
+                    smt.execute();
+            }
+            else
+            {
+            }
+        }
+        catch(Exception e)
+        {
+        }
+    }
+      public void activateSellerByEmail(String Email)
+    {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="UPDATE `login_details` SET `isactive`='1' WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, Email);
+                    smt.execute();
+            }
+            else
+            {
+            }
+        }
+        catch(Exception e)
+        {
+        }
+    }
+    public void DeActivatesellerByEmail(String Email)
+    {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="UPDATE `login_details` SET `isactive`='0' WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, Email);
+                    smt.execute();
+            }
+            else
+            {
+            }
+        }
+        catch(Exception e)
+        {
+        }
+    }
+    public ResultSet Sellerdetails()
+    {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="SELECT `first_name`,`last_name`,seller_details.email,`company_name`,`licence_number`,`ph_number`,`gender`,`state`,`town`,`zip_code`,`street`,`house_number`,`landmark`,login_details.isactive FROM seller_details, login_details where seller_details.email=login_details.email and login_details.user_type='SELLER'";
                     smt=conn.prepareStatement(sql);
                     rs=smt.executeQuery();
                     return rs;
