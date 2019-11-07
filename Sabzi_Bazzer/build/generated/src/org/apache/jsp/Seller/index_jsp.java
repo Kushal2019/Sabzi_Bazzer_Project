@@ -48,7 +48,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("<html>\r\n");
+<<<<<<< HEAD
       out.write("\r\n");
+=======
+>>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("<head>\r\n");
       out.write("    <title> Sabzi Bazzer </title>\r\n");
       out.write("\r\n");
@@ -58,7 +61,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("    <!-- Enternal file liks -->\r\n");
       out.write("    <link href=\"../Css/style.css\" rel=\"stylesheet\">\r\n");
+<<<<<<< HEAD
       out.write("    <script src=\"style.js\"></script>`\r\n");
+=======
+>>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("</head>\r\n");
       out.write("\r\n");
       out.write("<body>\r\n");
@@ -72,20 +78,63 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n");
       out.write("    <span class=\"navbar-toggler-icon\"></span>\r\n");
       out.write("  </button>\r\n");
+<<<<<<< HEAD
+=======
+
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        String uname=session.getAttribute("UserID").toString();
+        if(utype.equals("USER") && !uname.equals(""))
+        {
+            
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+                response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+            {
+                response.sendRedirect("../Seller/index.jsp");
+            } 
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+
+>>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("\r\n");
       out.write("  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n");
       out.write("    <ul class=\"navbar-nav ml-auto\">\r\n");
       out.write("      <li class=\"nav-item active\">\r\n");
+<<<<<<< HEAD
       out.write("        <a class=\"nav-link\" href=\"index.jsp\">Home</a>\r\n");
+=======
+      out.write("        <a class=\"nav-link\" href=\"index.jsp\">Home <span class=\"sr-only\">(current)</span></a>\r\n");
+>>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("      </li>\r\n");
       out.write("      <li class=\"nav-item\">\r\n");
       out.write("        <a class=\"nav-link\" href=\"about.jsp\">About</a>\r\n");
       out.write("      </li>\r\n");
       out.write("      <li class=\"nav-item\">\r\n");
+<<<<<<< HEAD
       out.write("        <a class=\"nav-link\" href=\"#\">Cart</a>\r\n");
       out.write("      </li>\r\n");
       out.write("      <li class=\"nav-item\">\r\n");
       out.write("        <a class=\"nav-link\" href=\"Mainlogin.jsp\">Login</a>\r\n");
+=======
+      out.write("        <a class=\"nav-link\" href=\"\">Cart</a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("          <a class=\"nav-link\" href=\"../logout.jsp\">Logout</a>\r\n");
+>>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("      </li>\r\n");
       out.write("    </ul>\r\n");
       out.write("    <form class=\"form-inline my-2 my-lg-0\">\r\n");
@@ -96,6 +145,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</nav>");
       out.write("\r\n");
       out.write("    <!-- Navbar end -->\r\n");
+<<<<<<< HEAD
+=======
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+>>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("    <!-- Start image slider -->\r\n");
       out.write("    <div id=\"carouselExampleFade\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">\r\n");
       out.write("        <div class=\"carousel-inner\">\r\n");
@@ -249,6 +306,24 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+<<<<<<< HEAD
+=======
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+>>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("    <!-- Footer -->\r\n");
       out.write("    ");
       out.write("<footer class=\"py-3 bg-dark\">\r\n");
