@@ -14,6 +14,8 @@
             function errorMag()
             {
                 alert("Invalid Userid or Password");
+                document.getElementById('Login_username').focus();
+                
             }
         </script>
 </head>
