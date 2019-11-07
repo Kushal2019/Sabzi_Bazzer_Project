@@ -9,9 +9,9 @@
     {
         String utype=session.getAttribute("UserType").toString();
         String uname=session.getAttribute("UserID").toString();
-        if(utype.equals("USER") && !uname.equals(""))
+        if(utype.equals("USER") )
         {
-            
+            response.sendRedirect("../User/index.jsp");
         }
         else
         {
@@ -22,9 +22,11 @@
             else
             {
                if(utype.equals("SELLER"))
-            {
-                response.sendRedirect("../Seller/index.jsp");
-            } 
+                {
+                    //response.sendRedirect("../Seller/index.jsp");
+                }
+               else
+                   response.sendRedirect("../index.jsp");
             }
         }
     }
