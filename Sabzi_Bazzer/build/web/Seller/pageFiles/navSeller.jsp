@@ -4,20 +4,50 @@
     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
+<%
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        String uname=session.getAttribute("UserID").toString();
+        if(utype.equals("USER") )
+        {
+            response.sendRedirect("../User/index.jsp");
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+                response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+                {
+                    //response.sendRedirect("../Seller/index.jsp");
+                }
+               else
+                   response.sendRedirect("../index.jsp");
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+%>
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.jsp">Home</a>
+        <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="../about.jsp">About</a>
+          <a class="nav-link" href="../Seller/Product_List.jsp">Product List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Cart</a>
+        <a class="nav-link" href="#">About</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="../index.jsp">Logout</a>
+          <a class="nav-link" href="../logout.jsp">Logout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

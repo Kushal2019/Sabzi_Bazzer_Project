@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <html>
 <head>
     <title> Sabzi Bazzer </title>
@@ -14,15 +12,7 @@
 
 <body>
 
-    <!-- Navbar start -->
-
-    <%@include file="navSeller.jsp" %>
-    <!-- Navbar end -->
-
-
-
-
-
+    
     <!-- Start image slider -->
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
@@ -47,8 +37,10 @@
     </div>
     <!-- End image slider -->
 
-
-
+    <!-- Navbar start -->
+    <%@include file="pageFiles/navSeller.jsp" %>
+    <!-- Navbar end -->
+    
     <!-- Product items start -->
     <div class="container"> <br>
         <div class="row">
