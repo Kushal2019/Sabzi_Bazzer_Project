@@ -1,10 +1,15 @@
 <html>
+
 <head>
     <title> Sabzi Bazzer </title>
 
     <!-- Bootstrap css links -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/Admin_all.css">
+    <link rel="stylesheet" href="../Css/Admin_Style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="../Javascript/Admin_Charts.js"></script>
 
     <!-- Enternal file liks -->
     <link href="../Css/style.css" rel="stylesheet">
@@ -12,7 +17,7 @@
 
 <body>
 
-    
+
     <!-- Start image slider -->
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
@@ -40,7 +45,7 @@
     <!-- Navbar start -->
     <%@include file="pageFiles/navSeller.jsp" %>
     <!-- Navbar end -->
-    
+
     <!-- Product items start -->
     <div class="container"> <br>
         <div class="row">
@@ -148,4 +153,3 @@
 </body>
 
 </html>
->>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f

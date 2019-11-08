@@ -25,13 +25,13 @@
             <a href="../Home/index.jsp" class="spur-logo"><i class="fas fa-bolt"></i> <span>Sabzi Bazzer</span></a>
         </header>
         <nav class="dash-nav-list">
-            <a href="index.jsp" class="dash-nav-item">
+            <a href="#dashboard" class="dash-nav-item">
                 <i class="fas fa-home"></i> Dashboard </a>
-            <a href="Product_List.jsp" class="dash-nav-item">
+            <a href="#product" class="dash-nav-item">
                 <i class="fas fa-shopping-bag"></i> Product </a>
-            <a href="Buyer.jsp" class="dash-nav-item">
+            <a href="#buyer" class="dash-nav-item">
                 <i class="fas fa-user-tie"></i> Buyer </a>
-            <a href="Seller.jsp" class="dash-nav-item">
+            <a href="#seller" class="dash-nav-item">
                 <i class="fas fa-user-edit"></i> Seller </a>
         </nav>
     </div>
