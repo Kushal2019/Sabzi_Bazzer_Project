@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../Css/Admin_Style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="../Javascript/Admin_Charts.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Enternal file liks -->
     <link href="../Css/style.css" rel="stylesheet">
@@ -134,9 +135,6 @@
     </div>
     </div>
     <hr>
-
-
-
 
 
 

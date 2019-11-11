@@ -28,11 +28,11 @@
             <a href="#dashboard" class="dash-nav-item">
                 <i class="fas fa-home"></i> Dashboard </a>
             <a href="#product" class="dash-nav-item">
-                <i class="fas fa-shopping-bag"></i> Product </a>
+                <i class="fas fa-shopping-bag"></i> Add item </a>
             <a href="#buyer" class="dash-nav-item">
-                <i class="fas fa-user-tie"></i> Buyer </a>
+                <i class="fas fa-user-tie"></i> Edit item </a>
             <a href="#seller" class="dash-nav-item">
-                <i class="fas fa-user-edit"></i> Seller </a>
+                <i class="fas fa-user-edit"></i> Delete item </a>
         </nav>
     </div>
 </body>

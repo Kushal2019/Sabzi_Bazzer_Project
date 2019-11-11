@@ -13,7 +13,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
-    _jspx_dependants.add("/Seller/../PageFiles/navMain.jsp");
+    _jspx_dependants.add("/Seller/pageFiles/navSeller.jsp");
     _jspx_dependants.add("/Seller/../PageFiles/footerMain.jsp");
   }
 
@@ -48,111 +48,26 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("<html>\r\n");
-<<<<<<< HEAD
       out.write("\r\n");
-=======
->>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("<head>\r\n");
       out.write("    <title> Sabzi Bazzer </title>\r\n");
       out.write("\r\n");
       out.write("    <!-- Bootstrap css links -->\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.4.1/css/all.css\">\r\n");
+      out.write("    <link href=\"https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700\" rel=\"stylesheet\">\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"../Css/Admin_all.css\">\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"../Css/Admin_Style.css\">\r\n");
+      out.write("    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js\"></script>\r\n");
+      out.write("    <script src=\"../Javascript/Admin_Charts.js\"></script>\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n");
-      out.write("    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n");
       out.write("\r\n");
       out.write("    <!-- Enternal file liks -->\r\n");
       out.write("    <link href=\"../Css/style.css\" rel=\"stylesheet\">\r\n");
-<<<<<<< HEAD
-      out.write("    <script src=\"style.js\"></script>`\r\n");
-=======
->>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("</head>\r\n");
       out.write("\r\n");
       out.write("<body>\r\n");
       out.write("\r\n");
-      out.write("    <!-- Navbar start -->\r\n");
       out.write("\r\n");
-      out.write("    ");
-      out.write("<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-Secondary\">\r\n");
-      out.write("  <a class=\"navbar-brand\" href=\"index.jsp\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </a>\r\n");
-      out.write("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\"\r\n");
-      out.write("    aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n");
-      out.write("    <span class=\"navbar-toggler-icon\"></span>\r\n");
-      out.write("  </button>\r\n");
-<<<<<<< HEAD
-=======
-
-    try
-    {
-        String utype=session.getAttribute("UserType").toString();
-        String uname=session.getAttribute("UserID").toString();
-        if(utype.equals("USER") && !uname.equals(""))
-        {
-            
-        }
-        else
-        {
-            if(utype.equals("ADMIN"))
-            {
-                response.sendRedirect("../Admin/index.jsp");
-            }
-            else
-            {
-               if(utype.equals("SELLER"))
-            {
-                response.sendRedirect("../Seller/index.jsp");
-            } 
-            }
-        }
-    }
-    catch(Exception ex)
-    {
-        response.sendRedirect("../index.jsp");
-    }
-
->>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
-      out.write("\r\n");
-      out.write("  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n");
-      out.write("    <ul class=\"navbar-nav ml-auto\">\r\n");
-      out.write("      <li class=\"nav-item active\">\r\n");
-<<<<<<< HEAD
-      out.write("        <a class=\"nav-link\" href=\"index.jsp\">Home</a>\r\n");
-=======
-      out.write("        <a class=\"nav-link\" href=\"index.jsp\">Home <span class=\"sr-only\">(current)</span></a>\r\n");
->>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
-      out.write("      </li>\r\n");
-      out.write("      <li class=\"nav-item\">\r\n");
-      out.write("        <a class=\"nav-link\" href=\"about.jsp\">About</a>\r\n");
-      out.write("      </li>\r\n");
-      out.write("      <li class=\"nav-item\">\r\n");
-<<<<<<< HEAD
-      out.write("        <a class=\"nav-link\" href=\"#\">Cart</a>\r\n");
-      out.write("      </li>\r\n");
-      out.write("      <li class=\"nav-item\">\r\n");
-      out.write("        <a class=\"nav-link\" href=\"Mainlogin.jsp\">Login</a>\r\n");
-=======
-      out.write("        <a class=\"nav-link\" href=\"\">Cart</a>\r\n");
-      out.write("      </li>\r\n");
-      out.write("      <li class=\"nav-item\">\r\n");
-      out.write("          <a class=\"nav-link\" href=\"../logout.jsp\">Logout</a>\r\n");
->>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
-      out.write("      </li>\r\n");
-      out.write("    </ul>\r\n");
-      out.write("    <form class=\"form-inline my-2 my-lg-0\">\r\n");
-      out.write("      <input class=\"form-control mr-sm-2\" type=\"text\" name=\"search\" placeholder=\"Search\">\r\n");
-      out.write("      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\r\n");
-      out.write("    </form>\r\n");
-      out.write("  </div>\r\n");
-      out.write("</nav>");
-      out.write("\r\n");
-      out.write("    <!-- Navbar end -->\r\n");
-<<<<<<< HEAD
-=======
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
->>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("    <!-- Start image slider -->\r\n");
       out.write("    <div id=\"carouselExampleFade\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">\r\n");
       out.write("        <div class=\"carousel-inner\">\r\n");
@@ -177,7 +92,70 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </div>\r\n");
       out.write("    <!-- End image slider -->\r\n");
       out.write("\r\n");
+      out.write("    <!-- Navbar start -->\r\n");
+      out.write("    ");
+      out.write("<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-Secondary\">\r\n");
+      out.write("  <a class=\"navbar-brand\" href=\"index.jsp\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </a>\r\n");
+      out.write("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\"\r\n");
+      out.write("    aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n");
+      out.write("    <span class=\"navbar-toggler-icon\"></span>\r\n");
+      out.write("  </button>\r\n");
+      out.write("  ");
+
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        String uname=session.getAttribute("UserID").toString();
+        if(utype.equals("USER") )
+        {
+            response.sendRedirect("../User/index.jsp");
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+                response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+                {
+                    //response.sendRedirect("../Seller/index.jsp");
+                }
+               else
+                   response.sendRedirect("../index.jsp");
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+
       out.write("\r\n");
+      out.write("  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n");
+      out.write("    <ul class=\"navbar-nav ml-auto\">\r\n");
+      out.write("      <li class=\"nav-item active\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"index.jsp\">Home <span class=\"sr-only\">(current)</span></a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"../Seller/item_list.jsp\">Product List</a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"#\">About</a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"../logout.jsp\">Logout</a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("    </ul>\r\n");
+      out.write("    <form class=\"form-inline my-2 my-lg-0\">\r\n");
+      out.write("      <input class=\"form-control mr-sm-2\" type=\"text\" name=\"search\" placeholder=\"Search\">\r\n");
+      out.write("      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\r\n");
+      out.write("    </form>\r\n");
+      out.write("  </div>\r\n");
+      out.write("</nav>");
+      out.write("\r\n");
+      out.write("    <!-- Navbar end -->\r\n");
       out.write("\r\n");
       out.write("    <!-- Product items start -->\r\n");
       out.write("    <div class=\"container\"> <br>\r\n");
@@ -272,58 +250,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-<<<<<<< HEAD
-=======
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
->>>>>>> 85fdc732a0f64cdf9dffff0463392b2f7d47036f
       out.write("    <!-- Footer -->\r\n");
       out.write("    ");
       out.write("<footer class=\"py-3 bg-dark\">\r\n");

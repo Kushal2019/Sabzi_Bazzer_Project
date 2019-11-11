@@ -5,14 +5,16 @@ JSP
 *F
 + 0 index.jsp
 Seller/index.jsp
-+ 1 navMain.jsp
-Seller/../PageFiles/navMain.jsp
++ 1 navSeller.jsp
+Seller/pageFiles/navSeller.jsp
 + 2 footerMain.jsp
 Seller/../PageFiles/footerMain.jsp
 *L
-1,19:50
-1#1,28:69
-19#0,157:97
-1#2,6:254
-175#0,10:260
+1,47:50
+1#1,7:97
+8,30:105
+37,22:135
+47#0,98:157
+1#2,6:255
+144#0,10:261
 *E
