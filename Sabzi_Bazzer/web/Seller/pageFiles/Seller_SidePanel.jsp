@@ -26,13 +26,13 @@
         </header>
         <nav class="dash-nav-list">
             <a href="#dashboard" class="dash-nav-item">
-                <i class="fas fa-home"></i> Dashboard </a>
-            <a href="#product" class="dash-nav-item">
+                <i class="fas fa-user-tie"></i> My Profile </a>
+                <a href="add_item.jsp" class="dash-nav-item">
                 <i class="fas fa-shopping-bag"></i> Add item </a>
             <a href="#buyer" class="dash-nav-item">
-                <i class="fas fa-user-tie"></i> Edit item </a>
-            <a href="#seller" class="dash-nav-item">
-                <i class="fas fa-user-edit"></i> Delete item </a>
+                <i class="fas fa fa-edit"></i> Edit item </a>
+            <a href="#buyer" class="dash-nav-item">
+                <i class="fas fa-shopping-cart "></i> My Order </a>
         </nav>
     </div>
 </body>
