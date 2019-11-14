@@ -6,13 +6,10 @@
     <!-- Bootstrap css links -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="../Css/Admin_all.css">
     <link rel="stylesheet" href="../Css/Admin_Style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="../Javascript/Admin_Charts.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <!-- Enternal file liks -->
     <link href="../Css/style.css" rel="stylesheet">
 </head>
 

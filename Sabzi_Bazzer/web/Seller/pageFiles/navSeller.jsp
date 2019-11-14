@@ -44,7 +44,7 @@
         <a class="nav-link" href="#">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../Seller/item_list.jsp">Edit _____</a>
+          <a class="nav-link" href="add_item.jsp">Edit _____</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../logout.jsp">Logout</a>
