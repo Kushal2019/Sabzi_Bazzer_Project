@@ -27,7 +27,7 @@
         <nav class="dash-nav-list">
             <a href="index.jsp" class="dash-nav-item">
                 <i class="fas fa-user-edit"></i> My Frofile </a>
-            <a href="Product_List.jsp" class="dash-nav-item">
+            <a href="all_item.jsp" class="dash-nav-item">
                 <i class="fas fa-shopping-bag"></i> All Item </a>
                 <a href="add_item.jsp" class="dash-nav-item">
                 <i class="fa fa-shopping-basket"></i> Add Item </a>

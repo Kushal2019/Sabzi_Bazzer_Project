@@ -406,11 +406,8 @@ pre {
   overflow-y: scroll; }
 
 .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; }
+  padding-left: 150px;
+  background-image: linear-gradient(orange, white, green); }
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
@@ -9238,4 +9235,28 @@ body {
 }
 .input-group{
     width: 600px;
+}
+#date_lable {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+#start {
+    width: 600px;
+    height: 35px;
+}
+btn btn-info{
+    position: relative;
+    left: 50px;
+}
+.purple-border textarea {
+    border: 1px solid #ba68c8;
+}
+.purple-border .form-control:focus {
+    border: 2px solid #ba68c8;
+    box-shadow: 0 0 0 0.2rem rgba(186, 104, 200, .25);
+}
+#Sub_button{
+    position: relative;
+    left: 220px;
+    margin: 15px;
 }

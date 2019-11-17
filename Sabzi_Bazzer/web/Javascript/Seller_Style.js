@@ -9,3 +9,4 @@ window.chartColors = {
     superwarning: '#fd7e14',
     danger: '#FC413F',
 };
+$('.datepicker').pickadate();

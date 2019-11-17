@@ -1,5 +1,38 @@
 <html>
+     <%
+        try
+        {
+            String userType=session.getAttribute("UserType").toString();
+            if(userType.equals("USER"))
+            {
+                //user
+                response.sendRedirect("../User/index.jsp");
+            }
+            else
+            {
+                if(userType.equals("SELLER"))
+                {
+                    //Seller
+                    response.sendRedirect("../Seller/index.jsp");
+                }  
+                else
+                {
+                    if(userType.equals("ADMIN"))
+                    {
+                        //Admin
+                        response.sendRedirect("../Admin/index.jsp");
+                    }
+                    else
+                    {
+                        //none of the above
+                    }
+                }
+            }
+        }
+        catch(Exception ex){}
+    %>
 <!-- jcgjhcgjdgwjg -->
+
 <head>
     <title> Sabzi Bazzer </title>
 

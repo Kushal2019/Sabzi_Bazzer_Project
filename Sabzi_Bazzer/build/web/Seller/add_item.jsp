@@ -19,7 +19,7 @@
       <%@include file="pageFiles/Seller_TopToolbar.jsp" %>
       <main class="dash-content">
         <div class="container">
-          <h1> Product Information </h1>
+          <h1> ---------Product Details--------- </h1>
           <form>
             <div class="form-group">
                 <label for="Name">Product Name : </label>
@@ -33,7 +33,7 @@
               
 
             <div class="input-group">
-                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Number of Quantity">
               <div class="input-group-append">
                      <select class="form-control">
                         <option class="hidden" selected disabled value="">Quantity-type</option>
@@ -47,17 +47,24 @@
                 <label for="Number">Price : </label>
                 <input type="number" class="form-control" id="Name" placeholder="Price">
             </div>
-               
-            </div>
-          <br><div class="form-group">
-                <button type="submit" class="btn btn-info">Submit Information</button>
-            </div> 
             
-          </form>
+            <div id="Exp_date">
+                <label for="start" id="date_lable">Expiry date:</label>
+                <input type="date" id="start" name="trip-start">
+            </div>
+            <div class="form-group purple-border">
+                <label for="exampleFormControlTextarea4">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" placeholder="Describe Your Product..."></textarea>
+            </div>  
+            
+              <div class="form-group">
+                <button type="submit" class="btn btn-info" id="Sub_button">Submit Details</button>
+            </div> 
+           </form>
+        </div>
       </main>
     </div>
    </div>
-  </div>
 
       
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
