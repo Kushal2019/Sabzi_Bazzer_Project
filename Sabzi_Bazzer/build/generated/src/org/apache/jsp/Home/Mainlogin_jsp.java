@@ -59,9 +59,32 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
       out.write("\t<link rel=\"stylesheet\" href=\"../Css/Mainlogin.css\">\r\n");
       out.write("\t<script src=\"../Javascript/Mainlogin_Validation.js\"></script>\r\n");
+      out.write("        <script>\r\n");
+      out.write("            function errorMag()\r\n");
+      out.write("            {\r\n");
+      out.write("                alert(\"Invalid Userid or Password\");\r\n");
+      out.write("                document.getElementById('Login_username').focus();\r\n");
+      out.write("                \r\n");
+      out.write("            }\r\n");
+      out.write("        </script>\r\n");
       out.write("</head>\r\n");
+
+    int err=0;
+    try
+    {
+        String error=request.getParameter("error");
+        if(error.equals("1"))
+        {
+            err=1;
+        }
+    }
+    catch(Exception e){}
+
       out.write("\r\n");
-      out.write("<body>\r\n");
+      out.write("\r\n");
+      out.write("<body onload=\"");
+      out.print((err==1)?"errorMag()":"");
+      out.write("\">\r\n");
       out.write("\t");
       out.write("<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-Secondary\">\r\n");
       out.write("  <a class=\"navbar-brand\" href=\"index.jsp\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </a>\r\n");
@@ -72,8 +95,8 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n");
       out.write("    <ul class=\"navbar-nav ml-auto\">\r\n");
-      out.write("      <li class=\"nav-item active\">\r\n");
-      out.write("        <a class=\"nav-link\" href=\"index.jsp\">Home <span class=\"sr-only\">(current)</span></a>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"index.jsp\">Home</a>\r\n");
       out.write("      </li>\r\n");
       out.write("      <li class=\"nav-item\">\r\n");
       out.write("        <a class=\"nav-link\" href=\"about.jsp\">About</a>\r\n");
@@ -88,6 +111,40 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  </div>\r\n");
       out.write("</nav>");
       out.write("\r\n");
+      out.write("           ");
+
+        try
+        {
+            String userType=session.getAttribute("UserType").toString();
+            if(userType.equals("USER"))
+            {
+                //user
+                response.sendRedirect("../User/index.jsp");
+            }
+            else
+            {
+                if(userType.equals("SELLER"))
+                {
+                    //Seller
+                    response.sendRedirect("../Seller/index.jsp");
+                }  
+                else
+                {
+                    if(userType.equals("ADMIN"))
+                    {
+                        //Admin
+                        response.sendRedirect("../Admin/index.jsp");
+                    }
+                    else
+                    {
+                        //none of the above
+                    }
+                }
+            }
+        }
+        catch(Exception ex){}
+    
+      out.write("\r\n");
       out.write("\t<br><br>\r\n");
       out.write("\t<div class=\"container h-100\">\r\n");
       out.write("\t\t<div class=\"d-flex justify-content-center h-100\">\r\n");
@@ -98,33 +155,32 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t<div class=\"d-flex justify-content-center form_container\">\r\n");
-      out.write("\t\t\t\t\t<form>\r\n");
+      out.write("                                    <form name=\"login\" action=\"../MainLogin\" method=\"POST\">\r\n");
       out.write("\t\t\t\t\t\t<div class=\"input-group mb-3\">\r\n");
       out.write("\t\t\t\t\t\t\t<div class=\"input-group-append\">\r\n");
       out.write("\t\t\t\t\t\t\t\t<span class=\"input-group-text\"><i class=\"fas fa-user\"></i></span>\r\n");
       out.write("\t\t\t\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t\t\t\t<input type=\"text\" name=\"Login_username\" id=\"Login_username\" class=\"form-control input_user\"\r\n");
-      out.write("\t\t\t\t\t\t\t\tvalue=\"\" placeholder=\"username\">\r\n");
-      out.write("\t\t\t\t\t\t\t<span id=\"Login_username_Error\" style=\"color:red;\"></span>\r\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"text\" name=\"Login_username\" id=\"Login_username\" class=\"form-control input_user\" value=\"\" placeholder=\"username\">\r\n");
+      out.write("                                                        <span id=\"Login_username_Error\" style=\"color:red;\"></span>\r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t<div class=\"input-group mb-2\">\r\n");
       out.write("\t\t\t\t\t\t\t<div class=\"input-group-append\">\r\n");
-      out.write("\t\t\t\t\t\t\t\t<span class=\"input-group-text\"><i class=\"fas fa-key\"></i></span>\r\n");
+      out.write("                                                            <span class=\"input-group-text\"><i class=\"fas fa-key\"></i></span>\r\n");
       out.write("\t\t\t\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t\t\t\t<input type=\"password\" name=\"Login_password\" id=\"Login_password\"\r\n");
-      out.write("\t\t\t\t\t\t\t\tclass=\"form-control input_pass\" value=\"\" placeholder=\"password\">\r\n");
-      out.write("\t\t\t\t\t\t\t<span id=\"Login_password_Error\" style=\"color:red;\"></span>\r\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"password\" name=\"Login_password\" id=\"Login_password\" class=\"form-control input_pass\" value=\"\" placeholder=\"password\">\r\n");
+      out.write("                                                        <span id=\"Login_password_Error\" style=\"color:red;\"></span> \r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t<div class=\"form-group\">\r\n");
       out.write("\t\t\t\t\t\t\t<div class=\"custom-control custom-checkbox\">\r\n");
       out.write("\t\t\t\t\t\t\t\t<input type=\"checkbox\" class=\"custom-control-input\" id=\"customControlInline\">\r\n");
-      out.write("\t\t\t\t\t\t\t\t<label class=\"custom-control-label\" for=\"customControlInline\">Remember me</label>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<label class=\"custom-control-label\" for=\"customControlInline\">Accept Terms & Condition</label>\r\n");
       out.write("\t\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t<div class=\"d-flex justify-content-center mt-8 login_container\">\r\n");
       out.write("\t\t\t\t\t\t\t<input type=\"submit\" name=\"log_sub\" class=\"btn login_btn\"\r\n");
       out.write("\t\t\t\t\t\t\t\tonclick=\"return Login_Validation()\" value=\"Login\">\r\n");
       out.write("\t\t\t\t\t\t</div>\r\n");
+      out.write("                                        \r\n");
       out.write("\t\t\t\t\t</form>\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t<div class=\"mt-4\">\r\n");

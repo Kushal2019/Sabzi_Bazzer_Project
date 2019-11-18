@@ -407,7 +407,7 @@ pre {
 
 .container {
   padding-left: 150px;
-  background-image: linear-gradient(orange, white, green); }
+  background-color: gray }
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
@@ -9240,7 +9240,7 @@ body {
     display: block;
     font: 1rem 'Fira Sans', sans-serif;
 }
-#start {
+#product_Expdate {
     width: 600px;
     height: 35px;
 }
