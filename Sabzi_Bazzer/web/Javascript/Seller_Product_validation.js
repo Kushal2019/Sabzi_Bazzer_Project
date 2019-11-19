@@ -18,7 +18,7 @@ function product_val()
     {
         document.getElementById("e1").innerHTML=""; 
         product_name.style.borderColor="green";
-        f=1;
+       
     }
     if(product_file.value==="")
     {
@@ -30,7 +30,7 @@ function product_val()
     {
         document.getElementById("e2").innerHTML=""; 
         product_file.style.borderColor="green";
-        f=1;
+        
     }
     if(product_quantity.value==="")
     {
@@ -52,7 +52,7 @@ function product_val()
         {
              document.getElementById("e3").innerHTML=""; 
              product_quantity_type.style.borderColor="green";
-             f=1;
+            
         }
     }
     
@@ -66,7 +66,7 @@ function product_val()
     {
        document.getElementById("e4").innerHTML=""; 
        product_price.style.borderColor="green";
-       f=1;
+      
     }
     if(product_Expdate.value==="")
     {
@@ -78,7 +78,7 @@ function product_val()
     {
        document.getElementById("e5").innerHTML=""; 
        product_Expdate.style.borderColor="green";
-       f=1;
+      
     }
     if(product_desc.value==="")
     {
@@ -90,7 +90,7 @@ function product_val()
     {
         document.getElementById("e6").innerHTML=""; 
        product_desc.style.borderColor="green";
-       f=1;
+       
     }
     if(f===1)
     {

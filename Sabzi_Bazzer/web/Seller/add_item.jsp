@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="../Css/Seller_Style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script src="../Javascript/Seller_Style.js"></script>
-  <script src="../Javascript/Seller_Product_validation.js"></script>
+  <!--<script src="../Javascript/Seller_Product_validation.js"></script>-->
   <title>Add Item</title>
 </head>
 
@@ -20,7 +20,7 @@
       <main class="dash-content">
         <div class="container">
           <h1> ---------Product Details--------- </h1>
-          <form>
+          <form method="POST" action="../Seller_AddProduct" enctype="">
             <div class="form-group">
                 <label for="Name">Product Name : </label>
                 <input type="name" class="form-control" id="product_name" name="product_name" placeholder="Product">
@@ -60,7 +60,7 @@
               <span style="color:red;" id="e5"></span>
             <div class="form-group purple-border">
                 <label for="exampleFormControlTextarea4">Description</label>
-                <textarea class="form-control" id="product_desc" name="product_des" rows="3" placeholder="Describe Your Product..."></textarea>
+                <textarea class="form-control" id="product_desc" name="product_desc" rows="3" placeholder="Describe Your Product..."></textarea>
                 <span style="color:red;" id="e6"></span>
             </div>  
             

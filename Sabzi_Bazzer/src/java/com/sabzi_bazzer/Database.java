@@ -362,5 +362,35 @@ public class Database {
             return null;
         }
     }
+
+   public  int insertProduct(Product_value val) {
+        try
+        {
+            if(isConnected())
+            {
+               String que="INSERT INTO `product_details`( `product_name`,  `product_quantity`, `product_type`, `product_price`, `product_exp_date`, `product_description`) VALUES (?,?,?,?,?,?)";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, val.getProduct_name());
+               smt.setString(2, val.getProduct_quantity());
+               smt.setString(3, val.getProduct_quantity_type());
+               smt.setString(4, val.getProduct_price());
+               smt.setString(5, val.getProduct_Expdate());
+               smt.setString(6, val.getProduct_desc());
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+        
+    }
+
+    
 }
 

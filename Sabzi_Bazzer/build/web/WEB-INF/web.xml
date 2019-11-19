@@ -16,6 +16,10 @@
         <servlet-name>MainLogin</servlet-name>
         <servlet-class>com.sabzi_bazzer.MainLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Seller_AddProduct</servlet-name>
+        <servlet-class>com.sabzi_bazzer.Seller_AddProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>MainLogin</servlet-name>
         <url-pattern>/MainLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Seller_AddProduct</servlet-name>
+        <url-pattern>/Seller_AddProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
