@@ -51,11 +51,11 @@ public class Seller_AddProduct extends HttpServlet {
             int x=db.insertProduct(val);
             if(x==1)
             {
-                response.sendRedirect("Seller/add-item.jsp?done=1");
+                response.sendRedirect("Seller/add_item.jsp?done=1");
             }
             else
             {
-                response.sendRedirect("Seller/add-item.jsp?err=1");
+                response.sendRedirect("Seller/add_item.jsp?err=1");
             }
         }
     }
