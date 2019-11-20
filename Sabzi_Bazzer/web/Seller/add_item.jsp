@@ -66,6 +66,7 @@
             
               <div class="form-group">
                   <input type="submit" class="btn btn-info" id="Sub_button" value="Submit Details" onclick="return product_val()">
+                  <input type="reset" class="btn btn-info" id="res_button" value="Reset">
             </div> 
            </form>
         </div>

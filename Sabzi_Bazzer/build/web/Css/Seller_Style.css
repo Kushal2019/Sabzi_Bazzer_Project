@@ -9257,7 +9257,11 @@ btn btn-info{
 }
 #Sub_button{
     position: relative;
-    left: 219px;
+    left: 140px;
     margin: 15px;
-    
+}
+#res_button{
+    position: relative;
+    left: 145px;
+    margin: 15px;
 }
