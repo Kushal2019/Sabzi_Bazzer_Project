@@ -35,15 +35,28 @@
               
 
             <div class="input-group">
-                <input type="number" class="form-control" id="product_quantity" name="product_quantity" aria-label="Text input with dropdown button" placeholder="Number of Quantity">
-              <div class="input-group-append">
+                <div class="input-group-append">
                      <select class="form-control" id="product_quantity_type" name="product_quantity_type">
                         <option class="hidden" selected disabled value="">Quantity-type</option>
-                        <option value="kg">Kilogram (k.g)</option>
-                        <option value="ps">Piece</option>
-                        <option value="gm">Gram (g.m)</option>
+                        <option value="200kg"> 200 g.m </option>
+                        <option value="250ps"> 250 g.m </option>
+                        <option value="500gm"> 500 g.m </option>
+                        <option value="1000gm"> 1 k.g </option>
+                        <option value="1500gm"> 1.5 k.g </option>
+                        <option value="2000gm"> 2 k.g </option>
+                        <option value="5000gm"> 5 k.g </option>
+                        <option value="10000gm"> 10 k.g </option>
+                        <option value="250ml"> 250 m.l </option>
+                        <option value="500ml"> 500 m.l </option>
+                        <option value="1000ml"> 1 L. </option>
+                        <option value="5000ml"> 5 L. </option>
+                        <option value="10000ml"> 10 L. </option>
+                        <option value="1piece"> 1 Piece </option>
+                        <option value="5piece"> 5 Piece </option>
+                        <option value="10piece"> 10 Piece </option>
                     </select>
-              </div>
+                </div>
+                <input type="number" class="form-control" id="product_quantity" name="product_quantity" aria-label="Text input with dropdown button" placeholder="Number of Quantity">
                 <span style="color:red;" id="e3"></span>
             </div>   
             <div class="form-group">
