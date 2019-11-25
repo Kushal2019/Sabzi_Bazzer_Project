@@ -7,14 +7,18 @@ JSP
 Seller/index.jsp
 + 1 navSeller.jsp
 Seller/pageFiles/navSeller.jsp
-+ 2 footerMain.jsp
++ 2 image_slider.jsp
+Seller/../Home/image_slider.jsp
++ 3 footerMain.jsp
 Seller/../PageFiles/footerMain.jsp
 *L
-1,47:50
-1#1,7:97
-8,30:105
-37,22:135
-47#0,98:157
-1#2,6:255
-144#0,10:261
+1,18:51
+1#1,7:69
+8,30:77
+37,22:107
+18#0,2:129
+5#2,29:131
+19#0,96:159
+1#3,6:255
+114#0,10:261
 *E

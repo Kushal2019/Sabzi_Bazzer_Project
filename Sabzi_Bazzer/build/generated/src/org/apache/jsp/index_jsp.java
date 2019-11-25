@@ -58,6 +58,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
+      out.write("\r\n");
+      out.write("<!-- This is Kushal Mukherjee -->\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

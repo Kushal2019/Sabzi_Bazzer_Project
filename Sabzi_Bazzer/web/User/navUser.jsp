@@ -35,14 +35,14 @@
 %>
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.jsp">About</a>
+      <li class="nav-item active">
+          <a class="nav-link" href="../User/User_about.jsp">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">Cart</a>
+        <a class="nav-link" href="#">Cart</a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="../logout.jsp">Logout</a>
