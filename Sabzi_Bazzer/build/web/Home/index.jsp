@@ -36,11 +36,11 @@
 
     <!-- Bootstrap css links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
 
     <!-- Enternal file liks -->
-    <link href="../Css/style.css" rel="stylesheet">
-    <script src="style.js"></script>`
+    <link href="../Css/style.css" rel="stylesheet">     
+    
 </head>
 
 <body>
@@ -134,23 +134,6 @@
             <!-- Product items end -->
         </div>
     </div>
-    </div>
-    <hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Footer -->
     <%@include file="../PageFiles/footerMain.jsp" %>
@@ -160,6 +143,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
 
+</body>
 </html>
