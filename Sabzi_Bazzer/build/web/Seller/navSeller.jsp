@@ -26,18 +26,21 @@
                     //response.sendRedirect("../Seller/index.jsp");
                 }
                else
-                   response.sendRedirect("../index.jsp");
+               {
+               response.sendRedirect("../index.jsp");
+               }
+    
             }
         }
     }
     catch(Exception ex)
     {
-        response.sendRedirect("../index.jsp");
+        
     }
 %>
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">

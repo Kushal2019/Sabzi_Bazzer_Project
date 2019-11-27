@@ -11,7 +11,7 @@
         String uname=session.getAttribute("UserID").toString();
         if(utype.equals("USER") && !uname.equals(""))
         {
-            
+           // response.sendRedirect("../User/index.jsp");
         }
         else
         {
@@ -38,7 +38,7 @@
       <li class="nav-item">
         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
           <a class="nav-link" href="../User/User_about.jsp">About</a>
       </li>
       <li class="nav-item">
