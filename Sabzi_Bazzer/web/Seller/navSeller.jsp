@@ -1,3 +1,5 @@
+<%@page import="com.sabzi_bazzer.Database"%>
+<%@page import="java.sql.ResultSet"%>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-Secondary">
   <a class="navbar-brand" href="index.jsp" style="font-family: Snap ITC; font-size: 28px;"> Sabzi Bazzer </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -32,12 +34,8 @@
     
             }
         }
-    }
-    catch(Exception ex)
-    {
-        
-    }
-%>
+        String rs = new Database().sellername(uname);
+ %>  
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
@@ -47,7 +45,7 @@
           <a class="nav-link" href="Seller_about.jsp">About</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="add_item.jsp">name</a>
+          <a class="nav-link" href="add_item.jsp"><%=rs%></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../logout.jsp">Logout</a>
@@ -59,3 +57,11 @@
     </form>
   </div>
 </nav>
+<%
+ }
+    catch(Exception ex)
+    {
+        
+    }
+   
+%>

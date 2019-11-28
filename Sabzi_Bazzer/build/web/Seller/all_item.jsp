@@ -17,7 +17,7 @@
             {
                if(utype.equals("SELLER"))
             {
-                response.sendRedirect("../Seller/index.jsp");
+               // response.sendRedirect("../Seller/index.jsp");
             } 
             }
         }

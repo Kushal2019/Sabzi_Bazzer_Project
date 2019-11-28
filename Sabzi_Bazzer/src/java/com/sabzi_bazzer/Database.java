@@ -390,7 +390,35 @@ public class Database {
         }
         
     }
-
+    public String sellername( String name)
+    {
+            try
+            {
+                if(isConnected())
+                {
+                    String sql="SELECT `first_name` FROM seller_details WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, name);
+                    rs=smt.executeQuery();
+                    if(rs.next())
+                     {
+                      return rs.getString("first_name");
+                      }
+                      else 
+                     {
+                           return "Null";
+                     }
+                }
+                else
+                {
+                    return "null";
+                }
+            }
+            catch(Exception a)
+            {
+                return "null";
+            }
+    }
     
 }
 

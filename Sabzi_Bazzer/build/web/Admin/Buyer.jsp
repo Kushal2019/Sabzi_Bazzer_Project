@@ -11,7 +11,7 @@
         {
             if(utype.equals("ADMIN"))
             {
-                response.sendRedirect("../Admin/index.jsp");
+                //response.sendRedirect("../Admin/index.jsp");
             }
             else
             {
