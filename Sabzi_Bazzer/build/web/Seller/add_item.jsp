@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../Css/Seller_Style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script src="../Javascript/Seller_Style.js"></script>
-  <!--<script src="../Javascript/Seller_Product_validation.js"></script>-->
+  <script src="../Javascript/Seller_Product_validation.js"></script>
   <title>Add Item</title>
 </head>
 

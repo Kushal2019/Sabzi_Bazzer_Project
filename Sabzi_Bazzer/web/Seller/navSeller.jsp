@@ -45,7 +45,7 @@
           <a class="nav-link" href="Seller_about.jsp">About</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="add_item.jsp"><%=rs%></a>
+          <a class="nav-link" href="add_item.jsp">Edit-<%=rs%></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../logout.jsp">Logout</a>
@@ -63,5 +63,4 @@
     {
         
     }
-   
 %>
