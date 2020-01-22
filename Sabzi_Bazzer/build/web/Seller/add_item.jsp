@@ -49,7 +49,7 @@
       <main class="dash-content">
         <div class="container">
           <h1> ---------Product Details--------- </h1>
-          <form method="POST" action="../Seller_AddProduct" enctype="">
+          <form method="POST" action="../Seller_AddProduct" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="Name">Product Name : </label>
                 <input type="name" class="form-control" id="product_name" name="product_name" placeholder="Product">
@@ -67,19 +67,19 @@
                 <div class="input-group-append">
                      <select class="form-control" id="product_quantity_type" name="product_quantity_type">
                         <option class="hidden" selected disabled value="">Quantity-type</option>
-                        <option value="200kg"> 200 g.m </option>
-                        <option value="250ps"> 250 g.m </option>
+                        <option value="200gm"> 200 g.m </option>
+                        <option value="250gm"> 250 g.m </option>
                         <option value="500gm"> 500 g.m </option>
-                        <option value="1000gm"> 1 k.g </option>
-                        <option value="1500gm"> 1.5 k.g </option>
-                        <option value="2000gm"> 2 k.g </option>
-                        <option value="5000gm"> 5 k.g </option>
-                        <option value="10000gm"> 10 k.g </option>
+                        <option value="1kg"> 1 k.g </option>
+                        <option value="1.5kg"> 1.5 k.g </option>
+                        <option value="2kg"> 2 k.g </option>
+                        <option value="5kg"> 5 k.g </option>
+                        <option value="10kg"> 10 k.g </option>
                         <option value="250ml"> 250 m.l </option>
                         <option value="500ml"> 500 m.l </option>
-                        <option value="1000ml"> 1 L. </option>
-                        <option value="5000ml"> 5 L. </option>
-                        <option value="10000ml"> 10 L. </option>
+                        <option value="1L"> 1 L. </option>
+                        <option value="5L"> 5 L. </option>
+                        <option value="10L"> 10 L. </option>
                         <option value="1piece"> 1 Piece </option>
                         <option value="5piece"> 5 Piece </option>
                         <option value="10piece"> 10 Piece </option>

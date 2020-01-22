@@ -20,6 +20,10 @@
         <servlet-name>Seller_AddProduct</servlet-name>
         <servlet-class>com.sabzi_bazzer.Seller_AddProduct</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Test_helper</servlet-name>
+        <servlet-class>com.sabzi_bazzer.Test_helper</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Seller_AddProduct</servlet-name>
         <url-pattern>/Seller_AddProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test_helper</servlet-name>
+        <url-pattern>/Test_helper</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

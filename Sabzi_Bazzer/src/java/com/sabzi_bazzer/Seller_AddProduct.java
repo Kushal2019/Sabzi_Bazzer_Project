@@ -7,15 +7,26 @@ package com.sabzi_bazzer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
 
 /**
  *
  * @author SoumenPC
  */
+@MultipartConfig(
+	fileSizeThreshold = 1024 * 1024 * 100, // 100 MB
+	maxFileSize = 1024 * 1024 * 500, // 500 MB
+	maxRequestSize = 1024 * 1024 * 500 // 500 MB
+)
+
 public class Seller_AddProduct extends HttpServlet {
 
     /**
@@ -27,31 +38,41 @@ public class Seller_AddProduct extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    private static final String UPLOAD_DIR = "image/Vegetables";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            String product_name, product_file, product_quantity, product_quantity_type, product_price, product_Expdate, product_desc;
+             
+            String product_name, product_file = null, product_quantity, product_quantity_type, product_price, product_Expdate, product_desc;
+            List<String> photos = Test_helper.uploadFile(UPLOAD_DIR, request);
+            for(String s:photos)
+                {
+                     product_file = s;
+                }
             product_name=request.getParameter("product_name");
-            //product_file=request.getParameter("product_file");
+            //out.println(product_name + " "+ product_file);
             product_quantity=request.getParameter("product_quantity");
             product_quantity_type=request.getParameter("product_quantity_type");
             product_price=request.getParameter("product_price");
             product_Expdate=request.getParameter("product_Expdate");
             product_desc=request.getParameter("product_desc");
+           //out.println(product_name + " "+ product_file+ " "+ product_quantity+ " "+ product_quantity_type+ " "+ product_price+ " "+ product_Expdate+ " "+ product_desc);
             Product_value val=new Product_value();
             val.setProduct_name(product_name);
+            val.setProduct_file(product_file);
             val.setProduct_quantity(product_quantity);
             val.setProduct_quantity_type(product_quantity_type);
             val.setProduct_price(product_price);
             val.setProduct_Expdate(product_Expdate);
             val.setProduct_desc(product_desc);
             Database db= new Database();
-            int x=db.insertProduct(val);
+            HttpSession session=request.getSession();
+            String s_name=session.getAttribute("UserID").toString();
+            int x=db.insertProduct(val,s_name);
             if(x==1)
             {
-                response.sendRedirect("Seller/add_item.jsp?done=1");
+               response.sendRedirect("Seller/add_item.jsp?done=1");
             }
             else
             {

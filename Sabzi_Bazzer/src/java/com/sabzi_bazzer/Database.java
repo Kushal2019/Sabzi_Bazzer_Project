@@ -363,19 +363,21 @@ public class Database {
         }
     }
 
-   public  int insertProduct(Product_value val) {
+   public  int insertProduct(Product_value val,String email) {
         try
         {
             if(isConnected())
             {
-               String que="INSERT INTO `product_details`( `product_name`,  `product_quantity`, `product_type`, `product_price`, `product_exp_date`, `product_description`) VALUES (?,?,?,?,?,?)";
+               String que="INSERT INTO `product_details`( `product _seller`, `product_name`, `product_image`, `product_quantity`, `product_type`, `product_price`, `product_exp_date`, `product_description`) VALUES (?,?,?,?,?,?,?,?)";
                smt=conn.prepareStatement(que);
-               smt.setString(1, val.getProduct_name());
-               smt.setString(2, val.getProduct_quantity());
-               smt.setString(3, val.getProduct_quantity_type());
-               smt.setString(4, val.getProduct_price());
-               smt.setString(5, val.getProduct_Expdate());
-               smt.setString(6, val.getProduct_desc());
+               smt.setString(1,email);
+               smt.setString(2, val.getProduct_name());
+               smt.setString(3, val.getProduct_file());
+               smt.setString(4, val.getProduct_quantity());
+               smt.setString(5, val.getProduct_quantity_type());
+               smt.setString(6, val.getProduct_price());
+               smt.setString(7, val.getProduct_Expdate());
+               smt.setString(8, val.getProduct_desc());
                smt.execute();
                return 1;
             }
