@@ -8664,14 +8664,14 @@ h1 {
   margin-left: 7px; }
 
 body {
-  background: #E9EDF4; }
+  background: green; }
 
 .dash {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh; }
+  min-height: 100vh;}
 
 .dash-app {
   display: -webkit-box;
