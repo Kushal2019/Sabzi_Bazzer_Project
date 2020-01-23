@@ -24,6 +24,10 @@
         <servlet-name>Test_helper</servlet-name>
         <servlet-class>com.sabzi_bazzer.Test_helper</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ss</servlet-name>
+        <servlet-class>com.sabzi_bazzer.ss</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>Test_helper</servlet-name>
         <url-pattern>/Test_helper</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ss</servlet-name>
+        <url-pattern>/ss</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

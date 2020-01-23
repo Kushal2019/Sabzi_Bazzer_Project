@@ -38,6 +38,7 @@
 
 <head>
     <title>Product List</title>
+   
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="../Css/Admin_Style.css">
@@ -52,7 +53,7 @@
     <%@include file="pageFiles/Seller_TopToolbar.jsp"%>
 
 
-
+    
     
     
     

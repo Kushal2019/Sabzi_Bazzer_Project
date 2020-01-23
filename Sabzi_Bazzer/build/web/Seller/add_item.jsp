@@ -111,6 +111,7 @@
                   <input type="reset" class="btn btn-info" id="res_button" value="Reset">
             </div> 
            </form>
+         
         </div>
       </main>
     </div>

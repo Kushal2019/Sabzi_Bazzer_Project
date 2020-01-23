@@ -53,7 +53,7 @@
                 <div class="product-grid6">
                     <div class="product-image6">
                         <a href="#">
-                            <img class="pic-1" src="../image/Vegetables/Aubergine.jpg">
+                            <img class="pic-1" src="">
                         </a>
                     </div>
                     <div class="product-content">
