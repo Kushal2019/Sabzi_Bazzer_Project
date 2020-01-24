@@ -94,7 +94,7 @@
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Accept Terms & Condition</label>
+								<label class="custom-control-label" for="customControlInline" style="color:#ffff00;">Accept Terms & Condition</label>
 							</div>
 						</div>
 						<div class="d-flex justify-content-center mt-8 login_container">
@@ -105,11 +105,11 @@
 					</form>
 				</div>
 				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="Registration.jsp" class="ml-2">Sign Up</a>
+					<div class="d-flex justify-content-center links" style="color:#ffff00;">
+						Don't have an account? <a href="Registration.jsp" class="ml-2" style="color:#ffff00;">Sign Up</a>
 					</div>
 					<div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
+						<a href="#" style="color:#ff6600;">Forgot your password?</a>
 					</div>
 				</div>
 			</div>

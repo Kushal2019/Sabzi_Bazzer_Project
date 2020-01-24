@@ -11,7 +11,7 @@
   display:block
 }
 .product-grid6 .product-image6 img{
-  width:100%;height:200px;transition:all .5s ease 0s
+  width:100%; height:220px; transition:all .5s ease 0s
 }
 .product-grid6:hover .product-image6 img{
   transform:scale(1.1)

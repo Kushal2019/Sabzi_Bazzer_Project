@@ -88,10 +88,8 @@
                 <td><%=rs.getString("gender")%></td>
                 <td><%=(rs.getString("isactive").toString().equals("1"))?"Activated":"Disabled"%></td>
                 <td>
-                    <button type="button"  onclick="activate('<%=rs.getString("email")%>')" class="btn btn-labeled btn-success">
-                    Enable <span class="btn-label"><i class="fa fa-check"></i></span></button>
-                    <button type="button" onclick="Deactivate('<%=rs.getString("email")%>')" class="btn btn-labeled btn-danger">
-                    Disable <span class="btn-label"><i class="fa fa-close"></i></span></button>
+                    <button type="button"  onclick="activate('<%=rs.getString("email")%>')" class="btn btn-labeled btn-success"> Enable </button>
+                    <button type="button" onclick="Deactivate('<%=rs.getString("email")%>')" class="btn btn-labeled btn-danger"> Disable </button>
                 </td>
               </tr>
               <%            

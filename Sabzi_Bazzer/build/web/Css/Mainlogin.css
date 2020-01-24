@@ -3,14 +3,14 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #60a3bc;
+			background: whitesmoke;
 		}
 		.user_card {
 			height: 428px;
 			width: 355px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #f39c12;
+			background:-webkit-linear-gradient(left, #3931af, #00c6ff);;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -28,15 +28,13 @@
 			width: 170px;
 			top: -75px;
 			border-radius: 50%;
-			background: #60a3bc;
+			background: whitesmoke;
 			padding: 10px;
 			text-align: center;
 		}
 		.brand_logo {
 			height: 150px;
 			width: 150px;
-			border-radius: 50%;
-			border: 2px solid white;
 		}
 		.form_container {
 			margin-top: 100px;
