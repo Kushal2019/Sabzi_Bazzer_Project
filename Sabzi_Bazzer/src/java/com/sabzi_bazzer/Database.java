@@ -421,6 +421,27 @@ public class Database {
                 return "null";
             }
     }
+    public ResultSet Productdetails()
+    {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="SELECT * FROM `product_details`";
+                    smt=conn.prepareStatement(sql);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
     
 }
 

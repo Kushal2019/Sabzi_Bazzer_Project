@@ -11,13 +11,13 @@
   display:block
 }
 .product-grid6 .product-image6 img{
-  width:100%;height:auto;transition:all .5s ease 0s
+  width:100%;height:200px;transition:all .5s ease 0s
 }
 .product-grid6:hover .product-image6 img{
   transform:scale(1.1)
 }
 .product-grid6 .product-content{
-  padding:12px 12px 15px;transition:all .5s ease 0s
+  padding:12px 12px 15px;transition:all .5s ease 0s;
 }
 .product-grid6:hover .product-content{
   opacity:0
@@ -35,6 +35,9 @@
   font-size:18px;font-weight:600;color:#2e86de
 }
 .product-grid6 .price span{
+  color:brown;font-size:15px;font-weight:400;text-decoration:none;margin-left:7px;display:inline-block
+}
+.mrp{
   color:red;font-size:15px;font-weight:400;text-decoration:line-through;margin-left:7px;display:inline-block
 }
 .product-grid6 .social{

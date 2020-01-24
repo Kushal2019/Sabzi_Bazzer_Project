@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <html>
 
 <head>
@@ -20,11 +22,18 @@
     <!-- Product items start -->
     <div class="container"> <br>
         <div class="row">
+           <%
+                try{
+                   ResultSet rs = new Database().Productdetails();  
+                   while(rs.next())
+                   {
+                       String Path="../image/Vegetables/" +rs.getString("product_image");
+            %>
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid6">
                     <div class="product-image6">
                         <a href="#">
-                            <img class="pic-1" src="../image/Vegetables/Aubergine.jpg">
+                            <img class="pic-1" src="<%=Path%>">
                         </a>
                     </div>
                     <div class="product-content">
@@ -40,66 +49,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid6">
-                    <div class="product-image6">
-                        <a href="#">
-                            <img class="pic-1" src="../image/Vegetables/Beetroot.jpg">
-                        </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Beetroot</a></h3>
-                        <div class="price">Rs8.00
-                            <span>MRP:Rs 12</span>
-                        </div>
-                    </div>
-                    <ul class="social">
-                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid6">
-                    <div class="product-image6">
-                        <a href="#">
-                            <img class="pic-1" src="../image/Vegetables/Black Pepper.jpg">
-                        </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Black Pepper</a></h3>
-                        <div class="price">Rs11.00
-                            <span>MRP: Rs 30 </span>
-                        </div>
-                    </div>
-                    <ul class="social">
-                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid6">
-                    <div class="product-image6">
-                        <a href="#">
-                            <img class="pic-1" src="../image/Vegetables/Cabbage.jpg" width="30px">
-                        </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Cabbage</a></h3>
-                        <div class="price">Rs11.00
-                            <span>MRP: Rs 30 </span>
-                        </div>
-                    </div>
-                    <ul class="social">
-                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+            <%
+                }
+                }
+                catch(Exception a){}
+            %>
             <!-- Product items end -->
         </div>
     </div>
