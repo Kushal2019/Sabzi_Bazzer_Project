@@ -1,3 +1,4 @@
+<%@page import="java.util.regex.Pattern"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.sabzi_bazzer.Database"%>
 <html>
@@ -53,12 +54,17 @@
     <!-- Product items start -->
     <div class="container"> <br>
         <div class="row">
-            <%
+           <%
                 try{
                    ResultSet rs = new Database().Productdetails();  
                    while(rs.next())
                    {
-                       String Path="../image/Vegetables/" +rs.getString("product_image");
+                       String st=rs.getString("product_image");
+                       Pattern pattern = Pattern.compile("-");
+                       String[] words;
+                       words = pattern.split(st);
+                      String  filepath=words[0]; 
+                       String Path="../image/Vegetables/" +filepath;
             %>
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid6">

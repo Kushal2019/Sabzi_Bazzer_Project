@@ -1,3 +1,4 @@
+<%@page import="java.util.regex.Pattern"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.sabzi_bazzer.Database"%>
 <html>
@@ -22,12 +23,17 @@
     <!-- Product items start -->
     <div class="container"> <br>
         <div class="row">
-           <%
+         <%
                 try{
                    ResultSet rs = new Database().Productdetails();  
                    while(rs.next())
                    {
-                       String Path="../image/Vegetables/" +rs.getString("product_image");
+                       String st=rs.getString("product_image");
+                       Pattern pattern = Pattern.compile("-");
+                       String[] words;
+                       words = pattern.split(st);
+                      String  filepath=words[0]; 
+                       String Path="../image/Vegetables/" +filepath;
             %>
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid6">
@@ -37,10 +43,12 @@
                         </a>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#">Aubergine</a></h3>
-                        <div class="price">Rs 18.90
-                            <span>MRP:Rs 20</span>
+                        <h3 class="title"><a href="#"><%=rs.getString("product_name")%></a></h3>
+                        
+                        <div class="price">Rs.<%=rs.getString("product_price")%> 
+                            <span>Per: <%=rs.getString("product_type")%></span>
                         </div>
+                        <span class="mrp">MRP:Rs 20</span>
                     </div>
                     <ul class="social">
                         <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
