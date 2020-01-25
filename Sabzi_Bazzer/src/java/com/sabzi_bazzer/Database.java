@@ -368,7 +368,7 @@ public class Database {
         {
             if(isConnected())
             {
-               String que="INSERT INTO `product_details`( `product _seller`, `product_name`, `product_image`, `product_quantity`, `product_type`, `product_price`, `product_exp_date`, `product_description`) VALUES (?,?,?,?,?,?,?,?)";
+               String que="INSERT INTO `product_details`( `product _seller`, `product_name`, `product_image`, `product_quantity`, `product_type`, `product_price`, `product_exp_date`, `product_description`,`isActive`) VALUES (?,?,?,?,?,?,?,?,?)";
                smt=conn.prepareStatement(que);
                smt.setString(1,email);
                smt.setString(2, val.getProduct_name());
@@ -378,6 +378,7 @@ public class Database {
                smt.setString(6, val.getProduct_price());
                smt.setString(7, val.getProduct_Expdate());
                smt.setString(8, val.getProduct_desc());
+               smt.setString(9, "1");
                smt.execute();
                return 1;
             }
@@ -427,8 +428,10 @@ public class Database {
         {
             if(isConnected())
             {
-                    String sql="SELECT * FROM `product_details`";
+                String c_date=new CurrentDate().C_date();
+                    String sql="SELECT * FROM `product_details` WHERE `isActive`='1' and `product_exp_date` >=?";
                     smt=conn.prepareStatement(sql);
+                   smt.setString(1, c_date);
                     rs=smt.executeQuery();
                     return rs;
             }

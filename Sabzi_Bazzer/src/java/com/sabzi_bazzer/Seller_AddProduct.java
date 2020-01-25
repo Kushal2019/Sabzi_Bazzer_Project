@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
+import java.util.regex.Pattern;
 
 
 
@@ -44,12 +46,23 @@ public class Seller_AddProduct extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
              
-            String product_name, product_file = null, product_quantity, product_quantity_type, product_price, product_Expdate, product_desc;
+            String product_name,product_file ="", product_quantity, product_quantity_type, product_price, product_Expdate, product_desc;
+            String[] pp;
+            int i=0;
+            pp= new String[100];
             List<String> photos = Test_helper.uploadFile(UPLOAD_DIR, request);
-            for(String s:photos)
-                {
-                     product_file = s;
-                }
+           for(String s:photos){
+                
+                pp[i]=s+"-";
+                
+                 product_file= product_file+ pp[i];
+                 i++;
+                    
+            }; 
+             Pattern pattern = Pattern.compile("-");
+            String[] words;
+           words = pattern.split(product_file);
+           out.println(words[0]);
             product_name=request.getParameter("product_name");
             //out.println(product_name + " "+ product_file);
             product_quantity=request.getParameter("product_quantity");
@@ -57,7 +70,7 @@ public class Seller_AddProduct extends HttpServlet {
             product_price=request.getParameter("product_price");
             product_Expdate=request.getParameter("product_Expdate");
             product_desc=request.getParameter("product_desc");
-           //out.println(product_name + " "+ product_file+ " "+ product_quantity+ " "+ product_quantity_type+ " "+ product_price+ " "+ product_Expdate+ " "+ product_desc);
+            //out.println(product_name + " "+ product_file+ " "+ product_quantity+ " "+ product_quantity_type+ " "+ product_price+ " "+ product_Expdate+ " "+ product_desc);
             Product_value val=new Product_value();
             val.setProduct_name(product_name);
             val.setProduct_file(product_file);
@@ -72,11 +85,11 @@ public class Seller_AddProduct extends HttpServlet {
             int x=db.insertProduct(val,s_name);
             if(x==1)
             {
-               response.sendRedirect("Seller/add_item.jsp?done=1");
+            response.sendRedirect("Seller/add_item.jsp?done=1");
             }
             else
             {
-                response.sendRedirect("Seller/add_item.jsp?err=1");
+            response.sendRedirect("Seller/add_item.jsp?err=1");
             }
         }
     }

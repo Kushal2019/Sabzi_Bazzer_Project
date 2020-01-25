@@ -58,7 +58,7 @@
                        
             <div class="form-group">
                 <label for="exampleFormControlFile1">Upload Picture : </label>
-                <input type="file" class="form-control-file" value="" id="product_file" name="product_file">
+                <input type="file" class="form-control-file" value="" id="product_file" name="product_file" multiple>
                 <span style="color:red;" id="e2"></span>
             </div>
               
@@ -107,7 +107,7 @@
             </div>  
             
               <div class="form-group">
-                  <input type="submit" class="btn btn-info" id="Sub_button" value="Submit Details" onclick="return product_val()">
+                  <input type="submit" class="btn btn-info" id="Sub_button" value="Submit Details" >
                   <input type="reset" class="btn btn-info" id="res_button" value="Reset">
             </div> 
            </form>
