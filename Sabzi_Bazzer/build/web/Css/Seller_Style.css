@@ -406,7 +406,7 @@ pre {
   overflow-y: scroll; }
 
 .container {
-  padding-left: 150px;
+  padding: 120px;
   background-image:-webkit-linear-gradient(left, #3931af, #00c6ff);}
   @media (min-width: 576px) {
     .container {
@@ -3980,10 +3980,9 @@ input[type="button"].btn-block {
           flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: lightgrey;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0; }
+  border-radius: 10px; }
   .card > hr {
     margin-right: 0;
     margin-left: 0; }
@@ -3999,7 +3998,8 @@ input[type="button"].btn-block {
   -webkit-flex: 1 1 auto;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  padding: 1.25rem; }
+  padding: 1.25rem;
+  border-radius: 50%}
 
 .card-title {
   margin-bottom: 0.75rem; }
@@ -4050,7 +4050,7 @@ input[type="button"].btn-block {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1.25rem; }
+  padding: 1.25rem;}
 
 .card-img {
   width: 100%;

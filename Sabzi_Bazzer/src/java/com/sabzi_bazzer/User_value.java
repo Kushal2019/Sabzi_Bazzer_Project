@@ -7,7 +7,7 @@ package com.sabzi_bazzer;
 
 /**
  *
- * @author Soumen-Pc
+ * @author Kushal
  */
 public class User_value {
     String fname,lname,pass,email,phone,ques,ans,gender,type;

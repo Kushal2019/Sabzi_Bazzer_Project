@@ -34,7 +34,7 @@ public class Test_helper {
 				if (part.getName().equalsIgnoreCase("product_file")) {
 					String fileName = getFileName(part);
                                         String ext=fileName.substring(fileName.lastIndexOf('.'), fileName.length());
-                                         Date date= new Date();
+                                        Date date= new Date();
                                         long time = date.getTime();
                                         fileName=String.valueOf(time)+ext;
 					fileNames.add(fileName);

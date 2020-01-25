@@ -52,13 +52,13 @@
           <form method="POST" action="../Seller_AddProduct" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="Name">Product Name : </label>
-                <input type="name" class="form-control" id="product_name" name="product_name" placeholder="Product">
+                <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Product">
                 <span style="color:red;" id="e1"></span>
             </div>
                        
             <div class="form-group">
                 <label for="exampleFormControlFile1">Upload Picture : </label>
-                <input type="file" class="form-control-file" value="" id="product_file" name="product_file">
+                <input type="file" class="form-control-file" id="product_file" name="product_file">
                 <span style="color:red;" id="e2"></span>
             </div>
               
