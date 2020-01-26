@@ -26,12 +26,13 @@ $(document).ready(function () {
                 }
                 else {
                     // change
+                    $('#profilePicture').click();
                 }
             });
             $('#profilePicture').on('change', function () {
                 readURL(this);
                 $('#btnChangePicture').addClass('changing');
-                $('#btnChangePicture').attr('value', 'Confirm');
+                $('#btnChangePicture').attr('value', 'Change');
                 $('#btnDiscard').removeClass('d-none');
                 // $('#imgProfile').attr('src', '');
             });
