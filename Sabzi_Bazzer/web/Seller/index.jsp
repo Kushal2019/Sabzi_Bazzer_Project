@@ -1,4 +1,3 @@
-
 <%@page import="java.util.regex.Pattern"%>
 <%
     try
@@ -45,13 +44,13 @@
 </head>
 
 <body>
-   
+
     <%@include file="navSeller.jsp" %>
     <%@include file="../Home/image_slider.jsp" %>
     <!-- Product items start -->
     <div class="container"> <br>
         <div class="row">
-           <%
+            <%
                 try{
                    ResultSet rs = new Database().Productdetails();  
                    while(rs.next())
@@ -72,8 +71,8 @@
                     </div>
                     <div class="product-content">
                         <h3 class="title"><a href="#"><%=rs.getString("product_name")%></a></h3>
-                        
-                        <div class="price">Rs.<%=rs.getString("product_price")%> 
+
+                        <div class="price">Rs.<%=rs.getString("product_price")%>
                             <span>Per: <%=rs.getString("product_type")%></span>
                         </div>
                         <span class="mrp">MRP:Rs 20</span>
@@ -95,9 +94,6 @@
     </div>
     </div>
     <hr>
-
-
-
 
 
     <!-- Footer -->

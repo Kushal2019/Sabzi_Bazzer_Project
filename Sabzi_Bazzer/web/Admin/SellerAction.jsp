@@ -37,9 +37,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-   
-    <body>
-        <%
+
+<body>
+    <%
             try
             {
                 String getVal=request.getParameter("Activeid");
@@ -57,5 +57,6 @@
             catch(Exception e){
             }
         %>
-    </body>
+</body>
+
 </html>

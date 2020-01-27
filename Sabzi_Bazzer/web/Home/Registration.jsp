@@ -1,10 +1,10 @@
 <html>
 
 <head>
-	<title>Registation Page</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link  rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
-         <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
+    <title>Registation Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
+    <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
 </head>
 
 <body onload="ran(1)">
@@ -107,21 +107,21 @@
                                                 if(err.contains("1")||err.contains("2"))
                                                 {
                                         %>
-                                                <span style="color:red;" id="error">account already exists</span>
+                                        <span style="color:red;" id="error">account already exists</span>
                                         <%   
                                                 }
                                           
                                         %>
-                                         <% 
+                                        <% 
                                             
                                                 if(err.contains("3")||err.contains("4"))
                                                 {
                                         %>
-                                                <span style="color:red;" id="error">account already exists</span>
+                                        <span style="color:red;" id="error">account already exists</span>
                                         <%   
                                                 }
                                              } catch (Exception e) {}
-                                        %> 
+                                        %>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

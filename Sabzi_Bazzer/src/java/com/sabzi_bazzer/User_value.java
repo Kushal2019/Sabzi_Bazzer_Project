@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sabzi_bazzer;
 
-/**
- *
- * @author Kushal
- */
 public class User_value {
     String fname,lname,pass,email,phone,ques,ans,gender,type;
 

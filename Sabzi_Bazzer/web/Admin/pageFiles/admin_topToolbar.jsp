@@ -10,7 +10,7 @@
     </a>
     <div class="tools">
         <a href="../logout.jsp" class="tools-item">
-            <i class="fas fa-sign-out-alt" style="font-size:30px; color: #FF5A00;"  title="Logout"></i>
+            <i class="fas fa-sign-out-alt" style="font-size:30px; color: #FF5A00;" title="Logout"></i>
         </a>
     </div>
 </header>

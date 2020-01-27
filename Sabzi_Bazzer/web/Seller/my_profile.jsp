@@ -88,46 +88,51 @@
                       </ul><br>
                       <div class="tab-content">
                         <div class="tab-pane fade" id="Personal_Information">
-                            <form>
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">First Name : </label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Kushal">
-                                        </div> 
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Last Name : </label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Mukherjee">
-                                        </div> 
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Company Name : </label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Online Brahmin">
-                                        </div> 
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Email : </label>
-                                        <div class="col-sm-6">
-                                            <input type="email" class="form-control form-control-sm" id="colFormLabelSm" value="www.kushalmukherjee@gmail.com">
-                                        </div> 
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Phone Number : </label>
-                                        <div class="col-sm-6">
-                                            <input type="number" class="form-control form-control-sm" id="colFormLabelSm" value="7407032908">
-                                        </div> 
-                                </div>
-                                
-                            </form>
+                          <form>
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">First Name : </label>
+                              <div class="col-sm-6">
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                  value="Kushal">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Last Name : </label>
+                              <div class="col-sm-6">
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                  value="Mukherjee">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Company Name : </label>
+                              <div class="col-sm-6">
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                  value="Online Brahmin">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Email : </label>
+                              <div class="col-sm-6">
+                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
+                                  value="www.kushalmukherjee@gmail.com">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label class="col-sm-3 col-form-label">Phone Number : </label>
+                              <div class="col-sm-6">
+                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm"
+                                  value="7407032908">
+                              </div>
+                            </div>
+
+                          </form>
                         </div>
                         <div class="tab-pane fade" id="Change_Password">
-                            <h1>dnfvnmvfnm</h1>
+                          <h1>dnfvnmvfnm</h1>
                         </div>
                         <div class="tab-pane fade" id="Manage_Addresses">
                           <h4 class="mt-2">Messages tab content</h4>

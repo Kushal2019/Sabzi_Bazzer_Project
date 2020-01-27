@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sabzi_bazzer;
 
 import java.io.IOException;
@@ -21,7 +16,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author SoumenPC
+ * @author Soumen-PC
  */
 @MultipartConfig(
 	fileSizeThreshold = 1024 * 1024 * 100, // 100 MB
