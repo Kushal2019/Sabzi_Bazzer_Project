@@ -118,7 +118,8 @@ public class Database {
         try {
             if(isConnected())
             {
-              String que="INSERT INTO `seller_details`(`seller_id`, `first_name`, `last_name`, `password`, `company_name`, `licence_number`, `email`, `ph_number`, `gender`, `state`, `town`, `zip_code`, `street`, `house_number`, `landmark`) VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";  
+               String profilepic="Sellerpic.png";
+              String que="INSERT INTO `seller_details`(`seller_id`, `first_name`, `last_name`, `password`, `company_name`, `licence_number`, `email`, `ph_number`, `gender`, `state`, `town`, `zip_code`, `street`, `house_number`, `landmark`,`profilepic`) VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";  
               smt=conn.prepareStatement(que);
               smt.setString(1,seller.getS_f_name());
               smt.setString(2,seller.getS_last_name());
@@ -134,6 +135,7 @@ public class Database {
               smt.setString(12,seller.getS_street());
               smt.setString(13,seller.getS_house());
               smt.setString(14,seller.getS_landmark());
+               smt.setString(15,profilepic);
               smt.execute();
               return 1;
             }
@@ -445,6 +447,61 @@ public class Database {
             return null;
         }
     }
+
+    int UpdateSeller_PD(Seller_PD_val sellerval, String s_name) {
+       try
+       {
+           if(isConnected())
+           {
+               String sql="UPDATE `seller_details` SET `first_name`=?,`last_name`=?,`profilepic`=?,`company_name`=?,`licence_number`=?,`email`=?,`ph_number`=? WHERE `email`=?";
+               smt=conn.prepareStatement(sql);
+               smt.setString(1,sellerval.getFirst_name());
+               smt.setString(2,sellerval.getLast_name());
+               smt.setString(3,sellerval.getProfilepic());
+               smt.setString(4,sellerval.getCompany_name());
+               smt.setString(5,sellerval.getLicence_number());
+               smt.setString(6,sellerval.getEmail());
+               smt.setString(7,sellerval.getPh_number());
+               smt.setString(8,s_name);
+               return 1;
+           }
+           else
+           {
+               return 0;
+           }
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
+    }
+
+    int Seller_C_Password(String password, String s_name) {
+        
+        try
+       {
+           if(isConnected())
+           {
+               String sql="UPDATE `seller_details` SET `password` = ? WHERE `seller_details`.`email` = ?";
+               smt=conn.prepareStatement(sql);
+               smt.setString(1,password);
+               smt.setString(2,s_name);
+               return 1;
+           }
+           else
+           {
+               return 0;
+           }
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
+    }
+
+    
+
+   
     
 }
 

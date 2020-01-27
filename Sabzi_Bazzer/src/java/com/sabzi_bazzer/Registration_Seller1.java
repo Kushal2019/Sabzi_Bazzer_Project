@@ -111,14 +111,22 @@ public class Registration_Seller1 extends HttpServlet {
           seller.setS_Company(s_Company);
           seller.setGender(gender);
           seller.setS_email(s_email);
-          seller.setS_house(s_email);
+          seller.setS_house(s_house);
           seller.setS_landmark(s_landmark);
           seller.setS_state(s_state);
           seller.setS_street(s_street);
           seller.setS_zip(s_zip);
           seller.setS_town(s_city);
           seller.setType("SELLER");
-          out.println(s_f_name+" "+s_last_name+" "+s_password+" "+s_phone+" "+s_licence+" "+s_Company+" "+gender+" "+s_email+" "+s_landmark+" "+s_state+" "+s_street+" "+s_zip+" "+s_city);
+//          if(gender=="male")
+//          {
+//              profilepic="";
+//          }
+//          if(gender=="female")
+//          {
+//              profilepic="";
+//          }
+         // out.println(s_f_name+" "+s_last_name+" "+s_password+" "+s_phone+" "+s_licence+" "+s_Company+" "+gender+" "+s_email+" "+s_landmark+" "+s_state+" "+s_street+" "+s_zip+" "+s_city);
           Database db= new Database();
           int x=db.insertseller(seller);
           if(x==1)

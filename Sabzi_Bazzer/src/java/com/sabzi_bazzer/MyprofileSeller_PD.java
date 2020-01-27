@@ -14,8 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Arrays;
-import java.util.regex.Pattern;
+
 
 
 
@@ -29,7 +28,11 @@ import java.util.regex.Pattern;
 	maxRequestSize = 1024 * 1024 * 500 // 500 MB
 )
 
-public class Seller_AddProduct extends HttpServlet {
+/**
+ *
+ * @author SoumenPC
+ */
+public class MyprofileSeller_PD extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,57 +43,45 @@ public class Seller_AddProduct extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private static final String UPLOAD_DIR = "image/Vegetables";
+     private static final String UPLOAD_DIR = "image/Seller_pic";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-             
-            String product_name,product_file ="", product_quantity, product_quantity_type, product_price, product_Expdate, product_desc;
-            String[] pp;
-            int i=0;
-            pp= new String[100];
-            List<String> photos = Test_helper.uploadFile(UPLOAD_DIR, request,"product_file");
-           for(String s:photos){
-                
-                pp[i]=s+"-";
-                
-                 product_file= product_file+ pp[i];
-                 i++;
-                    
-            }; 
-             Pattern pattern = Pattern.compile("-");
-            String[] words;
-           words = pattern.split(product_file);
-           out.println(words[0]);
-            product_name=request.getParameter("product_name");
-            //out.println(product_name + " "+ product_file);
-            product_quantity=request.getParameter("product_quantity");
-            product_quantity_type=request.getParameter("product_quantity_type");
-            product_price=request.getParameter("product_price");
-            product_Expdate=request.getParameter("product_Expdate");
-            product_desc=request.getParameter("product_desc");
-            //out.println(product_name + " "+ product_file+ " "+ product_quantity+ " "+ product_quantity_type+ " "+ product_price+ " "+ product_Expdate+ " "+ product_desc);
-            Product_value val=new Product_value();
-            val.setProduct_name(product_name);
-            val.setProduct_file(product_file);
-            val.setProduct_quantity(product_quantity);
-            val.setProduct_quantity_type(product_quantity_type);
-            val.setProduct_price(product_price);
-            val.setProduct_Expdate(product_Expdate);
-            val.setProduct_desc(product_desc);
-            Database db= new Database();
-            HttpSession session=request.getSession();
-            String s_name=session.getAttribute("UserID").toString();
-            int x=db.insertProduct(val,s_name);
-            if(x==1)
-            {
-            response.sendRedirect("Seller/add_item.jsp?done=1");
-            }
-            else
-            {
-            response.sendRedirect("Seller/add_item.jsp?err=1");
-            }
+           String first_name,last_name,profilepic,company_name,licence_number,email,ph_number;
+             List<String> photos = Test_helper.uploadFile(UPLOAD_DIR, request,"product_file");
+             for(String s:photos)
+             {
+                 profilepic=s;
+             }
+             first_name=request.getParameter("first_name");
+             last_name=request.getParameter("last_name");
+             profilepic=request.getParameter("profilepic");
+             company_name=request.getParameter("company_name");
+             licence_number=request.getParameter("licence_number");
+             email=request.getParameter("email");
+             ph_number=request.getParameter("ph_number");
+             Seller_PD_val sellerval= new Seller_PD_val();
+             sellerval.setFirst_name(first_name);
+             sellerval.setLast_name(last_name);
+             sellerval.setProfilepic(profilepic);
+             sellerval.setCompany_name(company_name);
+             sellerval.setLicence_number(licence_number);
+             sellerval.setEmail(email);
+             sellerval.setPh_number(ph_number);
+             HttpSession session=request.getSession();
+             String s_name=session.getAttribute("UserID").toString();
+             Database db=new Database();
+             int x=db.UpdateSeller_PD(sellerval,s_name);
+             if(x==1)
+             {
+                  session.setAttribute("UserID", email);
+                  response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
+             }
+             else
+             {
+                  response.sendRedirect("Seller/my_profile.jsp?Update='NotDone'");
+             }
         }
     }
 

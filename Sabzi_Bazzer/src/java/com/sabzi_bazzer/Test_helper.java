@@ -26,12 +26,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 public class Test_helper {
     
-    public static List<String> uploadFile(String UPLOAD_DIR, HttpServletRequest request) {
+    public static List<String> uploadFile(String UPLOAD_DIR, HttpServletRequest request,String name) {
 		List<String> fileNames = new ArrayList<String>();
 		try {
 			List<Part> parts = (List<Part>) request.getParts();
 			for (Part part : parts) {
-				if (part.getName().equalsIgnoreCase("product_file")) {
+				if (part.getName().equalsIgnoreCase(name)) {
 					String fileName = getFileName(part);
                                         String ext=fileName.substring(fileName.lastIndexOf('.'), fileName.length());
                                         Date date= new Date();

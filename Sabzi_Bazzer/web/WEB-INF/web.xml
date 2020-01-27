@@ -28,6 +28,18 @@
         <servlet-name>ss</servlet-name>
         <servlet-class>com.sabzi_bazzer.ss</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MyprofileSeller_PD</servlet-name>
+        <servlet-class>com.sabzi_bazzer.MyprofileSeller_PD</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Seller_Change_Password</servlet-name>
+        <servlet-class>com.sabzi_bazzer.Seller_Change_Password</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyprofileSeller_AM</servlet-name>
+        <servlet-class>com.sabzi_bazzer.MyprofileSeller_AM</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -55,6 +67,18 @@
     <servlet-mapping>
         <servlet-name>ss</servlet-name>
         <url-pattern>/ss</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyprofileSeller_PD</servlet-name>
+        <url-pattern>/MyprofileSeller_PD</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Seller_Change_Password</servlet-name>
+        <url-pattern>/Seller_Change_Password</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyprofileSeller_AM</servlet-name>
+        <url-pattern>/MyprofileSeller_AM</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
