@@ -10,14 +10,13 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="../Css/Mainlogin.css">
 	<script src="../Javascript/Mainlogin_Validation.js"></script>
-        <script>
-            function errorMag()
-            {
-                alert("Invalid Userid or Password");
-                document.getElementById('Login_username').focus();
-                
-            }
-        </script>
+	<script>
+		function errorMag() {
+			alert("Invalid Userid or Password");
+			document.getElementById('Login_username').focus();
+
+		}
+	</script>
 </head>
 <%
     int err=0;
@@ -34,7 +33,7 @@
 
 <body onload="<%=(err==1)?"errorMag()":""%>">
 	<%@include file="../PageFiles/navLog.jsp" %>
-           <%
+	<%
         try
         {
             String userType=session.getAttribute("UserType").toString();
@@ -76,37 +75,41 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-                                    <form name="login" action="../MainLogin" method="POST">
+					<form name="login" action="../MainLogin" method="POST">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="Login_username" id="Login_username" class="form-control input_user" value="" placeholder="username">
-                                                        <span id="Login_username_Error" style="color:red;"></span>
+							<input type="text" name="Login_username" id="Login_username" class="form-control input_user"
+								value="" placeholder="username">
+							<span id="Login_username_Error" style="color:red;"></span>
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
-                                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="Login_password" id="Login_password" class="form-control input_pass" value="" placeholder="password">
-                                                        <span id="Login_password_Error" style="color:red;"></span> 
+							<input type="password" name="Login_password" id="Login_password"
+								class="form-control input_pass" value="" placeholder="password">
+							<span id="Login_password_Error" style="color:red;"></span>
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
 								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline" style="color:#ffff00;">Accept Terms & Condition</label>
+								<label class="custom-control-label" for="customControlInline"
+									style="color:#ffff00;">Accept Terms & Condition</label>
 							</div>
 						</div>
 						<div class="d-flex justify-content-center mt-8 login_container">
 							<input type="submit" name="log_sub" class="btn login_btn"
 								onclick="return Login_Validation()" value="Login">
 						</div>
-                                        
+
 					</form>
 				</div>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links" style="color:#ffff00;">
-						Don't have an account? <a href="Registration.jsp" class="ml-2" style="color:#ffff00;">Sign Up</a>
+						Don't have an account? <a href="Registration.jsp" class="ml-2" style="color:#ffff00;">Sign
+							Up</a>
 					</div>
 					<div class="d-flex justify-content-center links">
 						<a href="#" style="color:#ff6600;">Forgot your password?</a>

@@ -1,6 +1,7 @@
 {
     "elements": {},
     "attributes": {
+        "minlength": {},
         "value": {}
     }
 }
