@@ -11,15 +11,15 @@ package com.sabzi_bazzer;
  */
 public class Seller_PD_val {
 
-    String first_name,last_name,profilepic,company_name,licence_number,email,ph_number;
+    String first_name,last_name,company_name,licence_number,email,ph_number;
 
     public Seller_PD_val() {
     }
 
-    public Seller_PD_val(String first_name, String last_name, String profilepic, String company_name, String licence_number, String email, String ph_number) {
+    public Seller_PD_val(String first_name, String last_name, String company_name, String licence_number, String email, String ph_number) {
         this.first_name = first_name;
         this.last_name = last_name;
-        this.profilepic = profilepic;
+        
         this.company_name = company_name;
         this.licence_number = licence_number;
         this.email = email;
@@ -42,13 +42,7 @@ public class Seller_PD_val {
         this.last_name = last_name;
     }
 
-    public String getProfilepic() {
-        return profilepic;
-    }
-
-    public void setProfilepic(String profilepic) {
-        this.profilepic = profilepic;
-    }
+    
 
     public String getCompany_name() {
         return company_name;

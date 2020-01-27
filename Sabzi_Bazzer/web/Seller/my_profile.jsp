@@ -47,7 +47,20 @@
   <link rel="stylesheet" href="../Css/Seller_Style.css">
   <link rel="stylesheet" href="../Css/my_profile.css">
   <script src="../Javascript/my_profile.js"></script>
-
+  <script>
+      function hide()
+        {
+                //alert("hi");
+            document.getElementById("btnChangePicture").style.display = "none";
+            document.getElementById("btnSubmitPicture").style.display = "none";
+        }
+         function Show()
+        {
+                //alert("hi");
+            document.getElementById("btnChangePicture").style.display = "block";
+             document.getElementById("btnSubmitPicture").style.display = "block";
+        }
+  </script>
 </head>
 
 <body>
@@ -66,23 +79,26 @@
                 <div class="card-title mb-8">
                   <div class="d-flex justify-content-start">
                     <div class="image-container">
+                        <form>
                       <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px"
                         class="img-thumbnail" />
                       <div class="middle">
                         <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change"/>
                         <input type="file" style="display: none;" id="profilePicture" name="file"/>
+                        <input class="btn btn-success" id="btnSubmitPicture" type="submit" value=" Submit">
                       </div>
+                        </form>
                     </div>
                     <div class="bs-example">
                       <ul class="nav nav-tabs" id="myTab">
                         <li class="nav-item">
-                          <a href="#Personal_Information" class="nav-link" data-toggle="tab">Personal Information</a>
+                          <a href="#Personal_Information" class="nav-link" data-toggle="tab" onclick="Show();">Personal Information</a>
                         </li>
                         <li class="nav-item">
-                          <a href="#Change_Password" class="nav-link" data-toggle="tab">Change Password</a>
+                          <a href="#Change_Password" class="nav-link" data-toggle="tab" onclick="hide();">Change Password</a>
                         </li>
                         <li class="nav-item">
-                          <a href="#Manage_Addresses" class="nav-link" data-toggle="tab">Manage Addresses</a>
+                          <a href="#Manage_Addresses" class="nav-link" data-toggle="tab" onclick="hide();">Manage Addresses</a>
                         </li>
                       </ul><br>
                       <div class="tab-content">

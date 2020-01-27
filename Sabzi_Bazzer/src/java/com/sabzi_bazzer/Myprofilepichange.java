@@ -1,6 +1,9 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package com.sabzi_bazzer;
@@ -15,18 +18,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
-
-
-/**
- *
- * @author SoumenPC
-
 /**
  *
  * @author SoumenPC
  */
-public class MyprofileSeller_PD extends HttpServlet {
+@MultipartConfig(
+	fileSizeThreshold = 1024 * 1024 * 100, // 100 MB
+	maxFileSize = 1024 * 1024 * 500, // 500 MB
+	maxRequestSize = 1024 * 1024 * 500 // 500 MB
+)
+
+public class Myprofilepichange extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,35 +38,25 @@ public class MyprofileSeller_PD extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     */
- 
+     */    private static final String UPLOAD_DIR = "image/Seller_pic";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           String first_name,last_name,company_name,licence_number,email,ph_number;
-             first_name=request.getParameter("first_name");
-             last_name=request.getParameter("last_name");
-            // profilepic=request.getParameter("profilepic");
-             company_name=request.getParameter("company_name");
-             licence_number=request.getParameter("licence_number");
-             email=request.getParameter("email");
-             ph_number=request.getParameter("ph_number");
-             Seller_PD_val sellerval= new Seller_PD_val();
-             sellerval.setFirst_name(first_name);
-             sellerval.setLast_name(last_name);
-            // sellerval.setProfilepic(profilepic);
-             sellerval.setCompany_name(company_name);
-             sellerval.setLicence_number(licence_number);
-             sellerval.setEmail(email);
-             sellerval.setPh_number(ph_number);
+            /* TODO output your page here. You may use following sample code. */
+            String profilepic="";
+             List<String> photos = Test_helper.uploadFile(UPLOAD_DIR, request,"product_file");
+             for(String s:photos)
+             {
+                 profilepic=s;
+             }
              HttpSession session=request.getSession();
              String s_name=session.getAttribute("UserID").toString();
              Database db=new Database();
-             int x=db.UpdateSeller_PD(sellerval,s_name);
+             int x=db.UpdateSellerprofilepic(profilepic,s_name);
              if(x==1)
              {
-                  session.setAttribute("UserID", email);
+                 
                   response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
              }
              else

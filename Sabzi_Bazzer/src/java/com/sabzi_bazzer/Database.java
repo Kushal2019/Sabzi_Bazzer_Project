@@ -448,16 +448,16 @@ public class Database {
        {
            if(isConnected())
            {
-               String sql="UPDATE `seller_details` SET `first_name`=?,`last_name`=?,`profilepic`=?,`company_name`=?,`licence_number`=?,`email`=?,`ph_number`=? WHERE `email`=?";
+               String sql="UPDATE `seller_details` SET `first_name`=?,`last_name`=?,`company_name`=?,`licence_number`=?,`email`=?,`ph_number`=? WHERE `email`=?";
                smt=conn.prepareStatement(sql);
                smt.setString(1,sellerval.getFirst_name());
                smt.setString(2,sellerval.getLast_name());
-               smt.setString(3,sellerval.getProfilepic());
-               smt.setString(4,sellerval.getCompany_name());
-               smt.setString(5,sellerval.getLicence_number());
-               smt.setString(6,sellerval.getEmail());
-               smt.setString(7,sellerval.getPh_number());
-               smt.setString(8,s_name);
+               //smt.setString(3,sellerval.getProfilepic());
+               smt.setString(3,sellerval.getCompany_name());
+               smt.setString(4,sellerval.getLicence_number());
+               smt.setString(5,sellerval.getEmail());
+               smt.setString(6,sellerval.getPh_number());
+               smt.setString(7,s_name);
                return 1;
            }
            else
@@ -480,6 +480,28 @@ public class Database {
                String sql="UPDATE `seller_details` SET `password` = ? WHERE `seller_details`.`email` = ?";
                smt=conn.prepareStatement(sql);
                smt.setString(1,password);
+               smt.setString(2,s_name);
+               return 1;
+           }
+           else
+           {
+               return 0;
+           }
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
+    }
+
+    int UpdateSellerprofilepic(String profilepic, String s_name) {
+        try
+       {
+           if(isConnected())
+           {
+               String sql="UPDATE `seller_details` SET `profilepic` = ? WHERE `seller_details`.`email` = ?";
+               smt=conn.prepareStatement(sql);
+               smt.setString(1,profilepic);
                smt.setString(2,s_name);
                return 1;
            }
