@@ -39,16 +39,14 @@
   <script src="../Javascript/Admin_Charts.js"></script>
   <title>Admin Panel</title>
   <script>
-      function activate(id)
-      {
-          let loc="SellerAction.jsp?Activeid="+id;
-          window.location=loc;
-      }
-      function Deactivate(id)
-      {
-          let loc="SellerAction.jsp?Deactiveid="+id;
-          window.location=loc;
-      }
+    function activate(id) {
+      let loc = "SellerAction.jsp?Activeid=" + id;
+      window.location = loc;
+    }
+    function Deactivate(id) {
+      let loc = "SellerAction.jsp?Deactiveid=" + id;
+      window.location = loc;
+    }
   </script>
 </head>
 
@@ -63,7 +61,7 @@
         <div class="container">
           <table class="table table-dark table-striped">
             <thead>
-             <tr>
+              <tr>
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
@@ -74,22 +72,24 @@
               </tr>
             </thead>
             <tbody>
-                <%
+              <%
                    try {
                          ResultSet rs = new Database().Sellerdetails();  
                          while(rs.next())
                          {
                 %>
-                <tr>
-                 <td><%=rs.getString("first_name")%></td>
+              <tr>
+                <td><%=rs.getString("first_name")%></td>
                 <td><%=rs.getString("last_name")%></td>
-                <td><%=rs.getString("email")%></td>       
+                <td><%=rs.getString("email")%></td>
                 <td><%=rs.getString("ph_number")%></td>
                 <td><%=rs.getString("gender")%></td>
                 <td><%=(rs.getString("isactive").toString().equals("1"))?"Activated":"Disabled"%></td>
                 <td>
-                    <button type="button"  onclick="activate('<%=rs.getString("email")%>')" class="btn btn-labeled btn-success"> Enable </button>
-                    <button type="button" onclick="Deactivate('<%=rs.getString("email")%>')" class="btn btn-labeled btn-danger"> Disable </button>
+                  <button type="button" onclick="activate('<%=rs.getString("email")%>')"
+                    class="btn btn-labeled btn-success"> Enable </button>
+                  <button type="button" onclick="Deactivate('<%=rs.getString("email")%>')"
+                    class="btn btn-labeled btn-danger"> Disable </button>
                 </td>
               </tr>
               <%            

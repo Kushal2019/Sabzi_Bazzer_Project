@@ -29,7 +29,7 @@
                 <i class="fas fa-user-edit"></i> My Profile </a>
             <a href="all_item.jsp" class="dash-nav-item">
                 <i class="fas fa-shopping-bag"></i> All Item </a>
-                <a href="add_item.jsp" class="dash-nav-item">
+            <a href="add_item.jsp" class="dash-nav-item">
                 <i class="fa fa-shopping-basket"></i> Add Item </a>
             <a href="#" class="dash-nav-item">
                 <i class="fa fa-shopping-cart"></i> My Order </a>

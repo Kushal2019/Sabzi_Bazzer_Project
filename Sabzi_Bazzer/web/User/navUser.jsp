@@ -4,7 +4,7 @@
     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-<%
+  <%
     try
     {
         String utype=session.getAttribute("UserType").toString();
@@ -39,13 +39,13 @@
         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="../User/User_about.jsp">About</a>
+        <a class="nav-link" href="../User/User_about.jsp">About</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Cart</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="../logout.jsp">Logout</a>
+        <a class="nav-link" href="../logout.jsp">Logout</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

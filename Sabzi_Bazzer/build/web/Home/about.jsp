@@ -2,11 +2,11 @@
 
 <head>
   <title> About </title>
-  
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="../Css/style.css" rel="stylesheet">
-  
+
 </head>
 
 <body>
@@ -39,7 +39,8 @@
       <div class="row text-center">
         <!-- Team item-->
         <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../image/Team_Member_Pic/Kushal.jpg" width="170" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../image/Team_Member_Pic/Kushal.jpg" width="170"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Kushal Mukherjee</h5><span class="small text-uppercase text-muted">Devoloper</span>
             <ul class="social mb-0 list-inline mt-3">
               <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -53,7 +54,8 @@
 
         <!-- Team item-->
         <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../image/Team_Member_Pic/Soumen.JPG" width="170" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../image/Team_Member_Pic/Soumen.JPG" width="170"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Soumen Mandal</h5><span class="small text-uppercase text-muted">Devoloper</span>
             <ul class="social mb-0 list-inline mt-3">
               <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -67,7 +69,8 @@
 
         <!-- Team item-->
         <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../image/Team_Member_Pic/Suman.JPG" width="170" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../image/Team_Member_Pic/Suman.JPG" width="170"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Suman Dhara</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
             <ul class="social mb-0 list-inline mt-3">
               <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -81,7 +84,8 @@
 
         <!-- Team item-->
         <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../image/Team_Member_Pic/Sankho.jpeg" width="170" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="../image/Team_Member_Pic/Sankho.jpeg" width="170"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
             <h5 class="mb-0">Sankho Subro Dorie </h5><span class="small text-uppercase text-muted">CEO - Founder</span>
             <ul class="social mb-0 list-inline mt-3">
               <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -96,16 +100,16 @@
       </div>
     </div>
   </div>
- 
-  
+
+
   <%@include file="../PageFiles/footerMain.jsp" %>
-  
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

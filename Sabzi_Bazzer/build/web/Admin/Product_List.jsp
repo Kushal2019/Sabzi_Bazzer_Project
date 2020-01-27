@@ -47,10 +47,10 @@
         <div class="container">
           <table class="table table-dark table-striped">
             <thead>
-                <th>Product Name</th>
-                <th>Owner Name</th>
-                <th>Available Quantity</th>
-                <th>Ph Number</th>
+              <th>Product Name</th>
+              <th>Owner Name</th>
+              <th>Available Quantity</th>
+              <th>Ph Number</th>
             </thead>
           </table>
         </div>
