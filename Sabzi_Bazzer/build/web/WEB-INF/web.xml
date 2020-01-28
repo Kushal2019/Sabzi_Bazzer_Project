@@ -44,6 +44,10 @@
         <servlet-name>Myprofilepichange</servlet-name>
         <servlet-class>com.sabzi_bazzer.Myprofilepichange</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SendMail</servlet-name>
+        <servlet-class>com.sabzi_bazzer.SendMail</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>Myprofilepichange</servlet-name>
         <url-pattern>/Myprofilepichange</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendMail</servlet-name>
+        <url-pattern>/SendMail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

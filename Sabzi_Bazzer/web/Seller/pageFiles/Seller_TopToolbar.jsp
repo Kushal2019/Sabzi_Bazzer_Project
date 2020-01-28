@@ -24,7 +24,7 @@
     }
     catch(Exception ex)
     {
-        response.sendRedirect("../index.jsp");
+      //  response.sendRedirect("../../index.jsp");
     }
 %><%-- 
     Document   : newjspadmin_topToolbar

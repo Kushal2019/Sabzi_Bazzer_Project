@@ -7,6 +7,10 @@ package com.sabzi_bazzer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,24 +33,34 @@ public class Seller_Change_Password extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           String password;
+           String oldpassword,password;
+           oldpassword=request.getParameter("oldpassword");
            password=request.getParameter("password");
            HttpSession session=request.getSession();
            String s_name=session.getAttribute("UserID").toString();
-           int x=new Database().Seller_C_Password(password,s_name);
-            if(x==1)
-             {
+           ResultSet rs = new Database().Checkpassword(oldpassword,s_name);  
+           if(rs.next())
+           {
+           
+                int x=new Database().Seller_C_Password(password,s_name);
+                if(x==1)
+                {
         
-                  response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
-             }
-             else
-             {
-                  response.sendRedirect("Seller/my_profile.jsp?Update='NotDone'");
-             }
+                    response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
+                }
+                else
+                {
+                    response.sendRedirect("Seller/my_profile.jsp?Update='NotDone'");
+                }
+           }
+           else
+           {
+               response.sendRedirect("Seller/my_profile.jsp?Update=Notfound");
+           }
         }
     }
 
@@ -62,7 +76,11 @@ public class Seller_Change_Password extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Seller_Change_Password.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -76,7 +94,11 @@ public class Seller_Change_Password extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Seller_Change_Password.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

@@ -65,6 +65,7 @@ public class MyprofileSeller_PD extends HttpServlet {
              if(x==1)
              {
                   session.setAttribute("UserID", email);
+                   s_name=session.getAttribute("UserID").toString();
                   response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
              }
              else

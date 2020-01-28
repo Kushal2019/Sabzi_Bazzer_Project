@@ -669,3 +669,83 @@ function ran(st_l) {
     //return f;
 }
  //Capture Validation End
+ 
+  function passwordcheck()
+        {
+            let pass=document.getElementById("newpass");
+            let cpass=document.getElementById("newcpass");
+            let oldpass=document.getElementById("oldpass");
+            let f=1;
+            if(pass.value==="" && cpass.value==="" && oldpass.value==="" )
+            {
+                 document.getElementById("msg").innerHTML="please fill out all field";
+                f=0;
+            }
+            else
+            {
+                if(oldpass.value==="")
+                {
+                    document.getElementById("msg").innerHTML="please fill out Old Password field";
+                 f=0;
+                }
+                else
+                {
+                    if(pass.value==="")
+                     {
+                            document.getElementById("msg").innerHTML="please fill out New Password field";
+                            f=0;
+                      }
+                      else
+                      {
+                          if(cpass.value==="")
+                            {
+                                 document.getElementById("msg").innerHTML="please fill out Confirm Password field";
+                                  f=0;
+                            }
+                          else
+                            {
+                                 if(cpass.value!==pass.value)
+                                 {
+                                    document.getElementById("msg").innerHTML="Confirm Password does not mathc new Password";
+                                     f=0;
+                                 }
+                                 else
+                                 {
+                                     f=1;
+                                 }
+                             }
+                      }
+                    
+                }
+               
+            }
+           
+            
+           
+            if(f===0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+         function hide()
+        {
+                //alert("hi");
+            document.getElementById("btnChangePicture").style.display = "none";
+            document.getElementById("btnSubmitPicture").style.display = "none";
+        }
+         function Show()
+        {
+                //alert("hi");
+            document.getElementById("btnChangePicture").style.display = "block";
+            
+        }
+         function Show1()
+        {
+                //alert("hi");
+            document.getElementById("btnSubmitPicture").style.display = "block";
+            
+        }

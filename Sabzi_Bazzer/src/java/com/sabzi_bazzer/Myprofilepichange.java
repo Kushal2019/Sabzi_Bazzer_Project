@@ -57,12 +57,17 @@ public class Myprofilepichange extends HttpServlet {
              if(x==1)
              {
                  
-                  response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
+                  response.sendRedirect("Seller/my_profile.jsp?Update=Done");
              }
              else
              {
                   response.sendRedirect("Seller/my_profile.jsp?Update='NotDone'");
              }
+             out.println("hi");
+        }
+        catch(Exception ex)
+        {
+         response.sendRedirect("Seller/my_profile.jsp?Update='NotDone'");
         }
     }
 

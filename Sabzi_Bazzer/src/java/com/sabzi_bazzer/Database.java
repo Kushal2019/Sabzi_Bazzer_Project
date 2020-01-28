@@ -458,6 +458,7 @@ public class Database {
                smt.setString(5,sellerval.getEmail());
                smt.setString(6,sellerval.getPh_number());
                smt.setString(7,s_name);
+               smt.execute();
                return 1;
            }
            else
@@ -481,6 +482,7 @@ public class Database {
                smt=conn.prepareStatement(sql);
                smt.setString(1,password);
                smt.setString(2,s_name);
+               smt.execute();
                return 1;
            }
            else
@@ -499,10 +501,11 @@ public class Database {
        {
            if(isConnected())
            {
-               String sql="UPDATE `seller_details` SET `profilepic` = ? WHERE `seller_details`.`email` = ?";
+               String sql="UPDATE `seller_details` SET `profilepic` =? WHERE `email` =?";
                smt=conn.prepareStatement(sql);
                smt.setString(1,profilepic);
                smt.setString(2,s_name);
+               smt.execute();
                return 1;
            }
            else
@@ -514,6 +517,32 @@ public class Database {
        {
            return 0;
        }
+    }
+
+  
+
+    ResultSet Checkpassword(String oldpassword, String s_name) {
+       try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT * FROM `seller_details` WHERE `password`=? AND `email`=?";
+                    smt=conn.prepareStatement(sql);
+                   smt.setString(1,oldpassword);
+                   smt.setString(2,s_name);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
     }
 
     

@@ -47,20 +47,8 @@
   <link rel="stylesheet" href="../Css/Seller_Style.css">
   <link rel="stylesheet" href="../Css/my_profile.css">
   <script src="../Javascript/my_profile.js"></script>
-  <script>
-      function hide()
-        {
-                //alert("hi");
-            document.getElementById("btnChangePicture").style.display = "none";
-            document.getElementById("btnSubmitPicture").style.display = "none";
-        }
-         function Show()
-        {
-                //alert("hi");
-            document.getElementById("btnChangePicture").style.display = "block";
-             document.getElementById("btnSubmitPicture").style.display = "block";
-        }
-  </script>
+  <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
+
 </head>
 
 <body>
@@ -79,13 +67,13 @@
                 <div class="card-title mb-8">
                   <div class="d-flex justify-content-start">
                     <div class="image-container">
-                        <form>
+                        <form action="../Myprofilepichange" method="post" enctype="multipart/form-data" >
                       <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px"
                         class="img-thumbnail" />
                       <div class="middle">
-                        <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change"/>
-                        <input type="file" style="display: none;" id="profilePicture" name="file"/>
-                        <input class="btn btn-success" id="btnSubmitPicture" type="submit" value=" Submit">
+                          <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" onclick="Show1();"/>
+                        <input type="file" style="display: none;" id="profilePicture" name="product_file"/>
+                        <input class="btn btn-success" id="btnSubmitPicture" type="submit" value=" Submit"  style="display: none;" >
                       </div>
                         </form>
                     </div>
@@ -106,12 +94,12 @@
                         <!--First tab Strat-->
                           
                         <div class="tab-pane fade" id="Personal_Information">
-                            <form action="#form_is_hiting_1" method="POST">
+                            <form action="../MyprofileSeller_PD" method="POST">
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">First Name : </label>
                               <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="Kushal">
+                                  value="Kushal" name="first_name">
                               </div>
                             </div>
 
@@ -119,7 +107,7 @@
                               <label class="col-sm-3 col-form-label">Last Name : </label>
                               <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="Mukherjee">
+                                  value="Mukherjee" name="last_name">
                               </div>
                             </div>
 
@@ -127,7 +115,7 @@
                               <label class="col-sm-3 col-form-label">Company Name : </label>
                               <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="Online Brahmin">
+                                  value="Online Brahmin" name="company_name">
                               </div>
                             </div>
 
@@ -135,7 +123,7 @@
                               <label class="col-sm-3 col-form-label">Email : </label>
                               <div class="col-sm-6">
                                 <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="www.kushalmukherjee@gmail.com">
+                                  value="www.kushalmukherjee@gmail.com" name="email">
                               </div>
                             </div>
 
@@ -143,7 +131,7 @@
                               <label class="col-sm-3 col-form-label">Phone Number : </label>
                               <div class="col-sm-6">
                                 <input type="number" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="7407032908">
+                                  value="7407032908" name="ph_number">
                               </div>
                             </div>
                               
@@ -151,7 +139,7 @@
                               <label class="col-sm-3 col-form-label">Licence Number : </label>
                               <div class="col-sm-6">
                                   <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="KL34C8222">
+                                  value="KL34C8222" name="licence_number">
                               </div>
                             </div>
                               
@@ -169,31 +157,42 @@
                         <!--Secound tab Strat-->
                         
                         <div class="tab-pane fade" id="Change_Password">
-                            <form action="#form_is_hiting_2" method="POST">
+                            <form action="../Seller_Change_Password" method="POST">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Old Password : </label>
                                         <div class="col-sm-6">
-                                            <input type="password" class="form-control form-control-sm" id="colFormLabelSm">
+                                            <input type="password" class="form-control form-control-sm" id="oldpass" name="oldpassword">
                                         </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">New Password : </label>
                                         <div class="col-sm-6">
-                                            <input type="password" class="form-control form-control-sm" id="colFormLabelSm">
+                                            <input type="password" class="form-control form-control-sm" id="newpass" name="password">
+                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                   
+                                        <div class="col-sm-6">
+                                           
                                         </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Confirm Password : </label>
                                         <div class="col-sm-6">
-                                            <input type="password" class="form-control form-control-sm" id="colFormLabelSm">
+                                            <input type="password" class="form-control form-control-sm" id="newcpass">
                                         </div>
                                 </div>
-                                
+                                 <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-6">
+                                           <font color='red' id='msg'> </font>
+                                        </div>
+                                </div>
                                 <div class="form-group btn">
                                     <div class="col-8">
-                                        <input class="btn btn-success" type="submit" value="Submit"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input class="btn btn-success" type="submit" value="Submit" onclick="return passwordcheck()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <input class="btn btn-danger" type="reset" value="Reset">
                                     </div>
                                 </div>
@@ -206,11 +205,11 @@
                         <!--Third tab Strat-->
                         
                         <div class="tab-pane fade" id="Manage_Addresses">
-                            <form action="#form_is_hiting_3" method="POST">
+                            <form action="../MyprofileSeller_AM" method="POST">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Your State : </label>
                                         <div class="col-sm-6">
-                                            <select class="form-control" style="width: 318px;">
+                                            <select class="form-control" style="width: 318px;" id="s_state" onclick="state()" name="state1">
                                                 <option value="West Bengal">West Bengal</option>
                                                 <option value="Bihar">Bihar</option>
                                                 <option value="Gujarat">Gujarat</option>
@@ -219,7 +218,7 @@
                                                 <option value="Odisha">Odisha</option>
                                                 <option value="Tamil Nadu">Tamil Nadu</option>
                                                 <option value="Uttarakhand">Uttarakhand</option>
-                                                <option value="Delhi">Delhi</option>
+                                                
                                             </select>
                                         </div>
                                 </div>
@@ -227,7 +226,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Your Town : </label>
                                         <div class="col-sm-6">
-                                            <select class="form-control" style="width: 318px;">
+                                            <select class="form-control" style="width: 318px;" id="s_town" name="town">
                                                 <option value="Unknown Town" disabled="">Unknown Town</option>
                                             </select>
                                         </div>
@@ -237,28 +236,28 @@
                                     <label class="col-sm-3 col-form-label">Zip Code : </label>
                                     <div class="col-sm-6">
                                         <input type="number" class="form-control form-control-sm" id="colFormLabelSm"
-                                               value="722154">
+                                               value="722154" name="zip_code">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Your Street : </label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Ahalaya Rd.">
+                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Ahalaya Rd." name="street">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">House Number : </label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="419/3">
+                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="419/3" name="house_number">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">landmark : </label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Bus-Stand">
+                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Bus-Stand" name="landmark">
                                     </div>
                                 </div>
                                 
