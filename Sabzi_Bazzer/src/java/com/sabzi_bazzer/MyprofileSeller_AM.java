@@ -49,6 +49,17 @@ public class MyprofileSeller_AM extends HttpServlet {
              sellerval.setLandmark(landmark);
              HttpSession session=request.getSession();
              String s_name=session.getAttribute("UserID").toString();
+             Database db=new Database();
+             int x=db.UpdateSeller_AD(sellerval,s_name);
+             if(x==1)
+             {
+                 
+                  response.sendRedirect("Seller/my_profile.jsp?Update=M_Address");
+             }
+             else
+             {
+                  response.sendRedirect("Seller/my_profile.jsp?Update=Not_M_Address");
+             }
         }
     }
 

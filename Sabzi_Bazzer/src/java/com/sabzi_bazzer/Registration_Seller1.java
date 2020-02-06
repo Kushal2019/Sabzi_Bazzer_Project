@@ -123,10 +123,10 @@ public class Registration_Seller1 extends HttpServlet {
 //          }
          // out.println(s_f_name+" "+s_last_name+" "+s_password+" "+s_phone+" "+s_licence+" "+s_Company+" "+gender+" "+s_email+" "+s_landmark+" "+s_state+" "+s_street+" "+s_zip+" "+s_city);
           Database db= new Database();
-          int x=db.insertseller(seller);
+          int x=db.insertLogindetails1(seller);
           if(x==1)
           {
-             int y=db.insertLogindetails1(seller);
+             int y=db.insertseller(seller);
              if(y==1)
              {
                 response.sendRedirect("Home/Mainlogin.jsp");

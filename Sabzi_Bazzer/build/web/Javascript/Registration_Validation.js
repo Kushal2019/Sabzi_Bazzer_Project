@@ -749,3 +749,13 @@ function ran(st_l) {
             document.getElementById("btnSubmitPicture").style.display = "block";
             
         }
+        function selecttown()
+        {
+            let town=document.getElementById("s_town");
+            if(town.value=="")
+            {
+                document.getElementById("s_town").focus();
+                return false;
+            }
+            return true;
+        }

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.sql.ResultSet;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,5 +68,53 @@ public class Test_helper {
 		return null;
 	}
 
-
+ public static List<String> uploadFile1(String UPLOAD_DIR, HttpServletRequest request,String name,String email) {
+		List<String> fileNames = new ArrayList<String>();
+		try {
+			List<Part> parts = (List<Part>) request.getParts();
+			for (Part part : parts) {
+				if (part.getName().equalsIgnoreCase(name)) {
+					String fileName = getFileName(part);
+                                       // String ext=fileName.substring(fileName.lastIndexOf('.'), fileName.length());
+                                       String ext=".jpg";
+                                        ResultSet rs = new Database().Sellerprofilepic(email);
+                                        String fpath="";
+                                        if(rs.next())
+                                        {
+                                           fpath = rs.getString("seller_id");
+                                        }
+                                        fileName=String.valueOf(fpath)+ext;
+					fileNames.add(fileName);
+					String applicationPath = request.getServletContext().getRealPath("");
+					String basePath = applicationPath + File.separator + UPLOAD_DIR + File.separator;
+                                     
+					InputStream inputStream = null;
+					OutputStream outputStream = null;
+					try {
+						File outputFilePath = new File(basePath + fileName);
+						inputStream = part.getInputStream();
+						outputStream = new FileOutputStream(outputFilePath);
+						int read = 0;
+						final byte[] bytes = new byte[1024];
+						while ((read = inputStream.read(bytes)) != -1) {
+							outputStream.write(bytes, 0, read);
+						}
+					} catch (Exception ex) {
+						fileName = null;
+					} finally {
+						if (outputStream != null) {
+							outputStream.close();
+						}
+						if (inputStream != null) {
+							inputStream.close();
+						}
+					}
+				}
+			}
+		} catch (Exception e) {
+			fileNames = null;
+		}
+                
+		return fileNames;
+	}
 }

@@ -9,12 +9,17 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../Css/Mainlogin.css">
+      <link href="../Css/Loder.css" rel="stylesheet">
     <script src="../Javascript/Mainlogin_Validation.js"></script>
     <script>
         function errorMag() {
             alert("Invalid Userid or Password");
             document.getElementById('Login_username').focus();
 
+        }
+        function Notfound()
+        {
+             alert("This email does not exist");
         }
     </script>
 </head>
@@ -27,11 +32,18 @@
         {
             err=1;
         }
+        if(error.equals("3"))
+        {
+            err=2;
+        }
     }
     catch(Exception e){}
 %>
 
-<body onload="<%=(err==1)?"errorMag()":""%>">
+<body onload="<%=(err==1)?((err==2)? "Notfound()":"errorMag()"):""%>">
+    <div id="loader" class="center">
+        <center><img src="../image/Sabzi_Logo.png"></center>
+    </div> 
     <%@include file="../PageFiles/navLog.jsp" %>
     <%
         try
@@ -129,16 +141,17 @@
                                         <div class="panel-body">
                                             <div class="text-center">
                                                 <p>If you have forgotten your password you can reset it here.</p>
-                                                <form class="form-group" action="#hit_forgot-password" method="GET">
+                                                <form class="form-group" action="../SendMail" method="POST">
                                                     <div class="panel-body">
                                                         <fieldset>
                                                             <div class="form-group">
                                                                 <input class="form-control input-lg"
                                                                     placeholder="E-mail Address" name="email"
-                                                                    type="email">
+                                                                    type="email" id="email">
                                                             </div>
+                                                            <div class="form-group"><font color="red" id="em"></font></div>
                                                             <input class="btn btn-lg btn-primary btn-block"
-                                                                value="Send My Password" type="submit">
+                                                                value="Send My Password" type="submit" onclick="return emailcheck()">
                                                         </fieldset>
                                                     </div>
                                                 </form>
@@ -149,7 +162,7 @@
                             </div>
                             <div class="modal-footer">
                                 <div class="col-md-7">
-                                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                    <button class="btn" data-dismiss="modal" aria-hidden="true" onClick="close()">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -161,6 +174,7 @@
         </div>
     </div>
     <%@include file="../PageFiles/footerMain.jsp" %>
+     <script src="../Javascript/loder.js"></script>
 </body>
 
 </html>

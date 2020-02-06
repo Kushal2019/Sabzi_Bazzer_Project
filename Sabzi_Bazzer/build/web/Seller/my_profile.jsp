@@ -1,8 +1,6 @@
-<%-- 
-    Document   : my_profile
-    Created on : 24 Jan, 2020, 1:48:44 PM
-    Author     : Kushal
---%>
+
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <%
     try
     {
@@ -68,11 +66,25 @@
                   <div class="d-flex justify-content-start">
                     <div class="image-container">
                         <form action="../Myprofilepichange" method="post" enctype="multipart/form-data" >
-                      <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px"
-                        class="img-thumbnail" />
+                        <%
+                                try
+                                {
+                                     String emaiiId=session.getAttribute("UserID").toString();
+                                     ResultSet rs = new Database().Sellerprofilepic(emaiiId);
+                                     if(rs.next())
+                                     {
+                                         String Path="../image/Seller_pic/" +rs.getString("profilepic");
+                        %>    
+                        <img src="<%=Path%>" id="imgProfile" style="width: 150px; height: 150px"
+                        class="img-thumbnail"  />
+                      <%
+                                    }
+                                }
+                                catch(Exception es){}
+                      %>
                       <div class="middle">
                           <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" onclick="Show1();"/>
-                        <input type="file" style="display: none;" id="profilePicture" name="product_file"/>
+                          <input type="file" style="display: none;" id="profilePicture" name="product_file" />
                         <input class="btn btn-success" id="btnSubmitPicture" type="submit" value=" Submit"  style="display: none;" >
                       </div>
                         </form>
@@ -95,11 +107,18 @@
                           
                         <div class="tab-pane fade" id="Personal_Information">
                             <form action="../MyprofileSeller_PD" method="POST">
+                                <%
+                                    try
+                                    {
+                                        String emailId=session.getAttribute("UserID").toString();
+                                        ResultSet rs1=new Database().SellerPI(emailId);
+                                        if(rs1.next())
+                                %>
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">First Name : </label>
                               <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="Kushal" name="first_name">
+                                  value="<%=rs1.getString("first_name")%>" name="first_name">
                               </div>
                             </div>
 
@@ -107,7 +126,7 @@
                               <label class="col-sm-3 col-form-label">Last Name : </label>
                               <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="Mukherjee" name="last_name">
+                                  value="<%=rs1.getString("last_name")%>" name="last_name">
                               </div>
                             </div>
 
@@ -115,7 +134,7 @@
                               <label class="col-sm-3 col-form-label">Company Name : </label>
                               <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="Online Brahmin" name="company_name">
+                                  value="<%=rs1.getString("company_name")%>" name="company_name">
                               </div>
                             </div>
 
@@ -123,7 +142,7 @@
                               <label class="col-sm-3 col-form-label">Email : </label>
                               <div class="col-sm-6">
                                 <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="www.kushalmukherjee@gmail.com" name="email">
+                                  value="<%=rs1.getString("email")%>" name="email">
                               </div>
                             </div>
 
@@ -131,7 +150,7 @@
                               <label class="col-sm-3 col-form-label">Phone Number : </label>
                               <div class="col-sm-6">
                                 <input type="number" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="7407032908" name="ph_number">
+                                  value="<%=rs1.getString("ph_number")%>" name="ph_number">
                               </div>
                             </div>
                               
@@ -139,10 +158,13 @@
                               <label class="col-sm-3 col-form-label">Licence Number : </label>
                               <div class="col-sm-6">
                                   <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
-                                  value="KL34C8222" name="licence_number">
+                                  value="<%=rs1.getString("licence_number")%>" name="licence_number">
                               </div>
                             </div>
-                              
+                            <%
+                                    }
+                                    catch(Exception a){}
+                             %> 
                             <div class="form-group btn">
                                 <div class="col-8">
                                     <input class="btn btn-success" type="submit" value="Submit"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -206,10 +228,18 @@
                         
                         <div class="tab-pane fade" id="Manage_Addresses">
                             <form action="../MyprofileSeller_AM" method="POST">
+                                 <%
+                                    try
+                                    {
+                                        String emailId=session.getAttribute("UserID").toString();
+                                        ResultSet rs2=new Database().SellerMA(emailId);
+                                        if(rs2.next())
+                                        {
+                                %>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Your State : </label>
                                         <div class="col-sm-6">
-                                            <select class="form-control" style="width: 318px;" id="s_state" onclick="state()" name="state1">
+                                            <select class="form-control" style="width: 318px;" id="s_state" onclick="state()" name="state1" selected="<%=rs2.getString("state")%>">
                                                 <option value="West Bengal">West Bengal</option>
                                                 <option value="Bihar">Bihar</option>
                                                 <option value="Gujarat">Gujarat</option>
@@ -226,8 +256,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Your Town : </label>
                                         <div class="col-sm-6">
-                                            <select class="form-control" style="width: 318px;" id="s_town" name="town">
-                                                <option value="Unknown Town" disabled="">Unknown Town</option>
+                                            <select class="form-control" style="width: 318px;" id="s_town" name="town" selected="<%=rs2.getString("town")%>">
+                                                <option value="<%=rs2.getString("town")%>" ><%=rs2.getString("town")%></option>
                                             </select>
                                         </div>
                                 </div>
@@ -236,34 +266,38 @@
                                     <label class="col-sm-3 col-form-label">Zip Code : </label>
                                     <div class="col-sm-6">
                                         <input type="number" class="form-control form-control-sm" id="colFormLabelSm"
-                                               value="722154" name="zip_code">
+                                               value="<%=rs2.getString("zip_code")%>" name="zip_code">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Your Street : </label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Ahalaya Rd." name="street">
+                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs2.getString("street")%>" name="street">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">House Number : </label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="419/3" name="house_number">
+                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs2.getString("house_number")%>" name="house_number">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">landmark : </label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="Bus-Stand" name="landmark">
+                                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs2.getString("landmark")%>" name="landmark">
                                     </div>
                                 </div>
-                                
+                                 <%
+                                    }
+                                    }
+                                    catch(Exception a){}
+                             %> 
                                 <div class="form-group btn">
                                     <div class="col-8">
-                                        <input class="btn btn-success" type="submit" value="Submit"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input class="btn btn-success" type="submit" value="Submit" onclick="return selecttown()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <input class="btn btn-danger" type="reset" value="Reset">
                                     </div>
                                 </div>

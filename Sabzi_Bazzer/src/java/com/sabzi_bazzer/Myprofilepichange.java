@@ -8,8 +8,10 @@
  */
 package com.sabzi_bazzer;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -45,14 +47,22 @@ public class Myprofilepichange extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String profilepic="";
-             List<String> photos = Test_helper.uploadFile(UPLOAD_DIR, request,"product_file");
+             HttpSession session=request.getSession();
+             String s_name=session.getAttribute("UserID").toString();
+             List<String> photos = Test_helper.uploadFile1(UPLOAD_DIR, request,"product_file",s_name);
              for(String s:photos)
              {
                  profilepic=s;
              }
-             HttpSession session=request.getSession();
-             String s_name=session.getAttribute("UserID").toString();
+            
              Database db=new Database();
+             /*ResultSet rs = new Database().Sellerprofilepic(s_name);
+             if(rs.next())
+             {
+                 String path="D:\\Minor Project\\Sabzi_Bazzer_Project\\Sabzi_Bazzer\\build\\web\\image\\Seller_pic"+rs.getString("profilepic");
+                   File f=new File(path);
+                    f.delete();
+             }*/
              int x=db.UpdateSellerprofilepic(profilepic,s_name);
              if(x==1)
              {

@@ -17,8 +17,8 @@ import javax.mail.internet.MimeMessage;
 public class Mailer {
     public static void send(String to,String subject,String msg){  
   
-final String user="soumen.mondal45876@gmail.com";//change accordingly  
-final String pass="45876sou";  
+final String user="sabzibazzer@gmail.com";//change accordingly  
+final String pass="Sabzi2019";  
   
 //1st step) Get the session object    
 Properties props = new Properties();  
@@ -40,8 +40,8 @@ try {
  message.setFrom(new InternetAddress(user));  
  message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
  message.setSubject(subject);  
- message.setText(msg);  
-   
+ //message.setText(msg);  
+  message.setContent(msg, "text/html"); 
  //3rd step)send message  
  Transport.send(message);  
   

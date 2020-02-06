@@ -64,13 +64,17 @@ public class MyprofileSeller_PD extends HttpServlet {
              int x=db.UpdateSeller_PD(sellerval,s_name);
              if(x==1)
              {
+                 int y=db.UpdateSeller_PD1(sellerval,s_name);
+                 if(y==1)
+                 {
                   session.setAttribute("UserID", email);
-                   s_name=session.getAttribute("UserID").toString();
-                  response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
+                   
+                  response.sendRedirect("Seller/my_profile.jsp?Update=P_Info");
+                 }
              }
              else
              {
-                  response.sendRedirect("Seller/my_profile.jsp?Update='NotDone'");
+                  response.sendRedirect("Seller/my_profile.jsp?Update=Not_P_Info");
              }
         }
     }

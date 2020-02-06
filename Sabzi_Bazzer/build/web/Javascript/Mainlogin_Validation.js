@@ -35,3 +35,21 @@ function Login_Validation() {
         return false;
     }
 }
+function emailcheck()
+{
+     let email = document.getElementById('email');
+     if(email.value==="")
+     {
+         document.getElementById('em').innerHTML="Enter the Email id";
+         document.getElementById('email').focus();
+         document.getElementById('email').style.borderColor="red";
+         return false;
+     }
+     return true;
+}
+function close()
+{
+     let email1 = document.getElementById('email');
+     email1.value="";
+      document.getElementById('em').innerHTML="";
+}

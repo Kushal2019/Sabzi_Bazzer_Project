@@ -471,6 +471,29 @@ public class Database {
            return 0;
        }
     }
+    int UpdateSeller_PD1(Seller_PD_val sellerval, String s_name) {
+       try
+       {
+           if(isConnected())
+           {
+               String sql="UPDATE `login_details` SET `email`=? WHERE email=?";
+               smt=conn.prepareStatement(sql);
+               smt.setString(1,sellerval.getEmail());
+               
+               smt.setString(2,s_name);
+               smt.execute();
+               return 1;
+           }
+           else
+           {
+               return 0;
+           }
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
+    }
 
     int Seller_C_Password(String password, String s_name) {
         
@@ -545,8 +568,178 @@ public class Database {
         }
     }
 
-    
+    int UpdateSeller_AD(Seller_AM sellerval, String s_name) {
+        try
+       {
+           if(isConnected())
+           {
+               String sql="UPDATE `seller_details` SET `state`=?,`town`=?,`zip_code`=?,`street`=?,`house_number`=?,`landmark`=? WHERE `email`=?";
+               smt=conn.prepareStatement(sql);
+               smt.setString(1,sellerval.getState());
+               smt.setString(2,sellerval.getTown());
+               
+               smt.setString(3,sellerval.getZip_code());
+               smt.setString(4,sellerval.getStreet());
+               smt.setString(5,sellerval.getHouse_number());
+               smt.setString(6,sellerval.getLandmark());
+               smt.setString(7,s_name);
+               smt.execute();
+               return 1;
+           }
+           else
+           {
+               return 0;
+           }
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
+        
+    }
 
+    ResultSet Forgotpassword(String emaiiId) {
+        
+         try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT  `password`,`user_type` FROM `login_details` WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,emaiiId);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+            return  null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+
+    ResultSet getDetails(String emaiiId) {
+         try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT * FROM `user_details` WHERE  email=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,emaiiId);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+            return  null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+
+    ResultSet getDetails1(String emaiiId) {
+        
+         try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT * FROM `seller_details` WHERE email=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,emaiiId);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+            return  null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+
+  
+
+    public ResultSet Sellerprofilepic(String email){
+        try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT  `seller_id`,`profilepic` FROM seller_details WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+            return  null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    
+    }
+    public ResultSet SellerPI(String email)
+    {
+         try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT  `first_name`, `last_name`,  `company_name`, `licence_number`, `email`, `ph_number` FROM `seller_details` WHERE email =?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+            return  null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+     public ResultSet SellerMA(String email)
+    {
+         try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT  `state`, `town`, `zip_code`, `street`, `house_number`, `landmark` FROM `seller_details` WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+            return  null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
    
     
 }

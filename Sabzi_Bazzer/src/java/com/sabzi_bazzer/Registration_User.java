@@ -103,11 +103,11 @@ public class Registration_User extends HttpServlet {
             user.setAns(ans);
             user.setType("USER");
             Database db = new Database();
-            int x=db.insertUser(user);
+            int x=db.insertLogindetails(user);
             if(x==1)
             {
 //              db.insertLogindetails(user);
-              int y=db.insertLogindetails(user);
+              int y=db.insertUser(user);
                 if(y==1)
                 {
                     response.sendRedirect("Home/Mainlogin.jsp");

@@ -7,6 +7,10 @@ package com.sabzi_bazzer;
 
 import java.io.IOException;  
 import java.io.PrintWriter;  
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
   
 import javax.servlet.ServletException;  
 import javax.servlet.http.HttpServlet;  
@@ -30,19 +34,103 @@ public class SendMail extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-             String to="souflipkart@gmail.com";  
-    String subject="SabziBazzer";  
-    String msg="Welcome to SabziBazzer (online Shoping) "
-            + " This site is made by Kushal & Soumen...";  
-          
-    Mailer.send(to, subject, msg);  
+            String emaiiId=request.getParameter("email");
+             ResultSet rs = new Database().Forgotpassword(emaiiId);
+             if(rs.next())
+             {
+                 String type=rs.getString("user_type");
+                 if(type.equals("USER"))
+                 {
+                                                    ResultSet rs1 = new Database().getDetails(emaiiId);
+                                                    if(rs1.next())
+                                                    {
+                                                        String to=emaiiId;  
+                                                        String subject="Forgot Password";  
+                                                        String msg="<html>\n" +
+                                                                       "\n" +
+                                                                       "<body>\n" +
+                                                                       "<center>\n" +
+                                                                       "	<table bgcolor=\"#ffcce6\">\n" +
+                                                                       "		<tr>\n" +
+                                                                       "			<td colspan=\"2\" width=\"400px\"><p class=\"navbar-brand\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </p></td>\n" +
+                                                                       "		</tr>\n" +
+                                                                       "		<tr bgcolor=\" #ffffff\">\n" +
+                                                                       "			\n" +
+                                                                       "			<td width=\"100px\" colspan=\"2\" align=\"Center\"><h3><u>Password:</u>  &nbsp;&nbsp; <font color=\"Blue\">"+rs1.getString("password")+"</font></h3></td>\n" +
+                                                                       "			\n" +
+                                                                       "		</tr>\n" +
+                                                                       "		<tr>\n" +
+                                                                       "			\n" +
+                                                                       "			<td width=\"100px\" colspan=\"2\"><h4>Dear "+rs1.getString("first_name")+" "+rs1.getString("last_name")+"<br> Use the Password to Login <br> Your User ID: "+emaiiId+" </h4></td>\n" +
+                                                                       "			\n" +
+                                                                       "		</tr>\n" +
+                                                                       "		<tr>\n" +
+                                                                       "\n" +
+                                                                       "			<td width=\"100px\" colspan=\"2\" align=\"right\"><h5>See You Soon <br>Team SabziBazzer </h5></td>\n" +
+                                                                       "			\n" +
+                                                                       "		</tr>\n" +
+                                                                       "	</table>\n" +
+                                                                       "</center>\n" +
+                                                                       "</body>\n" +
+                                                                       "</html>";
+
+                                       Mailer.send(to, subject, msg);  
+
+                                               out.print("message has been sent successfully");  
+                                             response.sendRedirect("Home/Mainlogin.jsp?done=1");
+                                                          }
+                 }
+                 if(type.equals("SELLER"))
+                 {
+                                        ResultSet rs2 = new Database().getDetails1(emaiiId);
+                                                    if(rs2.next())
+                                                    {
+                                                        String to=emaiiId;  
+                                                        String subject="Forgot Password";  
+                                                        String msg="<html>\n" +
+                                                                       "\n" +
+                                                                       "<body>\n" +
+                                                                       "<center>\n" +
+                                                                       "	<table bgcolor=\"#ffcce6\">\n" +
+                                                                       "		<tr>\n" +
+                                                                       "			<td colspan=\"2\" width=\"400px\"><p class=\"navbar-brand\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </p></td>\n" +
+                                                                       "		</tr>\n" +
+                                                                       "		<tr bgcolor=\" #ffffff\">\n" +
+                                                                       "			\n" +
+                                                                       "			<td width=\"100px\" colspan=\"2\" align=\"Center\"><h3><u>Password:</u>  &nbsp;&nbsp; <font color=\"Blue\">"+rs2.getString("password")+"</font></h3></td>\n" +
+                                                                       "			\n" +
+                                                                       "		</tr>\n" +
+                                                                       "		<tr>\n" +
+                                                                       "			\n" +
+                                                                       "			<td width=\"100px\" colspan=\"2\"><h4>Dear"+rs2.getString("first_name")+" "+rs2.getString("last_name")+" <br> Use the Password to Login <br> Your User ID: "+emaiiId+" </h4></td>\n" +
+                                                                       "			\n" +
+                                                                       "		</tr>\n" +
+                                                                       "		<tr>\n" +
+                                                                       "\n" +
+                                                                       "			<td width=\"100px\" colspan=\"2\" align=\"right\"><h5>See You Soon <br>Team SabziBazzer </h5></td>\n" +
+                                                                       "			\n" +
+                                                                       "		</tr>\n" +
+                                                                       "	</table>\n" +
+                                                                       "</center>\n" +
+                                                                       "</body>\n" +
+                                                                       "</html>";
+
+                                       Mailer.send(to, subject, msg);  
+
+                                               out.print("message has been sent successfully");  
+                                             response.sendRedirect("Home/Mainlogin.jsp?done=1");
+                                                          }
+                 }
     
-            out.print("message has been sent successfully");  
-    
+        }
+             else
+             {
+              response.sendRedirect("Home/Mainlogin.jsp?error=3");
+             }
         }
     }
 
@@ -58,7 +146,11 @@ public class SendMail extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(SendMail.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -72,7 +164,11 @@ public class SendMail extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(SendMail.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
