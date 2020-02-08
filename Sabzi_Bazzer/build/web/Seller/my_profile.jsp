@@ -40,8 +40,6 @@
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!--    <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css"/>-->
-
   <link rel="stylesheet" href="../Css/Seller_Style.css">
   <link rel="stylesheet" href="../Css/my_profile.css">
   <script src="../Javascript/my_profile.js"></script>
