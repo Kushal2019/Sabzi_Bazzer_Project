@@ -49,6 +49,36 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        String uname=session.getAttribute("UserID").toString();
+        if(utype.equals("USER") && !uname.equals(""))
+        {
+            response.sendRedirect("../User/index.jsp");
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+               // response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+            {
+                response.sendRedirect("../Seller/index.jsp");
+            } 
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+
+      out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("<html>\r\n");
@@ -61,16 +91,14 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <script src=\"../Javascript/Admin_Charts.js\"></script>\r\n");
       out.write("  <title>Admin Panel</title>\r\n");
       out.write("  <script>\r\n");
-      out.write("      function activate(id)\r\n");
-      out.write("      {\r\n");
-      out.write("          let loc=\"SellerAction.jsp?Activeid=\"+id;\r\n");
-      out.write("          window.location=loc;\r\n");
-      out.write("      }\r\n");
-      out.write("      function Deactivate(id)\r\n");
-      out.write("      {\r\n");
-      out.write("          let loc=\"SellerAction.jsp?Deactiveid=\"+id;\r\n");
-      out.write("          window.location=loc;\r\n");
-      out.write("      }\r\n");
+      out.write("    function activate(id) {\r\n");
+      out.write("      let loc = \"SellerAction.jsp?Activeid=\" + id;\r\n");
+      out.write("      window.location = loc;\r\n");
+      out.write("    }\r\n");
+      out.write("    function Deactivate(id) {\r\n");
+      out.write("      let loc = \"SellerAction.jsp?Deactiveid=\" + id;\r\n");
+      out.write("      window.location = loc;\r\n");
+      out.write("    }\r\n");
       out.write("  </script>\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
@@ -122,11 +150,11 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<header class=\"dash-toolbar\">\r\n");
       out.write("    <a href=\"#menu\" class=\"menu-toggle\">\r\n");
-      out.write("        <i class=\"fas fa-bars\" style=\"font-size:25px;\"></i>\r\n");
+      out.write("        <i class=\"fas fa-bars\" style=\"font-size:25px; color: greenyellow;\"></i>\r\n");
       out.write("    </a>\r\n");
       out.write("    <div class=\"tools\">\r\n");
       out.write("        <a href=\"../logout.jsp\" class=\"tools-item\">\r\n");
-      out.write("            <i class=\"fas fa-sign-out-alt\" style=\"font-size:30px;\" title=\"Logout\"></i>\r\n");
+      out.write("            <i class=\"fas fa-sign-out-alt\" style=\"font-size:30px; color: #FF5A00;\" title=\"Logout\"></i>\r\n");
       out.write("        </a>\r\n");
       out.write("    </div>\r\n");
       out.write("</header>");
@@ -135,7 +163,7 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"container\">\r\n");
       out.write("          <table class=\"table table-dark table-striped\">\r\n");
       out.write("            <thead>\r\n");
-      out.write("             <tr>\r\n");
+      out.write("              <tr>\r\n");
       out.write("                <th>Firstname</th>\r\n");
       out.write("                <th>Lastname</th>\r\n");
       out.write("                <th>Email</th>\r\n");
@@ -146,7 +174,7 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("              </tr>\r\n");
       out.write("            </thead>\r\n");
       out.write("            <tbody>\r\n");
-      out.write("                ");
+      out.write("              ");
 
                    try {
                          ResultSet rs = new Database().Sellerdetails();  
@@ -154,8 +182,8 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
                          {
                 
       out.write("\r\n");
-      out.write("                <tr>\r\n");
-      out.write("                 <td>");
+      out.write("              <tr>\r\n");
+      out.write("                <td>");
       out.print(rs.getString("first_name"));
       out.write("</td>\r\n");
       out.write("                <td>");
@@ -163,7 +191,7 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</td>\r\n");
       out.write("                <td>");
       out.print(rs.getString("email"));
-      out.write("</td>       \r\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print(rs.getString("ph_number"));
       out.write("</td>\r\n");
@@ -174,14 +202,14 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print((rs.getString("isactive").toString().equals("1"))?"Activated":"Disabled");
       out.write("</td>\r\n");
       out.write("                <td>\r\n");
-      out.write("                    <button type=\"button\"  onclick=\"activate('");
+      out.write("                  <button type=\"button\" onclick=\"activate('");
       out.print(rs.getString("email"));
-      out.write("')\" class=\"btn btn-labeled btn-success\">\r\n");
-      out.write("                    Enable <span class=\"btn-label\"><i class=\"fa fa-check\"></i></span></button>\r\n");
-      out.write("                    <button type=\"button\" onclick=\"Deactivate('");
+      out.write("')\"\r\n");
+      out.write("                    class=\"btn btn-labeled btn-success\"> Enable </button>\r\n");
+      out.write("                  <button type=\"button\" onclick=\"Deactivate('");
       out.print(rs.getString("email"));
-      out.write("')\" class=\"btn btn-labeled btn-danger\">\r\n");
-      out.write("                    Disable <span class=\"btn-label\"><i class=\"fa fa-close\"></i></span></button>\r\n");
+      out.write("')\"\r\n");
+      out.write("                    class=\"btn btn-labeled btn-danger\"> Disable </button>\r\n");
       out.write("                </td>\r\n");
       out.write("              </tr>\r\n");
       out.write("              ");
@@ -197,15 +225,9 @@ public final class Seller_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      </main>\r\n");
       out.write("    </div>\r\n");
       out.write("  </div>\r\n");
-      out.write("  <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"\r\n");
-      out.write("    integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\"\r\n");
-      out.write("    crossorigin=\"anonymous\"></script>\r\n");
-      out.write("  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"\r\n");
-      out.write("    integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\"\r\n");
-      out.write("    crossorigin=\"anonymous\"></script>\r\n");
-      out.write("  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"\r\n");
-      out.write("    integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\"\r\n");
-      out.write("    crossorigin=\"anonymous\"></script>\r\n");
+      out.write("  <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>\r\n");
+      out.write("  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>\r\n");
+      out.write("  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>\r\n");
       out.write("  <script src=\"../Javascript/Admin_Style.js\"></script>\r\n");
       out.write("</body>\r\n");
       out.write("\r\n");

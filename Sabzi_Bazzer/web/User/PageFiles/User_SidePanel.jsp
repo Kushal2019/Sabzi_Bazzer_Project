@@ -10,8 +10,6 @@
 
 <head>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="../../Css/Admin_Style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="../../Javascript/Admin_Charts.js"></script>
 </head>
@@ -27,7 +25,7 @@
         <nav class="dash-nav-list">
             <a href="My_Profile.jsp" class="dash-nav-item">
                 <i class="fas fa-user-edit"></i> My Profile </a>
-            <a href="#" class="dash-nav-item">
+            <a href="Add_Address.jsp" class="dash-nav-item">
                 <i class="fa fa-shopping-basket"></i> Add Address </a>
             <a href="#" class="dash-nav-item">
                 <i class="fa fa-shopping-cart"></i> My Order </a>

@@ -42,10 +42,10 @@
         <a class="nav-link" href="../User/User_about.jsp">About</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="My_Profile.jsp">Edit User</a>
+        <a class="nav-link" href="My_Profile.jsp">Edit User</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+        <a class="nav-link" href="#">Cart</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../logout.jsp">Logout</a>
