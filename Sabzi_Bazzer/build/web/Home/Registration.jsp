@@ -135,9 +135,11 @@
                                         <span style="color:red;" id="e5"></span>
                                     </div>
                                     
+                                    <div class="form-group">
                                         <input type="text" minlength="10" maxlength="10" name="txtEmpPhone"
                                             class="form-control" placeholder="Your Phone *" value="" id="txtEmpPhone" />
                                         <span style="color:red;" id="e6"></span>
+                                    </div>
                                     
                                     <div class="form-group">
                                         <select class="form-control" name="u_s_question" id="u_s_question"
