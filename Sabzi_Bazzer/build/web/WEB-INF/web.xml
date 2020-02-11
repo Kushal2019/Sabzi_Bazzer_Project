@@ -48,6 +48,18 @@
         <servlet-name>SendMail</servlet-name>
         <servlet-class>com.sabzi_bazzer.SendMail</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>User_profilechange</servlet-name>
+        <servlet-class>com.sabzi_bazzer.User_profilechange</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserMyprofile_PI</servlet-name>
+        <servlet-class>com.sabzi_bazzer.UserMyprofile_PI</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>User_changepassword</servlet-name>
+        <servlet-class>com.sabzi_bazzer.User_changepassword</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -95,6 +107,18 @@
     <servlet-mapping>
         <servlet-name>SendMail</servlet-name>
         <url-pattern>/SendMail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>User_profilechange</servlet-name>
+        <url-pattern>/User_profilechange</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserMyprofile_PI</servlet-name>
+        <url-pattern>/UserMyprofile_PI</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>User_changepassword</servlet-name>
+        <url-pattern>/User_changepassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -3,7 +3,37 @@
     Created on : 8 Feb, 2020, 7:17:30 PM
     Author     : Kushal
 --%>
-
+<%
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        String uname=session.getAttribute("UserID").toString();
+        if(utype.equals("USER") && !uname.equals(""))
+        {
+           //response.sendRedirect("../User/index.jsp"); 
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+                response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+            {
+               response.sendRedirect("../Seller/index.jsp");
+            } 
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -37,13 +67,27 @@
                 <div class="card-title mb-8">
                   <div class="d-flex justify-content-start">
                     <div class="image-container">
-                      <form action="#" method="POST" enctype="multipart/form-data">
-                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" id="imgProfile"
+                        <form action="../User_profilechange" method="POST" enctype="multipart/form-data">
+                           <%
+                                try
+                                {
+                                     String emaiiId=session.getAttribute("UserID").toString();
+                                     ResultSet rs = new Database().Userprofilepic(emaiiId);
+                                     if(rs.next())
+                                     {
+                                         String Path="../image/User_pic/" +rs.getString("profilepic");
+                        %>
+                        <img src="<%=Path%>" id="imgProfile"
                           style="width: 150px; height: 150px" class="img-thumbnail" />
+                          <%
+                                    }
+                                }
+                                catch(Exception es){}
+                      %>
                         <div class="middle">
                           <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change"
                             onclick="Show1();" />
-                          <input type="file" style="display: none;" id="profilePicture" name="product_file" />
+                          <input type="file" style="display: none;" id="profilePicture" name="Userproduct_file" />
                           <input class="btn btn-success" id="btnSubmitPicture" type="submit" value=" Submit"
                             style="display: none;">
                         </div>
@@ -52,10 +96,10 @@
                     <div class="bs-example">
                       <ul class="nav nav-tabs" id="myTab">
                         <li class="nav-item">
-                          <a href="#Personal_Information" class="nav-link" data-toggle="tab">Personal Information</a>
+                          <a href="#Personal_Information" class="nav-link" data-toggle="tab" onclick="Show();">Personal Information</a>
                         </li>
                         <li class="nav-item">
-                          <a href="#Change_Password" class="nav-link" data-toggle="tab">Change Password</a>
+                          <a href="#Change_Password" class="nav-link" data-toggle="tab" onclick="hide();">Change Password</a>
                         </li>
                       </ul><br>
                       <div class="tab-content">
@@ -63,11 +107,18 @@
                         <!--First tab Strat-->
 
                         <div class="tab-pane fade" id="Personal_Information">
-                          <form action="#" method="POST">
+                          <form action="../UserMyprofile_PI" method="POST">
+                              <%
+                                    try
+                                    {
+                                        String emailId=session.getAttribute("UserID").toString();
+                                        ResultSet rs1=new Database().UserPI(emailId);
+                                        if(rs1.next())
+                                %>
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">First Name : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value=""
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs1.getString("first_name")%>"
                                   name="first_name">
                               </div>
                             </div>
@@ -75,7 +126,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Last Name : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value=""
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs1.getString("last_name")%>"
                                   name="last_name">
                               </div>
                             </div>
@@ -83,7 +134,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Email : </label>
                               <div class="col-sm-6">
-                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm" value=""
+                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs1.getString("email")%>"
                                   name="email">
                               </div>
                             </div>
@@ -91,9 +142,13 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Phone Number : </label>
                               <div class="col-sm-6">
-                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm" value=""
+                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs1.getString("ph_number")%>"
                                   name="ph_number">
                               </div>
+                               <%
+                                    }
+                                    catch(Exception a){}
+                             %>
                             </div>
                             <div class="form-group btn">
                               <div class="col-8">
@@ -110,7 +165,7 @@
                         <!--Secound tab Strat-->
 
                         <div class="tab-pane fade" id="Change_Password">
-                          <form action="../Seller_Change_Password" method="POST">
+                          <form action="../User_changepassword" method="POST">
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Old Password : </label>
                               <div class="col-sm-6">
@@ -141,7 +196,7 @@
                             </div>
                             <div class="form-group btn">
                               <div class="col-8">
-                                <input class="btn btn-success" type="submit" value="Submit">
+                                <input class="btn btn-success" type="submit" value="Submit"  onclick="return passwordcheck()">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input class="btn btn-danger" type="reset" value="Reset">
                               </div>

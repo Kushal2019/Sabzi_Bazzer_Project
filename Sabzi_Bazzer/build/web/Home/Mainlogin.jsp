@@ -9,17 +9,23 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../Css/Mainlogin.css">
+    <style>
+   
+
+    </style>
       <link href="../Css/Loder.css" rel="stylesheet">
     <script src="../Javascript/Mainlogin_Validation.js"></script>
     <script>
         function errorMag() {
-            alert("Invalid Userid or Password");
-            document.getElementById('Login_username').focus();
-
+           document.getElementById("aaa").style.visibility = "visible";
+        document.getElementById("aaa").style.opacity = 1;
+             document.getElementById("aaa").innerHTML="Your Username & Password Invalid!";
         }
         function Notfound()
         {
-             alert("This email does not exist");
+             document.getElementById("aaa").style.visibility = "visible";
+        document.getElementById("aaa").style.opacity = 1;
+        document.getElementById("aaa").innerHTML="Your Email ID Does not exited";
         }
     </script>
 </head>
@@ -40,7 +46,7 @@
     catch(Exception e){}
 %>
 
-<body onload="<%=(err==1)?((err==2)? "Notfound()":"errorMag()"):""%>">
+<body onload="<%if(err==1){out.print("errorMag()");}else if(err==2){out.print("Notfound()");}%>">
     <div id="loader" class="center">
         <center><img src="../image/Sabzi_Logo.png"></center>
     </div> 
@@ -108,24 +114,31 @@
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customControlInline">
                                 <label class="custom-control-label" for="customControlInline"
-                                    style="color:#ffff00;">Accept Terms & Condition</label>
+                                    style="color:#ffff00;">Accept Terms & Condition
+                                </label>
+                                
                             </div>
                         </div>
                         <div class="d-flex justify-content-center mt-8 login_container">
                             <input type="submit" name="log_sub" class="btn login_btn"
                                 onclick="return Login_Validation()" value="Login">
                         </div>
-
+                      
                     </form>
                 </div>
                 <div class="mt-4">
+                     
                     <div class="d-flex justify-content-center links" style="color:#ffff00;">
                         Don't have an account? <a href="Registration.jsp" class="ml-2" style="color:#ffff00;">Sign
                             Up</a>
+                       
                     </div>
                     <div class="container">
                         <a href="#" data-target="#pwdModal" data-toggle="modal"
                             style="color: tomato; position: relative; left: 78px;">Forgot my password</a>
+                             <div class="tooltip11">
+                     <span class="tooltip11text" id="aaa"></span>
+                     </div>
                     </div>
                 </div>
                 <!--Forgot Password Model Start-->

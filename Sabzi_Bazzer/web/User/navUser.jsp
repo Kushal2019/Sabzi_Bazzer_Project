@@ -1,3 +1,4 @@
+<%@page import="com.sabzi_bazzer.Database"%>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-Secondary">
   <a class="navbar-brand" href="index.jsp" style="font-family: Snap ITC; font-size: 28px;"> Sabzi Bazzer </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -27,11 +28,7 @@
             } 
             }
         }
-    }
-    catch(Exception ex)
-    {
-        response.sendRedirect("../index.jsp");
-    }
+     String rs = new Database().Username(uname);
 %>
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
@@ -42,7 +39,7 @@
         <a class="nav-link" href="../User/User_about.jsp">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="My_Profile.jsp">Edit User</a>
+        <a class="nav-link" href="My_Profile.jsp">Edit: <%=rs%></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Cart</a>
@@ -57,3 +54,10 @@
     </form>
   </div>
 </nav>
+<%
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+%>

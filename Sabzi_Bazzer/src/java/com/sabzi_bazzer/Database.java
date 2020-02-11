@@ -52,7 +52,8 @@ public class Database {
             if(isConnected())
             {
                 //logic to insert
-                String qry="INSERT INTO `user_details`(`user_id`, `first_name`, `last_name`, `password`, `email`, `ph_number`, `s_question`, `s_answer`, `gender`) VALUES (null,?,?,?,?,?,?,?,?)";
+                String profilepic="Userpic.png";
+                String qry="INSERT INTO `user_details`(`user_id`, `first_name`,`password`, `last_name`,`profilepic`, `email`, `ph_number`, `s_question`, `s_answer`, `gender`, `profilepic`) VALUES (null,?,?,?,?,?,?,?,?,?)";
                 smt=conn.prepareStatement(qry);
                 smt.setString(1, user.getFname());
                 smt.setString(2, user.getLname());
@@ -62,6 +63,7 @@ public class Database {
                 smt.setString(6, user.getQues());
                 smt.setString(7, user.getAns());
                 smt.setString(8, user.getGender());
+                smt.setString(9,profilepic );
                 smt.execute();
                 return 1;                
             }
@@ -419,6 +421,35 @@ public class Database {
                 return "null";
             }
     }
+    public String Username( String name)
+    {
+            try
+            {
+                if(isConnected())
+                {
+                    String sql="SELECT `first_name` FROM user_details WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, name);
+                    rs=smt.executeQuery();
+                    if(rs.next())
+                     {
+                      return rs.getString("first_name");
+                      }
+                      else 
+                     {
+                           return "Null";
+                     }
+                }
+                else
+                {
+                    return "null";
+                }
+            }
+            catch(Exception a)
+            {
+                return "null";
+            }
+    }
     public ResultSet Productdetails()
     {
         try
@@ -501,10 +532,11 @@ public class Database {
        {
            if(isConnected())
            {
-               String sql="UPDATE `seller_details` SET `password` = ? WHERE `seller_details`.`email` = ?";
+               String sql="UPDATE login_details,seller_details SET seller_details.password=?,login_details.password=? WHERE login_details.email=seller_details.email AND seller_details.email=?";
                smt=conn.prepareStatement(sql);
                smt.setString(1,password);
-               smt.setString(2,s_name);
+               smt.setString(2,password);
+               smt.setString(3,s_name);
                smt.execute();
                return 1;
            }
@@ -541,7 +573,28 @@ public class Database {
            return 0;
        }
     }
-
+ int UpdateUserprofilepic(String profilepic, String s_name) {
+        try
+       {
+           if(isConnected())
+           {
+               String sql="UPDATE `user_details` SET `profilepic` =? WHERE `email` =?";
+               smt=conn.prepareStatement(sql);
+               smt.setString(1,profilepic);
+               smt.setString(2,s_name);
+               smt.execute();
+               return 1;
+           }
+           else
+           {
+               return 0;
+           }
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
+    }
   
 
     ResultSet Checkpassword(String oldpassword, String s_name) {
@@ -694,6 +747,30 @@ public class Database {
         }
     
     }
+    public ResultSet Userprofilepic(String email){
+        try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT  `user_id`,`profilepic` FROM user_details WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+            return  null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    
+    }
+    //
     public ResultSet SellerPI(String email)
     {
          try
@@ -702,6 +779,29 @@ public class Database {
             {
                 
                     String sql="SELECT  `first_name`, `last_name`,  `company_name`, `licence_number`, `email`, `ph_number` FROM `seller_details` WHERE email =?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+            return  null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+    public ResultSet UserPI(String email)
+    {
+         try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT * FROM `user_details` WHERE `email`=?";
                     smt=conn.prepareStatement(sql);
                     smt.setString(1,email);
                     rs=smt.executeQuery();
@@ -740,7 +840,93 @@ public class Database {
             return null;
         }
     }
+
+    int UpdateUser_PD(String first_name, String last_name, String email, String ph_number, String s_name) {
+       
+             try
+       {
+           if(isConnected())
+           {
+               String sql="UPDATE `user_details`,`login_details` SET login_details.email=?,user_details.`first_name`=?,user_details.`last_name`=?,user_details.`email`=?,user_details.`ph_number`=? WHERE user_details.`email`=login_details.email AND user_details.email=?";
+               smt=conn.prepareStatement(sql);
+               smt.setString(1,email);
+               smt.setString(2,first_name);
+               //smt.setString(3,sellerval.getProfilepic());
+               smt.setString(3,last_name);
+               smt.setString(4,email);
+               smt.setString(5,ph_number);
+               smt.setString(6,s_name);
+               
+               smt.execute();
+               return 1;
+           }
+           else
+           {
+               return 0;
+           }
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
    
+    }
+
+    int User_C_Password(String password, String s_name) {
+       try
+       {
+           if(isConnected())
+           {
+               String sql="UPDATE `user_details`,login_details SET user_details.password=?,login_details.password=? WHERE user_details.email=login_details.email AND user_details.email=?";
+               smt=conn.prepareStatement(sql);
+               smt.setString(1,password);
+               smt.setString(2,password);
+               smt.setString(3,s_name);
+               smt.execute();
+               return 1;
+           }
+           else
+           {
+               return 0;
+           }
+       }
+       catch(Exception ex)
+       {
+           return 0;
+       }
+    }
+
+    ResultSet USerCheckpassword(String oldpassword, String s_name) {
+       try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT * FROM `user_details` WHERE `password`=? AND `email`=?";
+                    smt=conn.prepareStatement(sql);
+                   smt.setString(1,oldpassword);
+                   smt.setString(2,s_name);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+ 
+    
+    
+    
+    
+    
+    
+    
     
 }
 

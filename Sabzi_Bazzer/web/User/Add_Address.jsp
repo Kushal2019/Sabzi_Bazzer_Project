@@ -51,8 +51,8 @@
                 <td>######</td>
                 <td>######</td>
                 <td>
-                  <button type="button" class="btn btn-labeled btn-success"> Edit </button>
-                  <button type="button" class="btn btn-labeled btn-danger"> Delete </button>
+                    <form> <input type="submit" class="btn btn-labeled btn-success" value="Edit"></form>
+                  <button type="button" class="btn btn-labeled btn-danger"> Delete</button>
                 </td>
               </tr>
             </tbody>

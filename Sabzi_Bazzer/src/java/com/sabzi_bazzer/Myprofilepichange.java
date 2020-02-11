@@ -8,10 +8,10 @@
  */
 package com.sabzi_bazzer;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
+
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -49,7 +49,7 @@ public class Myprofilepichange extends HttpServlet {
             String profilepic="";
              HttpSession session=request.getSession();
              String s_name=session.getAttribute("UserID").toString();
-             List<String> photos = Test_helper.uploadFile1(UPLOAD_DIR, request,"product_file",s_name);
+             List<String> photos = Test_helper.uploadFileSeller(UPLOAD_DIR, request,"product_file",s_name);
              for(String s:photos)
              {
                  profilepic=s;

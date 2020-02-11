@@ -7,21 +7,25 @@ package com.sabzi_bazzer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+@MultipartConfig(
+	fileSizeThreshold = 1024 * 1024 * 100, // 100 MB
+	maxFileSize = 1024 * 1024 * 500, // 500 MB
+	maxRequestSize = 1024 * 1024 * 500 // 500 MB
+)
 
 /**
  *
  * @author SoumenPC
  */
-public class Seller_Change_Password extends HttpServlet {
+public class User_profilechange extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,36 +35,42 @@ public class Seller_Change_Password extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     */
+     */ private static final String UPLOAD_DIR = "image/User_pic";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           String oldpassword,password;
-           oldpassword=request.getParameter("oldpassword");
-           password=request.getParameter("password");
-           HttpSession session=request.getSession();
-           String s_name=session.getAttribute("UserID").toString();
-           ResultSet rs = new Database().Checkpassword(oldpassword,s_name);  
-           if(rs.next())
-           {
-           
-                int x=new Database().Seller_C_Password(password,s_name);
-                if(x==1)
-                {
-        
-                    response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
-                }
-                else
-                {
-                    response.sendRedirect("Seller/my_profile.jsp?Update=NotDone");
-                }
-           }
-           else
-           {
-               response.sendRedirect("Seller/my_profile.jsp?Update=Notfound");
-           }
+            String profilepic="";
+             HttpSession session=request.getSession();
+             String s_name=session.getAttribute("UserID").toString();
+             List<String> photos = Test_helper.uploadFileUSer(UPLOAD_DIR, request,"Userproduct_file",s_name);
+             for(String s:photos)
+             {
+                 profilepic=s;
+             }
+            
+             Database db=new Database();
+             /*ResultSet rs = new Database().Sellerprofilepic(s_name);
+             if(rs.next())
+             {
+                 String path="D:\\Minor Project\\Sabzi_Bazzer_Project\\Sabzi_Bazzer\\build\\web\\image\\Seller_pic"+rs.getString("profilepic");
+                   File f=new File(path);
+                    f.delete();
+             }*/
+             int x=db.UpdateUserprofilepic(profilepic,s_name);
+             if(x==1)
+             {
+                  response.sendRedirect("User/My_Profile.jsp?Update=Done");
+             }
+             else
+             {
+                  response.sendRedirect("User/My_Profile.jsp?Update=NotDone");
+             }
+             //out.println("hi");
+        }catch(Exception ex)
+        {
+         response.sendRedirect("User/My_Profile.jsp?Update=NotDone");
         }
     }
 
@@ -76,11 +86,7 @@ public class Seller_Change_Password extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Seller_Change_Password.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -94,11 +100,7 @@ public class Seller_Change_Password extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Seller_Change_Password.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
