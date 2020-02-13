@@ -129,7 +129,20 @@ public class Registration_Seller1 extends HttpServlet {
              int y=db.insertseller(seller);
              if(y==1)
              {
-                response.sendRedirect("Home/Mainlogin.jsp");
+               String to=s_email;  
+                                                        String subject="registration confirmation ";  
+                                                        String msg="<html>\n" +
+                                                                       "\n" +
+                                                                       "<body>\n" +
+                                                                       "<center>\n" +
+                                                                       "dhfhjshsgsgdkjsjh"+
+                                                                       "</center>\n" +
+                                                                       "</body>\n" +
+                                                                       "</html>";
+
+                                       Mailer.send(to, subject, msg); 
+                      out.print("message has been sent successfully");  
+                   response.sendRedirect("Home/Mainlogin.jsp");
              }
              else
              {

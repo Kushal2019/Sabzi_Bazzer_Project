@@ -53,7 +53,7 @@ public class Database {
             {
                 //logic to insert
                 String profilepic="Userpic.png";
-                String qry="INSERT INTO `user_details`(`user_id`, `first_name`,`password`, `last_name`,`profilepic`, `email`, `ph_number`, `s_question`, `s_answer`, `gender`, `profilepic`) VALUES (null,?,?,?,?,?,?,?,?,?)";
+                String qry="INSERT INTO `user_details`( `first_name`, `last_name`,`password`, `email`, `ph_number`, `s_question`, `s_answer`, `gender`, `profilepic`) VALUES (?,?,?,?,?,?,?,?,?)";
                 smt=conn.prepareStatement(qry);
                 smt.setString(1, user.getFname());
                 smt.setString(2, user.getLname());

@@ -43,10 +43,86 @@
   <link rel="stylesheet" href="../Css/my_profile.css">
   <script src="../Javascript/my_profile.js"></script>
   <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
+  <script>
+        function errorMag() {
+           document.getElementById("aaa").style.visibility = "visible";
+        document.getElementById("aaa").style.opacity = 1;
+             document.getElementById("aaa").innerHTML="Your Username & Password Invalid!";
+        }
+        function NotupdatePI()
+        {
+             document.getElementById("aaa").style.visibility = "visible";
+        document.getElementById("aaa").style.opacity = 1;
+        document.getElementById("aaa").innerHTML="Update personal information Not successfully";
+        }
+        function NotupdateCP()
+        {
+             document.getElementById("aaa").style.visibility = "visible";
+        document.getElementById("aaa").style.opacity = 1;
+        document.getElementById("aaa").innerHTML="Your Old Password Is Worng!";
+        document.getElementById("oldpass").focus();
+        }
+    </script>
+  <style>
+      .tooltip11 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  left:76%;
+}
 
+.tooltip11 .tooltip11text {
+  visibility: hidden;
+  width: 300px;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 200%;
+  left: 80%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip11 .tooltip11text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left:50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  #555 transparent  transparent transparent  ;
+  
+}
+#aaa{color: red;}         
+  </style>
 </head>
-
-<body>
+<%
+    int err=0;
+    try
+    {
+        String error=request.getParameter("Update");
+        if(error.equals("NotDoneCP"))
+        {
+            err=1;
+        }
+        if(error.equals("Not_P_Info"))
+        {
+            err=2;
+        }
+         if(error.equals("Notfound"))
+        {
+            err=3;
+        }
+    }
+    catch(Exception e){}
+%>
+<body onload="<%if(err==1){out.print("errorMag()");}else if(err==2){out.print("NotupdatePI()");}else if(err==3){out.print("NotupdateCP()");}%>">
 
   <div class="dash">
     <%@include file="pageFiles/Seller_SidePanel.jsp" %>
@@ -55,6 +131,9 @@
       <!--Main contant is Start-->
 
       <div class="container">
+           <div class="tooltip11">
+                     <span class="tooltip11text" id="aaa">aaa</span>
+                     </div>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -119,7 +198,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">First Name : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm1"
                                   value="<%=rs1.getString("first_name")%>" name="first_name">
                               </div>
                             </div>
@@ -127,7 +206,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Last Name : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm2"
                                   value="<%=rs1.getString("last_name")%>" name="last_name">
                               </div>
                             </div>
@@ -135,7 +214,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Company Name : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm3"
                                   value="<%=rs1.getString("company_name")%>" name="company_name">
                               </div>
                             </div>
@@ -143,7 +222,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Email : </label>
                               <div class="col-sm-6">
-                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm4"
                                   value="<%=rs1.getString("email")%>" name="email">
                               </div>
                             </div>
@@ -151,7 +230,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Phone Number : </label>
                               <div class="col-sm-6">
-                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm5"
                                   value="<%=rs1.getString("ph_number")%>" name="ph_number">
                               </div>
                             </div>
@@ -159,7 +238,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Licence Number : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm6"
                                   value="<%=rs1.getString("licence_number")%>" name="licence_number">
                               </div>
                             </div>
@@ -169,7 +248,7 @@
                              %>
                             <div class="form-group btn">
                               <div class="col-8">
-                                <input class="btn btn-success" type="submit" value="Submit">
+                                  <input class="btn btn-success" type="submit" value="Submit" onclick="return validPI();">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input class="btn btn-danger" type="reset" value="Reset">
                               </div>
@@ -273,7 +352,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Zip Code : </label>
                               <div class="col-sm-6">
-                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="number" class="form-control form-control-sm" id="zip_code"
                                   value="<%=rs2.getString("zip_code")%>" name="zip_code">
                               </div>
                             </div>
@@ -281,7 +360,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Your Street : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="text" class="form-control form-control-sm" id="street"
                                   value="<%=rs2.getString("street")%>" name="street">
                               </div>
                             </div>
@@ -289,7 +368,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">House Number : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="text" class="form-control form-control-sm" id="house_number"
                                   value="<%=rs2.getString("house_number")%>" name="house_number">
                               </div>
                             </div>
@@ -297,7 +376,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">landmark : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm"
+                                <input type="text" class="form-control form-control-sm" id="landmark"
                                   value="<%=rs2.getString("landmark")%>" name="landmark">
                               </div>
                             </div>

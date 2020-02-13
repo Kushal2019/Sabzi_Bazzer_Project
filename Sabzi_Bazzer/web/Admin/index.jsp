@@ -96,8 +96,8 @@
                                         %>
                                         <div class="stats-number"><%=Bcount%></div>
                                         <div class="stats-change">
-                                            <span class="stats-percentage">+17.5%</span>
-                                            <span class="stats-timeframe">from last month</span>
+                                            <span class="stats-percentage"></span>
+                                            <span class="stats-timeframe">Number of Buyer</span>
                                         </div>
                                     </div>
                                 </div>

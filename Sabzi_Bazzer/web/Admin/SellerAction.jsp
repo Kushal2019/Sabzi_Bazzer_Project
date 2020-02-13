@@ -1,3 +1,4 @@
+<%@page import="com.sabzi_bazzer.Mailer"%>
 <%
     try
     {
@@ -44,6 +45,19 @@
             {
                 String getVal=request.getParameter("Activeid");
                 new  Database().activateSellerByEmail(getVal);
+                 String to=getVal;  
+                                                        String subject="Confirm Activation ";  
+                                                        String msg="<html>\n" +
+                                                                       "\n" +
+                                                                       "<body>\n" +
+                                                                       "<center>\n" +
+                                                                       "Confirm Activation of Your Sabzibazzer Account  Your are Read to Login "+
+                                                                       "</center>\n" +
+                                                                       "</body>\n" +
+                                                                       "</html>";
+
+                                       Mailer.send(to, subject, msg); 
+                      out.print("message has been sent successfully"); 
                 response.sendRedirect("Seller.jsp");
             }
             catch(Exception e){
@@ -52,6 +66,19 @@
             {
                 String getVal=request.getParameter("Deactiveid");
                 new  Database().DeActivatesellerByEmail(getVal);
+                 String to=getVal;  
+                                                        String subject="Deactivated Account";  
+                                                        String msg="<html>\n" +
+                                                                       "\n" +
+                                                                       "<body>\n" +
+                                                                       "<center>\n" +
+                                                                       "Your Account Deactivated By ADMIN "+
+                                                                       "</center>\n" +
+                                                                       "</body>\n" +
+                                                                       "</html>";
+
+                                       Mailer.send(to, subject, msg); 
+                      out.print("message has been sent successfully"); 
                 response.sendRedirect("Seller.jsp");
             }
             catch(Exception e){

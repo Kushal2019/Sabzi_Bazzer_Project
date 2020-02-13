@@ -1,13 +1,15 @@
 package com.sabzi_bazzer;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.IOException;  
+import java.io.PrintWriter;  
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+  
+import javax.servlet.ServletException;  
+import javax.servlet.http.HttpServlet;  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
 
 /**
  *
@@ -110,7 +112,20 @@ public class Registration_User extends HttpServlet {
               int y=db.insertUser(user);
                 if(y==1)
                 {
-                    response.sendRedirect("Home/Mainlogin.jsp");
+                                                        String to=email;  
+                                                        String subject="registration confirmation ";  
+                                                        String msg="<html>\n" +
+                                                                       "\n" +
+                                                                       "<body>\n" +
+                                                                       "<center>\n" +
+                                                                       "dhfhjshsgsgdkjsjh"+
+                                                                       "</center>\n" +
+                                                                       "</body>\n" +
+                                                                       "</html>";
+
+                                       Mailer.send(to, subject, msg); 
+                      out.print("message has been sent successfully");  
+                   response.sendRedirect("Home/Mainlogin.jsp");
                 }else
                 {
                     response.sendRedirect("Home/Registration.jsp?Err=2");
