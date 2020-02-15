@@ -47,7 +47,7 @@
   <link rel="stylesheet" href="../Css/my_profile.css">
   <script src="../Javascript/my_profile.js"></script>
   <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
-
+  
 </head>
 
 <body>

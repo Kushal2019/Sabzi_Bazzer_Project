@@ -678,35 +678,45 @@ function ran(st_l) {
             let f=1;
             if(pass.value==="" && cpass.value==="" && oldpass.value==="" )
             {
-                 document.getElementById("msg").innerHTML="please fill out all field";
+                 document.getElementById("aaa").style.visibility = "visible";
+                 document.getElementById("aaa").style.opacity = 1;
+                 document.getElementById("aaa").innerHTML="please fill out all field";
                 f=0;
             }
             else
             {
                 if(oldpass.value==="")
                 {
-                    document.getElementById("msg").innerHTML="please fill out Old Password field";
+                     document.getElementById("aaa").style.visibility = "visible";
+                      document.getElementById("aaa").style.opacity = 1;
+                    document.getElementById("aaa").innerHTML="please fill out Old Password field";
                  f=0;
                 }
                 else
                 {
                     if(pass.value==="")
                      {
-                            document.getElementById("msg").innerHTML="please fill out New Password field";
+                          document.getElementById("aaa").style.visibility = "visible";
+                          document.getElementById("aaa").style.opacity = 1;
+                            document.getElementById("aaa").innerHTML="please fill out New Password field";
                             f=0;
                       }
                       else
                       {
                           if(cpass.value==="")
                             {
-                                 document.getElementById("msg").innerHTML="please fill out Confirm Password field";
+                                 document.getElementById("aaa").style.visibility = "visible";
+                                document.getElementById("aaa").style.opacity = 1;
+                                 document.getElementById("aaa").innerHTML="please fill out Confirm Password field";
                                   f=0;
                             }
                           else
                             {
                                  if(cpass.value!==pass.value)
                                  {
-                                    document.getElementById("msg").innerHTML="Confirm Password does not mathc new Password";
+                                      document.getElementById("aaa").style.visibility = "visible";
+                                        document.getElementById("aaa").style.opacity = 1;
+                                    document.getElementById("aaa").innerHTML="Confirm Password does not mathc new Password";
                                      f=0;
                                  }
                                  else
@@ -751,11 +761,87 @@ function ran(st_l) {
         }
         function selecttown()
         {
+            let s_state=document.getElementById("s_state");
             let town=document.getElementById("s_town");
+            let zip_code=document.getElementById("zip_code");
+            let street=document.getElementById("street");
+            let house_number=document.getElementById("house_number");
+            let landmark=document.getElementById("landmark");
+            let f=1;
             if(town.value=="")
             {
                 document.getElementById("s_town").focus();
+                f=0;
+            }
+            if(s_state.value=="" ||zip_code.value=="" ||street.value=="" || house_number.value=="" || landmark.value=="")
+            {
+                document.getElementById("aaa").style.visibility = "visible";
+                 document.getElementById("aaa").style.opacity = 1;
+                 document.getElementById("aaa").innerHTML="please fill out all field";
+                f=0;
+            }
+            if(f==0)
+            {
                 return false;
             }
-            return true;
+            else
+            {
+                return true;
+            }
+        }
+        function validPI()
+        {
+            let fname,lastn,company,email,ph,lic;
+            fname= document.getElementById("colFormLabelSm1");
+            lastn= document.getElementById("colFormLabelSm2"); 
+            company= document.getElementById("colFormLabelSm3");
+            email= document.getElementById("colFormLabelSm4");
+            ph= document.getElementById("colFormLabelSm5");
+            lic= document.getElementById("colFormLabelSm6");
+            let f=1;
+            if(fname.value=="" || lastn.value=="" || company.value=="" || email.value=="" || ph.value=="" || lic.value=="")
+            {
+                document.getElementById("aaa").style.visibility = "visible";
+                 document.getElementById("aaa").style.opacity = 1;
+                 document.getElementById("aaa").innerHTML="please fill out all field";
+                 document.getElementById("aaa").focus();
+                 
+                f=0;
+            }
+            if(f===1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+         function validMA()
+        {
+            let fname,lastn,company,email,ph,lic;
+            fname= document.getElementById("colFormLabelSm1");
+            lastn= document.getElementById("colFormLabelSm2"); 
+            company= document.getElementById("colFormLabelSm3");
+            email= document.getElementById("colFormLabelSm4");
+            ph= document.getElementById("colFormLabelSm5");
+            lic= document.getElementById("colFormLabelSm6");
+            let f=1;
+            if(fname.value=="" || lastn.value=="" || company.value=="" || email.value=="" || ph.value=="" || lic.value=="")
+            {
+                document.getElementById("aaa").style.visibility = "visible";
+                 document.getElementById("aaa").style.opacity = 1;
+                 document.getElementById("aaa").innerHTML="please fill out all field";
+                 document.getElementById("aaa").focus();
+                 
+                f=0;
+            }
+            if(f===1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }

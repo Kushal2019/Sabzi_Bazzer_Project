@@ -159,7 +159,8 @@
                                         <span style="color:red;" id="e8"></span>
                                     </div>
                                     <input type="submit" class="btnRegister" value="Register"
-                                        onclick="return User_validation()" />
+                                        onclick="" />
+                                    /<!--return User_validation()-->
                                 </div>
                             </div>
                         </form>

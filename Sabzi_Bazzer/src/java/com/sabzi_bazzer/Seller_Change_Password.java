@@ -50,11 +50,11 @@ public class Seller_Change_Password extends HttpServlet {
                 if(x==1)
                 {
         
-                    response.sendRedirect("Seller/my_profile.jsp?Update='Done'");
+                    response.sendRedirect("Seller/my_profile.jsp?Update=Done");
                 }
                 else
                 {
-                    response.sendRedirect("Seller/my_profile.jsp?Update=NotDone");
+                    response.sendRedirect("Seller/my_profile.jsp?Update=Not_CP");
                 }
            }
            else
