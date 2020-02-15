@@ -83,7 +83,7 @@
                           <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change"
                             onclick="Show1();" />
                           <input type="file" style="display: none;" id="profilePicture" name="product_file" />
-                          <input class="btn btn-success" id="btnSubmitPicture" type="submit" value=" Submit"
+                          <input class="btn btn-success" id="btnSubmitPicture" type="submit" value="Submit"
                             style="display: none;">
                         </div>
                       </form>

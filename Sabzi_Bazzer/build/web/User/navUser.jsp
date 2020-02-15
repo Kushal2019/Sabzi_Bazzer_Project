@@ -39,7 +39,7 @@
         <a class="nav-link" href="../User/User_about.jsp">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="My_Profile.jsp">Edit: <%=rs%></a>
+        <a class="nav-link" href="My_Profile.jsp">Edit <%=rs%></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Cart</a>

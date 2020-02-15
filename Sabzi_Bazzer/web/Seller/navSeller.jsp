@@ -45,7 +45,7 @@
         <a class="nav-link" href="Seller_about.jsp">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="my_profile.jsp">Edit: <%=rs%></a>
+        <a class="nav-link" href="my_profile.jsp">Edit <%=rs%></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../logout.jsp">Logout</a>
