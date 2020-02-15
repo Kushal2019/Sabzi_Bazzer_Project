@@ -407,7 +407,7 @@ pre {
 
 .container {
   padding: 120px;
-  background-image:-webkit-linear-gradient(left, #3931af, #00c6ff);}
+  background-image:-webkit-linear-gradient(right, #3931af, #00c6ff);}
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
