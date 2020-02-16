@@ -60,6 +60,10 @@
         <servlet-name>User_changepassword</servlet-name>
         <servlet-class>com.sabzi_bazzer.User_changepassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>User_add_Address</servlet-name>
+        <servlet-class>com.sabzi_bazzer.User_add_Address</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>User_changepassword</servlet-name>
         <url-pattern>/User_changepassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>User_add_Address</servlet-name>
+        <url-pattern>/User_add_Address</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

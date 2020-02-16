@@ -845,3 +845,270 @@ function ran(st_l) {
                 return false;
             }
         }
+        function validUserPI()
+        {
+            let fname,lastn,company,email,ph,lic;
+            fname= document.getElementById("colFormLabelSm");
+            lastn= document.getElementById("colFormLabelSm1"); 
+            
+            email= document.getElementById("colFormLabelSm2");
+            ph= document.getElementById("colFormLabelSm3");
+          
+            let f=1;
+            if(fname.value=="" || lastn.value=="" ||  email.value=="" || ph.value=="")
+            {
+                document.getElementById("aaa").style.visibility = "visible";
+                 document.getElementById("aaa").style.opacity = 1;
+                 document.getElementById("aaa").innerHTML="please fill out all field";
+                 document.getElementById("aaa").focus();
+                 
+                f=0;
+            }
+            if(f===1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        function UserAddVAl()
+        {
+            
+            let f=1 ;
+           let house_number = document.getElementById('house_number1');
+           let street_number = document.getElementById('street_number1');
+            let vill_town = document.getElementById('vill_town1');
+            let post_office = document.getElementById('post_office1');
+           let police_station = document.getElementById('police_station1');
+          let  s_town = document.getElementById('s_town');
+          let  s_state = document.getElementById('s_state');
+         let   pin_code = document.getElementById('pin_code1');
+         let   landmark = document.getElementById('landmark1');
+             if (house_number.value === "") {
+                  house_number.style.borderColor = "red";
+                  document.getElementById('m1').innerHTML = "Enter the House No. ";
+                     f = 0;
+                }
+                if (street_number.value == "") {
+                  street_number.style.borderColor = "red";
+                  document.getElementById('m2').innerHTML = "Enter the Street No. ";
+                     f = 0;
+                }
+                if (vill_town.value == "") {
+                  vill_town.style.borderColor = "red";
+                  document.getElementById('m3').innerHTML = "Enter the Vill/Town. ";
+                     f = 0;
+                }
+                if (post_office.value == "") {
+                  post_office.style.borderColor = "red";
+                  document.getElementById('m4').innerHTML = "Enter the Post Office ";
+                     f = 0;
+                }
+                if (police_station.value == "") {
+                  police_station.style.borderColor = "red";
+                  document.getElementById('m5').innerHTML = "Enter the Police Station";
+                     f = 0;
+                }
+               
+                if (pin_code.value == "") {
+                  pin_code.style.borderColor = "red";
+                  document.getElementById('m8').innerHTML = "Enter the Pin code ";
+                     f = 0;
+                }
+                if (landmark.value == "") {
+                  landmark.style.borderColor = "red";
+                  document.getElementById('m9').innerHTML = "Enter the Landmark ";
+                     f = 0;
+                }
+                 if (s_town.value == "") {
+                  s_town.style.borderColor = "red";
+                  document.getElementById('m6').innerHTML = "Select the Distric ";
+                     f = 0;
+                }
+                if (s_state.value == "") {
+                  s_state.style.borderColor = "red";
+                  document.getElementById('m7').innerHTML = "Select the State ";
+                     f = 0;
+                }
+                if(f==1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
+         function UserAddVAl1()
+        {
+            
+            let f=1 ;
+           let house_number = document.getElementById('house_number2');
+           let street_number = document.getElementById('street_number2');
+            let vill_town = document.getElementById('vill_town2');
+            let post_office = document.getElementById('post_office2');
+           let police_station = document.getElementById('police_station2');
+          let  s_town = document.getElementById('s_town');
+          let  s_state = document.getElementById('s_state');
+         let   pin_code = document.getElementById('pin_code2');
+         let   landmark = document.getElementById('landmark2');
+             if (house_number.value === "") {
+                  house_number.style.borderColor = "red";
+                  document.getElementById('m11').innerHTML = "Enter the House No. ";
+                     f = 0;
+                }
+                if (street_number.value == "") {
+                  street_number.style.borderColor = "red";
+                  document.getElementById('m21').innerHTML = "Enter the Street No. ";
+                     f = 0;
+                }
+                if (vill_town.value == "") {
+                  vill_town.style.borderColor = "red";
+                  document.getElementById('m31').innerHTML = "Enter the Vill/Town. ";
+                     f = 0;
+                }
+                if (post_office.value == "") {
+                  post_office.style.borderColor = "red";
+                  document.getElementById('m41').innerHTML = "Enter the Post Office ";
+                     f = 0;
+                }
+                if (police_station.value == "") {
+                  police_station.style.borderColor = "red";
+                  document.getElementById('m51').innerHTML = "Enter the Police Station";
+                     f = 0;
+                }
+               
+                if (pin_code.value == "") {
+                  pin_code.style.borderColor = "red";
+                  document.getElementById('m81').innerHTML = "Enter the Pin code ";
+                     f = 0;
+                }
+                if (landmark.value == "") {
+                  landmark.style.borderColor = "red";
+                  document.getElementById('m91').innerHTML = "Enter the Landmark ";
+                     f = 0;
+                }
+                 if (s_town.value == "") {
+                  s_town.style.borderColor = "red";
+                  document.getElementById('m61').innerHTML = "Select the Distric ";
+                     f = 0;
+                }
+                if (s_state.value == "") {
+                  s_state.style.borderColor = "red";
+                  document.getElementById('m71').innerHTML = "Select the State ";
+                     f = 0;
+                }
+                if(f==1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
+        function state1() {
+    let s_state, s_town;
+    s_state = document.getElementById('s_state1');
+    s_town = document.getElementById('s_town1');
+    if (s_state.value == "West Bengal") {
+        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+                            <option value='kolkata'>Kolkata</option>\n\
+                            <option value='Asansol'>Asansol</option>\n\
+                            <option value='North 24 Parganas'>North 24 Parganas</option>\n\
+                            <option value='South 24 Parganas'>South 24 Parganas</option>\n\
+                            <option value='Howrah'>Howrah</option>\n\
+                            <option value='Hooghly'>Hooghly</option>\n\
+                            <option value='Malda'>Malda</option>\n\
+                            <option value='Paschim Medinipur'>Paschim Medinipur</option>\n\
+                            <option value='Bankura'>Bankura</option>\n\
+                            <option value='Purba Medinipur'>Purba Medinipur</option>";
+    }
+    if (s_state.value == "Bihar") {
+        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+                            <option value='Patna'>Patna</option>\n\
+                            <option value='Gaya'>Gaya</option>\n\
+                            <option value='Bhagalpur'>Bhagalpur</option>\n\
+                            <option value='Muzaffarpur'>Muzaffarpur</option>\n\
+                            <option value='Purnia'>Purnia</option>\n\
+                            <option value='Bhojpur'>Bhojpur</option>\n\
+                            <option value='Jamalpur'>Jamalpur</option>\n\
+                            <option value='Bagaha'>Bagaha</option>\n\
+                            <option value='Siwan'>Siwan</option>";
+    }
+    if (s_state.value == "Gujarat") {
+        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+                            <option value='Ahmedabad'>Ahmedabad</option>\n\
+                            <option value='Surat'>Surat</option>\n\
+                            <option value='Rajkot'>Rajkot</option>\n\
+                            <option value='Bhavnagar'>Bhavnagar</option>\n\
+                            <option value='Jamnagar'>Jamnagar</option>\n\
+                            <option value='Vadodara'>Vadodara</option>\n\
+                            <option value='Nadiad'>Nadiad</option>\n\
+                            <option value='Gandhidham'>Gandhidham</option>\n\
+                            <option value='Porbandar'>Porbandar</option>";
+    }
+    if (s_state.value == "Himachal Pradesh") {
+        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+                            <option value='Shimla'>Shimla</option>\n\
+                            <option value='Solan'>Solan</option>\n\
+                            <option value='Dharamsala'>Dharamsala</option>\n\
+                            <option value='Baddi'>Baddi</option>\n\
+                            <option value='Nahan'>Nahan</option>\n\
+                            <option value='Mandi'>Mandi</option>\n\
+                            <option value='Paonta Sahib'>Paonta Sahib</option>\n\
+                            <option value='Sundarnagar'>Sundarnagar</option>\n\
+                            <option value='Chamba'>Chamba</option>";
+    }
+    if (s_state.value == "Maharashtra") {
+        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+                            <option value='Mumbai'>Mumbai</option>\n\
+                            <option value='Pune'>Pune</option>\n\
+                            <option value='Nagpur'>Nagpur</option>\n\
+                            <option value='Nashik'>Nashik</option>\n\
+                            <option value='Aurangabad'>Aurangabad</option>\n\
+                            <option value='Jalgaon'>Jalgaon</option>\n\
+                            <option value='Gondia'>Gondia</option>\n\
+                            <option value='Sangli'>Sangli</option>\n\
+                            <option value='Jalna'>Jalna</option>";
+    }
+    if (s_state.value == "Odisha") {
+        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+                            <option value='Bhubaneswar'>Bhubaneswar</option>\n\
+                            <option value='Cuttack'>Cuttack</option>\n\
+                            <option value='Rourkela'>Rourkela</option>\n\
+                            <option value='Brahmapur'>Brahmapur</option>\n\
+                            <option value='Puri'>Puri</option>\n\
+                            <option value='Baripada'>Baripada</option>\n\
+                            <option value='Jeypore'>Jeypore</option>\n\
+                            <option value='Bargarh'>Bargarh</option>\n\
+                            <option value='Rayagada'>Rayagada</option>";
+    }
+    if (s_state.value == "Tamil Nadu") {
+        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+                            <option value='Chennai'>Chennai</option>\n\
+                            <option value='Coimbatore'>Coimbatore</option>\n\
+                            <option value='Madurai'>Madurai</option>\n\
+                            <option value='Tiruchirappalli'>Tiruchirappalli</option>\n\
+                            <option value='Tiruppur'>Tiruppur</option>\n\
+                            <option value='Salem'>Salem</option>\n\
+                            <option value='Erode'>Erode</option>\n\
+                            <option value='Vellore'>Vellore</option>\n\
+                            <option value='Dindigul'>Dindigul</option>";
+
+    }
+    if (s_state.value == "Uttarakhand") {
+        s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
+                           <option value='Dehradun'>Dehradun</option>\n\
+                            <option value='Haridwar'>Haridwar</option>\n\
+                            <option value='Rudrapur'>Rudrapur</option>\n\
+                            <option value='Roorkee'>Roorkee</option>\n\
+                            <option value='Kashipur'>Kashipur</option>\n\
+                            <option value='Rishikesh'>Rishikesh</option>\n\
+                            <option value='Haldwani'>Haldwani</option>";
+    }
+
+
+}

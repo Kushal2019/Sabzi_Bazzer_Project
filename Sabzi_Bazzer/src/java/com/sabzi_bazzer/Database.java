@@ -919,9 +919,83 @@ public class Database {
             return null;
         }
     }
+
+    int insetUserAddress(User_Address_val val) {
+       try
+        {
+            if(isConnected())
+            {
+               String que="INSERT INTO `user_address`( `email`, `house_number`, `street_number`, `vill_town`, `post_office`, `police_station`, `district`, `state`, `pin_code`, `landmark`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+               smt=conn.prepareStatement(que);
+               smt.setString(1,val.getEmail());
+               smt.setString(2, val.getHouse_number());
+               smt.setString(3, val.getStreet_number1());
+               smt.setString(4, val.getVill_town1());
+               smt.setString(5, val.getPost_office1());
+               smt.setString(6, val.getPolice_station1());
+               smt.setString(7, val.getS_town());
+               smt.setString(8, val.getS_state());
+               smt.setString(9, val.getPin_code1());
+               smt.setString(10, val.getLandmark1());
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
  
     
-    
+    public ResultSet UserAddress( String s_name) {
+       try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT * FROM `user_address` WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,s_name);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+      public ResultSet UserAddress1( String id) {
+       try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT * FROM `user_address` WHERE `address_id`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,id);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
     
     
     

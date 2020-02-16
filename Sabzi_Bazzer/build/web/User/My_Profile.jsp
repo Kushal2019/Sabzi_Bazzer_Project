@@ -47,7 +47,44 @@
   <link rel="stylesheet" href="../Css/my_profile.css">
   <script src="../Javascript/my_profile.js"></script>
   <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
+  <style>
+      .tooltip11 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  left:76%;
+}
+
+.tooltip11 .tooltip11text {
+  visibility: hidden;
+  width: 300px;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 200%;
+  left: 80%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip11 .tooltip11text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left:50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  #555 transparent  transparent transparent  ;
   
+}
+#aaa{color: red;}         
+  </style>
 </head>
 
 <body>
@@ -60,6 +97,9 @@
       <!--Main contant is Start-->
 
       <div class="container">
+          <div class="tooltip11">
+                     <span class="tooltip11text" id="aaa">aaa</span>
+                     </div>
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -126,7 +166,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Last Name : </label>
                               <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs1.getString("last_name")%>"
+                                <input type="text" class="form-control form-control-sm" id="colFormLabelSm1" value="<%=rs1.getString("last_name")%>"
                                   name="last_name">
                               </div>
                             </div>
@@ -134,7 +174,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Email : </label>
                               <div class="col-sm-6">
-                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs1.getString("email")%>"
+                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm2" value="<%=rs1.getString("email")%>"
                                   name="email">
                               </div>
                             </div>
@@ -142,7 +182,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Phone Number : </label>
                               <div class="col-sm-6">
-                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm" value="<%=rs1.getString("ph_number")%>"
+                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm3" value="<%=rs1.getString("ph_number")%>"
                                   name="ph_number">
                               </div>
                                <%
@@ -152,7 +192,7 @@
                             </div>
                             <div class="form-group btn">
                               <div class="col-8">
-                                <input class="btn btn-success" type="submit" value="Submit">
+                                  <input class="btn btn-success" type="submit" value="Submit" onclick="return validUserPI()">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input class="btn btn-danger" type="reset" value="Reset">
                               </div>
