@@ -9,23 +9,19 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../Css/Mainlogin.css">
-    <style>
-   
-
-    </style>
-      <link href="../Css/Loder.css" rel="stylesheet">
+    <link href="../Css/Loder.css" rel="stylesheet">
     <script src="../Javascript/Mainlogin_Validation.js"></script>
     <script>
         function errorMag() {
-           document.getElementById("aaa").style.visibility = "visible";
-        document.getElementById("aaa").style.opacity = 1;
-             document.getElementById("aaa").innerHTML="Your Username & Password Invalid!";
+            document.getElementById("aaa").style.visibility = "visible";
+            document.getElementById("aaa").style.opacity = 1;
+            document.getElementById("aaa").innerHTML="Your Username & Password Invalid!";
         }
         function Notfound()
         {
-             document.getElementById("aaa").style.visibility = "visible";
-        document.getElementById("aaa").style.opacity = 1;
-        document.getElementById("aaa").innerHTML="Your Email ID Does not exited";
+            document.getElementById("aaa").style.visibility = "visible";
+            document.getElementById("aaa").style.opacity = 1;
+            document.getElementById("aaa").innerHTML="Your Email ID Does not exited";
         }
     </script>
 </head>
@@ -47,9 +43,7 @@
 %>
 
 <body onload="<%if(err==1){out.print("errorMag()");}else if(err==2){out.print("Notfound()");}%>">
-    <div id="loader" class="center">
-        <center><img src="../image/Sabzi_Logo.png"></center>
-    </div> 
+    <div id="loader"> <img src="../image/loading.gif"> </div> 
     <%@include file="../PageFiles/navLog.jsp" %>
     <%
         try

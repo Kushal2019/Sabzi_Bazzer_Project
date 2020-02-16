@@ -48,9 +48,9 @@
 </head>
 
 <body>
-    <div id="loader" class="center">
+    <div id="loader">
         <center><img src="../image/Sabzi_Logo.png"></center>
-    </div> 
+    </div>
     <%@include file="../PageFiles/navMain.jsp" %>
     <%@include file="../Home/image_slider.jsp" %>
         
