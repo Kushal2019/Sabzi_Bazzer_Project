@@ -996,6 +996,60 @@ public class Database {
             return null;
         }
     }
+
+    int updateUserAddress(User_Address_val val,String id) {
+        try
+        {
+            if(isConnected())
+            {
+               String que="UPDATE `user_address` SET `house_number`=?,`street_number`=?,`vill_town`=?,`post_office`=?,`police_station`=?,`district`=?,`state`=?,`pin_code`=?,`landmark`=? WHERE `address_id`=? and `email`=?";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, val.getHouse_number());
+               smt.setString(2, val.getStreet_number1());
+               smt.setString(3, val.getVill_town1());
+               smt.setString(4, val.getPost_office1());
+               smt.setString(5, val.getPolice_station1());
+               smt.setString(6, val.getS_town());
+               smt.setString(7, val.getS_state());
+               smt.setString(8, val.getPin_code1());
+               smt.setString(9, val.getLandmark1());
+               smt.setString(10,id);
+               smt.setString(11, val.getEmail());
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
+
+    int User_add_delete(String id) {
+       try
+        {
+            if(isConnected())
+            {
+               String que="DELETE FROM `user_address` WHERE `address_id`=?";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, id);
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
     
     
     

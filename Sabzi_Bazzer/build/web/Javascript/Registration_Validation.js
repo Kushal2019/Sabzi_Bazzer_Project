@@ -950,8 +950,8 @@ function ran(st_l) {
             let vill_town = document.getElementById('vill_town2');
             let post_office = document.getElementById('post_office2');
            let police_station = document.getElementById('police_station2');
-          let  s_town = document.getElementById('s_town');
-          let  s_state = document.getElementById('s_state');
+          let  s_town = document.getElementById('s_town1');
+          let  s_state = document.getElementById('s_state1');
          let   pin_code = document.getElementById('pin_code2');
          let   landmark = document.getElementById('landmark2');
              if (house_number.value === "") {

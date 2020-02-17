@@ -3,7 +3,35 @@
     Created on : 9 Feb, 2020, 6:38:15 PM
     Author     : Kushal
 --%>
-
+<%
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        String uname=session.getAttribute("UserID").toString();
+        if(utype.equals("USER") && !uname.equals(""))
+        {
+           //response.sendRedirect("../User/index.jsp"); 
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+                response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+            {
+               response.sendRedirect("../Seller/index.jsp");
+            } 
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+%>
 <%@page import="org.apache.jasper.tagplugins.jstl.core.Catch"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.sabzi_bazzer.Database"%>
@@ -24,6 +52,13 @@
      function Editid(id) {
          
       let loc = "Add_Address.jsp?id=" + id;
+      window.location = loc;
+      
+       
+    }
+    function Delete(id) {
+         
+      let loc = "../User_Delete_address?id=" + id;
       window.location = loc;
       
        
@@ -158,7 +193,7 @@
                 <td>
                   <button type="button" class="btn btn-success"
                      onclick="Editid('<%=rs.getString("address_id")%>')">Edit</button>
-                  <button type="button" class="btn btn-labeled btn-danger"> Delete </button>
+                  <button type="button" class="btn btn-labeled btn-danger" onclick="Delete('<%=rs.getString("address_id")%>')"> Delete </button>
                 </td>
               </tr>
               <%
@@ -182,7 +217,7 @@
                            {
               %>
             <div class="container" >
-          <form action="#" method="POST">
+          <form action="../User_update_Address?id=<%=id%>" method="POST">
             <div class="form-row">
               <div class="form-group col-md-4">
                 <label for="house_number">House Number :</label> <span style="color:red;" id="m11"></span>
@@ -219,8 +254,8 @@
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <div class="form-group col-md-4">
                 <label for="district">District :</label>
-                <select id="s_town1" class="form-control" style="position: absolute;"  name="s_town2">
-                  <option class="hidden" selected disabled value="<%=rs.getString("district")%>" ><%=rs.getString("district")%>"</option>
+                <select id="s_town1" class="form-control" style="position: absolute;"  name="s_town2" selected="<%=rs.getString("district")%>">
+                  <option value="<%=rs.getString("district")%>" ><%=rs.getString("district")%></option>
                                             
                 </select>
                 <span style="color:red;" id="m61"></span>
@@ -229,9 +264,9 @@
             <div class="form-row">
               <div class="form-group col-md-4">
                 <label for="state">State :</label>
-                <select id="s_state1" class="form-control" style="position: absolute;"  name="s_state2" onchange="state1()">
-                  <option class="hidden" selected disabled value="<%=rs.getString("state")%>"><%=rs.getString("state")%>
-                                            </option>
+                <select id="s_state1" class="form-control" style="position: absolute;"  name="s_state2" onchange="state1()" selected="<%=rs.getString("state")%>">
+                 
+                                          
                                             <option value="West Bengal">West Bengal</option>
                                             <option value="Bihar">Bihar</option>
                                             <option value="Gujarat">Gujarat</option>
