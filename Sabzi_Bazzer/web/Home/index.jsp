@@ -49,7 +49,7 @@
 
 <body>
     <div id="loader">
-        <center><img src="../image/Sabzi_Logo.png"></center>
+        <center><img src="../image/loading.gif"></center>
     </div>
     <%@include file="../PageFiles/navMain.jsp" %>
     <%@include file="../Home/image_slider.jsp" %>
