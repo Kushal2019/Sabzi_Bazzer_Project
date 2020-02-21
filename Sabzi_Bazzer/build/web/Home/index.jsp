@@ -89,6 +89,10 @@
                     <ul class="social">
                         <li><a href="product_view.jsp" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                         <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+<<<<<<< HEAD
+=======
+                        <li><a href="../Addtocart?id=1" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+>>>>>>> 7c91c2071b12edb17b3b6e2d9f53e6aa5e945d4a
                     </ul>
                 </div>
             </div>

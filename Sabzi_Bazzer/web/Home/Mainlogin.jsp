@@ -26,7 +26,9 @@
     </script>
 </head>
 <%
+    
     int err=0;
+    
     try
     {
         String error=request.getParameter("error");
@@ -111,6 +113,20 @@
                                 <input type="checkbox" class="custom-control-input" id="customControlInline">
                                 <label class="custom-control-label" for="customControlInline"
                                     style="color:#ffff00;">Accept Terms & Condition
+                                    <%
+                                        Cookie cookie = null;
+                                        Cookie[] cookies = null;
+                                        cookies = request.getCookies();
+                                         if( cookies != null ){
+      for (int i = 0; i < cookies.length; i++){
+         cookie = cookies[i];
+         out.print("Name : " + cookie.getName( ) + ",  ");
+         out.print("Value: " + cookie.getValue( )+" <br/>");
+      }
+  }else{
+      out.println("<h2>No cookies founds</h2>");
+  }
+                                    %>
                                 </label>
                                 
                             </div>

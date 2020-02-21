@@ -72,6 +72,10 @@
         <servlet-name>User_Delete_address</servlet-name>
         <servlet-class>com.sabzi_bazzer.User_Delete_address</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Addtocart</servlet-name>
+        <servlet-class>com.sabzi_bazzer.Addtocart</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>User_Delete_address</servlet-name>
         <url-pattern>/User_Delete_address</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Addtocart</servlet-name>
+        <url-pattern>/Addtocart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
