@@ -48,7 +48,7 @@
   <script src="../Javascript/my_profile.js"></script>
   <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
   <style>
-      .tooltip11 {
+  .tooltip11 {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
@@ -182,8 +182,7 @@
                             <div class="form-group row">
                               <label class="col-sm-3 col-form-label">Phone Number : </label>
                               <div class="col-sm-6">
-                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm3" value="<%=rs1.getString("ph_number")%>"
-                                  name="ph_number">
+                                <input type="number" class="form-control form-control-sm" id="colFormLabelSm3" value="<%=rs1.getString("ph_number")%>" name="ph_number">
                               </div>
                                <%
                                     }

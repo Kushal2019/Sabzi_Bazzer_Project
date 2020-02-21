@@ -43,12 +43,8 @@
 <body>
     <div class="dash">
         <%@include file="pageFiles/admin_sidePaneel.jsp" %>
-
         <div class="dash-app">
-
             <%@include file="pageFiles/admin_topToolbar.jsp" %>
-
-
             <main class="dash-content">
                 <div class="container-fluid">
                     <div class="row dash-row">

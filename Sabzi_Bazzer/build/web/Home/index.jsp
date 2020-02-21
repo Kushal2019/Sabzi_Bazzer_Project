@@ -74,7 +74,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid6">
                     <div class="product-image6">
-                        <a href="#">
+                        <a href="product_view.jsp">
                             <img class="pic-1" src="<%=Path%>">
                         </a>
                     </div>
@@ -87,9 +87,8 @@
                         <span class="mrp">MRP:Rs 20</span>
                     </div>
                     <ul class="social">
-                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="product_view.jsp" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                         <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                 </div>
             </div>

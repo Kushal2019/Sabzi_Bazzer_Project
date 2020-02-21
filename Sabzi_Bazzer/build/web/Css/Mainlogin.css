@@ -88,15 +88,17 @@
   transition: opacity 0.3s;
 }
 
-.tooltip11 .tooltip11text::after {
-  content: "";
+.tooltip11 .tooltip11text::before {
   position: absolute;
   top: 100%;
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: transparent transparent #555 transparent;
+  top: -10px;
   
 }
-#aaa{color: red;}         
+#aaa{
+    color: red;
+}
