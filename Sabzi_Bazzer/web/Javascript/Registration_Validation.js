@@ -1015,7 +1015,7 @@ function ran(st_l) {
     s_town = document.getElementById('s_town1');
     if (s_state.value == "West Bengal") {
         s_town.innerHTML = "<option value=''>Select your Town *</option>\n\
-                            <option value='kolkata'>Kolkata</option>\n\
+                            <option value='Kolkata'>Kolkata</option>\n\
                             <option value='Asansol'>Asansol</option>\n\
                             <option value='North 24 Parganas'>North 24 Parganas</option>\n\
                             <option value='South 24 Parganas'>South 24 Parganas</option>\n\

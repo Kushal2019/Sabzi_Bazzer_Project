@@ -105,19 +105,9 @@
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="form-group col-md-4">
-              <label for="district">District :</label><span style="color:red;" id="m6"></span>
-              <select id="s_town" class="form-control" name="s_town">
-                <option selected value="">sdfghjk</option>
-         
-              </select>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
               <label for="state">State :</label><span style="color:red;" id="m7"></span>
               <select id="s_state" class="form-control" onchange="state()" name="s_state" >
-                <option selected value="">dfghjk</option>
-                 </option>
+                <option selected value="">Select State</option>
                                             <option value="West Bengal">West Bengal</option>
                                             <option value="Bihar">Bihar</option>
                                             <option value="Gujarat">Gujarat</option>
@@ -127,6 +117,14 @@
                                             <option value="Tamil Nadu">Tamil Nadu</option>
                                             <option value="Uttarakhand">Uttarakhand</option>
                                             <option value="Delhi">Delhi</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="district">District :</label><span style="color:red;" id="m6"></span>
+              <select id="s_town" class="form-control" name="s_town">
+                <option selected value="">Select District</option>
               </select>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -253,16 +251,6 @@
                
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <div class="form-group col-md-4">
-                <label for="district">District :</label>
-                <select id="s_town1" class="form-control" style="position: absolute;"  name="s_town2" selected="<%=rs.getString("district")%>">
-                  <option value="<%=rs.getString("district")%>" ><%=rs.getString("district")%></option>
-                                            
-                </select>
-                <span style="color:red;" id="m61"></span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-4">
                 <label for="state">State :</label>
                 <select id="s_state1" class="form-control" style="position: absolute;"  name="s_state2" onchange="state1()" selected="<%=rs.getString("state")%>">
                  
@@ -278,6 +266,16 @@
                                             <option value="Delhi">Delhi</option>
                 </select>
                 <span style="color:red;" id="m71"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="district">District :</label>
+                <select id="s_town1" class="form-control" style="position: absolute;"  name="s_town2" selected="<%=rs.getString("district")%>">
+                  <option value="<%=rs.getString("district")%>" ><%=rs.getString("district")%></option>
+                                            
+                </select>
+                <span style="color:red;" id="m61"></span>
               </div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <div class="form-group col-md-4">

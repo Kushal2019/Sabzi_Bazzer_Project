@@ -45,7 +45,9 @@
 %>
 
 <body onload="<%if(err==1){out.print("errorMag()");}else if(err==2){out.print("Notfound()");}%>">
-    <div id="loader"> <img src="../image/loading.gif"> </div> 
+    <div id="loader">
+        <center><img src="../image/loading.gif"></center>
+    </div>
     <%@include file="../PageFiles/navLog.jsp" %>
     <%
         try
