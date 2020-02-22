@@ -43,7 +43,7 @@ function CheckEmail(str) {
     }
        
   };
-  xhttp.open("POST", "CheckEmail_login.jsp?q="+str, true);
+  xhttp.open("GET", "CheckEmail_login.jsp?q="+str, true);
   xhttp.send(); 
 }
 </script>
