@@ -70,8 +70,7 @@
 <body>
 
   <!--Edit button Popup design Start-->
-  <div class="modal fade cd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
-    aria-hidden="true">
+  <div class="modal fade cd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <form action="../User_add_Address"  method="POST">
@@ -107,16 +106,16 @@
             <div class="form-group col-md-4">
               <label for="state">State :</label><span style="color:red;" id="m7"></span>
               <select id="s_state" class="form-control" onchange="state()" name="s_state" >
-                <option selected value="">Select State</option>
-                                            <option value="West Bengal">West Bengal</option>
-                                            <option value="Bihar">Bihar</option>
-                                            <option value="Gujarat">Gujarat</option>
-                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                            <option value="Maharashtra">Maharashtra</option>
-                                            <option value="Odisha">Odisha</option>
-                                            <option value="Tamil Nadu">Tamil Nadu</option>
-                                            <option value="Uttarakhand">Uttarakhand</option>
-                                            <option value="Delhi">Delhi</option>
+                    <option selected value="">Select State</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Delhi">Delhi</option>
               </select>
             </div>
           </div>
