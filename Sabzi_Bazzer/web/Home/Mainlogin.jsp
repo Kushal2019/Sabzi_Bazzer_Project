@@ -24,6 +24,29 @@
             document.getElementById("aaa").innerHTML="Your Email ID Does not exited";
         }
     </script>
+    <script>
+function CheckEmail(str) {
+  var xhttp;
+  if (str.length == 0) { 
+      document.getElementById("aaa").style.visibility = "hidden";
+            document.getElementById("aaa").style.opacity = 0;
+    document.getElementById("aaa").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("aaa").style.visibility = "visible";
+            document.getElementById("aaa").style.opacity = 1;
+      document.getElementById("aaa").innerHTML = this.responseText;
+      
+    }
+       
+  };
+  xhttp.open("POST", "CheckEmail_login.jsp?q="+str, true);
+  xhttp.send(); 
+}
+</script>
 </head>
 <%
     
@@ -97,7 +120,7 @@
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" name="Login_username" id="Login_username" class="form-control input_user"
-                                value="" placeholder="username">
+                                 placeholder="username" onkeyup="CheckEmail(this.value)">
                             <span id="Login_username_Error" style="color:red;"></span>
                         </div>
                         <div class="input-group mb-2">
@@ -111,7 +134,11 @@
                         <div class="form-group">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                <label class="custom-control-label" for="customControlInline" style="color:#ffff00;">Accept Terms & Condition </label>
+                                <label class="custom-control-label" for="customControlInline"
+                                    style="color:#ffff00;">Accept Terms & Condition
+                                   
+                                </label>
+                                
                             </div>
                         </div>
                         <div class="d-flex justify-content-center mt-8 login_container">
