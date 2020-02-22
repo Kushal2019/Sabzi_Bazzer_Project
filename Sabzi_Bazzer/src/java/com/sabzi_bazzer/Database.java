@@ -1050,7 +1050,28 @@ public class Database {
             return 0;
         }
     }
-    
+    public ResultSet CheckEmail(String email) {
+       try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT `email` FROM `login_details` WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
     
     
     
