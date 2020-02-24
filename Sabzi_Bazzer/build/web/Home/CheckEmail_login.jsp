@@ -6,7 +6,7 @@
     ResultSet rs = new Database().CheckEmail(e1);
     if(rs.next())
     {
-       h1="";
+       h1="Good";
     }
     else
     {
