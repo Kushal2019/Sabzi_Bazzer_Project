@@ -83,7 +83,6 @@
   border-color:  #555 transparent  transparent transparent  ;
   
 }
-#aaa{color: red;}         
   </style>
 </head>
 
@@ -97,9 +96,6 @@
       <!--Main contant is Start-->
 
       <div class="container">
-          <div class="tooltip11">
-                     <span class="tooltip11text" id="aaa">aaa</span>
-                     </div>
         <div class="row">
           <div class="col-12">
             <div class="card">

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#myTab li:eq(0) a").tab('show');  // show 2nd tab on page load
+    $("#myTab li:eq(0) a").tab('show');
     $imgSrc = $('#imgProfile').attr('src');
     function readURL(input) {
 
@@ -14,12 +14,10 @@ $(document).ready(function () {
         }
     }
     $('#btnChangePicture').on('click', function () {
-        // document.getElementById('profilePicture').click();
         if (!$('#btnChangePicture').hasClass('changing')) {
             $('#profilePicture').click();
         }
         else {
-            // change
             $('#profilePicture').click();
         }
     });
@@ -28,15 +26,12 @@ $(document).ready(function () {
         $('#btnChangePicture').addClass('changing');
         $('#btnChangePicture').attr('value', 'Change');
         $('#btnDiscard').removeClass('d-none');
-        // $('#imgProfile').attr('src', '');
     });
     $('#btnDiscard').on('click', function () {
-        // if ($('#btnDiscard').hasClass('d-none')) {
         $('#btnChangePicture').removeClass('changing');
         $('#btnChangePicture').attr('value', 'Change');
         $('#btnDiscard').addClass('d-none');
         $('#imgProfile').attr('src', $imgSrc);
         $('#profilePicture').val('');
-        // }
     });
 });

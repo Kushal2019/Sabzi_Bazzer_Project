@@ -1,6 +1,6 @@
-<footer class="py-3 bg-dark">
-    <div class="container">
-    <p class="m-0 text-center text-white"> This site is made by Kushal & Soumen... </p>
-    <p class="m-0 text-center text-danger"> Special thanks to respected Debashis Sir... </p>
-  </div>
-</footer>
+<div class="footer" style="background-color: red; height: 80px; padding: 10px;">
+    <div class="text-center" style="background-color: greenyellow;">
+        <p>Created by Kushal & Soumen</p>
+        <p>Special thanks to our respected Teachers</p>
+    </div>
+</div> 

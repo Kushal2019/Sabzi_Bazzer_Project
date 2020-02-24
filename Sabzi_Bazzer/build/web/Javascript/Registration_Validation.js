@@ -743,19 +743,16 @@ function ran(st_l) {
         }
          function hide()
         {
-                //alert("hi");
             document.getElementById("btnChangePicture").style.display = "none";
             document.getElementById("btnSubmitPicture").style.display = "none";
         }
          function Show()
         {
-                //alert("hi");
             document.getElementById("btnChangePicture").style.display = "block";
             
         }
          function Show1()
         {
-                //alert("hi");
             document.getElementById("btnSubmitPicture").style.display = "block";
             
         }

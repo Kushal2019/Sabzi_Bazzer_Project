@@ -15,17 +15,15 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="../Css/View_Cart_Style.css">
-  <script type="text/javascript" src="../Javascript/View_Cart_Style.js"> </script>
+  <link rel="stylesheet" href="../Css/Cart_Style.css">
+  <script type="text/javascript" src="../Javascript/View_Cart_Style.js"></script>  
 
 </head>
 
 <body>
-  <!--%@include file="../PageFiles/navMain.jsp"%-->
-
+    <%@include file="../PageFiles/navCart.jsp"%>
+    <div class="container"> <br><br><br>
   <h1>Shopping Cart</h1>
-
-  <div class="container">
   <div class="shopping-cart">
 
     <div class="column-labels">
@@ -100,9 +98,9 @@
 
     <button class="checkout">Checkout</button>
 
-  </div>
-      </div>
-  <!--%@include file="../PageFiles/footerMain.jsp"%-->
+  </div> 
+  </div> <br><br><br>
+  <%@include file="../PageFiles/footerMain.jsp"%>
 </body>
 
 </html>
