@@ -34,14 +34,7 @@ public class Addtocart extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String id= request.getParameter("id");
-             Cookie cook_ID = new Cookie("id", id);
-             Cookie cook_ID1 = new Cookie("name" ,  "2");
-             response.addCookie( cook_ID );
-   response.addCookie( cook_ID1 );
-             out.println(cook_ID.getDomain());
-             out.println(cook_ID1.getName());
-             
+         out.println(request.getParameter("id"));
             
         }
     }
