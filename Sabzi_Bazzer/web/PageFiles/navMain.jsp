@@ -14,7 +14,7 @@
         <a class="nav-link" href="about.jsp">About</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="../Home/View_Cart.jsp">Cart</a>
+          <a class="nav-link" href="../Home/Mainlogin.jsp">Cart</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="Mainlogin.jsp">Login</a>

@@ -53,7 +53,7 @@
 /* Apply clearfix in a few places */
 /* Apply dollar signs */
 .product .product-price:before, .product .product-line-price:before, .totals-value:before {
-  content: '$';
+  content: '₹';
 }
  
 /* Body/Header stuff */
@@ -223,7 +223,7 @@ label {
   }
  
   .product .product-line-price:before {
-    content: 'Item Total: $';
+    
   }
  
   .totals .totals-item label {

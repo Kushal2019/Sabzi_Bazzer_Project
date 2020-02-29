@@ -7,22 +7,17 @@ package com.sabzi_bazzer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
-import java.sql.ResultSet;
-import java.util.regex.Pattern;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 /**
  *
  * @author SoumenPC
  */
-public class Addtocart extends HttpServlet {
+public class Remove_Cart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,57 +33,49 @@ public class Addtocart extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-                    String id=request.getParameter("id");
-                     HttpSession session=request.getSession();
-                     String email=session.getAttribute("UserID").toString();
-                     String userType=session.getAttribute("UserType").toString();
-                    ResultSet rs = new Database().Productdetails1(id);  
-                    if(rs.next())
-                    {
-                         ResultSet rs1= new Database().Cartdetails2(email,id);
-                         if(!rs1.next())
-                         {
-                            int x= new Database().Addcart(rs,email);
-                            if(x==1)
-                            {
-                               if(userType.equals("USER"))
-                               {
-                                //user
-                                    response.sendRedirect("User/index.jsp?Addcart=done");
-                                }
-                                 else
-                                 {
-                                         if(userType.equals("SELLER"))
-                                         {
-                    //Seller
-                                             response.sendRedirect("Seller/index.jsp?Addcart=done");
-                                         }  
-                                     
-                                }
-                            }
-                             
-                        }
-                        else
-                        {   
-                            if(userType.equals("USER"))
-                             {
-                                //user
-                                response.sendRedirect("User/index.jsp?Addcart=err");
-                             }
-                             else
-                            {
-                                      if(userType.equals("SELLER"))
-                                         {
-                    //Seller
-                                             response.sendRedirect("Seller/index.jsp?Addcart=err");
-                                         }  
-                                    
-                            }
-                        }
-                 }
-                   
+          String id=request.getParameter("id");
+           HttpSession session=request.getSession();
+           String userType=session.getAttribute("UserType").toString();
+          int x=new Database().RemoveCart(id);
+         if(x==1)
+        {
+           if(userType.equals("USER"))
+           {
+            //user
+                response.sendRedirect("User/View_Cart.jsp?remove=done");
+            }
+             else
+             {
+                     if(userType.equals("SELLER"))
+                     {
+//Seller
+                         response.sendRedirect("Seller/View_Cart.jsp?remove=done");
+                     }  
+
+            }
         }
-        catch(Exception a){}
+         else
+         {
+             if(userType.equals("USER"))
+           {
+            //user
+                response.sendRedirect("User/View_Cart.jsp?remove=err");
+            }
+             else
+             {
+                     if(userType.equals("SELLER"))
+                     {
+//Seller
+                         response.sendRedirect("Seller/View_Cart.jsp?remove=err");
+                     }  
+
+            }
+         
+         
+         }
+         
+          
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

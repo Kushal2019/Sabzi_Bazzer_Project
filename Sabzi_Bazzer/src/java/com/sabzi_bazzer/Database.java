@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -1072,10 +1073,190 @@ public class Database {
             return null;
         }
     }
+
+    ResultSet Productdetails1(String id) {
+         try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `product_details` WHERE `product_id`=?";
+                    smt=conn.prepareStatement(sql);
+                  
+                   smt.setString(1,id);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+
+    
+
+    int Addcart(ResultSet rs,String email) {
+        try
+        {
+            if(isConnected())
+            {
+                 String st=rs.getString("product_image");
+                       Pattern pattern = Pattern.compile("-");
+                       String[] words;
+                       words = pattern.split(st);
+                      String  filepath=words[0]; 
+               String que="INSERT INTO `add_cart` (`user_id`, `product_name`, `product_img`, `seller_name`, `product_price`, `qantity`, `description`, `total`,`product_id`) VALUES (?,?,?,?,?,?,?,?,?)";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, email);
+               smt.setString(2, rs.getString("product_name"));
+               smt.setString(3, filepath);
+               smt.setString(4, rs.getString("product _seller"));
+               smt.setString(5, rs.getString("product_price"));
+               smt.setString(6, "1");
+               smt.setString(7, rs.getString("product_description"));
+               smt.setString(8,  rs.getString("product_price"));
+                smt.setString(9,  rs.getString("product_id"));
+               
+                
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
+        
     
     
+     public ResultSet Cartdetails(String email) {
+         try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `add_cart` WHERE `user_id`=?";
+                    smt=conn.prepareStatement(sql);
+                  
+                   smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
     
-    
-    
+    public ResultSet Cartdetails1(String email) {
+         try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT sum(`total`) as total FROM `add_cart` WHERE `user_id`=?";
+                    smt=conn.prepareStatement(sql);
+                  
+                   smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+
+    int Updatecart(String id, String total, String qan) {
+        try
+        {
+            if(isConnected())
+            {
+               String que="UPDATE `add_cart` SET `qantity`=?,`total`=? where `cart_id`=?";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, qan);
+               smt.setString(2, total);
+               smt.setString(3, id);
+             
+               
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
+
+    ResultSet Cartdetails2(String email, String id) {
+         try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `add_cart` WHERE `product_id`=? AND `user_id`=?";
+                    smt=conn.prepareStatement(sql);
+                  smt.setString(1,id);
+                   smt.setString(2,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+
+    int RemoveCart(String id) {
+         try
+        {
+            if(isConnected())
+            {
+               String que="DELETE FROM `add_cart` WHERE `cart_id`=?";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, id);
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
 }
 
