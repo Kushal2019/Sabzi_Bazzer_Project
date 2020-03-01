@@ -5,6 +5,10 @@ JSP
 *F
 + 0 product_view.jsp
 Home/product_view.jsp
++ 1 navView_Product.jsp
+Home/../PageFiles/navView_Product.jsp
 *L
-5,1112:44
+5,21:49
+5#1,30:70
+25#0,65:100
 *E

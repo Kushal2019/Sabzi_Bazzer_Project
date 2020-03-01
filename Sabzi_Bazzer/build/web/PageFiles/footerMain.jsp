@@ -1,5 +1,5 @@
-<div class="footer" style="background-color: red; height: 80px; padding: 10px;">
-    <div class="text-center" style="background-color: greenyellow;">
+<div class="footer" style="background-color: black;">
+    <div class="text-center" style="color: white">
         <p>Created by Kushal & Soumen</p>
         <p>Special thanks to our respected Teachers</p>
     </div>
