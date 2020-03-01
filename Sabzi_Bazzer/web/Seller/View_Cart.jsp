@@ -35,7 +35,7 @@ function cartremove(id)
 </head>
 
 <body >
-    <%@include file="../PageFiles/navCart.jsp"%>
+    <%@include file="navSeller.jsp"%>
     <div class="container"> <br><br><br>
   <h1>Shopping Cart</h1>
   <div class="shopping-cart">
@@ -69,7 +69,7 @@ function cartremove(id)
           <input type="number" value="<%=rs.getString("qantity")%>" min="1" id="quantity" onchange="Addcart(this.value,<%=rs.getString("cart_id")%>)">
       </div>
       <div class="product-removal">
-          <button class="remove-product" onclick="cartremove(<%=rs.getString("cart_id")%>)">
+        <button class="remove-product" onclick="cartremove(<%=rs.getString("cart_id")%>)">
           Remove
         </button>
       </div>

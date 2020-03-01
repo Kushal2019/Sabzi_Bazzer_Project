@@ -48,6 +48,9 @@
         <a class="nav-link" href="my_profile.jsp">Edit <%=rs%></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="../Seller/View_Cart.jsp">Cart</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="../logout.jsp">Logout</a>
       </li>
     </ul>

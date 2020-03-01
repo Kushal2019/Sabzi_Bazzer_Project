@@ -4,6 +4,8 @@
     Author     : Kushal
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,10 +19,22 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../Css/Cart_Style.css">
   <script type="text/javascript" src="../Javascript/View_Cart_Style.js"></script>  
-
+  <script>
+      function Addcart(str,id) {
+  var p= document.getElementById(id).innerHTML;
+  
+  var  price = parseFloat(p);
+  var total = price*str;
+  window.location="../UpdateAddtocart?total="+total+"&id="+id+"&qan="+str;
+}
+function cartremove(id)
+{
+    window.location="../Remove_Cart?id="+id;
+}
+  </script>
 </head>
 
-<body>
+<body >
     <%@include file="../PageFiles/navCart.jsp"%>
     <div class="container"> <br><br><br>
   <h1>Shopping Cart</h1>
@@ -34,71 +48,75 @@
       <label class="product-removal">Remove</label>
       <label class="product-line-price">Total</label>
     </div>
-
+    <%
+        try{
+              String uname=session.getAttribute("UserID").toString();
+                   ResultSet rs = new Database().Cartdetails(uname);  
+                   while(rs.next())
+                   {
+    %>
     <div class="product">
       <div class="product-image">
-          <img src="../image/Vegetables/vendi.jpeg">
+          <img src="../image/Vegetables/<%=rs.getString("product_img")%>">
       </div>
       <div class="product-details">
-        <div class="product-title">Nike Flex Form TR Women's Sneaker</div>
-        <p class="product-description"> It has a lightweight, breathable mesh upper with forefoot cables for a
-          locked-down fit.</p>
+        <div class="product-title"><%=rs.getString("product_name")%></div>
+        <div class="product-title"><%=rs.getString("seller_name")%></div>
+        <p class="product-description"> <%=rs.getString("description")%></p>
       </div>
-      <div class="product-price">60</div>
+      <div class="product-price" id="<%=rs.getString("cart_id")%>"><%=rs.getString("product_price")%></div>
       <div class="product-quantity">
-        <input type="number" value="2" min="1">
+          <input type="number" value="<%=rs.getString("qantity")%>" min="1" id="quantity" onchange="Addcart(this.value,<%=rs.getString("cart_id")%>)">
       </div>
       <div class="product-removal">
-        <button class="remove-product">
+          <button class="remove-product" onclick="cartremove(<%=rs.getString("cart_id")%>)">
           Remove
         </button>
       </div>
-      <div class="product-line-price">25.98</div>
+      <div class="product-line-price"><%=rs.getString("total")%></div>
     </div>
-
-    <div class="product">
-      <div class="product-image">
-          <img src="../image/Sabzi_Logo.png">
-      </div>
-      <div class="product-details">
-        <div class="product-title">ULTRABOOST UNCAGED SHOES</div>
-        <p class="product-description">Born from running culture, these men's shoes deliver the freedom of a cage-free
-          design</p>
-      </div>
-      <div class="product-price">45.99</div>
-      <div class="product-quantity">
-        <input type="number" value="1" min="1">
-      </div>
-      <div class="product-removal">
-        <button class="remove-product">
-          Remove
-        </button>
-      </div>
-      <div class="product-line-price">45.99</div>
-    </div>
-
+ <%
+        }
+        }
+        catch(Exception a){}
+       %>
+        <%
+        try{
+              String uname=session.getAttribute("UserID").toString();
+                   ResultSet rs = new Database().Cartdetails1(uname);  
+                   if(rs.next())
+                   {
+                       double txt= Float.parseFloat(rs.getString("total"));
+                       double ftxt=txt*0.05;
+                       double gandt=ftxt+txt+40;
+    %>
     <div class="totals">
       <div class="totals-item">
         <label>Subtotal</label>
-        <div class="totals-value" id="cart-subtotal">71.97</div>
+        <div class="totals-value" id="cart-subtotal"><%=rs.getString("total")%></div>
       </div>
       <div class="totals-item">
         <label>Tax (5%)</label>
-        <div class="totals-value" id="cart-tax">3.60</div>
+        <div class="totals-value" id="cart-tax"><%=ftxt%></div>
       </div>
       <div class="totals-item">
         <label>Shipping</label>
-        <div class="totals-value" id="cart-shipping">15.00</div>
+        <div class="totals-value" id="cart-shipping">40</div>
       </div>
       <div class="totals-item totals-item-total">
         <label>Grand Total</label>
-        <div class="totals-value" id="cart-total">90.57</div>
+        <div class="totals-value" id="cart-total"><%=gandt%></div>
       </div>
     </div>
 
     <button class="checkout">Checkout</button>
-
+   
   </div> 
+     <%
+        }
+        }
+        catch(Exception a){}
+       %>
   </div> <br><br><br>
   <%@include file="../PageFiles/footerMain.jsp"%>
 </body>

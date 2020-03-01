@@ -45,26 +45,8 @@
     <!-- Enternal file liks -->
     <link href="../Css/style.css" rel="stylesheet">
     <link href="../Css/Loder.css" rel="stylesheet">
-    <script>
-function Addcart(str) {
-  var xhttp;
-  if (str.length == 0) { 
-    
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        
-      alert(this.responseText);
-      
-    }
-       
-  };
-  xhttp.open("GET", "../Addtocart?id="+str, true);
-  xhttp.send(); 
-}
-</script>
+ 
+
 </head>
 
 <body>
@@ -107,7 +89,7 @@ function Addcart(str) {
                     <ul class="social">
                         <li><a href="product_view.jsp" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                         <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="#" data-tip="Add to Cart"  onclick="Addcart('<%=rs.getString("product_id")%>')" ><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="../Addtocart?id=<%=rs.getString("product_id")%>" data-tip="Add to Cart"   ><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                 </div>
             </div>
