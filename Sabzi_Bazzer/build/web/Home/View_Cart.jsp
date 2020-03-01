@@ -44,7 +44,7 @@
         <p class="product-description"> It has a lightweight, breathable mesh upper with forefoot cables for a
           locked-down fit.</p>
       </div>
-      <div class="product-price">12.99</div>
+      <div class="product-price">60</div>
       <div class="product-quantity">
         <input type="number" value="2" min="1">
       </div>

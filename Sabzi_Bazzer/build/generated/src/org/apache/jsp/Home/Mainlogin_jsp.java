@@ -92,7 +92,7 @@ public final class Mainlogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    }\r\n");
       out.write("       \r\n");
       out.write("  };\r\n");
-      out.write("  xhttp.open(\"POST\", \"CheckEmail_login.jsp?q=\"+str, true);\r\n");
+      out.write("  xhttp.open(\"GET\", \"CheckEmail_login.jsp?q=\"+str, true);\r\n");
       out.write("  xhttp.send(); \r\n");
       out.write("}\r\n");
       out.write("</script>\r\n");
