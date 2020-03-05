@@ -51,8 +51,25 @@
     <%@include file="pageFiles/Seller_SidePanel.jsp" %>
     <div class="dash-app">
       <%@include file="pageFiles/Seller_TopToolbar.jsp" %>     
-      
-        <!--Main contant is here-->
+      <main class="dash-content">
+        <div>
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th>House_Number</th>
+                <th>Vill/Town</th>
+                <th>Police Station</th>
+                <th>District</th>
+                <th>State</th>
+                <th>Pin</th>
+                <th>Landmark</th>
+                <th>Activity <button type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target=".cd-example-modal-xl" onclick="">Add Address</button></th>
+              </tr>
+            </thead>
+        </div>
+
+      </main>
       
     </div>
   </div>

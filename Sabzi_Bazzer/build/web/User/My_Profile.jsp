@@ -59,7 +59,7 @@
   visibility: hidden;
   width: 300px;
   background-color: rgba(0,0,0,0.6);
-  color: #fff;
+  color: red;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -96,6 +96,9 @@
       <!--Main contant is Start-->
 
       <div class="container">
+          <div class="tooltip11">
+                     <span class="tooltip11text" id="aaa">aaa</span>
+                     </div>
         <div class="row">
           <div class="col-12">
             <div class="card">

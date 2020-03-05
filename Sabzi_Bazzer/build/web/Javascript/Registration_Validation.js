@@ -844,7 +844,7 @@ function ran(st_l) {
         }
         function validUserPI()
         {
-            let fname,lastn,company,email,ph,lic;
+            let fname,lastn,email,ph;
             fname= document.getElementById("colFormLabelSm");
             lastn= document.getElementById("colFormLabelSm1"); 
             
