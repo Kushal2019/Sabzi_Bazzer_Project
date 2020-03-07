@@ -48,7 +48,6 @@
                         <div class="price">Rs.<%=rs.getString("product_price")%>
                             <span>Per: <%=rs.getString("product_type")%></span>
                         </div>
-                        <span class="mrp">MRP:Rs 20</span>
                     </div>
                     <ul class="social">
                         <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>

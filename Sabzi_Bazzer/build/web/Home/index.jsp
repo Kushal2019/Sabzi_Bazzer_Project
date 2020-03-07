@@ -79,12 +79,14 @@
                         </a>
                     </div>
                     <div class="product-content">
-                        <h3 class="title"><a href="#"><%=rs.getString("product_name")%></a></h3>
+                        <h3 class="title">
+                            <a href="#"><%=rs.getString("product_name")%>
+                            </a>
+                        </h3>
 
                         <div class="price">Rs.<%=rs.getString("product_price")%>
                             <span>Per: <%=rs.getString("product_type")%></span>
                         </div>
-                        <span class="mrp">MRP:Rs 20</span>
                     </div>
                     <ul class="social">
                         <li><a href="product_view.jsp" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
