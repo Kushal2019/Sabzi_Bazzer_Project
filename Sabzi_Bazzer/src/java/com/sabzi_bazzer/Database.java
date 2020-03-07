@@ -1258,5 +1258,91 @@ public class Database {
             return 0;
         }
     }
+    public ResultSet Product_details(String email)
+    {
+     try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `product_details` WHERE `product _seller`=?";
+                    smt=conn.prepareStatement(sql);
+                   smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+
+    void productActive(String id) {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="UPDATE `product_details` SET `isActive`='1' WHERE `product_id`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, id);
+                    smt.execute();
+            }
+            else
+            {
+            }
+        }
+        catch(Exception e)
+        {
+        }
+    }
+     void productDeactive(String id) {
+        try
+        {
+            if(isConnected())
+            {
+                    String sql="UPDATE `product_details` SET `isActive`='0' WHERE `product_id`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, id);
+                    smt.execute();
+            }
+            else
+            {
+            }
+        }
+        catch(Exception e)
+        {
+        }
+    }
+     public ResultSet Product_details()
+    {
+     try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `product_details` ";
+                    smt=conn.prepareStatement(sql);
+                  
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+     
+     
+     
 }
 
