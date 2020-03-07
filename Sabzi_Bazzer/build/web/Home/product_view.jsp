@@ -1,7 +1,7 @@
 <%-- 
     Document   : product_view
     Created on : 5 Mar, 2020, 9:27:01 PM
-    Author     : Kushal
+    Author     : Kushal-PC
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
