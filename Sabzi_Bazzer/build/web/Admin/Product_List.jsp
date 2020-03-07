@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <%
     try
     {
@@ -36,6 +38,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script src="../Javascript/Admin_Charts.js"></script>
   <title>Admin Panel</title>
+  <script>
+    function activate(id) {
+      let loc = "../Product_Permission3?id=" + id;
+      window.location = loc;
+    }
+    function Deactivate(id) {
+      let loc = "../Product_Permission4?id=" + id;
+      window.location = loc;
+    }
+  </script>
 </head>
 
 <body>
@@ -43,15 +55,50 @@
     <%@include file="pageFiles/admin_sidePaneel.jsp" %>
     <div class="dash-app">
       <%@include file="pageFiles/admin_topToolbar.jsp" %>
-      <main class="dash-content">
-        <div class="container">
+       <main class="dash-content">
+        <div>
           <table class="table table-dark table-striped">
             <thead>
-              <th>Product Name</th>
-              <th>Owner Name</th>
-              <th>Available Quantity</th>
-              <th>Ph Number</th>
+              <tr>
+                <th>Product Name</th>
+                <th>Product Seller</th>
+                <th>Product Quantity</th>
+                <th>Product Type</th>
+                <th>Product Price</th>
+                <th>Product Exp.Date</th>
+                <th>Activity</th>
+                <th>Permission</th>
+              </tr>
             </thead>
+            <tbody>
+              <%
+                   try {
+                      
+                         ResultSet rs = new Database().Product_details();  
+                         while(rs.next())
+                         {
+                %>
+              <tr>
+                <td><%=rs.getString("product_name")%></td>
+                 <td><%=rs.getString("product _seller")%></td>
+                <td><%=rs.getString("product_quantity")%></td>
+                <td><%=rs.getString("product_type")%></td>
+                <td><%=rs.getString("product_price")%></td>
+                <td><%=rs.getString("product_exp_date")%></td>
+                <td><%=(rs.getString("isActive").toString().equals("1"))?"Activated":"Disabled"%></td>
+                <td>
+                  <button type="button" onclick="activate('<%=rs.getString("product_id")%>')"
+                    class="btn btn-labeled btn-success"> Enable </button>
+                  <button type="button" onclick="Deactivate('<%=rs.getString("product_id")%>')"
+                    class="btn btn-labeled btn-danger"> Disable </button>
+                </td>
+              </tr>
+              <%            
+                  }
+                }
+                catch(Exception e){}
+               %>
+            </tbody>
           </table>
         </div>
 
