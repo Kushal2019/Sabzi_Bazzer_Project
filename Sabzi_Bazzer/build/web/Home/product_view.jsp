@@ -4,6 +4,9 @@
     Author     : Kushal-PC
 --%>
 
+<%@page import="java.util.regex.Pattern"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,7 +23,16 @@
 
 <body>
 	<%@include  file="../PageFiles/navMain.jsp" %><br><br><br>
-
+ <%
+            try{
+                String id=request.getParameter("id");
+                //String emaiiId=session.getAttribute("UserID").toString();
+                 ResultSet rs = new Database().Productdetails1(id);  
+                 if(rs.next())
+                 {
+                         
+                     
+        %>
 	<div class="super_container">
 		<div class="single_product">
 			<div class="container-fluid">
@@ -28,45 +40,41 @@
 					<div class="col-md-5">
 						<div class="bzoom_wrap">
 							<ul id="bzoom">
+                                                            <%
+                                                                    String st=rs.getString("product_image");
+                                                                    Pattern pattern = Pattern.compile("-");
+                                                                     String[] words;
+                                                                    words = pattern.split(st);
+                                                                    for(int i=0;i<words.length ; i++)
+                                                                    {
+                                                            
+                                                            %>
 								<li>
-									<img class="bzoom_thumb_image" src="https://unsplash.it/375/500?image=201" />
-									<img class="bzoom_big_image" src="https://unsplash.it/750/1000?image=201" />
+                                                                    <img class="bzoom_thumb_image" src="../image/Vegetables/<%=words[i]%>" />
+									<img class="bzoom_big_image" src="../image/Vegetables/<%=words[i]%>" />
 								</li>
-								<li>
-									<img class="bzoom_thumb_image" src="https://unsplash.it/375/500?image=203" />
-									<img class="bzoom_big_image" src="https://unsplash.it/750/1000?image=203" />
-								</li>
-								<li>
-									<img class="bzoom_thumb_image" src="https://unsplash.it/375/500?image=212" />
-									<img class="bzoom_big_image" src="https://unsplash.it/750/1000?image=212" />
-								</li>
-								<li>
-									<img class="bzoom_thumb_image" src="https://unsplash.it/375/500?image=220" />
-									<img class="bzoom_big_image" src="https://unsplash.it/750/1000?image=220" />
-								</li>
-								<li>
-									<img class="bzoom_thumb_image" src="https://unsplash.it/375/500?image=223" />
-									<img class="bzoom_big_image" src="https://unsplash.it/750/1000?image=223" />
-								</li>
+								
+                                                                 <%}%>
 							</ul>
 						</div>
 					</div>
+                                   
 					<div class="col-md-5 order-3">
 						<div class="product_description">
-							<div class="product_name"> Acer Aspire 3 Celeron Dual Core </div>
+							<div class="product_name"><%=rs.getString("product_name")%></div>
 							<div class="product-rating"><span class="badge badge-success"><i class="fa fa-star"></i> New
-								</span> <span class="rating-review">A fresh approach to shopping</span></div>
-							<div> <span class="product_price">MRP : ₹ 1500</span> <strike class="product_discount">
-									<span style='color:black'>₹ 2,000<span> </strike> </div>
-							<div> <span class="product_saved">You Saved:</span> <span style='color:black'>₹ 500</span>
+								</span> <span class="rating-review"><%=rs.getString("company_name")%></span></div>
+							<div> <span class="product_price">Price: ₹<%=rs.getString("product_price")%></span> <strike class="product_discount">
+                                                                <span style='color:black'>MRP ₹ <%=Integer.parseInt(rs.getString("product_price"))+10%> </span> </strike> </div>
+							<div> <span class="product_saved">You Saved:</span> <span style='color:black'>₹ 10</span>
 							</div>
 							<hr class="singleline">
 							<div>
-								<span class="product_info">EMI starts at ₹ 1,000. No Cost EMI Available</span><br>
-								<span class="product_info">2 Days home delivery</span><br>
+								
+								<span class="product_info"> Standard Delivery:  Tomorrow Evening</span><br>
 								<span class="product_info">We provide you best seller of the week</span><br>
-								<span class="product_info">10 Days easy return policy</span><br>
-								<span class="product_info">In Stock: 25 units sold this week</span>
+								<span class="product_info">No return policy</span><br>
+								<span class="product_info">In Stock: <%=rs.getString("product_quantity")%> units sold this Date <%=rs.getString("product_exp_date")%> </span>
 							</div>
 							<div>
 								<div class="row">
@@ -92,11 +100,12 @@
 							</div>
 							<div class="row">
 								<div class="col-xs-6" style="margin-left: 14px">
+                                                                    <span class="product_info"><b>Pack Size: </b><%=rs.getString("product_type")%></span><br>
 									<div class="qty mt-10">
-										<span class="minus bg-dark">-</span>
-										<input type="number" class="count" name="qty" value="1">
+                                                                            <span class="minus bg-dark">-</span>
+										<input type="number" class="count" name="qty" value="1" id="qty">
 										<span class="plus bg-dark">+</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<button type="button" class="btn btn-primary shop-button">Add to Cart</button>
+                                                                                <button type="button" class="btn btn-primary shop-button" onclick="addtocart(<%=rs.getString("product_id")%>)">Add to Cart</button>
 										<button type="button" class="btn btn-success shop-button">Buy Now</button>
 									</div>
 								</div>
@@ -107,7 +116,11 @@
 			</div>
 		</div>
 	</div>
-
+        <%
+            }
+            }
+            catch(Exception x){}
+        %>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -123,14 +136,114 @@
 					<div class="carousel-inner">
 						<div class="item carousel-item active">
 							<div class="row">
-								<div class="col-sm-3">
+                                                            <%
+                                                                try{
+                                                                    String id=request.getParameter("id");
+                                                                    ResultSet rs = new Database().Productdetails2(id);
+                                                                    while(rs.next())
+                                                                    {
+                                                                         String st=rs.getString("product_image");
+                                                                         Pattern pattern = Pattern.compile("-");
+                                                                         String[] words;
+                                                                         words = pattern.split(st);
+                                                                         String  filepath=words[0]; 
+                                                                         String Path="../image/Vegetables/" +filepath;
+                                                            %>
+                                                            
+                                                            <div class="col-sm-3" style="border-color: red;">
 									<div class="thumb-wrapper">
 										<div class="img-box">
-											<img src="/examples/images/products/ipad.jpg"
+											<img src="<%=Path%>"
 												class="img-responsive img-fluid" alt="">
 										</div>
 										<div class="thumb-content">
-											<h4>Apple iPad</h4>
+											<h4><%=rs.getString("product_name")%></h4>
+											<p class="item-price"><strike>$400.00</strike> <span>₹<%=rs.getString("product_price")%></span></p>
+											<div class="star-rating">
+												<ul class="list-inline">
+													<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+												</ul>
+											</div>
+											<a href="../Addtocart?id=<%=rs.getString("product_id")%>" class="btn btn-primary">Add to Cart</a>
+										</div>
+									</div>
+								</div>
+								<%
+                                                                    }
+                                                                    }
+                                                                    catch(Exception z){}
+                                                                %>
+								
+								
+							</div>
+						</div>
+						<div class="item carousel-item">
+							<div class="row">
+                                                            <%
+                                                                try{
+                                                                    String id=request.getParameter("id");
+                                                                    ResultSet rs = new Database().Productdetails3(id);
+                                                                    while(rs.next())
+                                                                    {
+                                                                         String st=rs.getString("product_image");
+                                                                         Pattern pattern = Pattern.compile("-");
+                                                                         String[] words;
+                                                                         words = pattern.split(st);
+                                                                         String  filepath=words[0]; 
+                                                                         String Path="../image/Vegetables/" +filepath;
+                                                            %>
+                                                            
+                                                            <div class="col-sm-3" style="border-color: red;">
+									<div class="thumb-wrapper">
+										<div class="img-box">
+											<img src="<%=Path%>"
+												class="img-responsive img-fluid" alt="">
+										</div>
+										<div class="thumb-content">
+											<h4><%=rs.getString("product_name")%></h4>
+											<p class="item-price"><strike>$400.00</strike> <span><%=rs.getString("product_price")%></span></p>
+											
+											<a href="../Addtocart?id=<%=rs.getString("product_id")%>" class="btn btn-primary">Add to Cart</a>
+										</div>
+									</div>
+								</div>
+								<%
+                                                                    }
+                                                                    }
+                                                                    catch(Exception z){}
+                                                                %>
+								
+								
+							</div>
+						</div>
+						<div class="item carousel-item">
+							<div class="row">
+                                                            <%
+                                                                try{
+                                                                    String id=request.getParameter("id");
+                                                                    ResultSet rs = new Database().Productdetails4(id);
+                                                                    while(rs.next())
+                                                                    {
+                                                                         String st=rs.getString("product_image");
+                                                                         Pattern pattern = Pattern.compile("-");
+                                                                         String[] words;
+                                                                         words = pattern.split(st);
+                                                                         String  filepath=words[0]; 
+                                                                         String Path="../image/Vegetables/" +filepath;
+                                                            %>
+                                                            
+                                                            <div class="col-sm-3" style="border-color: red;">
+									<div class="thumb-wrapper">
+										<div class="img-box">
+											<img src="<%=Path%>"
+												class="img-responsive img-fluid" alt="">
+										</div>
+										<div class="thumb-content">
+											<h4><%=rs.getString("product_name")%></h4>
 											<p class="item-price"><strike>$400.00</strike> <span>$369.00</span></p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -141,260 +254,17 @@
 													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 												</ul>
 											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
+											<a href="../Addtocart?id=<%=rs.getString("product_id")%>" class="btn btn-primary">Add to Cart</a>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/headphone.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Sony Headphone</h4>
-											<p class="item-price"><strike>$25.00</strike> <span>$23.99</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/macbook-air.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Macbook Air</h4>
-											<p class="item-price"><strike>$899.00</strike> <span>$649.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/nikon.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Nikon DSLR</h4>
-											<p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item carousel-item">
-							<div class="row">
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/play-station.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Sony Play Station</h4>
-											<p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/macbook-pro.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Macbook Pro</h4>
-											<p class="item-price"><strike>$1099.00</strike> <span>$869.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/speaker.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Bose Speaker</h4>
-											<p class="item-price"><strike>$109.00</strike> <span>$99.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/galaxy.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Samsung Galaxy S8</h4>
-											<p class="item-price"><strike>$599.00</strike> <span>$569.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item carousel-item">
-							<div class="row">
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/iphone.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Apple iPhone</h4>
-											<p class="item-price"><strike>$369.00</strike> <span>$349.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/canon.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Canon DSLR</h4>
-											<p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/pixel.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Google Pixel</h4>
-											<p class="item-price"><strike>$450.00</strike> <span>$418.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumb-wrapper">
-										<div class="img-box">
-											<img src="/examples/images/products/watch.jpg"
-												class="img-responsive img-fluid" alt="">
-										</div>
-										<div class="thumb-content">
-											<h4>Apple Watch</h4>
-											<p class="item-price"><strike>$350.00</strike> <span>$330.00</span></p>
-											<div class="star-rating">
-												<ul class="list-inline">
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-												</ul>
-											</div>
-											<a href="#" class="btn btn-primary">Add to Cart</a>
-										</div>
-									</div>
-								</div>
+								<%
+                                                                    }
+                                                                    }
+                                                                    catch(Exception z){}
+                                                                %>
+								
+								
 							</div>
 						</div>
 					</div>
@@ -409,11 +279,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-
 
 
 
