@@ -1,4 +1,4 @@
-; (function ($) {
+(function ($) {
 	$.fn.zoom = function (options) {
 		var _option = {
 			align: "left",
@@ -111,7 +111,7 @@
 					width = _option.thumb_image_width,
 					smwidth = (_option.thumb_image_width / _option.small_thumbs) - 10,
 					smheight = smwidth / scxy,
-					ulwidth =
+					
 						smurl = '',
 					html = '';
 

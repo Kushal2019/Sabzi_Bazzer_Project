@@ -19,11 +19,20 @@
 	<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../Css/product_view_style.css">
 	<link rel="stylesheet" type="text/css" href="../Css/product_image_style.css">
+        <script>
+            function addtocart(id)
+            {
+                let q=document.getElementById('qty').value;
+                  window.location="../Addtocart2?id="+id+"&q="+q;
+            }
+        </script>
 </head>
 
 <body>
-	<%@include  file="../PageFiles/navMain.jsp" %><br><br><br>
- <%
+    <%@include  file="../User/navUser.jsp" %><br><br><br>
+
+        
+        <%
             try{
                 String id=request.getParameter("id");
                 //String emaiiId=session.getAttribute("UserID").toString();
@@ -279,6 +288,11 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
+
 
 
 

@@ -1074,13 +1074,13 @@ public class Database {
         }
     }
 
-    ResultSet Productdetails1(String id) {
+    public ResultSet Productdetails1(String id) {
          try
         {
             if(isConnected())
             {
                
-                    String sql="SELECT * FROM `product_details` WHERE `product_id`=?";
+                    String sql="SELECT *FROM product_details,seller_details WHERE product_details.`product _seller`=seller_details.email and product_details.product_id=?";
                     smt=conn.prepareStatement(sql);
                   
                    smt.setString(1,id);
@@ -1100,7 +1100,7 @@ public class Database {
 
     
 
-    int Addcart(ResultSet rs,String email) {
+    int Addcart(ResultSet rs,String email,String q) {
         try
         {
             if(isConnected())
@@ -1117,7 +1117,7 @@ public class Database {
                smt.setString(3, filepath);
                smt.setString(4, rs.getString("product _seller"));
                smt.setString(5, rs.getString("product_price"));
-               smt.setString(6, "1");
+               smt.setString(6, q);
                smt.setString(7, rs.getString("product_description"));
                smt.setString(8,  rs.getString("product_price"));
                 smt.setString(9,  rs.getString("product_id"));
@@ -1342,7 +1342,82 @@ public class Database {
         }
     }
      
+     public ResultSet Productdetails2(String id) {
+         try
+        {
+            if(isConnected())
+            {
+                 String c_date=new CurrentDate().C_date();
+                    String sql="SELECT * FROM product_details WHERE `product_name`=(SELECT product_name FROM product_details WHERE `product_id`=?) And `product_id` not in(?) and product_exp_date>=? LIMIT 4";
+                    smt=conn.prepareStatement(sql);
+                  
+                   smt.setString(1,id);
+                   smt.setString(2,id);
+                   smt.setString(3,c_date);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
      
      
+      public ResultSet Productdetails3(String id) {
+         try
+        {
+            if(isConnected())
+            {
+                    String c_date=new CurrentDate().C_date();
+                    String sql="SELECT * FROM product_details WHERE `product _seller`=(SELECT `product _seller` FROM product_details WHERE `product_id`=?)and product_exp_date>=? LIMIT 4";
+                    smt=conn.prepareStatement(sql);
+                  
+                   smt.setString(1,id);
+                  smt.setString(2,c_date);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+      
+       public ResultSet Productdetails4(String id) {
+         try
+        {
+            if(isConnected())
+            {
+               String c_date=new CurrentDate().C_date();
+                    String sql="SELECT * FROM product_details WHERE `product _seller`not in(SELECT `product _seller` FROM product_details WHERE `product_id`=2)and product_exp_date>=?  LIMIT 4";
+                    smt=conn.prepareStatement(sql);
+                  
+                   smt.setString(1,id);
+                   smt.setString(2,id);
+                   smt.setString(3,c_date);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
 }
 

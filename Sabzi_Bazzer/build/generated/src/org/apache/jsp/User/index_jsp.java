@@ -3,6 +3,10 @@ package org.apache.jsp.User;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.util.regex.Pattern;
+import java.sql.ResultSet;
+import com.sabzi_bazzer.Database;
+import com.sabzi_bazzer.Database;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -12,8 +16,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants = new java.util.ArrayList<String>(3);
     _jspx_dependants.add("/User/navUser.jsp");
+    _jspx_dependants.add("/User/../Home/image_slider.jsp");
     _jspx_dependants.add("/User/../PageFiles/footerMain.jsp");
   }
 
@@ -47,242 +52,198 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("<html>\n");
-      out.write("<head>\n");
-      out.write("  <title> Sabzi Bazzer </title>\n");
-      out.write("  \n");
-      out.write("  <!-- Bootstrap css links -->\n");
-      out.write("  <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\n");
-      out.write("  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n");
-      out.write("\n");
-      out.write("  <!-- Enternal file liks -->\n");
-      out.write("  <link href=\"../Css/style.css\" rel=\"stylesheet\">\n");
-      out.write("  <script src=\"style.js\"></script>\n");
-      out.write("</head>\n");
-      out.write("<body>\n");
-      out.write("\n");
-      out.write("    <!-- Navbar start -->\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<html>\r\n");
+      out.write("\r\n");
+      out.write("<head>\r\n");
+      out.write("    <title> Sabzi Bazzer </title>\r\n");
+      out.write("\r\n");
+      out.write("    <!-- Bootstrap css links -->\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n");
+      out.write("\r\n");
+      out.write("    <!-- Enternal file liks -->\r\n");
+      out.write("    <link href=\"../Css/style.css\" rel=\"stylesheet\">\r\n");
+      out.write("    <script src=\"style.js\"></script>\r\n");
+      out.write("</head>\r\n");
+      out.write("\r\n");
+      out.write("<body>\r\n");
+      out.write("\r\n");
       out.write("    ");
-      out.write(" <nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-Secondary\">\n");
-      out.write("    <a class=\"navbar-brand\" href=\"index.jsp\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </a>\n");
-      out.write("    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n");
-      out.write("      <span class=\"navbar-toggler-icon\"></span>\n");
-      out.write("    </button>\n");
-      out.write("\n");
-      out.write("    <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n");
-      out.write("      <ul class=\"navbar-nav ml-auto\">\n");
-      out.write("        <li class=\"nav-item active\">\n");
-      out.write("            <a class=\"nav-link\" href=\"index.jsp\">Home <span class=\"sr-only\">(current)</span></a>\n");
-      out.write("        </li>\n");
-      out.write("        <li class=\"nav-item\">\n");
-      out.write("          <a class=\"nav-link\" href=\"about.jsp\">About</a>\n");
-      out.write("        </li>\n");
-      out.write("        <li class=\"nav-item\">\n");
-      out.write("          <a class=\"nav-link\" href=\"\">Cart</a>\n");
-      out.write("        </li>\n");
-      out.write("       <li class=\"nav-item\">\n");
-      out.write("           <a class=\"nav-link\" href=\"../Home/index.jsp\">Logout</a>\n");
-      out.write("        </li>\n");
-      out.write("      </ul>\n");
-      out.write("      <form class=\"form-inline my-2 my-lg-0\">\n");
-      out.write("        <input class=\"form-control mr-sm-2\" type=\"text\" name=\"search\" placeholder=\"Search\">\n");
-      out.write("        <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\n");
-      out.write("      </form>\n");
-      out.write("    </div>\n");
-      out.write("    </nav>");
-      out.write("\n");
-      out.write("    <!-- Navbar end -->\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("  <!-- Start image slider -->\n");
-      out.write("  <div id=\"carouselExampleFade\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">\n");
-      out.write("  <div class=\"carousel-inner\">\n");
-      out.write("    <div class=\"carousel-item active\">\n");
-      out.write("        <img src=\"../image/Slider1.jpg\" class=\"d-block w-100\">\n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"carousel-item\">\n");
-      out.write("      <img src=\"../image/Slider2.jpg\" class=\"d-block w-100\">\n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"carousel-item\">\n");
-      out.write("      <img src=\"../image/Slider3.jpg\" class=\"d-block w-100\">\n");
-      out.write("    </div>\n");
-      out.write("  </div>\n");
-      out.write("  <a class=\"carousel-control-prev\" href=\"#carouselExampleFade\" role=\"button\" data-slide=\"prev\">\n");
-      out.write("    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n");
-      out.write("    <span class=\"sr-only\">Previous</span>\n");
-      out.write("  </a>\n");
-      out.write("  <a class=\"carousel-control-next\" href=\"#carouselExampleFade\" role=\"button\" data-slide=\"next\">\n");
-      out.write("    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n");
-      out.write("    <span class=\"sr-only\">Next</span>\n");
-      out.write("  </a>\n");
-      out.write("</div>\n");
-      out.write("  <!-- End image slider -->\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("  <!-- Product items start -->\n");
-      out.write("  <div class=\"container\"> <br>\n");
-      out.write("    <div class=\"row\">\n");
-      out.write("        <div class=\"col-md-3 col-sm-6\">\n");
-      out.write("            <div class=\"product-grid6\">\n");
-      out.write("                <div class=\"product-image6\">\n");
-      out.write("                    <a href=\"#\">\n");
-      out.write("                        <img class=\"pic-1\" src=\"../image/Vegetables/Aubergine.jpg\">\n");
-      out.write("                    </a>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"product-content\">\n");
-      out.write("                    <h3 class=\"title\"><a href=\"#\">Aubergine</a></h3>\n");
-      out.write("                    <div class=\"price\">Rs 18.90\n");
-      out.write("                        <span>MRP:Rs 20</span>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("                <ul class=\"social\">\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Quick View\"><i class=\"fa fa-search\"></i></a></li>\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Add to Wishlist\"><i class=\"fa fa-shopping-bag\"></i></a></li>\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Add to Cart\"><i class=\"fa fa-shopping-cart\"></i></a></li>\n");
-      out.write("                </ul>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"col-md-3 col-sm-6\">\n");
-      out.write("            <div class=\"product-grid6\">\n");
-      out.write("                <div class=\"product-image6\">\n");
-      out.write("                    <a href=\"#\">\n");
-      out.write("                        <img class=\"pic-1\" src=\"../image/Vegetables/Beetroot.jpg\">\n");
-      out.write("                    </a>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"product-content\">\n");
-      out.write("                    <h3 class=\"title\"><a href=\"#\">Beetroot</a></h3>\n");
-      out.write("                    <div class=\"price\">Rs8.00\n");
-      out.write("                        <span>MRP:Rs 12</span>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("                <ul class=\"social\">\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Quick View\"><i class=\"fa fa-search\"></i></a></li>\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Add to Wishlist\"><i class=\"fa fa-shopping-bag\"></i></a></li>\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Add to Cart\"><i class=\"fa fa-shopping-cart\"></i></a></li>\n");
-      out.write("                </ul>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"col-md-3 col-sm-6\">\n");
-      out.write("            <div class=\"product-grid6\">\n");
-      out.write("                <div class=\"product-image6\">\n");
-      out.write("                    <a href=\"#\">\n");
-      out.write("                        <img class=\"pic-1\" src=\"../image/Vegetables/Black Pepper.jpg\">\n");
-      out.write("                    </a>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"product-content\">\n");
-      out.write("                    <h3 class=\"title\"><a href=\"#\">Black Pepper</a></h3>\n");
-      out.write("                    <div class=\"price\">Rs11.00\n");
-      out.write("                        <span>MRP: Rs 30 </span>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("                <ul class=\"social\">\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Quick View\"><i class=\"fa fa-search\"></i></a></li>\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Add to Wishlist\"><i class=\"fa fa-shopping-bag\"></i></a></li>\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Add to Cart\"><i class=\"fa fa-shopping-cart\"></i></a></li>\n");
-      out.write("                </ul>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"col-md-3 col-sm-6\">\n");
-      out.write("            <div class=\"product-grid6\">\n");
-      out.write("                <div class=\"product-image6\">\n");
-      out.write("                    <a href=\"#\">\n");
-      out.write("                        <img class=\"pic-1\" src=\"../image/Vegetables/Cabbage.jpg\" width=\"30px\">\n");
-      out.write("                    </a>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"product-content\">\n");
-      out.write("                    <h3 class=\"title\"><a href=\"#\">Cabbage</a></h3>\n");
-      out.write("                    <div class=\"price\">Rs11.00\n");
-      out.write("                        <span>MRP: Rs 30 </span>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("                <ul class=\"social\">\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Quick View\"><i class=\"fa fa-search\"></i></a></li>\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Add to Wishlist\"><i class=\"fa fa-shopping-bag\"></i></a></li>\n");
-      out.write("                    <li><a href=\"\" data-tip=\"Add to Cart\"><i class=\"fa fa-shopping-cart\"></i></a></li>\n");
-      out.write("                </ul>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("          <!-- Product items end -->\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
-      out.write("<hr>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("    <!-- Footer -->\n");
+      out.write("\r\n");
+      out.write("<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-dark\">\r\n");
+      out.write("  <a class=\"navbar-brand\" href=\"index.jsp\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </a>\r\n");
+      out.write("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\"\r\n");
+      out.write("    aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n");
+      out.write("    <span class=\"navbar-toggler-icon\"></span>\r\n");
+      out.write("  </button>\r\n");
+      out.write("  ");
+
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        String uname=session.getAttribute("UserID").toString();
+        if(utype.equals("USER") && !uname.equals(""))
+        {
+           // response.sendRedirect("../User/index.jsp");
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+                response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+            {
+                response.sendRedirect("../Seller/index.jsp");
+            } 
+            }
+        }
+     String rs = new Database().Username(uname);
+
+      out.write("\r\n");
+      out.write("  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n");
+      out.write("    <ul class=\"navbar-nav ml-auto\">\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"index.jsp\">Home <span class=\"sr-only\">(current)</span></a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"../User/User_about.jsp\">About</a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"My_Profile.jsp\">Edit ");
+      out.print(rs);
+      out.write("</a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"../User/View_Cart.jsp\">Cart</a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("      <li class=\"nav-item\">\r\n");
+      out.write("        <a class=\"nav-link\" href=\"../logout.jsp\">Logout</a>\r\n");
+      out.write("      </li>\r\n");
+      out.write("    </ul>\r\n");
+      out.write("    <form class=\"form-inline my-2 my-lg-0\">\r\n");
+      out.write("      <input class=\"form-control mr-sm-2\" type=\"text\" name=\"search\" placeholder=\"Search\">\r\n");
+      out.write("      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\r\n");
+      out.write("    </form>\r\n");
+      out.write("  </div>\r\n");
+      out.write("</nav>\r\n");
+
+    }
+    catch(Exception ex)
+    {
+        response.sendRedirect("../index.jsp");
+    }
+
+      out.write("\r\n");
       out.write("    ");
-      out.write("\n");
-      out.write(" <footer class=\"py-5 bg-dark \">\n");
-      out.write("    <div class=\"container\">\n");
-      out.write("      <p class=\"m-0 text-center text-white\"> This site is made by Kushal & Soumen </p>\n");
-      out.write("      <p class=\"m-0 text-center text-danger\"> Special thanks to respected Debashis sir... </p>\n");
-      out.write("    </div>\n");
-      out.write("  </footer>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("  <!-- jQuery first, then Popper.js, then Bootstrap JS -->\n");
-      out.write("\n");
-      out.write("  <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>\n");
-      out.write("  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>\n");
-      out.write("  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>\n");
-      out.write("  </body>\n");
+      out.write("\r\n");
+      out.write("<br><br>\r\n");
+      out.write("<!-- Start image slider -->\r\n");
+      out.write("<div id=\"carouselExampleFade\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">\r\n");
+      out.write("    <div class=\"carousel-inner\">\r\n");
+      out.write("        <div class=\"carousel-item active\">\r\n");
+      out.write("            <img src=\"../image/Slider 1.jpg\" class=\"d-block w-100\">\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <div class=\"carousel-item\">\r\n");
+      out.write("            <img src=\"../image/Slider 2.jpg\" class=\"d-block w-100\">\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <div class=\"carousel-item\">\r\n");
+      out.write("            <img src=\"../image/Slider 3.jpg\" class=\"d-block w-100\">\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <div class=\"carousel-item\">\r\n");
+      out.write("            <img src=\"../image/Slider 4.jpg\" class=\"d-block w-100\">\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <a class=\"carousel-control-prev\" href=\"#carouselExampleFade\" role=\"button\" data-slide=\"prev\">\r\n");
+      out.write("        <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\r\n");
+      out.write("        <span class=\"sr-only\">Previous</span>\r\n");
+      out.write("    </a>\r\n");
+      out.write("    <a class=\"carousel-control-next\" href=\"#carouselExampleFade\" role=\"button\" data-slide=\"next\">\r\n");
+      out.write("        <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\r\n");
+      out.write("        <span class=\"sr-only\">Next</span>\r\n");
+      out.write("    </a>\r\n");
+      out.write("</div>\r\n");
+      out.write("<!-- End image slider -->");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("    <!-- Product items start -->\r\n");
+      out.write("    <div class=\"container\"> <br>\r\n");
+      out.write("        <div class=\"row\">\r\n");
+      out.write("            ");
+
+                try{
+                   ResultSet rs = new Database().Productdetails();  
+                   while(rs.next())
+                   {
+                       String st=rs.getString("product_image");
+                       Pattern pattern = Pattern.compile("-");
+                       String[] words;
+                       words = pattern.split(st);
+                      String  filepath=words[0]; 
+                       String Path="../image/Vegetables/" +filepath;
+            
+      out.write("\r\n");
+      out.write("            <div class=\"col-md-3 col-sm-6\">\r\n");
+      out.write("                <div class=\"product-grid6\">\r\n");
+      out.write("                    <div class=\"product-image6\">\r\n");
+      out.write("                        <a href=\"#\">\r\n");
+      out.write("                            <img class=\"pic-1\" src=\"");
+      out.print(Path);
+      out.write("\">\r\n");
+      out.write("                        </a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"product-content\">\r\n");
+      out.write("                        <h3 class=\"title\"><a href=\"#\">");
+      out.print(rs.getString("product_name"));
+      out.write("</a></h3>\r\n");
+      out.write("\r\n");
+      out.write("                        <div class=\"price\">Rs.");
+      out.print(rs.getString("product_price"));
+      out.write("\r\n");
+      out.write("                            <span>Per: ");
+      out.print(rs.getString("product_type"));
+      out.write("</span>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <ul class=\"social\">\r\n");
+      out.write("                        <li><a href=\"\" data-tip=\"Quick View\"><i class=\"fa fa-search\"></i></a></li>\r\n");
+      out.write("                        <li><a href=\"\" data-tip=\"Add to Wishlist\"><i class=\"fa fa-shopping-bag\"></i></a></li>\r\n");
+      out.write("                        <li><a href=\"../Addtocart?id=");
+      out.print(rs.getString("product_id"));
+      out.write("\" data-tip=\"Add to Cart\"   ><i class=\"fa fa-shopping-cart\"></i></a></li>\r\n");
+      out.write("                    </ul>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            ");
+
+                }
+                }
+                catch(Exception a){}
+            
+      out.write("\r\n");
+      out.write("            <!-- Product items end -->\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div> <br><br><br><br>\r\n");
+      out.write("    <!-- Footer -->\r\n");
+      out.write("    ");
+      out.write("<div class=\"footer\" style=\"background-color: black;\">\r\n");
+      out.write("    <div class=\"text-center\" style=\"color: white\">\r\n");
+      out.write("        <p>Created by Kushal & Soumen</p>\r\n");
+      out.write("        <p>Special thanks to our respected Teachers</p>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div> ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>\r\n");
+      out.write("    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>\r\n");
+      out.write("    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>\r\n");
+      out.write("</body>\r\n");
+      out.write("\r\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -54,9 +54,21 @@ public class Seller_AddProduct extends HttpServlet {
                  i++;
                     
             }; 
+           // product_file=product_file+product_file+product_file+product_file+product_file;
              Pattern pattern = Pattern.compile("-");
             String[] words;
            words = pattern.split(product_file);
+           String ssss="";
+           if(words.length<5)
+           {
+               for(int ii=0;ii<4;ii++)
+               {
+                   ssss=ssss+words[0]+"-";
+               } 
+              
+           }
+           
+           product_file=product_file+ssss;
            out.println(words[0]);
             product_name=request.getParameter("product_name");
             //out.println(product_name + " "+ product_file);

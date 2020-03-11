@@ -7,22 +7,18 @@ package com.sabzi_bazzer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import java.sql.ResultSet;
-import java.util.regex.Pattern;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 /**
  *
  * @author SoumenPC
  */
-public class Addtocart extends HttpServlet {
+public class Addtocart2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,7 +34,8 @@ public class Addtocart extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-                    String id=request.getParameter("id");
+           String id=request.getParameter("id");
+           String q=request.getParameter("q");
                      HttpSession session=request.getSession();
                      String email=session.getAttribute("UserID").toString();
                      String userType=session.getAttribute("UserType").toString();
@@ -48,7 +45,7 @@ public class Addtocart extends HttpServlet {
                          ResultSet rs1= new Database().Cartdetails2(email,id);
                          if(!rs1.next())
                          {
-                            int x= new Database().Addcart(rs,email,"1");
+                            int x= new Database().Addcart(rs,email,q);
                             if(x==1)
                             {
                                if(userType.equals("USER"))
@@ -86,7 +83,8 @@ public class Addtocart extends HttpServlet {
                             }
                         }
                  }
-                   
+                    
+        
         }
         catch(Exception a){}
     }
