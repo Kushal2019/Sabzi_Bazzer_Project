@@ -13,6 +13,7 @@
     <!-- Enternal file liks -->
     <link href="../Css/style.css" rel="stylesheet">
     <script src="style.js"></script>
+    
 </head>
 
 <body>

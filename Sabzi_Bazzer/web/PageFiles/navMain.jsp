@@ -1,3 +1,17 @@
+<script>
+        function valSearch()
+        {
+    let val=document.getElementById("search").value;
+    if(val=="")
+    {
+     
+    }else
+    {
+       window.location="../Home/Search_Result.jsp?search="+val;
+    }
+    
+        }
+        </script>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.jsp" style="font-family: Snap ITC; font-size: 28px;"> Sabzi Bazzer </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -20,9 +34,9 @@
         <a class="nav-link" href="Mainlogin.jsp">Login</a>
       </li>
     </ul>
-      <form class="form-inline my-2 my-lg-0" action="../Home/Search_Result.jsp">
-      <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      <form class="form-inline my-2 my-lg-0" >
+      <input class="form-control mr-sm-2" type="text" name="search" id="search" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="button" onclick="valSearch()">Search</button>
     </form>
   </div>
 </nav>

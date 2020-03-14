@@ -5,6 +5,9 @@
 --%>
 
 
+<%@page import="java.util.regex.Pattern"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.sabzi_bazzer.Database"%>
 <html>
 
 <head>
@@ -18,16 +21,34 @@
     <div style="width:90%;margin-left:5%;margin-right:5%;">
         <div id="container">
             <ul class="list">
-                <li style="font-family: cursive; font-size: 17px; height: 28px; background-color: yellowgreen;">&nbsp;&nbsp;&nbsp; You Search for Potato...</li>
-                
+                <%
+                    String search= request.getParameter("search");
+                %>
+                <li style="font-family: cursive; font-size: 17px; height: 28px; background-color: yellowgreen;">&nbsp;&nbsp;&nbsp; You Search for &nbsp;<%=search%></li>
+                <%
+                    try{
+                         ResultSet rs = new Database().SearchProduct(search);  
+                         while(rs.next())
+                         {
+                             String st=rs.getString("product_image");
+                        Pattern pattern = Pattern.compile("-");
+                        String[] words;
+                         words = pattern.split(st);
+                      String  filepath=words[0]; 
+                       String Path="../image/Vegetables/" +filepath;
+                         
+                         
+                 %>
                 <!-- This is first search result start -->
                 <li>
-                    <img src="https://i1.wp.com/theazb.com/wp-content/uploads/2018/08/xhealth-benefits-of-organic-potatoes-1024x576-pagespeed-ic-6zphs-lh7z.jpg?fit=1024%2C576&ssl=1" width="250" height="250">
+                    <a href="product_view.jsp?id=<%=rs.getString("product_id")%>">
+                        <img src="<%=Path%>" width="250" height="250">
+                    </a>
                     <section class="list-left">
-                        <span class="title">Potato</span>
-                        <p> Fresh New potatoes are freshly picked from the best of farms and as the name suggests they are a new crop. Because of this, they have a thinner skin or peel on top. </p>
+                        <a href="product_view.jsp?id=<%=rs.getString("product_id")%>"> <span class="title"><%=rs.getString("product_name")%></span></a>
+                        <p> <%=rs.getString("product_description")%> </p>
                             <div class="icon-group-btn">
-                                <a title="Add to Cart" href="#" class="btn-cart" onclick="">
+                                <a title="Add to Cart" href="#" class="btn-cart" >
                                     <span class="icon-cart"></span> <span class="icon-cart-text"> Add To Cart </span>
                                 </a>
                             </div>
@@ -38,28 +59,19 @@
                     </div>
 		</li>
                 <!-- This is first search result end -->
-                
-                <!-- This is second search result start -->
-                <li>
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/21SjSwG98CL.jpg" class="img-responsive" width="250" height="250">
-                    <section class="list-left">
-                        <span class="title">Potato</span>
-                        <p> With a ruby red smooth skin and firm white flesh, red potatoes have a waxy texture and a mild buttery flavour. It has an heavy impact on health. </p>
-                            <div class="icon-group-btn">
-                                <a title="Add to Cart" href="#" class="btn-cart" onclick="">
-                                    <span class="icon-cart"></span> <span class="icon-cart-text"> Add To Cart </span>
-                                </a>
-                            </div>
-                    </section>
-                    <div class="list-right">
-                        <span class="price">Rs.41</span><br><br><br>
-                        <button type="button" class="btn btn-warning btn-lg" id="buy_btn">Buy Now</button>
-                    </div>
-		</li>
-                <!-- This is second search result end -->
+               <%  }
+                   }
+                   catch(Exception x){}
+               %> 
+               
             </ul>
         </div>
     </div>
+               <br>
+               <br>
+                              <br> <br>
+                              
+
     <%@include file="../PageFiles/footerMain.jsp"%>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

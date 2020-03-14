@@ -5,8 +5,8 @@
 --%>
 
 
-<%@page import="java.util.regex.Pattern"%>
 <%@page import="java.sql.ResultSet"%>
+<%@page import="java.util.regex.Pattern"%>
 <%@page import="com.sabzi_bazzer.Database"%>
 <html>
 
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <%@include file="../PageFiles/navMain.jsp" %><br><br><br>
+    <%@include file="navSeller.jsp" %><br><br><br>
     <div style="width:90%;margin-left:5%;margin-right:5%;">
         <div id="container">
             <ul class="list">
@@ -48,7 +48,7 @@
                         <a href="product_view.jsp?id=<%=rs.getString("product_id")%>"> <span class="title"><%=rs.getString("product_name")%></span></a>
                         <p> <%=rs.getString("product_description")%> </p>
                             <div class="icon-group-btn">
-                                <a title="Add to Cart" href="#" class="btn-cart" >
+                                <a title="Add to Cart" href="../Addtocart?id=<%=rs.getString("product_id")%>" class="btn-cart" >
                                     <span class="icon-cart"></span> <span class="icon-cart-text"> Add To Cart </span>
                                 </a>
                             </div>
@@ -63,15 +63,12 @@
                    }
                    catch(Exception x){}
                %> 
-               
             </ul>
         </div>
     </div>
-               <br>
+             <br>
                <br>
                               <br> <br>
-                              
-
     <%@include file="../PageFiles/footerMain.jsp"%>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

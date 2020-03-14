@@ -119,6 +119,7 @@ function cartremove(id)
        %>
   </div> <br><br><br>
   <%@include file="../PageFiles/footerMain.jsp"%>
+  
 </body>
 
 </html>

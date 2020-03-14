@@ -12,8 +12,9 @@ public final class Empty_005fCart_jsp extends org.apache.jasper.runtime.HttpJspB
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants = new java.util.ArrayList<String>(2);
     _jspx_dependants.add("/Home/../PageFiles/navMain.jsp");
+    _jspx_dependants.add("/Home/../PageFiles/footerMain.jsp");
   }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -68,6 +69,20 @@ public final class Empty_005fCart_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        ");
+      out.write("<script>\r\n");
+      out.write("        function valSearch()\r\n");
+      out.write("        {\r\n");
+      out.write("    let val=document.getElementById(\"search\").value;\r\n");
+      out.write("    if(val==\"\")\r\n");
+      out.write("    {\r\n");
+      out.write("     \r\n");
+      out.write("    }else\r\n");
+      out.write("    {\r\n");
+      out.write("       window.location=\"../Home/Search_Result.jsp?search=\"+val;\r\n");
+      out.write("    }\r\n");
+      out.write("    \r\n");
+      out.write("        }\r\n");
+      out.write("        </script>\r\n");
       out.write("<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-dark\">\r\n");
       out.write("  <a class=\"navbar-brand\" href=\"index.jsp\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </a>\r\n");
       out.write("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\"\r\n");
@@ -90,9 +105,9 @@ public final class Empty_005fCart_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        <a class=\"nav-link\" href=\"Mainlogin.jsp\">Login</a>\r\n");
       out.write("      </li>\r\n");
       out.write("    </ul>\r\n");
-      out.write("    <form class=\"form-inline my-2 my-lg-0\" >\r\n");
-      out.write("      <input class=\"form-control mr-sm-2\" type=\"text\" name=\"search\" placeholder=\"Search\">\r\n");
-      out.write("      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\r\n");
+      out.write("      <form class=\"form-inline my-2 my-lg-0\" >\r\n");
+      out.write("      <input class=\"form-control mr-sm-2\" type=\"text\" name=\"search\" id=\"search\" placeholder=\"Search\">\r\n");
+      out.write("      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"button\" onclick=\"valSearch()\">Search</button>\r\n");
       out.write("    </form>\r\n");
       out.write("  </div>\r\n");
       out.write("</nav>");
@@ -104,7 +119,15 @@ public final class Empty_005fCart_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                <button type=\"button\" class=\"btn btn-warning btn-lg\" onClick=\"location.href='index.jsp'\">Continue Shopping</button><br><br><br>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>        \r\n");
+      out.write("        ");
+      out.write(" <footer id=\"sticky-footer\" class=\"py-4 bg-dark text-white-50\">\r\n");
+      out.write("     <div class=\"text-center\" style=\"color: white\">\r\n");
       out.write("        \r\n");
+      out.write("        <small>Created by Kushal & Soumen<br>Special thanks to our respected Teachers</small>\r\n");
+      out.write("    </div>\r\n");
+      out.write("   \r\n");
+      out.write("  </footer>");
+      out.write("\r\n");
       out.write("        <script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\"></script>\r\n");
       out.write("        <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\"></script>\r\n");
       out.write("        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\"></script>\r\n");

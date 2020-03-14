@@ -1419,5 +1419,32 @@ public class Database {
             return null;
         }
     }
+     public ResultSet SearchProduct(String search)
+     {
+         try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `product_details` WHERE `product_name` like '%"+search+"%'";
+                    smt=conn.prepareStatement(sql);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+     
+     }
+       
+       
+       
+       
 }
 

@@ -7,8 +7,12 @@ JSP
 Home/Empty_Cart.jsp
 + 1 navMain.jsp
 Home/../PageFiles/navMain.jsp
++ 2 footerMain.jsp
+Home/../PageFiles/footerMain.jsp
 *L
-5,22:49
-1#1,28:71
-26#0,15:99
+5,22:50
+1#1,42:72
+26#0,9:114
+1#2,7:123
+34#0,7:130
 *E

@@ -68,17 +68,16 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t<link href=\"http://www.jqueryscript.net/css/jquerysctipttop.css\" rel=\"stylesheet\">\n");
       out.write("\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../Css/product_view_style.css\">\n");
       out.write("\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../Css/product_image_style.css\">\n");
-      out.write("        <script>\n");
-      out.write("            function addtocart(id)\n");
-      out.write("            {\n");
-      out.write("                let q=document.getElementById('qty').value;\n");
-      out.write("                  window.location=\"../Addtocart2?id=\"+id+\"&q=\"+q;\n");
-      out.write("            }\n");
-      out.write("        </script>\n");
+      out.write("\t<script>\n");
+      out.write("\t\tfunction addtocart(id) {\n");
+      out.write("\t\t\tlet q = document.getElementById('qty').value;\n");
+      out.write("\t\t\twindow.location = \"../Addtocart2?id=\" + id + \"&q=\" + q;\n");
+      out.write("\t\t}\n");
+      out.write("\t</script>\n");
       out.write("</head>\n");
       out.write("\n");
       out.write("<body>\n");
-      out.write("    ");
+      out.write("\t");
       out.write("\r\n");
       out.write("<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-dark\">\r\n");
       out.write("  <a class=\"navbar-brand\" href=\"index.jsp\" style=\"font-family: Snap ITC; font-size: 28px;\"> Sabzi Bazzer </a>\r\n");
@@ -148,8 +147,8 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
 
       out.write("<br><br><br>\n");
       out.write("\n");
-      out.write("        \n");
-      out.write("        ");
+      out.write("\n");
+      out.write("\t");
 
             try{
                 String id=request.getParameter("id");
@@ -168,7 +167,7 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t\t\t\t<div class=\"col-md-5\">\n");
       out.write("\t\t\t\t\t\t<div class=\"bzoom_wrap\">\n");
       out.write("\t\t\t\t\t\t\t<ul id=\"bzoom\">\n");
-      out.write("                                                            ");
+      out.write("\t\t\t\t\t\t\t\t");
 
                                                                     String st=rs.getString("product_image");
                                                                     Pattern pattern = Pattern.compile("-");
@@ -180,15 +179,15 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
                                                             
       out.write("\n");
       out.write("\t\t\t\t\t\t\t\t<li>\n");
-      out.write("                                                                    <img class=\"bzoom_thumb_image\" src=\"../image/Vegetables/");
+      out.write("\t\t\t\t\t\t\t\t\t<img class=\"bzoom_thumb_image\" src=\"../image/Vegetables/");
       out.print(words[i]);
       out.write("\" />\n");
       out.write("\t\t\t\t\t\t\t\t\t<img class=\"bzoom_big_image\" src=\"../image/Vegetables/");
       out.print(words[i]);
       out.write("\" />\n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
-      out.write("\t\t\t\t\t\t\t\t\n");
-      out.write("                                                                 ");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t\t\t");
 }
       out.write("\n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
@@ -199,67 +198,72 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t\t\t\t\t<div class=\"product_description\">\n");
       out.write("\t\t\t\t\t\t\t<div class=\"product_name\">");
       out.print(rs.getString("product_name"));
-      out.write("</div>\n");
-      out.write("\t\t\t\t\t\t\t<div class=\"product-rating\"><span class=\"badge badge-success\"><i class=\"fa fa-star\"></i> New\n");
-      out.write("\t\t\t\t\t\t\t\t</span> <span class=\"rating-review\">");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t<div class=\"product-rating\"><span class=\"badge badge-success\"><i class=\"fa fa-star\"></i> New\n");
+      out.write("\t\t\t\t\t\t\t</span> <span class=\"rating-review\">");
       out.print(rs.getString("company_name"));
       out.write("</span></div>\n");
-      out.write("\t\t\t\t\t\t\t<div> <span class=\"product_price\">Price: ₹");
+      out.write("\t\t\t\t\t\t<div> <span class=\"product_price\">Price: ₹");
       out.print(rs.getString("product_price"));
-      out.write("</span> <strike class=\"product_discount\">\n");
-      out.write("                                                                <span style='color:black'>MRP ₹ ");
+      out.write("</span> <strike\n");
+      out.write("\t\t\t\t\t\t\t\tclass=\"product_discount\">\n");
+      out.write("\t\t\t\t\t\t\t\t<span style='color:black'>MRP ₹ ");
       out.print(Integer.parseInt(rs.getString("product_price"))+10);
-      out.write(" </span> </strike> </div>\n");
-      out.write("\t\t\t\t\t\t\t<div> <span class=\"product_saved\">You Saved:</span> <span style='color:black'>₹ 10</span>\n");
-      out.write("\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t<hr class=\"singleline\">\n");
-      out.write("\t\t\t\t\t\t\t<div>\n");
-      out.write("\t\t\t\t\t\t\t\t\n");
-      out.write("\t\t\t\t\t\t\t\t<span class=\"product_info\"> Standard Delivery:  Tomorrow Evening</span><br>\n");
-      out.write("\t\t\t\t\t\t\t\t<span class=\"product_info\">We provide you best seller of the week</span><br>\n");
-      out.write("\t\t\t\t\t\t\t\t<span class=\"product_info\">No return policy</span><br>\n");
-      out.write("\t\t\t\t\t\t\t\t<span class=\"product_info\">In Stock: ");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t\t\t</span> </strike> </div>\n");
+      out.write("\t\t\t\t\t\t<div> <span class=\"product_saved\">You Saved:</span> <span style='color:black'>₹ 10</span>\n");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t<hr class=\"singleline\">\n");
+      out.write("\t\t\t\t\t\t<div>\n");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t\t<span class=\"product_info\"> Standard Delivery: Tomorrow Evening</span><br>\n");
+      out.write("\t\t\t\t\t\t\t<span class=\"product_info\">We provide you best seller of the week</span><br>\n");
+      out.write("\t\t\t\t\t\t\t<span class=\"product_info\">No return policy</span><br>\n");
+      out.write("\t\t\t\t\t\t\t<span class=\"product_info\">In Stock: ");
       out.print(rs.getString("product_quantity"));
-      out.write(" units sold this Date ");
+      out.write(" units sold this\n");
+      out.write("\t\t\t\t\t\t\t\tDate ");
       out.print(rs.getString("product_exp_date"));
       out.write(" </span>\n");
-      out.write("\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t<div>\n");
-      out.write("\t\t\t\t\t\t\t\t<div class=\"row\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"col-md-5\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"br-dashed\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-3 col-xs-3\"> <img\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\tsrc=\"https://img.icons8.com/color/48/000000/price-tag.png\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-9 col-xs-9\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"pr-info\"> <span class=\"break-all\">Extra 5% off* with\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tNLDB Credit Card</span> </div>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t<div>\n");
+      out.write("\t\t\t\t\t\t\t<div class=\"row\">\n");
+      out.write("\t\t\t\t\t\t\t\t<div class=\"col-md-5\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t<div class=\"br-dashed\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-3 col-xs-3\"> <img\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\tsrc=\"https://img.icons8.com/color/48/000000/price-tag.png\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-md-9 col-xs-9\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"pr-info\"> <span class=\"break-all\">Extra 5% off* with\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\tNLDB Credit Card</span> </div>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"col-md-7\"> </div>\n");
       out.write("\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t<div class=\"col-md-7\"> </div>\n");
       out.write("\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t<hr class=\"singleline\">\n");
-      out.write("\t\t\t\t\t\t\t<div class=\"order_info d-flex flex-row\">\n");
-      out.write("\t\t\t\t\t\t\t\t<form action=\"#\">\n");
-      out.write("\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t<div class=\"row\">\n");
-      out.write("\t\t\t\t\t\t\t\t<div class=\"col-xs-6\" style=\"margin-left: 14px\">\n");
-      out.write("                                                                    <span class=\"product_info\"><b>Pack Size: </b>");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t<hr class=\"singleline\">\n");
+      out.write("\t\t\t\t\t\t<div class=\"order_info d-flex flex-row\">\n");
+      out.write("\t\t\t\t\t\t\t<form action=\"#\">\n");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t<div class=\"row\">\n");
+      out.write("\t\t\t\t\t\t\t<div class=\"col-xs-6\" style=\"margin-left: 14px\">\n");
+      out.write("\t\t\t\t\t\t\t\t<span class=\"product_info\"><b>Pack Size:\n");
+      out.write("\t\t\t\t\t\t\t\t\t</b>");
       out.print(rs.getString("product_type"));
       out.write("</span><br>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<div class=\"qty mt-10\">\n");
-      out.write("                                                                            <span class=\"minus bg-dark\">-</span>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<input type=\"number\" class=\"count\" name=\"qty\" value=\"1\" id=\"qty\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<span class=\"plus bg-dark\">+</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
-      out.write("                                                                                <button type=\"button\" class=\"btn btn-primary shop-button\" onclick=\"addtocart(");
+      out.write("\t\t\t\t\t\t\t\t<div class=\"qty mt-10\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t<span class=\"minus bg-dark\">-</span>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<input type=\"number\" class=\"count\" name=\"qty\" value=\"1\" id=\"qty\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t<span class=\"plus bg-dark\">+</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n");
+      out.write("\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary shop-button\"\n");
+      out.write("\t\t\t\t\t\t\t\t\t\tonclick=\"addtocart(");
       out.print(rs.getString("product_id"));
       out.write(")\">Add to Cart</button>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success shop-button\">Buy Now</button>\n");
-      out.write("\t\t\t\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success shop-button\">Buy Now</button>\n");
       out.write("\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t</div>\n");
@@ -268,7 +272,8 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t\t</div>\n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");
-      out.write("        ");
+      out.write("\t</div>\n");
+      out.write("\t");
 
             }
             }
@@ -290,7 +295,7 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t\t\t\t<div class=\"carousel-inner\">\n");
       out.write("\t\t\t\t\t\t<div class=\"item carousel-item active\">\n");
       out.write("\t\t\t\t\t\t\t<div class=\"row\">\n");
-      out.write("                                                            ");
+      out.write("\t\t\t\t\t\t\t\t");
 
                                                                 try{
                                                                     String id=request.getParameter("id");
@@ -305,20 +310,20 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
                                                                          String Path="../image/Vegetables/" +filepath;
                                                             
       out.write("\n");
-      out.write("                                                            \n");
-      out.write("                                                            <div class=\"col-sm-3\" style=\"border-color: red;\">\n");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t\t\t<div class=\"col-sm-3\" style=\"border-color: red;\">\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"thumb-wrapper\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"img-box\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t<img src=\"");
       out.print(Path);
-      out.write("\"\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\tclass=\"img-responsive img-fluid\" alt=\"\">\n");
+      out.write("\" class=\"img-responsive img-fluid\" alt=\"\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"thumb-content\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t<h4>");
       out.print(rs.getString("product_name"));
       out.write("</h4>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t<p class=\"item-price\"><strike>$400.00</strike> <span>₹");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<p class=\"item-price\"><strike>$400.00</strike>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t<span>₹");
       out.print(rs.getString("product_price"));
       out.write("</span></p>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t<div class=\"star-rating\">\n");
@@ -330,7 +335,10 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\"><i class=\"fa fa-star-o\"></i></li>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-primary\">Add to Cart</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<a href=\"../Addtocart?id=");
+      out.print(rs.getString("product_id"));
+      out.write("\"\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tclass=\"btn btn-primary\">Add to Cart</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t</div>\n");
@@ -341,17 +349,17 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
                                                                     catch(Exception z){}
                                                                 
       out.write("\n");
-      out.write("\t\t\t\t\t\t\t\t\n");
-      out.write("\t\t\t\t\t\t\t\t\n");
+      out.write("\n");
+      out.write("\n");
       out.write("\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t<div class=\"item carousel-item\">\n");
       out.write("\t\t\t\t\t\t\t<div class=\"row\">\n");
-      out.write("                                                            ");
+      out.write("\t\t\t\t\t\t\t\t");
 
                                                                 try{
                                                                     String id=request.getParameter("id");
-                                                                    ResultSet rs = new Database().Productdetails2(id);
+                                                                    ResultSet rs = new Database().Productdetails3(id);
                                                                     while(rs.next())
                                                                     {
                                                                          String st=rs.getString("product_image");
@@ -362,24 +370,27 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
                                                                          String Path="../image/Vegetables/" +filepath;
                                                             
       out.write("\n");
-      out.write("                                                            \n");
-      out.write("                                                            <div class=\"col-sm-3\" style=\"border-color: red;\">\n");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t\t\t<div class=\"col-sm-3\" style=\"border-color: red;\">\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"thumb-wrapper\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"img-box\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t<img src=\"");
       out.print(Path);
-      out.write("\"\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\tclass=\"img-responsive img-fluid\" alt=\"\">\n");
+      out.write("\" class=\"img-responsive img-fluid\" alt=\"\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"thumb-content\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t<h4>");
       out.print(rs.getString("product_name"));
       out.write("</h4>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t<p class=\"item-price\"><strike>$400.00</strike> <span>");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<p class=\"item-price\"><strike>$400.00</strike>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t<span>");
       out.print(rs.getString("product_price"));
       out.write("</span></p>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-primary\">Add to Cart</a>\n");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<a href=\"../Addtocart?id=");
+      out.print(rs.getString("product_id"));
+      out.write("\"\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tclass=\"btn btn-primary\">Add to Cart</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t</div>\n");
@@ -390,17 +401,17 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
                                                                     catch(Exception z){}
                                                                 
       out.write("\n");
-      out.write("\t\t\t\t\t\t\t\t\n");
-      out.write("\t\t\t\t\t\t\t\t\n");
+      out.write("\n");
+      out.write("\n");
       out.write("\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t<div class=\"item carousel-item\">\n");
       out.write("\t\t\t\t\t\t\t<div class=\"row\">\n");
-      out.write("                                                            ");
+      out.write("\t\t\t\t\t\t\t\t");
 
                                                                 try{
                                                                     String id=request.getParameter("id");
-                                                                    ResultSet rs = new Database().Productdetails2(id);
+                                                                    ResultSet rs = new Database().Productdetails4(id);
                                                                     while(rs.next())
                                                                     {
                                                                          String st=rs.getString("product_image");
@@ -411,14 +422,13 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
                                                                          String Path="../image/Vegetables/" +filepath;
                                                             
       out.write("\n");
-      out.write("                                                            \n");
-      out.write("                                                            <div class=\"col-sm-3\" style=\"border-color: red;\">\n");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t\t\t<div class=\"col-sm-3\" style=\"border-color: red;\">\n");
       out.write("\t\t\t\t\t\t\t\t\t<div class=\"thumb-wrapper\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"img-box\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t<img src=\"");
       out.print(Path);
-      out.write("\"\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\tclass=\"img-responsive img-fluid\" alt=\"\">\n");
+      out.write("\" class=\"img-responsive img-fluid\" alt=\"\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<div class=\"thumb-content\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t<h4>");
@@ -434,7 +444,10 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"list-inline-item\"><i class=\"fa fa-star-o\"></i></li>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t\t</div>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"btn btn-primary\">Add to Cart</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t<a href=\"../Addtocart?id=");
+      out.print(rs.getString("product_id"));
+      out.write("\"\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\tclass=\"btn btn-primary\">Add to Cart</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t\t\t</div>\n");
@@ -445,8 +458,8 @@ public final class product_005fview_jsp extends org.apache.jasper.runtime.HttpJs
                                                                     catch(Exception z){}
                                                                 
       out.write("\n");
-      out.write("\t\t\t\t\t\t\t\t\n");
-      out.write("\t\t\t\t\t\t\t\t\n");
+      out.write("\n");
+      out.write("\n");
       out.write("\t\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t</div>\n");

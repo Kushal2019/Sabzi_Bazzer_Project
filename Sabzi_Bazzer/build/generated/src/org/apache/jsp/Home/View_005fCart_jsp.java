@@ -112,7 +112,7 @@ public final class View_005fCart_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("  </div>\r\n");
       out.write("</nav>");
       out.write("\r\n");
-      out.write("    <div class=\"container\"> <br><br><br>\r\n");
+      out.write("    <div class=\"container\">\r\n");
       out.write("  <h1>Shopping Cart</h1>\r\n");
       out.write("  <div class=\"shopping-cart\">\r\n");
       out.write("\r\n");
@@ -224,48 +224,24 @@ public final class View_005fCart_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("     ");
 
         }
-        else
-        {
-        
-      out.write("\r\n");
-      out.write("        <div class=\"totals\">\r\n");
-      out.write("      <div class=\"totals-item\">\r\n");
-      out.write("        <label>Subtotal</label>\r\n");
-      out.write("        <div class=\"totals-value\" id=\"cart-subtotal\"></div>\r\n");
-      out.write("      </div>\r\n");
-      out.write("      <div class=\"totals-item\">\r\n");
-      out.write("        <label>Tax (5%)</label>\r\n");
-      out.write("        <div class=\"totals-value\" id=\"cart-tax\"></div>\r\n");
-      out.write("      </div>\r\n");
-      out.write("      <div class=\"totals-item\">\r\n");
-      out.write("        <label>Shipping</label>\r\n");
-      out.write("        <div class=\"totals-value\" id=\"cart-shipping\"></div>\r\n");
-      out.write("      </div>\r\n");
-      out.write("      <div class=\"totals-item totals-item-total\">\r\n");
-      out.write("        <label>Grand Total</label>\r\n");
-      out.write("        <div class=\"totals-value\" id=\"cart-total\"></div>\r\n");
-      out.write("      </div>\r\n");
-      out.write("    </div>\r\n");
-      out.write("\r\n");
-      out.write("    <button class=\"checkout\">Checkout</button>\r\n");
-      out.write("   \r\n");
-      out.write("  </div> \r\n");
-      out.write("        ");
-
-        }
         }
         catch(Exception a){}
        
       out.write("\r\n");
       out.write("  </div> <br><br><br>\r\n");
       out.write("  ");
-      out.write("<div class=\"footer\" style=\"background-color: red; height: 80px; padding: 10px;\">\r\n");
-      out.write("    <div class=\"text-center\" style=\"background-color: greenyellow;\">\r\n");
+      out.write(" <footer id=\"sticky-footer\" class=\"py-4 bg-dark text-white-50\">\r\n");
+      out.write("     <div class=\"text-center\" style=\"color: white\">\r\n");
       out.write("        <p>Created by Kushal & Soumen</p>\r\n");
       out.write("        <p>Special thanks to our respected Teachers</p>\r\n");
       out.write("    </div>\r\n");
-      out.write("</div> ");
+      out.write("    <div class=\"container text-center\">\r\n");
+      out.write("        \r\n");
+      out.write("      <small>Copyright &copy; Your Website</small>\r\n");
+      out.write("    </div>\r\n");
+      out.write("  </footer>");
       out.write("\r\n");
+      out.write("  \r\n");
       out.write("</body>\r\n");
       out.write("\r\n");
       out.write("</html>");
