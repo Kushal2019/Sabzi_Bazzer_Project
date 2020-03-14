@@ -1,18 +1,18 @@
 SMAP
-Search_005fResult_jsp.java
+Buy_005fNow_jsp.java
 JSP
 *S JSP
 *F
-+ 0 Search_Result.jsp
-Home/Search_Result.jsp
++ 0 Buy_Now.jsp
+Home/Buy_Now.jsp
 + 1 navMain.jsp
 Home/../PageFiles/navMain.jsp
 + 2 footerMain.jsp
 Home/../PageFiles/footerMain.jsp
 *L
-5,13:50
-1#1,28:63
-17#0,47:91
-1#2,6:138
-63#0,6:144
+5,12:50
+1#1,28:62
+16#0,3:90
+1#2,6:93
+18#0,6:99
 *E
