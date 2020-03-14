@@ -23,8 +23,7 @@
         
     </head>
     <body>
-        <%@include file="../PageFiles/navMain.jsp"%>
-        <br><br><br><br><br><br>
+        <%@include file="../PageFiles/navMain.jsp"%> <br><br><br><br><br><br>
         <div class="container">
             <div class="text-center"><br>
                 <h1> &nbsp; Your Cart is empty</h1><br><br><br><br><br><br><br><br><br>
