@@ -23,15 +23,14 @@
         
     </head>
     <body>
-        <%@include file="../PageFiles/navMain.jsp"%>
-        <br><br><br><br><br><br>
+        <%@include file="../PageFiles/navMain.jsp"%> <br><br><br><br><br><br>
         <div class="container">
             <div class="text-center"><br>
                 <h1> &nbsp; Your Cart is empty</h1><br><br><br><br><br><br><br><br><br>
                 <button type="button" class="btn btn-warning btn-lg" onClick="location.href='index.jsp'">Continue Shopping</button><br><br><br>
             </div>
-        </div>        
-        
+        </div>
+        <%@include file="../PageFiles/footerMain.jsp"%>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
