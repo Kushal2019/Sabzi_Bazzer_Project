@@ -88,7 +88,8 @@ public final class Buy_005fNow_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  </div>\r\n");
       out.write("</nav>");
       out.write("\n");
-      out.write("        <h1>This is Bye Now Page...</h1>\n");
+      out.write("        <br><br><br><br><br><br><br><br><br><br><br><br>\n");
+      out.write("        This page is incomplete...\n");
       out.write("        ");
       out.write("<div class=\"footer\" style=\"background-color: black;\">\r\n");
       out.write("    <div class=\"text-center\" style=\"color: white\">\r\n");
