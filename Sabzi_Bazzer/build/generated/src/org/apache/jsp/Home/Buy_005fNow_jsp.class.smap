@@ -7,12 +7,8 @@ JSP
 Home/Buy_Now.jsp
 + 1 navMain.jsp
 Home/../PageFiles/navMain.jsp
-+ 2 footerMain.jsp
-Home/../PageFiles/footerMain.jsp
 *L
-5,12:50
-1#1,28:62
-16#0,3:90
-1#2,6:93
-18#0,6:99
+5,40:49
+1#1,42:89
+44#0,112:131
 *E

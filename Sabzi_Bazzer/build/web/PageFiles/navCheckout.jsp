@@ -1,3 +1,9 @@
+<%-- 
+    Document   : navCheckout
+    Created on : 18 Mar, 2020, 12:25:35 PM
+    Author     : Kushal
+--%>
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.jsp" style="font-family: Snap ITC; font-size: 28px;"> Sabzi Bazzer </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -10,19 +16,6 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.jsp">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.jsp">About</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="../Home/Empty_Cart.jsp">Cart</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Mainlogin.jsp">Login</a>
-      </li>
     </ul>
-      <form class="form-inline my-2 my-lg-0" action="../SearchProduct">
-      <input class="form-control mr-sm-2" type="text" name="search" id="search" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="Submit" onclick>Search</button>
-    </form>
   </div>
 </nav>
