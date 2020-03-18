@@ -4,14 +4,14 @@
     <title>Registation Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../Css/Registration_Style.css">
-      <link href="../Css/Loder.css" rel="stylesheet">
+    <link href="../Css/Loder.css" rel="stylesheet">
     <script type="text/javascript" src="../Javascript/Registration_Validation.js"></script>
 </head>
 
 <body onload="ran(1)">
     <div id="loader" class="center">
         <center><img src="../image/Sabzi_Logo.png"></center>
-    </div> 
+    </div>
     <%@include file="../PageFiles/navReg.jsp" %>
     <br>
     <%
@@ -134,13 +134,13 @@
                                             name="u_email" id="u_email" />
                                         <span style="color:red;" id="e5"></span>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <input type="text" minlength="10" maxlength="10" name="txtEmpPhone"
                                             class="form-control" placeholder="Your Phone *" value="" id="txtEmpPhone" />
                                         <span style="color:red;" id="e6"></span>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <select class="form-control" name="u_s_question" id="u_s_question"
                                             onchange="SQ()">
@@ -158,9 +158,8 @@
                                             disabled value="" name="u_s_answer" id="u_s_answer" />
                                         <span style="color:red;" id="e8"></span>
                                     </div>
-                                    <input type="submit" class="btnRegister" value="Register"
-                                        onclick="" />
-                                    /<!--return User_validation()-->
+                                    <input type="submit" class="btnRegister" value="Register" onclick="" />
+                                    <!--return User_validation()-->
                                 </div>
                             </div>
                         </form>
@@ -296,7 +295,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-     <script src="../Javascript/loder.js"></script>
+    <script src="../Javascript/loder.js"></script>
 </body>
 
 </html>
