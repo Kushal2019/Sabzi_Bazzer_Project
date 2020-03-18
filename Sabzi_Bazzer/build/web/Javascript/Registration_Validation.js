@@ -145,7 +145,7 @@ function User_validation() {
             f = 1;
         }
         else {
-            s_email.style.borderColor = "green";
+            u_email.style.borderColor = "green";
             document.getElementById('e5').innerHTML = "";
         }
     }

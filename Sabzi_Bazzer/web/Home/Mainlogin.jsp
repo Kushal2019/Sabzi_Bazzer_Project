@@ -13,40 +13,20 @@
     <script src="../Javascript/Mainlogin_Validation.js"></script>
     <script>
         function errorMag() {
-            document.getElementById("aaa").style.visibility = "visible";
-            document.getElementById("aaa").style.opacity = 1;
-            document.getElementById("aaa").innerHTML="Your Username & Password Invalid!";
+            document.getElementById("aaa").innerHTML="<span class='tooltip11text' style='color:red;' id='aaa2' ></span>";
+            document.getElementById("aaa2").style.visibility = "visible";
+            document.getElementById("aaa2").style.opacity = 1;
+            document.getElementById("aaa2").innerHTML="Your Username & Password Invalid!";
         }
         function Notfound()
         {
-            document.getElementById("aaa").style.visibility = "visible";
-            document.getElementById("aaa").style.opacity = 1;
-            document.getElementById("aaa").innerHTML="Your Email ID Does not exited";
+             document.getElementById("aaa").innerHTML="<span class='tooltip11text' style='color:red;' id='aaa2' ></span>";
+            document.getElementById("aaa2").style.visibility = "visible";
+            document.getElementById("aaa2").style.opacity = 1;
+            document.getElementById("aaa2").innerHTML="Your Email ID Does not exited";
         }
     </script>
-    <script>
-function CheckEmail(str) {
-  var xhttp;
-  if (str.length == 0) { 
-      document.getElementById("aaa").style.visibility = "hidden";
-            document.getElementById("aaa").style.opacity = 0;
-    document.getElementById("aaa").innerHTML = "";
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("aaa").style.visibility = "visible";
-            document.getElementById("aaa").style.opacity = 1;
-      document.getElementById("aaa").innerHTML = this.responseText;
-      
-    }
-       
-  };
-  xhttp.open("GET", "CheckEmail_login.jsp?q="+str, true);
-  xhttp.send(); 
-}
-</script>
+    
 </head>
 <%
     
@@ -158,8 +138,8 @@ function CheckEmail(str) {
                     <div class="container">
                         <a href="#" data-target="#pwdModal" data-toggle="modal"
                             style="color: tomato; position: relative; left: 78px;">Forgot my password</a>
-                             <div class="tooltip11">
-                     <span class="tooltip11text" id="aaa"></span>
+                    <div class="tooltip11" id="aaa">
+                     
                      </div>
                     </div>
                 </div>
@@ -210,6 +190,24 @@ function CheckEmail(str) {
     </div>
     <%@include file="../PageFiles/footerMain.jsp" %>
      <script src="../Javascript/loder.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script>
+function CheckEmail(str) {
+    if (str.length == 0) { document.getElementById("aaa2").style.visibility = "hidden"; document.getElementById("aaa2").style.opacity = 0; document.getElementById("aaa2").innerHTML = ""; return; }
+  $.ajax({
+      url: "CheckEmail_login.jsp",
+      type:'post',
+      data:{q:str},
+      success: function(result){
+           $("#aaa").html(result);
+            document.getElementById("aaa2").style.visibility = "visible";
+            document.getElementById("aaa2").style.opacity = 1;
+     
+  }});
+ // xhttp.open("GET", "CheckEmail_login.jsp?q="+str, true);
+ 
+}
+</script>
 </body>
 
 </html>

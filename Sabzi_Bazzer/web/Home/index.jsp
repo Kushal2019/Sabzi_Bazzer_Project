@@ -45,7 +45,22 @@
     <!-- Enternal file liks -->
     <link href="../Css/style.css" rel="stylesheet">
     <link href="../Css/Loder.css" rel="stylesheet">
-    
+    <script>
+        function login(id)
+        {
+           window.open("Mainlogin_1.jsp", 'Ad', 'left=20,top=20,width=500,height=550,toolbar=1,resizable=0');
+           let r=confirm("Press a button!");
+           if(r)
+           {
+               
+           }
+           else{
+               alert(id);
+           }
+          
+          
+        }
+    </script>
 
 </head>
 
@@ -91,7 +106,7 @@
                     <ul class="social">
                         <li><a href="product_view.jsp?id=<%=rs.getString("product_id")%>" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                         <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="../Addtocart?id=<%=rs.getString("product_id")%>" data-tip="Add to Cart"   ><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="Mainlogin_1.jsp?id=<%=rs.getString("product_id")%>" data-tip="Add to Cart"   ><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                 </div>
             </div>

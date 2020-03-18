@@ -118,7 +118,7 @@
 									<input type="number" class="count" name="qty" value="1" id="qty">
 									<span class="plus bg-dark">+</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<button type="button" class="btn btn-primary shop-button"
-										onclick="addtocart(<%=rs.getString('product_id")%>)">Add to Cart</button>
+										onclick="addtocart(<%=rs.getString("product_id")%>)">Add to Cart</button>
 									<button type="button" class="btn btn-success shop-button">Buy Now</button>
 								</div>
 							</div>

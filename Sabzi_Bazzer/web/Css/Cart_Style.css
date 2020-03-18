@@ -1,5 +1,12 @@
 /* Global settings */
- 
+.emp{
+    
+}
+.main{
+   margin-top:20px;
+   margin-left: 60px;
+   margin-right: 60px;
+}
 .product-image {
   float: left;
   width: 20%;

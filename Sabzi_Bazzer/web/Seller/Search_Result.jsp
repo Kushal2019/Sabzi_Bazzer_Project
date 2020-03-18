@@ -28,6 +28,7 @@
                 <%
                     try{
                          ResultSet rs = new Database().SearchProduct(search);  
+                         String temp="";
                          while(rs.next())
                          {
                              String st=rs.getString("product_image");
@@ -58,8 +59,14 @@
                         <button type="button" class="btn btn-warning btn-lg" id="buy_btn">Buy Now</button>
                     </div>
 		</li>
-                <!-- This is first search result end -->
-               <%  }
+                <%  temp="1";
+        }
+        if(temp.equals(""))
+        {%>
+          
+        <img src="../image/pnf.png" width="750px" height="280px">    
+   
+        <%}
                    }
                    catch(Exception x){}
                %> 

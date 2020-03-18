@@ -36,7 +36,7 @@ function cartremove(id)
 
 <body >
     <%@include file="navSeller.jsp"%>
-    <div class="container"> <br><br><br>
+    <div class="main"> <br><br><br>
   <h1>Shopping Cart</h1>
   <div class="shopping-cart">
 
@@ -51,6 +51,7 @@ function cartremove(id)
     <%
         try{
               String uname=session.getAttribute("UserID").toString();
+              String temp="";
                    ResultSet rs = new Database().Cartdetails(uname);  
                    while(rs.next())
                    {
@@ -76,6 +77,13 @@ function cartremove(id)
       <div class="product-line-price"><%=rs.getString("total")%></div>
     </div>
  <%
+        temp="1";
+        }
+        if(temp.equals(""))
+        {
+          
+                response.sendRedirect("Empty_Cart.jsp");
+   
         }
         }
         catch(Exception a){}

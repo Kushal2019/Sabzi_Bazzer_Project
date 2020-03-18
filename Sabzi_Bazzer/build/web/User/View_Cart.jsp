@@ -15,8 +15,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   <link rel="stylesheet" href="../Css/Cart_Style.css">
   <script type="text/javascript" src="../Javascript/View_Cart_Style.js"></script>  
   <script>
@@ -36,7 +35,7 @@ function cartremove(id)
 
 <body >
     <%@include file="navUser.jsp"%>
-    <div class="container"> <br><br><br>
+    <div class="main"> <br><br><br>
   <h1>Shopping Cart</h1>
   <div class="shopping-cart">
 
@@ -51,6 +50,7 @@ function cartremove(id)
     <%
         try{
               String uname=session.getAttribute("UserID").toString();
+              String temp="";
                    ResultSet rs = new Database().Cartdetails(uname);  
                    while(rs.next())
                    {
@@ -75,7 +75,14 @@ function cartremove(id)
       </div>
       <div class="product-line-price"><%=rs.getString("total")%></div>
     </div>
- <%
+      <%    
+          temp="1";
+        }
+        if(temp.equals(""))
+        {
+          
+                response.sendRedirect("Empty_Cart.jsp");
+   
         }
         }
         catch(Exception a){}
@@ -112,6 +119,7 @@ function cartremove(id)
     <button class="checkout">Checkout</button>
    
   </div> 
+      
      <%
         }
         }
@@ -119,6 +127,9 @@ function cartremove(id)
        %>
   </div> <br><br><br>
   <%@include file="../PageFiles/footerMain.jsp"%>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
 </body>
 
 </html>

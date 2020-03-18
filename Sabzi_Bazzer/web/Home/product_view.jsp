@@ -19,6 +19,12 @@
 	<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../Css/product_view_style.css">
 	<link rel="stylesheet" type="text/css" href="../Css/product_image_style.css">
+        <script>
+		function addtocart() {
+			
+			window.location = "../Home/Mainlogin.jsp";
+		}
+	</script>
 </head>
 
 <body>
@@ -105,7 +111,7 @@
                                                                             <span class="minus bg-dark">-</span>
 										<input type="number" class="count" name="qty" value="1" id="qty">
 										<span class="plus bg-dark">+</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <button type="button" class="btn btn-primary shop-button" onclick="addtocart(<%=rs.getString("product_id")%>)">Add to Cart</button>
+                                                                                <button type="button" class="btn btn-primary shop-button" onclick="addtocart()">Add to Cart</button>
 										<button type="button" class="btn btn-success shop-button">Buy Now</button>
 									</div>
 								</div>
@@ -168,7 +174,7 @@
 													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 												</ul>
 											</div>
-											<a href="../Addtocart?id=<%=rs.getString("product_id")%>" class="btn btn-primary">Add to Cart</a>
+											<a href="../Home/Mainlogin.jsp" class="btn btn-primary">Add to Cart</a>
 										</div>
 									</div>
 								</div>
@@ -207,7 +213,7 @@
 											<h4><%=rs.getString("product_name")%></h4>
 											<p class="item-price"><strike>$400.00</strike> <span><%=rs.getString("product_price")%></span></p>
 											
-											<a href="../Addtocart?id=<%=rs.getString("product_id")%>" class="btn btn-primary">Add to Cart</a>
+											<a href="../Home/Mainlogin.jsp" class="btn btn-primary">Add to Cart</a>
 										</div>
 									</div>
 								</div>
@@ -254,7 +260,7 @@
 													<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 												</ul>
 											</div>
-											<a href="../Addtocart?id=<%=rs.getString("product_id")%>" class="btn btn-primary">Add to Cart</a>
+                                                                                <a href="../Home/Mainlogin.jsp" class="btn btn-primary">Add to Cart</a>
 										</div>
 									</div>
 								</div>

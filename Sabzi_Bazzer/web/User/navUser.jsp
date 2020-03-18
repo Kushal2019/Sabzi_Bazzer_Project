@@ -1,18 +1,5 @@
 <%@page import="com.sabzi_bazzer.Database"%>
-<script>
-        function valSearch()
-        {
-    let val=document.getElementById("search").value;
-    if(val=="")
-    {
-     
-    }else
-    {
-       window.location="Search_Result.jsp?search="+val;
-    }
-    
-        }
-        </script>
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.jsp" style="font-family: Snap ITC; font-size: 28px;"> Sabzi Bazzer </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -62,9 +49,9 @@
         <a class="nav-link" href="../logout.jsp">Logout</a>
       </li>
     </ul>
-     <form class="form-inline my-2 my-lg-0" >
+    <form class="form-inline my-2 my-lg-0" action="../SearchProductUser">
       <input class="form-control mr-sm-2" type="text" name="search" id="search" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="button" onclick="valSearch()">Search</button>
+      <button class="btn btn-secondary my-2 my-sm-0" type="Submit" onclick>Search</button>
     </form>
   </div>
 </nav>
