@@ -77,10 +77,6 @@
         <servlet-class>com.sabzi_bazzer.Addtocart</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Pdf</servlet-name>
-        <servlet-class>com.sabzi_bazzer.Pdf</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>UpdateAddtocart</servlet-name>
         <servlet-class>com.sabzi_bazzer.UpdateAddtocart</servlet-class>
     </servlet>
@@ -203,10 +199,6 @@
     <servlet-mapping>
         <servlet-name>Addtocart</servlet-name>
         <url-pattern>/Addtocart</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Pdf</servlet-name>
-        <url-pattern>/Pdf</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UpdateAddtocart</servlet-name>
