@@ -70,7 +70,15 @@ public class MainLogin extends HttpServlet {
             else
             {
                 //invalid
+                ResultSet x= new Database().CheckLogin1(uid,pass);
+                if(x.next())
+                {
+                 response.sendRedirect("Home/Mainlogin.jsp?error=4");
+                }
+                else
+                {
                 response.sendRedirect("Home/Mainlogin.jsp?error=1");
+                }
             }
             
         }

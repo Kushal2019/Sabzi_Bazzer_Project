@@ -27,10 +27,14 @@
                 <i class="fas fa-user-edit"></i> My Profile </a>
             <a href="Add_Address.jsp" class="dash-nav-item">
                 <i class="fa fa-shopping-basket"></i> Add Address </a>
-            <a href="#" class="dash-nav-item">
+                <a href="My_Order.jsp" class="dash-nav-item">
                 <i class="fa fa-shopping-cart"></i> My Order </a>
         </nav>
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
