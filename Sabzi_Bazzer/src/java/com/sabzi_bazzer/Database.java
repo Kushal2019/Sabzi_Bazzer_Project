@@ -1442,6 +1442,29 @@ public class Database {
         }
      
      }
+
+    ResultSet CheckLogin1(String uid, String pass) {
+        try
+        {
+            if(isConnected())
+            {
+               String que="SELECT * FROM `login_details` WHERE `email`=? and `password`=? and `isactive`='0'";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, uid);
+               smt.setString(2, pass);
+               rs=smt.executeQuery();
+               return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
        
        
        

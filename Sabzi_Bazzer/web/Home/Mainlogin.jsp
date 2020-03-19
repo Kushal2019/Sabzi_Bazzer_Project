@@ -25,6 +25,13 @@
             document.getElementById("aaa2").style.opacity = 1;
             document.getElementById("aaa2").innerHTML="Your Email ID Does not exited";
         }
+         function notactive()
+        {
+             document.getElementById("aaa").innerHTML="<span class='tooltip11text' style='color:red;' id='aaa2' ></span>";
+            document.getElementById("aaa2").style.visibility = "visible";
+            document.getElementById("aaa2").style.opacity = 1;
+            document.getElementById("aaa2").innerHTML="Your account not Approve";
+        }
     </script>
     
 </head>
@@ -43,11 +50,15 @@
         {
             err=2;
         }
+        if(error.equals("4"))
+        {
+            err=3;
+        }
     }
     catch(Exception e){}
 %>
 
-<body onload="<%if(err==1){out.print("errorMag()");}else if(err==2){out.print("Notfound()");}%>">
+<body onload="<%if(err==1){out.print("errorMag()");}else if(err==2){out.print("Notfound()");}else if(err==3){out.print("notactive()");}%>">
     <div id="loader">
         <center><img src="../image/loading.gif"></center>
     </div>
