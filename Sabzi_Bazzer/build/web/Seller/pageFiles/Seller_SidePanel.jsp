@@ -31,7 +31,9 @@
                 <i class="fas fa-shopping-bag"></i> All Item </a>
             <a href="add_item.jsp" class="dash-nav-item">
                 <i class="fa fa-shopping-basket"></i> Add Item </a>
-            <a href="#" class="dash-nav-item">
+                <a href="Order_list.jsp" class="dash-nav-item">
+                <i class="fa fa-shopping-cart"></i> Order List </a>
+            <a href="My_Order.jsp" class="dash-nav-item">
                 <i class="fa fa-shopping-cart"></i> My Order </a>
         </nav>
     </div>

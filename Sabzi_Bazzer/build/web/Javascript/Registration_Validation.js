@@ -146,7 +146,8 @@ function User_validation() {
         }
         else {
             u_email.style.borderColor = "green";
-            document.getElementById('e5').innerHTML = "";
+            document.getElementById('e5').innerHTML = "Your Email as Username";
+            document.getElementById('e5').style.color="green";
         }
     }
 
@@ -380,7 +381,8 @@ function Seller_validation() {
         }
         else {
             s_email.style.borderColor = "green";
-            document.getElementById('s7').innerHTML = "";
+            document.getElementById('s7').innerHTML = "Your email is as Username";
+            document.getElementById('s7').style.color="green";
         }
     }
 
@@ -406,7 +408,7 @@ function Seller_validation() {
         f = 1;
     }
     else {
-        s_licence.style.borderColor = "green";
+        s_Company.style.borderColor = "green";
         document.getElementById('s5').innerHTML = "";
     }
     //Company Name Validation End

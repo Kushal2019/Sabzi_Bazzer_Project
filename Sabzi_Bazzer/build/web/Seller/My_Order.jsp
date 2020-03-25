@@ -21,9 +21,9 @@
 
 <body>
     <div class="dash">
-        <%@include file="PageFiles/User_SidePanel.jsp" %>
+        <%@include file="pageFiles//Seller_SidePanel.jsp" %>
         <div class="dash-app">
-            <%@include file="PageFiles/User_TopToolbar.jsp" %>
+            <%@include file="pageFiles/Seller_TopToolbar.jsp" %>
             <main class="dash-content">
                 <%
                         try{

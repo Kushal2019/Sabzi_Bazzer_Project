@@ -55,8 +55,8 @@
                             </div>
                     </section>
                     <div class="list-right">
-                        <span class="price">Rs.45</span><br><br><br>
-                        <button type="button" class="btn btn-warning btn-lg" id="buy_btn">Buy Now</button>
+                        <span class="price">Rs. <%=rs.getString("product_price")%></span><br><br><br>
+                       
                     </div>
 		</li>
                 <!-- This is first search result end -->

@@ -1465,9 +1465,201 @@ public class Database {
             return null;
         }
     }
+       public ResultSet SellerAddress( String s_name) {
+       try
+        {
+            if(isConnected())
+            {
+                
+                    String sql="SELECT * FROM `seller_details` WHERE `email`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1,s_name);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    } 
        
-       
-       
-       
+        public ResultSet Productdetails5(String id)
+    {
+     try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `product_details` where product_id=?";
+                    smt=conn.prepareStatement(sql);
+                     smt.setString(1,id);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
+
+    int InsertOrderDetails(String buyer, String seller, String product, String quntity, String amount, String Address, String payment, String c_date1, String tomorrow, String status) {
+         try
+        {
+            if(isConnected())
+            {
+               String que="INSERT INTO `order_details`( `buyer_id`, `seller_id`, `product_id`, `quantity`, `amount`, `address_id`, `payment_method`, `order_date`, `delivery_date`, `order_status`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, buyer);
+               smt.setString(2, seller);
+               smt.setString(3, product);
+               smt.setString(4, quntity);
+               smt.setString(5, amount);
+               smt.setString(6, Address);
+               smt.setString(7, payment);
+               smt.setString(8, c_date1);
+               smt.setString(9, tomorrow);
+               smt.setString(10, status);
+               
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
+
+   public ResultSet OrderDetails(String email)
+    {
+     try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `order_details` WHERE `buyer_id`=?";
+                    smt=conn.prepareStatement(sql);
+                     smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+     catch(Exception z){
+         return null;
+     }
+    }   
+
+    int Cancel_order(String id) {
+         try
+        {
+            if(isConnected())
+            {
+               String que="UPDATE `order_details` SET `order_status` = 'Cancel' WHERE `order_details`.`order_id` = ?";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, id);
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
+   
+    int Remove_order(String id) {
+         try
+        {
+            if(isConnected())
+            {
+               String que="DELETE FROM `order_details` WHERE `order_id`=?";
+               smt=conn.prepareStatement(que);
+               smt.setString(1, id);
+               smt.execute();
+               return 1;
+            }
+            else
+            {
+                return 2;
+            }
+        }
+        catch(Exception c)
+        {
+            return 0;
+        }
+    }
+   
+    public ResultSet Order_List(String email)
+    {
+     try
+        {
+            if(isConnected())
+            {
+               
+                    String sql="SELECT * FROM `order_details` WHERE `seller_id`=?";
+                    smt=conn.prepareStatement(sql);
+                     smt.setString(1,email);
+                    rs=smt.executeQuery();
+                    return rs;
+            }
+            else
+            {
+                return null;
+            }
+        }
+     catch(Exception z){
+         return null;
+     }
+    }   
+
+    void ChangeOrderStatus(String id,String status) {
+       try
+        {
+            if(isConnected())
+            {
+                    String sql="UPDATE order_details SET `order_status`=? WHERE `order_id`=?";
+                    smt=conn.prepareStatement(sql);
+                    smt.setString(1, status);
+                     smt.setString(2, id);
+                    smt.execute();
+            }
+            else
+            {
+            }
+        }
+        catch(Exception e)
+        {
+        }
+    }
+   
+   
+   
+   
+   
+   
+   
+   
 }
 

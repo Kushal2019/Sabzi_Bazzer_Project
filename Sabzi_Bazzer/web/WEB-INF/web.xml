@@ -124,6 +124,22 @@
         <servlet-name>SearchProductSeller</servlet-name>
         <servlet-class>com.sabzi_bazzer.SearchProductSeller</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BuyProduct</servlet-name>
+        <servlet-class>com.sabzi_bazzer.BuyProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Cancel_Order</servlet-name>
+        <servlet-class>com.sabzi_bazzer.Cancel_Order</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Remove_order</servlet-name>
+        <servlet-class>com.sabzi_bazzer.Remove_order</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangeOrderStatus</servlet-name>
+        <servlet-class>com.sabzi_bazzer.ChangeOrderStatus</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -247,6 +263,22 @@
     <servlet-mapping>
         <servlet-name>SearchProductSeller</servlet-name>
         <url-pattern>/SearchProductSeller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuyProduct</servlet-name>
+        <url-pattern>/BuyProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cancel_Order</servlet-name>
+        <url-pattern>/Cancel_Order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Remove_order</servlet-name>
+        <url-pattern>/Remove_order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangeOrderStatus</servlet-name>
+        <url-pattern>/ChangeOrderStatus</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

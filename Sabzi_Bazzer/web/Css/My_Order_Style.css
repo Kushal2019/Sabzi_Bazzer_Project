@@ -125,7 +125,11 @@ a {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #4bb8a9
+    background: green;
+}
+#progressbar li.active1:before,
+#progressbar li.active1:after {
+    background: red;
 }
 
 .card {

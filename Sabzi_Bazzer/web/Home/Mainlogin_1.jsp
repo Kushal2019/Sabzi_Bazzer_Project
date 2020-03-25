@@ -73,7 +73,7 @@
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" name="Login_username" id="Login_username" class="form-control input_user"
-                                 placeholder="username" onkeyup="CheckEmail(this.value)">
+                                 placeholder="username" onblur="CheckEmail(this.value)">
                             <span id="Login_username_Error" style="color:red;"></span>
                         </div>
                         <div class="input-group mb-2">

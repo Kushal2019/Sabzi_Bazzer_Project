@@ -1,3 +1,4 @@
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.jsp" style="font-family: Snap ITC; font-size: 28px;"> Sabzi Bazzer </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -21,8 +22,9 @@
       </li>
     </ul>
       <form class="form-inline my-2 my-lg-0" action="../SearchProduct">
+          
       <input class="form-control mr-sm-2" type="text" name="search" id="search" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="Submit" onclick>Search</button>
+      <input type="submit" class="btn btn-secondary my-2 my-sm-0"  onclick="javascript:if(document.getElementById('search').value===''){alert('Enter the Search Value');return false;}return true;" value="Search">
     </form>
   </div>
 </nav>
