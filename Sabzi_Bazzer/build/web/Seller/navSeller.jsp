@@ -57,7 +57,7 @@
     </ul>
      <form class="form-inline my-2 my-lg-0" action="../SearchProductSeller">
       <input class="form-control mr-sm-2" type="text" name="search" id="search" placeholder="Search">
-      <input type="submit" class="btn btn-secondary my-2 my-sm-0" type="Submit" onclick="javascript:if(document.getElementById('search').value===''){alert('Enter the Search Value');return false;}return true;" value="Search">
+      <button type="submit" class="btn btn-secondary my-2 my-sm-0" type="Submit" onclick="javascript:if(document.getElementById('search').value===''){alert('Enter the Search Value');return false;}return true;" value="Search">Search</button>
     </form>
   </div>
 </nav>

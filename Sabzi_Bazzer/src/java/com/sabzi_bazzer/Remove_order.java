@@ -43,14 +43,14 @@ public class Remove_order extends HttpServlet {
                                if(userType.equals("USER"))
                                {
                                 //user
-                                    response.sendRedirect("User/My_Order.jsp");
+                                    response.sendRedirect("User/MyOrder.jsp?");
                                 }
                                  else
                                  {
                                          if(userType.equals("SELLER"))
                                          {
                     //Seller
-                                             response.sendRedirect("Seller/My_Order.jsp");
+                                             response.sendRedirect("Seller/MyOrder.jsp");
                                          }  
                                      
                                 }
@@ -60,14 +60,14 @@ public class Remove_order extends HttpServlet {
                                 if(userType.equals("USER"))
                                {
                                 //user
-                                    response.sendRedirect("User/My_Order.jsp");
+                                    response.sendRedirect("User/MyOrder.jsp");
                                 }
                                  else
                                  {
                                          if(userType.equals("SELLER"))
                                          {
                     //Seller
-                                             response.sendRedirect("Seller/My_Order.jsp");
+                                             response.sendRedirect("Seller/MyOrder.jsp");
                                          }  
                                      
                                 }

@@ -8,17 +8,17 @@ package com.sabzi_bazzer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author SoumenPC
  */
-public class Cancel_Order extends HttpServlet {
+public class BuyProduct1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,48 +34,34 @@ public class Cancel_Order extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           String id=request.getParameter("id");
-          
-                     HttpSession session=request.getSession();
-                     String userType=session.getAttribute("UserType").toString();
-                     int x= new Database().Cancel_order(id);
-                            if(x==1)
-                            {
-                               if(userType.equals("USER"))
-                               {
-                                //user
-                                    response.sendRedirect("User/My_Order.jsp?id="+id);
-                                }
-                                 else
-                                 {
-                                         if(userType.equals("SELLER"))
-                                         {
-                    //Seller
-                                             response.sendRedirect("Seller/My_Order.jsp?id="+id);
-                                         }  
-                                     
-                                }
-                            }
-                            else
-                            {
-                                if(userType.equals("USER"))
-                               {
-                                //user
-                                    response.sendRedirect("User/My_Order.jsp?id="+id);
-                                }
-                                 else
-                                 {
-                                         if(userType.equals("SELLER"))
-                                         {
-                    //Seller
-                                             response.sendRedirect("Seller/My_Order.jsp?id="+id);
-                                         }  
-                                     
-                                }
-                            
-                            }
-                            
-        }catch(Exception x){}
+           String  id=request.getParameter("id");
+            String Address=request.getParameter("Address");
+            String   payment=request.getParameter("Payment");
+            Pattern pattern = Pattern.compile(",");
+            String[] words;
+            words = pattern.split(id);
+            String c_date1=new CurrentDate().C_date1();
+           String tomorrow=new CurrentDate().tomorrowdate();
+           String status="PLACED";
+           int temp=0;
+            for(int i=0;i<words.length;i++)
+            {
+                 ResultSet rs = new Database().cartlist(words[i]);
+                 if(rs.next())
+                 {
+                     int x=new Database().InsertOrderDetails(rs.getString("user_id"),rs.getString("seller_name"),rs.getString("product_id"),rs.getString("qantity"),rs.getString("total"),Address,payment,c_date1,tomorrow,status);
+                     temp=1;
+                 }
+            }
+            if(temp==1)
+            {
+                response.sendRedirect("Home/My_Order.jsp");
+            }
+            else
+            {
+            response.sendRedirect("Checkout_AddtoCart.jsp?err=1");
+            }
+        }catch(Exception a){}
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

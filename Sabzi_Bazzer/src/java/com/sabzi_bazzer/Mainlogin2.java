@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author SoumenPC
  */
-public class Cancel_Order extends HttpServlet {
+public class Mainlogin2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,50 +32,33 @@ public class Cancel_Order extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-           String id=request.getParameter("id");
-          
-                     HttpSession session=request.getSession();
-                     String userType=session.getAttribute("UserType").toString();
-                     int x= new Database().Cancel_order(id);
-                            if(x==1)
-                            {
-                               if(userType.equals("USER"))
-                               {
-                                //user
-                                    response.sendRedirect("User/My_Order.jsp?id="+id);
-                                }
-                                 else
-                                 {
-                                         if(userType.equals("SELLER"))
-                                         {
-                    //Seller
-                                             response.sendRedirect("Seller/My_Order.jsp?id="+id);
-                                         }  
-                                     
-                                }
-                            }
-                            else
-                            {
-                                if(userType.equals("USER"))
-                               {
-                                //user
-                                    response.sendRedirect("User/My_Order.jsp?id="+id);
-                                }
-                                 else
-                                 {
-                                         if(userType.equals("SELLER"))
-                                         {
-                    //Seller
-                                             response.sendRedirect("Seller/My_Order.jsp?id="+id);
-                                         }  
-                                     
-                                }
-                            
-                            }
-                            
-        }catch(Exception x){}
+        try (PrintWriter out = response.getWriter()){
+            String uid,pass,userType,id ;
+            
+            uid=request.getParameter("Login_username");
+            pass=request.getParameter("Login_password");
+             id=request.getParameter("id");
+             String q=request.getParameter("q");
+            ResultSet rs = new Database().CheckLogin(uid,pass);
+            if(rs.next())
+            {
+                //valid 
+                userType=rs.getString("user_type");
+                HttpSession session=request.getSession();
+                session.setAttribute("UserID", uid);
+                session.setAttribute("UserType", userType);               
+                 response.sendRedirect("Checkout.jsp?id="+id+"&q="+q);
+            }
+            else
+            {
+                //invalid
+                
+            }
+            
+        }
+        catch(Exception ex){
+         response.sendRedirect("Home/Mainlogin_1.jsp?error=2");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -67,9 +67,12 @@ public final class Checkout_jsp extends org.apache.jasper.runtime.HttpJspBase
 
     
     int done=0;
-    String id="",q="",amount="",seller="";
+    String id="",q="",amount="",seller="",emaiiId="";
+    
     try
     {
+        emaiiId=session.getAttribute("UserID").toString();
+       // String userType=session.getAttribute("UserType").toString();
         String error=request.getParameter("done");
          id=request.getParameter("id");
          q=request.getParameter("q");
@@ -147,6 +150,8 @@ if(done==1){out.print("model()");}
       out.print(amount);
       out.write("&seller=");
       out.print(seller);
+      out.write("&buyer=");
+      out.print(emaiiId);
       out.write("\">\r\n");
       out.write("      <div class=\"col-xs-13\">\r\n");
       out.write("       \r\n");
@@ -156,8 +161,8 @@ if(done==1){out.print("model()");}
       out.write("              ");
 
                   try{
-                         String emaiiId=session.getAttribute("UserID").toString();
-                         String userType=session.getAttribute("UserType").toString();
+                          
+                          String userType=session.getAttribute("UserType").toString();
                          ResultSet rs ;
                          if(userType.equals("USER"))
                          {
@@ -178,12 +183,15 @@ if(done==1){out.print("model()");}
       out.print((userType.equals("USER")?rs.getString("address_id"):rs.getString("seller_id")));
       out.write("\" value=\"");
       out.print((userType.equals("USER")?rs.getString("address_id"):rs.getString("seller_id")));
-      out.write("\" checked> ");
-      out.print(rs.getString("house_number")+","+rs.getString("street_number")+","
+      out.write("\" checked> \r\n");
+      out.write("                        ");
+      out.print((userType.equals("USER")?rs.getString("house_number")+","+rs.getString("street_number")+","
                       +rs.getString("vill_town")+","+rs.getString("post_office")+","
                       +rs.getString("post_office")+","+rs.getString("police_station")+","
                       +rs.getString("district")+","+rs.getString("state")+","
-                      +rs.getString("pin_code"));
+                      +rs.getString("pin_code"):rs.getString("house_number")+","+rs.getString("street")+","
+                      +rs.getString("town")+","+rs.getString("state")+","
+                      +rs.getString("zip_code")+","+rs.getString("landmark")));
       out.write("\r\n");
       out.write("                  </label>\r\n");
       out.write("                </div>\r\n");
@@ -211,7 +219,7 @@ if(done==1){out.print("model()");}
       out.write("              <div class=\"row radio\">\r\n");
       out.write("                <div class=\"col-xs-3\">\r\n");
       out.write("                  <label data-toggl-e=\"collapse\" data-target=\"#newcard\">\r\n");
-      out.write("                      <input type=\"radio\" name=\"optionsRadios\" id=\"optionsRadios2\" value=\"option2\" disabled>\r\n");
+      out.write("                      <input type=\"radio\" name=\"Payment\" id=\"optionsRadios2\" value=\"option2\" disabled>\r\n");
       out.write("                    New Credit Card\r\n");
       out.write("                  </label>\r\n");
       out.write("                </div>\r\n");
@@ -234,7 +242,7 @@ if(done==1){out.print("model()");}
       out.write("              <div class=\"row radio\">\r\n");
       out.write("                <div class=\"col-xs-3\">\r\n");
       out.write("                  <label data-toggl-e=\"collapse\" data-target=\"#newcard\">\r\n");
-      out.write("                    <input type=\"radio\" name=\"optionsRadios\" id=\"optionsRadios3\" value=\"option3\" disabled> Pay with PayPal\r\n");
+      out.write("                    <input type=\"radio\" name=\"Payment\" id=\"optionsRadios3\" value=\"option3\" disabled> Pay with PayPal\r\n");
       out.write("                  </label>\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"col-xs-5\">\r\n");

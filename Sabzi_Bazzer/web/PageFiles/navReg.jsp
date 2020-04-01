@@ -1,3 +1,34 @@
+<%
+    try
+    {
+        String utype=session.getAttribute("UserType").toString();
+        
+        if(utype.equals("USER") )
+        {
+            response.sendRedirect("../User/index.jsp");
+        }
+        else
+        {
+            if(utype.equals("ADMIN"))
+            {
+                response.sendRedirect("../Admin/index.jsp");
+            }
+            else
+            {
+               if(utype.equals("SELLER"))
+                {
+                    //response.sendRedirect("../Seller/index.jsp");
+                }
+               else
+               {
+               response.sendRedirect("../index.jsp");
+               }
+    
+            }
+        }
+    }
+    catch(Exception x){}
+ %>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.jsp" style="font-family: Snap ITC; font-size: 28px;"> Sabzi Bazzer </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"

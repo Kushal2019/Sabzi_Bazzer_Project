@@ -140,6 +140,14 @@
         <servlet-name>ChangeOrderStatus</servlet-name>
         <servlet-class>com.sabzi_bazzer.ChangeOrderStatus</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Mainlogin2</servlet-name>
+        <servlet-class>com.sabzi_bazzer.Mainlogin2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BuyProduct1</servlet-name>
+        <servlet-class>com.sabzi_bazzer.BuyProduct1</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registration_User</servlet-name>
         <url-pattern>/Registration_User</url-pattern>
@@ -279,6 +287,14 @@
     <servlet-mapping>
         <servlet-name>ChangeOrderStatus</servlet-name>
         <url-pattern>/ChangeOrderStatus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Mainlogin2</servlet-name>
+        <url-pattern>/Mainlogin2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuyProduct1</servlet-name>
+        <url-pattern>/BuyProduct1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,34 +1,5 @@
 <%@page import="java.sql.ResultSet"%>
-<%@page import="com.sabzi_bazzer.Database"%>
-<%
-    try
-    {
-        String utype=session.getAttribute("UserType").toString();
-        String uname=session.getAttribute("UserID").toString();
-        if(utype.equals("USER") && !uname.equals(""))
-        {
-           response.sendRedirect("../User/index.jsp"); 
-        }
-        else
-        {
-            if(utype.equals("ADMIN"))
-            {
-                response.sendRedirect("../Admin/index.jsp");
-            }
-            else
-            {
-               if(utype.equals("SELLER"))
-            {
-               // response.sendRedirect("../Seller/index.jsp");
-            } 
-            }
-        }
-    }
-    catch(Exception ex)
-    {
-        response.sendRedirect("../index.jsp");
-    }
-%><%-- 
+<%@page import="com.sabzi_bazzer.Database"%><%-- 
     Document   : Product_List
     Created on : 8 Nov, 2019, 11:31:09 AM
     Author     : Kushal
@@ -69,16 +40,16 @@
 
 <body>
   <div class="dash">
-    <%@include file="pageFiles/Seller_SidePanel.jsp" %>
+      <%@include file="PageFiles/User_SidePanel.jsp" %>
     <div class="dash-app">
-      <%@include file="pageFiles/Seller_TopToolbar.jsp" %>     
+        <%@include file="PageFiles/User_TopToolbar.jsp" %>     
       <main class="dash-content">
         <div>
           <table class="table table-dark table-striped">
             <thead>
               <tr>
                
-                <th>Buyer_name</th>
+               
                 <th>Product_name</th>
                 <th>Quantity</th>
                 <th>Amount</th>
@@ -86,20 +57,20 @@
                 <th>Order_date</th>
                 <th>Delivery_date</th>
                 <th>Order_status</th>
-                <th>Change</th>
+                <th>Details</th>
               </tr>
             </thead>
             <tbody>
               <%
                    try {
                        String emaiiId=session.getAttribute("UserID").toString();
-                         ResultSet rs = new Database().Order_List(emaiiId);  
+                         ResultSet rs = new Database().Order_List2(emaiiId);  
                          while(rs.next())
                          {
                              
                 %>
               <tr>
-                  <td><%=(new Database().Type(rs.getString("buyer_id")).equals("USER")? new Database().Username(rs.getString("buyer_id")): new Database().Sellername(rs.getString("buyer_id")))%></td>
+                 
                   <td>
                       <%
                            ResultSet rs1=new Database().Productdetails5(rs.getString("product_id"));
@@ -115,34 +86,8 @@
                 <td><%=rs.getString("delivery_date")%></td>
                 <td><%=rs.getString("order_status")%></td>
                 <td>
-                    <select  class="form-control" name="Order_status" id="Order_status" onchange="Order_status(<%=rs.getString("order_id")%>)">
-                        <%
-                            if(rs.getString("order_status").equals("PLACED"))
-                            {
-                        %>
-                        <option  value="" selected>PLACED</option>
-                        <option value="SHIPPED">SHIPPED</option>
-                        <%}%>
-                         <%
-                            if(rs.getString("order_status").equals("SHIPPED"))
-                            {
-                        %>
-                        <option  value="" selected>SHIPPED</option>
-                        <option value="DELIVERED">DELIVERED</option>
-                        <%}%>
-                         <%
-                            if(rs.getString("order_status").equals("DELIVERED"))
-                            {
-                        %>
-                        <option value="DELIVERED">DELIVERED</option>
-                        <%}%>
-                          <%
-                            if(rs.getString("order_status").equals("Cancel"))
-                            {
-                        %>
-                        <option value="">Cancel</option>
-                        <%}%>
-                    </select>
+                    <button type="button" onclick="javascript:window.location='My_Order.jsp?id=<%=rs.getString("order_id")%>'"
+                            class="btn btn-labeled btn-success">View</button>
                 </td>
               </tr>
               <%            

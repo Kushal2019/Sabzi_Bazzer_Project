@@ -27,9 +27,10 @@
             <main class="dash-content">
                 <%
                         try{
-                             String emaiiId=session.getAttribute("UserID").toString();
-                              ResultSet rs=new Database().OrderDetails(emaiiId);
-                              while(rs.next())
+                            
+                             String id=request.getParameter("id");
+                              ResultSet rs=new Database().OrderDetails(id);
+                              if(rs.next())
                               {
                                     ResultSet rs1=new Database().Productdetails5(rs.getString("product_id"));
                                     if(rs1.next()){
@@ -56,8 +57,10 @@
                                 {
                         %>
                          <h6 class="ml-auto mr-3"> <a href="../Remove_order?id=<%=rs.getString("order_id")%>">Remove</a> </h6>
+                        <%}else if(rs.getString("order_status").equals("DELIVERED")){%>
+                                    <h6 class="ml-auto mr-3"> <a href="../Remove_order?id=<%=rs.getString("order_id")%>">Remove</a> </h6>
                         <%}else{%>
-                                    <h6 class="ml-auto mr-3"> <a href="../Cancel_Order?id=<%=rs.getString("order_id")%>">Cancel Order</a> </h6>
+                        <h6 class="ml-auto mr-3"> <a href="../Cancel_Order?id=<%=rs.getString("order_id")%>">Cancel Order</a> </h6>
                         <%}%>
                                 </div>
                             </div>

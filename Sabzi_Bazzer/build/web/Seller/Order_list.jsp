@@ -96,10 +96,18 @@
                          ResultSet rs = new Database().Order_List(emaiiId);  
                          while(rs.next())
                          {
+                             
                 %>
               <tr>
-                <td></td>
-                <td></td>
+                  <td><%=(new Database().Type(rs.getString("buyer_id")).equals("USER")? new Database().Username(rs.getString("buyer_id")): new Database().Sellername(rs.getString("buyer_id")))%></td>
+                  <td>
+                      <%
+                           ResultSet rs1=new Database().Productdetails5(rs.getString("product_id"));
+                                    if(rs1.next()){
+                                    out.println(rs1.getString("product_name"));
+                                    }
+                      %>
+                  </td>
                 <td><%=rs.getString("quantity")%></td>
                 <td><%=rs.getString("amount")%></td>
                 <td><%=rs.getString("payment_method")%></td>

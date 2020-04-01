@@ -24,6 +24,10 @@
 			let q = document.getElementById('qty').value;
 			window.location = "../Addtocart2?id=" + id + "&q=" + q;
 		}
+                function Buy(id) {
+			let q = document.getElementById('qty').value;
+			window.location = "../Checkout.jsp?id=" + id + "&q=" + q;
+		}
 	</script>
 </head>
 
@@ -119,7 +123,7 @@
 									<span class="plus bg-dark">+</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<button type="button" class="btn btn-primary shop-button"
 										onclick="addtocart(<%=rs.getString("product_id")%>)">Add to Cart</button>
-									<button type="button" class="btn btn-success shop-button">Buy Now</button>
+									<button type="button" class="btn btn-success shop-button" onclick="Buy(<%=rs.getString("product_id")%>)">Buy Now</button>
 								</div>
 							</div>
 						</div>

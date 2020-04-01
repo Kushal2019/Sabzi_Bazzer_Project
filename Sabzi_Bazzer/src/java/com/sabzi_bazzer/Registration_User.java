@@ -118,7 +118,7 @@ public class Registration_User extends HttpServlet {
                                                                        "\n" +
                                                                        "<body>\n" +
                                                                        "<center>\n" +
-                                                                       "dhfhjshsgsgdkjsjh"+
+                                                                       "Hi Welcome to <b>Sabzi Bazzer<b><br>Your UserId: "+email+"<br>Password"+pass+
                                                                        "</center>\n" +
                                                                        "</body>\n" +
                                                                        "</html>";

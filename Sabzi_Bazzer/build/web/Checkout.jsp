@@ -96,11 +96,14 @@
             <div class="list-group-item-heading">
               <div class="row radio">
                 <div class="col-xs-3">
-                    <label><input type="radio" name="Address" id="optionShipp<%=(userType.equals("USER")?rs.getString("address_id"):rs.getString("seller_id"))%>" value="<%=(userType.equals("USER")?rs.getString("address_id"):rs.getString("seller_id"))%>" checked> <%=rs.getString("house_number")+","+rs.getString("street_number")+","
+                    <label><input type="radio" name="Address" id="optionShipp<%=(userType.equals("USER")?rs.getString("address_id"):rs.getString("seller_id"))%>" value="<%=(userType.equals("USER")?rs.getString("address_id"):rs.getString("seller_id"))%>" checked> 
+                        <%=(userType.equals("USER")?rs.getString("house_number")+","+rs.getString("street_number")+","
                       +rs.getString("vill_town")+","+rs.getString("post_office")+","
                       +rs.getString("post_office")+","+rs.getString("police_station")+","
                       +rs.getString("district")+","+rs.getString("state")+","
-                      +rs.getString("pin_code")%>
+                      +rs.getString("pin_code"):rs.getString("house_number")+","+rs.getString("street")+","
+                      +rs.getString("town")+","+rs.getString("state")+","
+                      +rs.getString("zip_code")+","+rs.getString("landmark"))%>
                   </label>
                 </div>
               </div>

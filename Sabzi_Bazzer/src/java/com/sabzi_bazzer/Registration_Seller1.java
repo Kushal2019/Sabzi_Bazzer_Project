@@ -129,13 +129,14 @@ public class Registration_Seller1 extends HttpServlet {
              int y=db.insertseller(seller);
              if(y==1)
              {
+               db.insertsellerAddress(seller);
                String to=s_email;  
                                                         String subject="registration confirmation ";  
                                                         String msg="<html>\n" +
                                                                        "\n" +
                                                                        "<body>\n" +
                                                                        "<center>\n" +
-                                                                       "dhfhjshsgsgdkjsjh"+
+                                                                        "Hi Welcome to <b>Sabzi Bazzer<b><br>Your UserId: "+s_email+"<br>Password"+s_password+
                                                                        "</center>\n" +
                                                                        "</body>\n" +
                                                                        "</html>";

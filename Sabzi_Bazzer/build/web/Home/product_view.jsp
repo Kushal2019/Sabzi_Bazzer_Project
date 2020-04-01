@@ -20,9 +20,13 @@
 	<link rel="stylesheet" type="text/css" href="../Css/product_view_style.css">
 	<link rel="stylesheet" type="text/css" href="../Css/product_image_style.css">
         <script>
-		function addtocart() {
+		function addtocart(id) {
 			
-			window.location = "../Home/Mainlogin.jsp";
+			window.location = "../Home/Mainlogin_1.jsp?id="+id;
+		}
+                function Buy(id) {
+			let q = document.getElementById('qty').value;
+			window.location = "../Home/Mainlogin_2.jsp?id="+id+"&q="+q;
 		}
 	</script>
 </head>
@@ -111,8 +115,8 @@
                                                                             <span class="minus bg-dark">-</span>
 										<input type="number" class="count" name="qty" value="1" id="qty">
 										<span class="plus bg-dark">+</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                <button type="button" class="btn btn-primary shop-button" onclick="addtocart()">Add to Cart</button>
-                                                                                <button type="button" class="btn btn-success shop-button" >Buy Now</button>
+                                                                                <button type="button" class="btn btn-primary shop-button" onclick="addtocart(<%=rs.getString("product_id")%>)">Add to Cart</button>
+                                                                                <button type="button" class="btn btn-success shop-button" onclick="Buy(<%=rs.getString("product_id")%>)">Buy Now</button>
 									</div>
 								</div>
 							</div>

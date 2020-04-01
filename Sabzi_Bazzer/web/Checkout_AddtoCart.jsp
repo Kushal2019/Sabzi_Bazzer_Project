@@ -1,5 +1,6 @@
 
 
+<%@page import="java.util.regex.Pattern"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.sabzi_bazzer.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,11 +14,21 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link href="Css/Buy_Now_Style.css" rel="stylesheet" type="text/css">
   <script src="Javascript/Checkout.js"></script>
+  <script>
+      function model()
+      {
+          $("#myModal").modal();
+      }
+      function Myorder()
+      {
+          window.location="Home/My_Order.jsp";
+      }
+  </script>
 </head>
 <%
     
     int done=0;
-    String id="",q="",amount="",seller="",emaiiId="";
+    String id="",amount="",emaiiId="",ids="",count="";
     
     try
     {
@@ -25,14 +36,13 @@
        // String userType=session.getAttribute("UserType").toString();
         String error=request.getParameter("done");
          id=request.getParameter("id");
-         q=request.getParameter("q");
-        ResultSet rs=new Database().Productdetails5(id);
+         ids=id.substring(0, id.length() - 1);
+        
+        ResultSet rs=new Database().Productdetails7(ids);
         if(rs.next())
         {
-           Double pp=Double.parseDouble(rs.getString("product_price"));
-           Double aa=pp*Double.parseDouble(q);
-           amount=aa.toString();
-           seller=rs.getString("product _seller");
+           amount=rs.getString("total");
+           count=rs.getString("count");
         }
         if(error.equals("1"))
         {
@@ -71,9 +81,9 @@
 
   <div class="container-fluid">
     <div class="row">
-        <form method="Post" action="BuyProduct?id=<%=id%>&q=<%=q%>&amount=<%=amount%>&seller=<%=seller%>&buyer=<%=emaiiId%>">
+        <form method="Post" action="BuyProduct1?id=<%=id%>">
       <div class="col-xs-13">
-       
+       <h3>You Have <%=count%> Product Buy:</h3>
         <h3>Select Address..</h3>
         <div class="list-group">
           <div class="list-group-item">
@@ -210,16 +220,7 @@
     </form>
     </div>
   </div>
-  <script>
-      function model()
-      {
-          $("#myModal").modal();
-      }
-      function Myorder()
-      {
-          window.location="Home/My_Order.jsp";
-      }
-  </script>
+  
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>

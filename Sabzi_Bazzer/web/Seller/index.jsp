@@ -53,7 +53,8 @@
         <div class="row">
             <%
                 try{
-                   ResultSet rs = new Database().Productdetails();  
+                    String  emaiiId=session.getAttribute("UserID").toString();
+                   ResultSet rs = new Database().Productdetails6(emaiiId);  
                    while(rs.next())
                    {
                        String st=rs.getString("product_image");

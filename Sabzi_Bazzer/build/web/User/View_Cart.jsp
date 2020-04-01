@@ -26,6 +26,31 @@
   var total = price*str;
   window.location="../UpdateAddtocart?total="+total+"&id="+id+"&qan="+str;
 }
+function checkproduct()
+{
+      var addproduct = document.getElementsByName("addproduct[]");
+      var str="";
+      var temp=0;
+      for(var i=0;i<addproduct.length;i++)
+      {
+          if(addproduct[i].checked==true)
+          {
+              temp=1;
+              str=str+addproduct[i].value+",";
+          }
+      }
+      if(temp==1)
+      {
+      window.location="../Checkout_AddtoCart.jsp?id="+str;
+      }
+      else
+      {
+           alert("Choose Buys Product");
+              return false;
+      }
+       
+     
+}
 function cartremove(id)
 {
     window.location="../Remove_Cart?id="+id;
@@ -56,7 +81,9 @@ function cartremove(id)
                    {
     %>
     <div class="product">
+            
       <div class="product-image">
+         <input type="checkbox" name="addproduct[]" value="<%=rs.getString("cart_id")%>">
           <img src="../image/Vegetables/<%=rs.getString("product_img")%>">
       </div>
       <div class="product-details">
@@ -94,21 +121,18 @@ function cartremove(id)
                    if(rs.next())
                    {
                        double txt= Float.parseFloat(rs.getString("total"));
-                       double ftxt=txt*0.05;
-                       double gandt=ftxt+txt+40;
+                       double ftxt=txt*0;
+                       double gandt=ftxt+txt+0;
     %>
     <div class="totals">
       <div class="totals-item">
         <label>Subtotal</label>
         <div class="totals-value" id="cart-subtotal"><%=rs.getString("total")%></div>
       </div>
-      <div class="totals-item">
-        <label>Tax (5%)</label>
-        <div class="totals-value" id="cart-tax"><%=ftxt%></div>
-      </div>
+      
       <div class="totals-item">
         <label>Shipping</label>
-        <div class="totals-value" id="cart-shipping">40</div>
+        <div class="totals-value" id="cart-shipping">0(free)</div>
       </div>
       <div class="totals-item totals-item-total">
         <label>Grand Total</label>
@@ -116,7 +140,7 @@ function cartremove(id)
       </div>
     </div>
 
-    <button class="checkout">Checkout</button>
+      <button class="checkout" onclick="return checkproduct()">Checkout</button>
    
   </div> 
       

@@ -57,6 +57,7 @@ function cartremove(id)
                    {
     %>
     <div class="product">
+        <input type="checkbox" name="addproduct[]" value="<%=rs.getString("product_id")%>">
       <div class="product-image">
           <img src="../image/Vegetables/<%=rs.getString("product_img")%>">
       </div>
@@ -89,27 +90,24 @@ function cartremove(id)
         catch(Exception a){}
        %>
         <%
-        try{
+       try{
               String uname=session.getAttribute("UserID").toString();
                    ResultSet rs = new Database().Cartdetails1(uname);  
                    if(rs.next())
                    {
                        double txt= Float.parseFloat(rs.getString("total"));
-                       double ftxt=txt*0.05;
-                       double gandt=ftxt+txt+40;
+                       double ftxt=txt*0;
+                       double gandt=ftxt+txt+0;
     %>
     <div class="totals">
       <div class="totals-item">
         <label>Subtotal</label>
         <div class="totals-value" id="cart-subtotal"><%=rs.getString("total")%></div>
       </div>
-      <div class="totals-item">
-        <label>Tax (5%)</label>
-        <div class="totals-value" id="cart-tax"><%=ftxt%></div>
-      </div>
+      
       <div class="totals-item">
         <label>Shipping</label>
-        <div class="totals-value" id="cart-shipping">40</div>
+        <div class="totals-value" id="cart-shipping">0(free)</div>
       </div>
       <div class="totals-item totals-item-total">
         <label>Grand Total</label>
