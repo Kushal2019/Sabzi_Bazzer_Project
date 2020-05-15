@@ -36,6 +36,7 @@
             }
         }
         String rs = new Database().sellername(uname);
+         String count=new Database().Countcart(uname);
  %>
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
@@ -49,7 +50,7 @@
         <a class="nav-link" href="my_profile.jsp">Edit <%=rs%></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../Seller/View_Cart.jsp">Cart</a>
+          <a class="nav-link" href="../Seller/View_Cart.jsp">Cart(<%=count%>)</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../logout.jsp">Logout</a>

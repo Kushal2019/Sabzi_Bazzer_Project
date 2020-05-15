@@ -27,6 +27,31 @@
   var total = price*str;
   window.location="../UpdateAddtocart?total="+total+"&id="+id+"&qan="+str;
 }
+function checkproduct()
+{
+      var addproduct = document.getElementsByName("addproduct[]");
+      var str="";
+      var temp=0;
+      for(var i=0;i<addproduct.length;i++)
+      {
+          if(addproduct[i].checked==true)
+          {
+              temp=1;
+              str=str+addproduct[i].value+",";
+          }
+      }
+      if(temp==1)
+      {
+      window.location="../Checkout_AddtoCart.jsp?id="+str;
+      }
+      else
+      {
+           alert("Choose Buys Product");
+              return false;
+      }
+       
+     
+}
 function cartremove(id)
 {
     window.location="../Remove_Cart?id="+id;
@@ -57,8 +82,9 @@ function cartremove(id)
                    {
     %>
     <div class="product">
-        <input type="checkbox" name="addproduct[]" value="<%=rs.getString("product_id")%>">
+       
       <div class="product-image">
+           <input type="checkbox" name="addproduct[]" value="<%=rs.getString("cart_id")%>">
           <img src="../image/Vegetables/<%=rs.getString("product_img")%>">
       </div>
       <div class="product-details">
@@ -115,8 +141,7 @@ function cartremove(id)
       </div>
     </div>
 
-    <button class="checkout">Checkout</button>
-   
+    <button class="checkout" onclick="return checkproduct()">Checkout</button>
   </div> 
      <%
         }

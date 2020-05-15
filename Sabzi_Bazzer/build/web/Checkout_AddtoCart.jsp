@@ -37,7 +37,7 @@
         String error=request.getParameter("done");
          id=request.getParameter("id");
          ids=id.substring(0, id.length() - 1);
-        
+        //out.println(ids);
         ResultSet rs=new Database().Productdetails7(ids);
         if(rs.next())
         {
